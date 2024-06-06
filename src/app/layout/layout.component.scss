@@ -3,9 +3,9 @@
 }
 
 .sidenav {
+  box-sizing: border-box;
   width: 240px;
   padding: 0 8px;
-  box-sizing: border-box;
 }
 
 .mat-toolbar.mat-primary {
@@ -19,38 +19,41 @@ mat-sidenav-content {
 }
 
 .sidenav-scroll-wrapper {
+  box-sizing: border-box;
   height: calc(100dvh - 64px - 16px);
   overflow: auto;
   border-radius: 16px;
-  box-sizing: border-box;
 }
 
 .sidenav-content {
-  max-height: 100%;
-  overflow-y: auto;
-  padding: 16px;
   box-sizing: border-box;
+  max-height: 100%;
+  padding: 16px;
+  overflow-y: auto;
   @media (pointer: fine) {
     &::-webkit-scrollbar {
-      background-color: transparent;
       width: 8px;
+      background-color: transparent;
     }
+
     &::-webkit-scrollbar-thumb {
       border-radius: 4px;
     }
   }
 }
 
-@media (max-width: 959.98px) {
+@media (width <= 959.98px) {
   mat-sidenav-content {
     padding-right: 8px;
     padding-left: 8px;
   }
+
   .sidenav-scroll-wrapper {
     height: calc(100dvh - 64px);
   }
+
   .sidenav-content {
-    overflow-y: visible;
     padding: 8px;
+    overflow-y: visible;
   }
 }

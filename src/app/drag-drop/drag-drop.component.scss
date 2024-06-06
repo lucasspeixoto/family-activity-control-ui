@@ -1,28 +1,28 @@
 .container {
+  display: inline-block;
   width: 400px;
   max-width: 100%;
   margin: 0 20px;
-  display: inline-block;
   vertical-align: top;
 }
 
 .list {
-  border: solid 1px #ccc;
-  min-height: 60px;
-  background: white;
-  border-radius: 4px;
   display: block;
+  min-height: 60px;
   overflow: hidden;
+  background: white;
+  border: solid 1px #ccc;
+  border-radius: 4px;
 }
 
 .list-item {
-  padding: 20px 10px;
-  border-bottom: solid 1px #ccc;
   box-sizing: border-box;
+  padding: 20px 10px;
+  font-size: 14px;
+  color: black;
   cursor: move;
   background: white;
-  color: black;
-  font-size: 14px;
+  border-bottom: solid 1px #ccc;
 }
 
 .list-item:last-child {
