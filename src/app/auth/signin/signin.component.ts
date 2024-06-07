@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatFormField, MatLabel, MatSuffix } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
@@ -24,5 +24,9 @@ import { HDividerComponent } from '@elementar/components';
   styleUrl: './signin.component.scss'
 })
 export class SigninComponent {
+  private router = inject(Router);
 
+  public loginHandler(): void {
+    this.router.navigateByUrl('/pages/dashboard');
+  }
 }
