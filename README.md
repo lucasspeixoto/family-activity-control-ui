@@ -1,27 +1,25 @@
-# Family Activity Control Ui
+# Elementar Admin
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+[Overview](https://elementarui.com) | [Live Demo](https://demo.elementarui.com) | [Documentation](https://elementarui.com/documentation)
 
-## Development server
+# Modern Angular admin panel and dashboard, based on [Angular Material 3](https://material.angular.io) components and [Tailwind](https://tailwindcss.com/) css framework
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<a target="_blank" href="https://elementarui.com">
+  <img src="https://elementarlabs.nyc3.digitaloceanspaces.com/famili-activity-control-ui-angular-admin-dasgboard-template.png">
+</a>
 
-## Code scaffolding
+## Key features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Based on the most popular Angular material components
+- All components are designed from scratch specifically for the elementar admin
+- It has a large number of components aimed at creating real projects
+- Free and Open Source for personal and commercial purposes
 
-## Build
+## What's included:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Angular 18+ & Typescript
+- Tailwind 3+ & SCSS
+- High resolution
+- Flexibly configurable themes (3 themes included)
+- Light & dark color schemes in each theme
+- 50+ Angular Components

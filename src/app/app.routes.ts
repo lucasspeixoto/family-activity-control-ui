@@ -2,44 +2,29 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
+    path: 'pages',
+    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
+  {
+    path: 'error',
+    loadChildren: () => import('./error/error.module').then(m => m.ErrorModule)
+  },
+  {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'dashboard',
+    redirectTo: 'auth/sign-in',
+    pathMatch: 'full'
   },
   {
-    path: 'dashboard',
-    loadComponent: () =>
-      import('./dashboard/dashboard.component').then(
-        (c) => c.DashboardComponent
-      ),
-    title: 'Dashboard',
+    path: 'base-layouts',
+    loadChildren: () => import('./base-layouts/base-layouts.module').then(m => m.BaseLayoutsModule)
   },
   {
-    path: 'address',
-    loadComponent: () =>
-      import('./address-form/address-form.component').then(
-        (c) => c.AddressFormComponent
-      ),
-    title: 'Address',
-  },
-  {
-    path: 'table',
-    loadComponent: () =>
-      import('./table/table.component').then((c) => c.TableComponent),
-    title: 'Table',
-  },
-  {
-    path: 'tree',
-    loadComponent: () =>
-      import('./tree/tree.component').then((c) => c.TreeComponent),
-    title: 'Tree',
-  },
-  {
-    path: 'drag-drop',
-    loadComponent: () =>
-      import('./drag-drop/drag-drop.component').then(
-        (c) => c.DragDropComponent
-      ),
-    title: 'Drag-Drop',
-  },
+    path: '**',
+    title: 'Page Not Found',
+    loadComponent: () => import('./error/not-found/not-found.component').then(c => c.NotFoundComponent)
+  }
 ];

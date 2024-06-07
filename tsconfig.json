@@ -1,38 +1,51 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "src",
-    "downlevelIteration": true,
+    "paths": {
+      "@shared/*": [
+        "./src/app/@shared/*"
+      ],
+      "@services/*": [
+        "./src/app/@services/*"
+      ],
+      "@app/*": [
+        "./src/app/@app/*"
+      ],
+      "@components/*": [
+        "./src/app/@components/*"
+      ],
+      "@state/*": [
+        "./src/app/@state/*"
+      ],
+      "@meta/*": [
+        "./src/app/@meta/*"
+      ],
+      "@elementar/components": [
+        "./projects/components/src"
+      ]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "strictPropertyInitialization": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
-    "module": "ES2022",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["ES2022", "dom"],
-    "paths": {
-      "@core": ["app/core"],
-      "@core/*": ["app/core/*"],
-      "@shared": ["app/shared"],
-      "@shared/*": ["app/shared/*"],
-      "@theme": ["app/theme"],
-      "@theme/*": ["app/theme/*"],
-      "@testing": ["testing"],
-      "@testing/*": ["testing/*"],
-      "@env": ["environments"],
-      "@env/*": ["environments/*"]
-    },
+    "module": "ES2022",
     "useDefineForClassFields": false,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "lib": [
+      "ES2022",
+      "dom"
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
