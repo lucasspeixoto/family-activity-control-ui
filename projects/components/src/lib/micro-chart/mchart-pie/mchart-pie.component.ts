@@ -20,15 +20,15 @@ import { OverlayPosition } from '../../overlay';
 import { BaseChartTooltip } from '../base-chart.tooltip';
 
 @Component({
-  selector: 'emr-mchart-pie',
-  exportAs: 'emrMchartPie',
+  selector: 'fac-mchart-pie',
+  exportAs: 'facMchartPie',
   standalone: true,
   imports: [],
   templateUrl: './mchart-pie.component.html',
   styleUrl: './mchart-pie.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'class': 'emr-mchart-pie'
+    'class': 'fac-mchart-pie'
   }
 })
 export class MchartPieComponent extends BaseChartTooltip implements AfterViewChecked, OnChanges, OnDestroy {

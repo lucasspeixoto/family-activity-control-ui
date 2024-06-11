@@ -7,9 +7,9 @@
 }
 
 :host:not([class*="w-"]):not([class*="size-"]) {
-  @apply w-[var(--emr-icon-size)];
+  @apply w-[var(--fac-icon-size)];
 }
 
 :host:not([class*="h-"]):not([class*="size-"]) {
-  @apply h-[var(--emr-icon-size)];
+  @apply h-[var(--fac-icon-size)];
 }

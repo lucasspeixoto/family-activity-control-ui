@@ -2,8 +2,8 @@ import { Component, HostListener, inject, input } from '@angular/core';
 import { TabPanelApiService } from '../tab-panel-api.service';
 
 @Component({
-  selector: 'emr-tab-panel-custom-item',
-  exportAs: 'emrTabPanelCustomItem',
+  selector: 'fac-tab-panel-custom-item',
+  exportAs: 'facTabPanelCustomItem',
   templateUrl: './tab-panel-custom-item.component.html',
   styleUrl: './tab-panel-custom-item.component.scss'
 })

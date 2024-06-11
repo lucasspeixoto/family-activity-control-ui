@@ -1,10 +1,10 @@
 import { Directive, inject, TemplateRef } from '@angular/core';
 
 @Directive({
-  selector: '[emrNavigationItemIcon]',
-  exportAs: 'emrNavigationItemIcon',
+  selector: '[facNavigationItemIcon]',
+  exportAs: 'facNavigationItemIcon',
   host: {
-    'class': 'emr-navigation-item-icon'
+    'class': 'fac-navigation-item-icon'
   }
 })
 export class NavigationItemIconDirective {

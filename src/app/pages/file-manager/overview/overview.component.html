@@ -38,9 +38,9 @@
         </button>
       </div>
       <div class="flex items-center gap-2.5">
-        <emr-avatar text="PS" class="size-8 cursor-pointer"
-                    matTooltip="Pavel Salauyou (owner, you)"
-                    matTooltipPosition="below"></emr-avatar>
+        <fac-avatar text="PS" class="size-8 cursor-pointer"
+                    matTooltip="Lucas Peixoto (owner, you)"
+                    matTooltipPosition="below"></fac-avatar>
         <div class="text-xs text-neutral-500">Only you</div>
       </div>
     </div>
@@ -178,7 +178,7 @@
 
 <mat-menu #filesView="matMenu" [formGroup]="settingsForm">
   <div class="text-xs my-2 px-3.5 text-neutral-600 dark:text-neutral-400">Layout</div>
-  <div emrMenuOptionGroup formControlName="layout">
+  <div facMenuOptionGroup formControlName="layout">
     <mat-option value="grid">
       <mat-icon class="font-icon">grid_on</mat-icon>
       <span>Grid</span>
@@ -200,7 +200,7 @@
     <mat-divider></mat-divider>
   </div>
   <div class="text-xs mb-2 px-3.5 text-neutral-600 dark:text-neutral-400">Open files in</div>
-  <div emrMenuOptionGroup formControlName="filePreview">
+  <div facMenuOptionGroup formControlName="filePreview">
     <mat-option value="fullscreen">
       <mat-icon class="font-icon">fullscreen</mat-icon>
       <div>

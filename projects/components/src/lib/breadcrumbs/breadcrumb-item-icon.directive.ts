@@ -1,11 +1,11 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[emrBreadcrumbItemIcon]',
-  exportAs: 'emrBreadcrumbItemIcon',
+  selector: '[facBreadcrumbItemIcon]',
+  exportAs: 'facBreadcrumbItemIcon',
   standalone: true,
   host: {
-    'class': 'emr-breadcrumb-item-icon'
+    'class': 'fac-breadcrumb-item-icon'
   }
 })
 export class BreadcrumbItemIconDirective {

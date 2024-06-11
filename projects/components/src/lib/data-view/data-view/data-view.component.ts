@@ -30,8 +30,8 @@ import { EmrSkeletonModule } from '../../skeleton';
 import { NgComponentOutlet } from '@angular/common';
 
 @Component({
-  selector: 'emr-data-view',
-  exportAs: 'emrDataView',
+  selector: 'fac-data-view',
+  exportAs: 'facDataView',
   standalone: true,
   imports: [
     MatCell,
@@ -53,7 +53,7 @@ import { NgComponentOutlet } from '@angular/common';
   templateUrl: './data-view.component.html',
   styleUrl: './data-view.component.scss',
   host: {
-    'class': 'emr-data-view',
+    'class': 'fac-data-view',
     '[class.highlight-header]': 'highlightHeader()'
   }
 })

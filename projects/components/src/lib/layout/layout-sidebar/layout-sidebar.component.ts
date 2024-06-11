@@ -5,13 +5,13 @@ import { LAYOUT, LayoutSidebarVisibilityChange } from '../types';
 import { LayoutComponent } from '../layout/layout.component';
 
 @Component({
-  selector: 'emr-layout-sidebar',
+  selector: 'fac-layout-sidebar',
   standalone: true,
   imports: [],
   templateUrl: './layout-sidebar.component.html',
   styleUrl: './layout-sidebar.component.scss',
   host: {
-    'class': 'emr-layout-sidebar',
+    'class': 'fac-layout-sidebar',
     '[class.is-hidden]': 'hidden'
   }
 })

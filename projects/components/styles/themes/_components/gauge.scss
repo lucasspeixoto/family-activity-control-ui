@@ -1,17 +1,17 @@
 :root {
-  --emr-gauge-value-color: theme('colors.neutral.700');
-  --emr-gauge-bg: theme('colors.neutral.300');
-  --emr-gauge-fill: theme('colors.primary.DEFAULT');
-  --emr-gauge-size: theme('width.20');
+  --fac-gauge-value-color: theme('colors.neutral.700');
+  --fac-gauge-bg: theme('colors.neutral.300');
+  --fac-gauge-fill: theme('colors.primary.DEFAULT');
+  --fac-gauge-size: theme('width.20');
 }
 
-@keyframes emr-gauge-fill {
+@keyframes fac-gauge-fill {
   from {
     stroke-dashoffset: 332;
   }
 }
 
 html.dark {
-  --emr-gauge-value-color: theme('colors.neutral.300');
-  --emr-gauge-bg: theme('colors.neutral.600');
+  --fac-gauge-value-color: theme('colors.neutral.300');
+  --fac-gauge-bg: theme('colors.neutral.600');
 }

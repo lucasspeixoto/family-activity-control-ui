@@ -1,16 +1,16 @@
 <div class="flex items-center gap-10">
-  <emr-mchart-pie [data]="data1 | shuffleArray"
+  <fac-mchart-pie [data]="data1 | shuffleArray"
                   [showDataAnimation]="showDataAnimation"
-                  class="size-[25px]"></emr-mchart-pie>
-  <emr-mchart-pie [data]="data2 | shuffleArray"
+                  class="size-[25px]"></fac-mchart-pie>
+  <fac-mchart-pie [data]="data2 | shuffleArray"
                   [showDataAnimation]="showDataAnimation"
-                  class="size-[50px]"></emr-mchart-pie>
-  <emr-mchart-pie [data]="data3 | shuffleArray"
+                  class="size-[50px]"></fac-mchart-pie>
+  <fac-mchart-pie [data]="data3 | shuffleArray"
                   [showDataAnimation]="showDataAnimation"
-                  class="size-[100px]"></emr-mchart-pie>
-  <emr-mchart-pie [data]="data4 | shuffleArray"
+                  class="size-[100px]"></fac-mchart-pie>
+  <fac-mchart-pie [data]="data4 | shuffleArray"
                   [showDataAnimation]="showDataAnimation"
-                  class="size-[200px]"></emr-mchart-pie>
+                  class="size-[200px]"></fac-mchart-pie>
 </div>
 <div class="mt-10 flex items-center gap-5">
   <button mat-flat-button (click)="refreshData()">Refresh Data</button>

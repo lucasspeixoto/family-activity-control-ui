@@ -1,7 +1,7 @@
 :host {
   --mat-table-row-item-outline-width: 0;
 
-  .emr-skeleton-block {
+  .fac-skeleton-block {
     z-index: 1;
   }
 
@@ -25,15 +25,15 @@
 
   .mdc-data-table__row {
     &.is-selected {
-      border-color: var(--emr-data-view-selected-border-color) !important;
+      border-color: var(--fac-data-view-selected-border-color) !important;
     }
   }
 
   ::ng-deep {
     .header-cell,
     .cell {
-      min-width: var(--emr-data-view-cell-width, auto);
-      max-width: var(--emr-data-view-cell-width, auto);
+      min-width: var(--fac-data-view-cell-width, auto);
+      max-width: var(--fac-data-view-cell-width, auto);
     }
   }
 
@@ -45,14 +45,14 @@
     ::ng-deep {
       .mat-mdc-header-row {
         position: relative;
-        margin: var(--emr-data-view-hl-header-margin);
+        margin: var(--fac-data-view-hl-header-margin);
 
         &::before {
           content: '';
           position: absolute;
           left: 0;
           right: 0;
-          background: var(--emr-data-view-hl-header-row-bg);
+          background: var(--fac-data-view-hl-header-row-bg);
           height: theme('height.10');
           border-radius: theme('borderRadius.lg');
           z-index: 0;
@@ -60,8 +60,8 @@
       }
 
       .mdc-data-table__header-cell {
-        --emr-skeleton-from-bg: theme('colors.neutral.300/60');
-        --emr-skeleton-from-to: theme('colors.neutral.400/50');
+        --fac-skeleton-from-bg: theme('colors.neutral.300/60');
+        --fac-skeleton-from-to: theme('colors.neutral.400/50');
       }
 
       .mat-mdc-table .mat-mdc-header-cell {
@@ -100,8 +100,8 @@
 
   ::ng-deep {
     .mdc-data-table__header-cell {
-      --emr-skeleton-from-bg: theme('colors.neutral.700/60');
-      --emr-skeleton-from-to: theme('colors.neutral.800/50');
+      --fac-skeleton-from-bg: theme('colors.neutral.700/60');
+      --fac-skeleton-from-to: theme('colors.neutral.800/50');
     }
   }
 }

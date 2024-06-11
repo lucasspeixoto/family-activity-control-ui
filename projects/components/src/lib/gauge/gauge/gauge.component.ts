@@ -6,12 +6,12 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'emr-gauge',
-  exportAs: 'emrGauge',
+  selector: 'fac-gauge',
+  exportAs: 'facGauge',
   templateUrl: './gauge.component.html',
   styleUrls: ['./gauge.component.scss'],
   host: {
-    'class': 'emr-gauge'
+    'class': 'fac-gauge'
   }
 })
 export class GaugeComponent implements OnInit {

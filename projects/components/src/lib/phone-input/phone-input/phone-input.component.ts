@@ -52,7 +52,7 @@ import { PhoneNumberFormat } from '../model/phone-number-format.model'
 import { phoneValidator } from '../phone.validator';
 import { SearchPipe } from '../search.pipe';
 
-class emrPhoneInputBase {
+class facPhoneInputBase {
   constructor(
     public _defaultErrorStateMatcher: ErrorStateMatcher,
     public _parentForm: NgForm,
@@ -61,12 +61,12 @@ class emrPhoneInputBase {
   ) {}
 }
 
-const _emrPhoneInputMixinBase: typeof emrPhoneInputBase = mixinErrorState(
-  emrPhoneInputBase as _AbstractConstructor<any>,
+const _facPhoneInputMixinBase: typeof facPhoneInputBase = mixinErrorState(
+  facPhoneInputBase as _AbstractConstructor<any>,
 )
 
 @Component({
-  selector: 'emr-phone-input',
+  selector: 'fac-phone-input',
   templateUrl: './phone-input.component.html',
   styleUrls: ['./phone-input.component.scss'],
   providers: [
@@ -83,11 +83,11 @@ const _emrPhoneInputMixinBase: typeof emrPhoneInputBase = mixinErrorState(
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'class': 'emr-phone-input'
+    'class': 'fac-phone-input'
   }
 })
 export class PhoneInputComponent
-  extends _emrPhoneInputMixinBase
+  extends _facPhoneInputMixinBase
   implements OnInit, DoCheck, OnDestroy
 {
   static nextId = 0

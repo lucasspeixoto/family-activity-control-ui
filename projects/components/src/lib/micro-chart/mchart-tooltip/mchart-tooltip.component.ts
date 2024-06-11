@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'emr-mchart-tooltip',
+  selector: 'fac-mchart-tooltip',
   standalone: true,
   imports: [],
   templateUrl: './mchart-tooltip.component.html',

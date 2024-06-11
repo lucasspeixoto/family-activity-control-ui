@@ -20,7 +20,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class SecurityComponent {
   securityProfile = {
-    email: 'pavel.salauyou@gmail.com',
+    email: 'lspeixotodev@gmail.com',
     isEmailVerified: false,
     mfaConfigured: false,
     mfaEnabled: false

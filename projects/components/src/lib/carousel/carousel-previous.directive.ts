@@ -2,7 +2,7 @@ import { Directive, HostListener, inject, input, OnInit } from '@angular/core';
 import { CAROUSEL, CarouselInterface } from './types';
 
 @Directive({
-  selector: '[emrCarouselPrevious]',
+  selector: '[facCarouselPrevious]',
   standalone: true,
   host: {
     '[attr.disabled]': '_carousel?.api.isPreviousDisabled() ? true : null'

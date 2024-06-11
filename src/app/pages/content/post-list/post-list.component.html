@@ -1,22 +1,22 @@
-<emr-panel>
-  <emr-panel-header class="px-10 h-16">
+<fac-panel>
+  <fac-panel-header class="px-10 h-16">
     <div class="border-b dark:border-b-inverse h-full flex items-center justify-between">
       <div class="flex items-center gap-7">
         <div class="text-lg font-bold">Posts</div>
-        <emr-v-divider></emr-v-divider>
+        <fac-v-divider></fac-v-divider>
         @if (selectedRows.length === 0) {
-          <emr-segmented [(ngModel)]="status" theme="simple" class="-mx-2">
-            <emr-segmented-button value="all">All</emr-segmented-button>
-            <emr-segmented-button value="published">Published</emr-segmented-button>
-            <emr-segmented-button value="scheduled">Scheduled</emr-segmented-button>
-            <emr-segmented-button value="draft">Drafts</emr-segmented-button>
-          </emr-segmented>
-          <emr-v-divider></emr-v-divider>
+          <fac-segmented [(ngModel)]="status" theme="simple" class="-mx-2">
+            <fac-segmented-button value="all">All</fac-segmented-button>
+            <fac-segmented-button value="published">Published</fac-segmented-button>
+            <fac-segmented-button value="scheduled">Scheduled</fac-segmented-button>
+            <fac-segmented-button value="draft">Drafts</fac-segmented-button>
+          </fac-segmented>
+          <fac-v-divider></fac-v-divider>
           <input type="text" placeholder="Search..."
                  class="border-b h-10 w-96 text-sm bg-transparent dark:border-b-inverse outline-0 focus-within:border-neutral-950">
         } @else {
           <div class="text-sm">Checked <span class="font-bold">{{ selectedRows.length }}</span></div>
-          <emr-v-divider></emr-v-divider>
+          <fac-v-divider></fac-v-divider>
           <div class="flex items-center gap-4">
             <button mat-stroked-button>
               <mat-icon class="font-icon">download</mat-icon>Unpublish
@@ -33,10 +33,10 @@
         </button>
       </div>
     </div>
-  </emr-panel-header>
-  <emr-panel-body>
+  </fac-panel-header>
+  <fac-panel-body>
     <div class="px-10 pb-5">
-      <emr-data-view [columnDefs]="columnDefs"
+      <fac-data-view [columnDefs]="columnDefs"
                      [data]="data"
                      [paginator]="paginator"
                      [cellRenderers]="cellRenderers"
@@ -46,10 +46,10 @@
                      highlightHeader
                      (rowSelectionChanged)="rowSelectionChanged($event)"
                      (selectionChanged)="selectionChanged($event)"
-                     (allRowsSelectionChanged)="allRowsSelectionChanged($event)"></emr-data-view>
+                     (allRowsSelectionChanged)="allRowsSelectionChanged($event)"></fac-data-view>
     </div>
-  </emr-panel-body>
-  <emr-panel-footer class="px-10 h-20 flex items-center justify-center border-t dark:border-t-inverse">
+  </fac-panel-body>
+  <fac-panel-footer class="px-10 h-20 flex items-center justify-center border-t dark:border-t-inverse">
     <mat-paginator #paginator pageSize="20" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-  </emr-panel-footer>
-</emr-panel>
+  </fac-panel-footer>
+</fac-panel>

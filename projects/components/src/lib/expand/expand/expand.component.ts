@@ -1,12 +1,12 @@
 import { booleanAttribute, Component, ElementRef, EventEmitter, inject, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'emr-expand',
-  exportAs: 'emrExpand',
+  selector: 'fac-expand',
+  exportAs: 'facExpand',
   templateUrl: './expand.component.html',
   styleUrl: './expand.component.scss',
   host: {
-    'class': 'emr-expand',
+    'class': 'fac-expand',
     '[class.is-expanded]': 'expanded'
   }
 })
@@ -18,7 +18,7 @@ export class ExpandComponent {
 
   @Input()
   set color(color: string) {
-    (this._elementRef.nativeElement as HTMLElement).style.setProperty('--emr-expand-fade-color', color, 'important');
+    (this._elementRef.nativeElement as HTMLElement).style.setProperty('--fac-expand-fade-color', color, 'important');
   }
 
   @Input()

@@ -2,10 +2,10 @@ import { Directive } from '@angular/core';
 import { MatRipple } from "@angular/material/core";
 
 @Directive({
-  selector: '[emrAlertAction]',
-  exportAs: 'emrAlertAction',
+  selector: '[facAlertAction]',
+  exportAs: 'facAlertAction',
   host: {
-    'class': 'emr-alert-action'
+    'class': 'fac-alert-action'
   },
   hostDirectives: [MatRipple]
 })

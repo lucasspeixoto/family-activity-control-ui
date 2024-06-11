@@ -23,14 +23,14 @@ import { PositionManager } from './position-manager';
 import { ColorPickerPosition } from './properties';
 
 @Directive({
-  selector: '[emrColorPickerTriggerFor]',
-  exportAs: 'emrColorPickerTriggerFor',
+  selector: '[facColorPickerTriggerFor]',
+  exportAs: 'facColorPickerTriggerFor',
   host: {
-    'class': 'emr-color-picker-trigger-for'
+    'class': 'fac-color-picker-trigger-for'
   }
 })
 export class ColorPickerTriggerForDirective {
-  @Input('emrColorPickerTriggerFor')
+  @Input('facColorPickerTriggerFor')
   colorPickerTemplateRef!: TemplateRef<unknown>;
 
   @Input()
@@ -132,7 +132,7 @@ export class ColorPickerTriggerForDirective {
       positionStrategy: this._getOverlayPositionStrategy(),
       scrollStrategy: this._overlay.scrollStrategies.reposition(),
       direction: this._directionality || undefined,
-      panelClass: 'emr-color-picker-overlay-panel'
+      panelClass: 'fac-color-picker-overlay-panel'
     });
   }
 

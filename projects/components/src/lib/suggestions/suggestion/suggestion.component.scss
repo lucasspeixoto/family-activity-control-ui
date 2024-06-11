@@ -3,13 +3,13 @@
   align-items: center;
   width: 100%;
   gap: theme('gap[2.5]');
-  height: var(--emr-suggestion-height);
-  padding: var(--emr-suggestion-padding);
-  margin: var(--emr-suggestion-margin);
-  border-radius: var(--emr-suggestion-border-radius);
+  height: var(--fac-suggestion-height);
+  padding: var(--fac-suggestion-padding);
+  margin: var(--fac-suggestion-margin);
+  border-radius: var(--fac-suggestion-border-radius);
 
   &:hover {
-    background: var(--emr-suggestion-hover-bg);
+    background: var(--fac-suggestion-hover-bg);
     cursor: pointer;
   }
 
@@ -23,7 +23,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    --emr-avatar-size: theme('size.8');
+    --fac-avatar-size: theme('size.8');
   }
 
   .icon:empty,

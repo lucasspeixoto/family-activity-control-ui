@@ -1,12 +1,12 @@
 import { Component, ElementRef, inject, Input } from '@angular/core';
 
 @Component({
-  selector: 'emr-content-fade',
-  exportAs: 'emrContentFade',
+  selector: 'fac-content-fade',
+  exportAs: 'facContentFade',
   templateUrl: './content-fade.component.html',
   styleUrl: './content-fade.component.scss',
   host: {
-    'class': 'emr-content-fade'
+    'class': 'fac-content-fade'
   }
 })
 export class ContentFadeComponent {
@@ -14,11 +14,11 @@ export class ContentFadeComponent {
 
   @Input()
   set color(color: string) {
-    (this._elementRef.nativeElement as HTMLElement).style.setProperty('--emr-content-fade-color', color, 'important');
+    (this._elementRef.nativeElement as HTMLElement).style.setProperty('--fac-content-fade-color', color, 'important');
   }
 
   @Input()
   set width(width: string) {
-    (this._elementRef.nativeElement as HTMLElement).style.setProperty('--emr-content-fade-width', width, 'important');
+    (this._elementRef.nativeElement as HTMLElement).style.setProperty('--fac-content-fade-width', width, 'important');
   }
 }

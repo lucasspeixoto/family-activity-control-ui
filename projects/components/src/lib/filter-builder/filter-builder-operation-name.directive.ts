@@ -1,7 +1,7 @@
 import { Directive, inject, TemplateRef } from '@angular/core';
 
 @Directive({
-  selector: '[emrFilterBuilderOperationName]'
+  selector: '[facFilterBuilderOperationName]'
 })
 export class FilterBuilderOperationNameDirective {
   readonly templateRef = inject(TemplateRef);

@@ -1,28 +1,28 @@
 :root {
-  --emr-skeleton-gap: theme('gap.4');
-  --emr-skeleton-item-border-radius: theme('borderRadius.xl');
-  --emr-skeleton-item-animation: emr-skeleton-loading 1s linear infinite alternate;
-  --emr-skeleton-block-width: theme('width.full');
-  --emr-skeleton-block-height: theme('height.20');
-  --emr-skeleton-line-height: theme('height.5');
-  --emr-skeleton-line-width: theme('width.full');
-  --emr-skeleton-line-border-radius: theme('borderRadius.full');
-  --emr-skeleton-circle-size: theme('spacing.14');
-  --emr-skeleton-from-bg: theme('colors.neutral.100/80');
-  --emr-skeleton-from-to: theme('colors.neutral.200/70');
+  --fac-skeleton-gap: theme('gap.4');
+  --fac-skeleton-item-border-radius: theme('borderRadius.xl');
+  --fac-skeleton-item-animation: fac-skeleton-loading 1s linear infinite alternate;
+  --fac-skeleton-block-width: theme('width.full');
+  --fac-skeleton-block-height: theme('height.20');
+  --fac-skeleton-line-height: theme('height.5');
+  --fac-skeleton-line-width: theme('width.full');
+  --fac-skeleton-line-border-radius: theme('borderRadius.full');
+  --fac-skeleton-circle-size: theme('spacing.14');
+  --fac-skeleton-from-bg: theme('colors.neutral.100/80');
+  --fac-skeleton-from-to: theme('colors.neutral.200/70');
 }
 
-@keyframes emr-skeleton-loading {
+@keyframes fac-skeleton-loading {
   0% {
-    background: var(--emr-skeleton-from-bg);
+    background: var(--fac-skeleton-from-bg);
   }
 
   100% {
-    background: var(--emr-skeleton-from-to);
+    background: var(--fac-skeleton-from-to);
   }
 }
 
 html.dark {
-  --emr-skeleton-from-bg: theme('colors.neutral.500/80');
-  --emr-skeleton-from-to: theme('colors.neutral.600/70');
+  --fac-skeleton-from-bg: theme('colors.neutral.500/80');
+  --fac-skeleton-from-to: theme('colors.neutral.600/70');
 }

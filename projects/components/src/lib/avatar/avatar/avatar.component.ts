@@ -12,8 +12,8 @@ import { ULT_AVATAR_ACCESSOR } from '../avatar.properties';
 const alreadyLoadedImages: string[] = [];
 
 @Component({
-  selector: 'emr-avatar,[emr-avatar]',
-  exportAs: 'emrAvatar',
+  selector: 'fac-avatar,[fac-avatar]',
+  exportAs: 'facAvatar',
   templateUrl: './avatar.component.html',
   styleUrls: ['./avatar.component.scss'],
   providers: [
@@ -24,7 +24,7 @@ const alreadyLoadedImages: string[] = [];
     }
   ],
   host: {
-    'class': 'emr-avatar',
+    'class': 'fac-avatar',
     '[class.is-clickable]': 'clickable()',
     '[class.has-automatic-color]': '!!automaticColor()',
     '[class.has-loaded-image]': 'src() && imageLoaded',
@@ -69,9 +69,9 @@ export class AvatarComponent implements OnInit, OnChanges {
     }
 
     const element = this._elementRef.nativeElement as HTMLElement;
-    element.style.setProperty('--emr-avatar-bg', color);
-    element.style.setProperty('--emr-avatar-border-color', this._newShade(color, -25));
-    element.style.setProperty('--emr-avatar-color', this._newShade(color, -150));
+    element.style.setProperty('--fac-avatar-bg', color);
+    element.style.setProperty('--fac-avatar-border-color', this._newShade(color, -25));
+    element.style.setProperty('--fac-avatar-color', this._newShade(color, -150));
   }
 
   private _newShade(hexColor: string, magnitude: number): string {

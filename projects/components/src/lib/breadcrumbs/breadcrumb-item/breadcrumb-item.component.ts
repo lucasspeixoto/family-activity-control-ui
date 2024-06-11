@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'emr-breadcrumb-item,[emr-breadcrumb-item]',
-  exportAs: 'emrBreadcrumbItem',
+  selector: 'fac-breadcrumb-item,[fac-breadcrumb-item]',
+  exportAs: 'facBreadcrumbItem',
   templateUrl: './breadcrumb-item.component.html',
   styleUrls: ['./breadcrumb-item.component.scss'],
   host: {
-    class: 'emr-breadcrumb-item'
+    class: 'fac-breadcrumb-item'
   }
 })
 export class BreadcrumbItemComponent {

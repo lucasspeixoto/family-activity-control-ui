@@ -2,7 +2,7 @@ import { afterNextRender, inject, Injectable } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-const LOCAL_STORAGE_KEY = 'emr-admin';
+const LOCAL_STORAGE_KEY = 'fac-admin';
 
 function getClassNameForKey(key: string) {
   return `style-manager-${key}`;

@@ -21,7 +21,7 @@ body {
   max-width: none !important;
 }
 
-.emr-button-loading {
+.fac-button-loading {
   .mat-button-wrapper {
     visibility: hidden;
   }
@@ -46,12 +46,12 @@ h6 {
   @apply font-serif;
 }
 
-input.emr-number-input-no-spinners::-webkit-outer-spin-button,
-input.emr-number-input-no-spinners::-webkit-inner-spin-button {
+input.fac-number-input-no-spinners::-webkit-outer-spin-button,
+input.fac-number-input-no-spinners::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-input[type=number].emr-number-input-no-spinners {
+input[type=number].fac-number-input-no-spinners {
   -moz-appearance: textfield;
 }

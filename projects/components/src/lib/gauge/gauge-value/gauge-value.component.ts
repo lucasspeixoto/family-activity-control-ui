@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'emr-gauge-value',
-  exportAs: 'emrGaugeValue',
+  selector: 'fac-gauge-value',
+  exportAs: 'facGaugeValue',
   templateUrl: './gauge-value.component.html',
   styleUrls: ['./gauge-value.component.scss'],
   host: {
-    'class': 'emr-gauge-value'
+    'class': 'fac-gauge-value'
   }
 })
 export class GaugeValueComponent {

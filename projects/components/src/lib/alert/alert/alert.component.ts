@@ -15,8 +15,8 @@ import { coerceNumberProperty, NumberInput } from '@angular/cdk/coercion';
 import { AlertIconDirective } from '../alert-icon.directive';
 
 @Component({
-  selector: 'emr-alert',
-  exportAs: 'emrAlert',
+  selector: 'fac-alert',
+  exportAs: 'facAlert',
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.scss'],
   providers: [
@@ -26,7 +26,7 @@ import { AlertIconDirective } from '../alert-icon.directive';
     }
   ],
   host: {
-    'class': 'emr-alert',
+    'class': 'fac-alert',
     '[class.is-bordered]': 'bordered',
   }
 })
@@ -57,7 +57,7 @@ export class AlertComponent implements  OnInit {
   @Input()
   set variant(variant: AlertVariant) {
     this._variant = variant;
-    this._renderer.setAttribute(this._elementRef.nativeElement, 'emr-alert-variant', this._variant);
+    this._renderer.setAttribute(this._elementRef.nativeElement, 'fac-alert-variant', this._variant);
   }
   get variant(): AlertVariant {
     return this._variant;
@@ -76,7 +76,7 @@ export class AlertComponent implements  OnInit {
   }
 
   ngOnInit() {
-    this._renderer.setAttribute(this._elementRef.nativeElement, 'emr-alert-variant', this._variant);
+    this._renderer.setAttribute(this._elementRef.nativeElement, 'fac-alert-variant', this._variant);
   }
 
   private _close() {

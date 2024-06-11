@@ -4,8 +4,8 @@ import { shake } from '../animations';
 import { PasswordStrengthComponent } from '../password-strength/password-strength.component';
 
 @Component({
-  selector: 'emr-password-strength-info',
-  exportAs: 'emrPasswordStrengthInfo',
+  selector: 'fac-password-strength-info',
+  exportAs: 'facPasswordStrengthInfo',
   templateUrl: './password-strength-info.component.html',
   styleUrls: ['./password-strength-info.component.scss'],
   animations: [

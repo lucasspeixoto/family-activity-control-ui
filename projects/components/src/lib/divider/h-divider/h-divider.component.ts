@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'emr-h-divider',
+  selector: 'fac-h-divider',
   standalone: true,
   imports: [],
   templateUrl: './h-divider.component.html',

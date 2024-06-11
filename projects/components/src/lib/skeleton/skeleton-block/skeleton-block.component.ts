@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'emr-skeleton-block',
-  exportAs: 'emrSkeletonBlock',
+  selector: 'fac-skeleton-block',
+  exportAs: 'facSkeletonBlock',
   template: '',
   styleUrls: ['./skeleton-block.component.scss'],
   host: {
-    'class': 'emr-skeleton-item emr-skeleton-block'
+    'class': 'fac-skeleton-item fac-skeleton-block'
   }
 })
 export class SkeletonBlockComponent {

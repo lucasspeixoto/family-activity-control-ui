@@ -16,8 +16,8 @@ import { SCROLL_SPY_NAV } from '../types';
 import { ScrollSpyOnComponent } from '../scroll-spy-on/scroll-spy-on.component';
 
 @Component({
-  selector: 'emr-scroll-spy-nav,[emr-scroll-spy-nav]',
-  exportAs: 'emrScrollSpyNav',
+  selector: 'fac-scroll-spy-nav,[fac-scroll-spy-nav]',
+  exportAs: 'facScrollSpyNav',
   templateUrl: './scroll-spy-nav.component.html',
   styleUrl: './scroll-spy-nav.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -28,7 +28,7 @@ import { ScrollSpyOnComponent } from '../scroll-spy-on/scroll-spy-on.component';
     }
   ],
   host: {
-    'class': 'emr-scroll-spy-nav'
+    'class': 'fac-scroll-spy-nav'
   }
 })
 export class ScrollSpyNavComponent implements AfterContentInit {
@@ -51,7 +51,7 @@ export class ScrollSpyNavComponent implements AfterContentInit {
       return;
     }
 
-    this._elementToScroll = this._document.querySelector('.emr-layout-body:has(:not(.emr-layout-body))') as HTMLElement;
+    this._elementToScroll = this._document.querySelector('.fac-layout-body:has(:not(.fac-layout-body))') as HTMLElement;
 
     if (this._elementToScroll) {
       this._zone.runOutsideAngular(() => {

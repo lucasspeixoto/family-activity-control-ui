@@ -1,19 +1,19 @@
 <div class="h-[400px] overflow-hidden">
-  <emr-incidents>
-    <emr-incidents-bar>
-      <emr-incidents-title>Maintenance work on the DNS</emr-incidents-title>
-      <emr-incidents-description>Description</emr-incidents-description>
-      <mat-icon emrIncidentsToggleIcon class="font-icon">expand_more</mat-icon>
-    </emr-incidents-bar>
-    <emr-incidents-list>
+  <fac-incidents>
+    <fac-incidents-bar>
+      <fac-incidents-title>Maintenance work on the DNS</fac-incidents-title>
+      <fac-incidents-description>Description</fac-incidents-description>
+      <mat-icon facIncidentsToggleIcon class="font-icon">expand_more</mat-icon>
+    </fac-incidents-bar>
+    <fac-incidents-list>
       @for (incident of incidents; track incident) {
-        <emr-incident>
-          <mat-icon emrIncidentIcon class="font-icon">info</mat-icon>
-          <mat-icon emrIncidentClose class="font-icon">close</mat-icon>
-          <emr-incident-title>{{ incident.title }}</emr-incident-title>
-          <emr-incident-details>{{ incident.details }}</emr-incident-details>
-        </emr-incident>
+        <fac-incident>
+          <mat-icon facIncidentIcon class="font-icon">info</mat-icon>
+          <mat-icon facIncidentClose class="font-icon">close</mat-icon>
+          <fac-incident-title>{{ incident.title }}</fac-incident-title>
+          <fac-incident-details>{{ incident.details }}</fac-incident-details>
+        </fac-incident>
       }
-    </emr-incidents-list>
-  </emr-incidents>
+    </fac-incidents-list>
+  </fac-incidents>
 </div>

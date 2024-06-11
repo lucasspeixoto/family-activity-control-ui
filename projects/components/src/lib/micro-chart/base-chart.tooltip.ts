@@ -24,11 +24,11 @@ export abstract class BaseChartTooltip {
   abstract getTooltipPosition(): OverlayPosition;
 
   protected _createTooltipOrigin(): void {
-    let tooltipOrigin: HTMLElement | null = this._document.querySelector('.emr-mchart-tooltip-origin');
+    let tooltipOrigin: HTMLElement | null = this._document.querySelector('.fac-mchart-tooltip-origin');
 
     if (!tooltipOrigin) {
       tooltipOrigin = this._renderer.createElement('div') as HTMLElement;
-      tooltipOrigin.classList.add('emr-mchart-tooltip-origin');
+      tooltipOrigin.classList.add('fac-mchart-tooltip-origin');
       this._renderer.appendChild(this._document.body, tooltipOrigin);
     }
 
@@ -80,7 +80,7 @@ export abstract class BaseChartTooltip {
 
   protected _getOverlayConfig() {
     return new OverlayConfig({
-      panelClass: 'emr-mchart-tooltip-overlay',
+      panelClass: 'fac-mchart-tooltip-overlay',
       positionStrategy: this._getOverlayPositionStrategy(),
       scrollStrategy: this._overlay.scrollStrategies.reposition()
     });

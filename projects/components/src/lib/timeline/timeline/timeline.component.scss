@@ -5,6 +5,6 @@
   column-gap: 16px;
 }
 
-:host:has(.emr-timeline-timestamp) {
+:host:has(.fac-timeline-timestamp) {
   grid-template-columns: auto auto 1fr;
 }

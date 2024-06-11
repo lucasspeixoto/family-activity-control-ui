@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'emr-v-divider',
+  selector: 'fac-v-divider',
   standalone: true,
   imports: [],
   templateUrl: './v-divider.component.html',

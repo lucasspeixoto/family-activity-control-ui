@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { MatRipple } from '@angular/material/core';
 
 @Component({
-  selector: 'emr-suggestion,[emr-suggestion]',
-  exportAs: 'emrSuggestion',
+  selector: 'fac-suggestion,[fac-suggestion]',
+  exportAs: 'facSuggestion',
   standalone: true,
   imports: [],
   templateUrl: './suggestion.component.html',

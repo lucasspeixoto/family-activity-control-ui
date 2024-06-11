@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'emr-tab-panel-header',
-  exportAs: 'emrTabPanelHeader',
+  selector: 'fac-tab-panel-header',
+  exportAs: 'facTabPanelHeader',
   templateUrl: './tab-panel-header.component.html',
   styleUrls: ['./tab-panel-header.component.scss'],
   host: {
-    'class': 'emr-tab-panel-header'
+    'class': 'fac-tab-panel-header'
   }
 })
 export class TabPanelHeaderComponent {

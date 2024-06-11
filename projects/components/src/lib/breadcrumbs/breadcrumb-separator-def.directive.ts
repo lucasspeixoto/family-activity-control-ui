@@ -1,7 +1,7 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[emrBreadcrumbSeparatorDef]'
+  selector: '[facBreadcrumbSeparatorDef]'
 })
 export class BreadcrumbSeparatorDefDirective {
 }

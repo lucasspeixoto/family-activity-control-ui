@@ -5,8 +5,8 @@ import { EmrGaugeModule } from '../../gauge';
 import { UploadFileState } from '../properties';
 
 @Component({
-  selector: 'emr-grid-file',
-  exportAs: 'emrGridFile',
+  selector: 'fac-grid-file',
+  exportAs: 'facGridFile',
   standalone: true,
   imports: [
     MatIcon,

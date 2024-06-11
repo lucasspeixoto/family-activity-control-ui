@@ -7,12 +7,12 @@
       }
     </mat-select>
   </mat-form-field>
-  <button mat-stroked-button [emrPopoverTriggerFor]="customPositionPopover"
+  <button mat-stroked-button [facPopoverTriggerFor]="customPositionPopover"
           [position]="position.value!" trigger="hover">Hover Me!</button>
 </div>
 
 <ng-template #customPositionPopover>
-  <emr-popover>
+  <fac-popover>
     <div class="text-sm p-4">Some text content</div>
-  </emr-popover>
+  </fac-popover>
 </ng-template>

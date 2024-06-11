@@ -5,28 +5,28 @@
   user-select: none;
   flex: none;
   text-transform: uppercase;
-  font-weight: var(--emr-avatar-font-weight);
+  font-weight: var(--fac-avatar-font-weight);
   position: relative;
-  box-shadow: var(--emr-avatar-inner-border);
+  box-shadow: var(--fac-avatar-inner-border);
 
   &:not([class*="text-"]) {
-    color: var(--emr-avatar-color);
+    color: var(--fac-avatar-color);
   }
 
   &:not([class*="rounded"]) {
-    border-radius: var(--emr-avatar-border-radius);
+    border-radius: var(--fac-avatar-border-radius);
   }
 
   &:not([class*="w-"]):not([class*="size-"]) {
-    width: var(--emr-avatar-size);
+    width: var(--fac-avatar-size);
   }
 
   &:not([class*="h-"]):not([class*="size-"]) {
-    height: var(--emr-avatar-size);
+    height: var(--fac-avatar-size);
   }
 
   &:not([class*="bg-"]):not(.has-loaded-image) {
-    background: var(--emr-avatar-bg);
+    background: var(--fac-avatar-bg);
   }
 
   &.has-loaded-image {
@@ -60,19 +60,19 @@
   .presence-indicator {
     position: absolute;
     z-index: 1;
-    outline: var(--emr-avatar-presence-indicator-outline);
+    outline: var(--fac-avatar-presence-indicator-outline);
     border-radius: 6.1875rem;
-    width: var(--emr-avatar-presence-indicator-size);
-    height: var(--emr-avatar-presence-indicator-size);
-    top: var(--emr-avatar-presence-indicator-position-top);
-    inset-inline-end: var(--emr-avatar-presence-indicator-position-end);
+    width: var(--fac-avatar-presence-indicator-size);
+    height: var(--fac-avatar-presence-indicator-size);
+    top: var(--fac-avatar-presence-indicator-position-top);
+    inset-inline-end: var(--fac-avatar-presence-indicator-position-end);
 
     &.is-online {
-      background: var(--emr-avatar-presence-indicator-online-bg);
+      background: var(--fac-avatar-presence-indicator-online-bg);
     }
 
     &.is-offline {
-      background: var(--emr-avatar-presence-indicator-offline-bg);
+      background: var(--fac-avatar-presence-indicator-offline-bg);
     }
   }
 
@@ -85,6 +85,6 @@
   }
 
   &.has-automatic-color {
-    border: 1px solid var(--emr-avatar-border-color);
+    border: 1px solid var(--fac-avatar-border-color);
   }
 }

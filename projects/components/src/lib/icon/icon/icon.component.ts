@@ -12,14 +12,14 @@ import { loadIcon } from 'iconify-icon';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
-  selector: 'emr-icon',
-  exportAs: 'emrIcon',
+  selector: 'fac-icon',
+  exportAs: 'facIcon',
   standalone: true,
   template: '',
   styleUrls: ['./icon.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'class': 'emr-icon',
+    'class': 'fac-icon',
     '[innerHTML]': '_iconHtml',
   }
 })

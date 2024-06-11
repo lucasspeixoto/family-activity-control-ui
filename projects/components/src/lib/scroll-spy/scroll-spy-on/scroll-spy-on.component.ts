@@ -4,12 +4,12 @@ import { ScrollSpyNavComponent } from '../scroll-spy-nav/scroll-spy-nav.componen
 import { SCROLL_SPY_NAV } from '../types';
 
 @Component({
-  selector: 'emr-scroll-spy-on,[emr-scroll-spy-on]',
-  exportAs: 'emrScrollSpyOn',
+  selector: 'fac-scroll-spy-on,[fac-scroll-spy-on]',
+  exportAs: 'facScrollSpyOn',
   templateUrl: './scroll-spy-on.component.html',
   styleUrl: './scroll-spy-on.component.scss',
   host: {
-    'class': 'emr-scroll-spy-on',
+    'class': 'fac-scroll-spy-on',
     '[class.is-active]': 'isActive'
   }
 })

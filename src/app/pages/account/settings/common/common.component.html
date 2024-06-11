@@ -1,14 +1,14 @@
-<emr-layout-body>
-  <emr-layout>
-    <emr-layout-sidebar class="border-r dark:border-r-neutral-600 w-[300px] py-7 px-5">
-      <emr-navigation [activeKey]="activeLinkId" theme="secondary">
+<fac-layout-body>
+  <fac-layout>
+    <fac-layout-sidebar class="border-r dark:border-r-neutral-600 w-[300px] py-7 px-5">
+      <fac-navigation [activeKey]="activeLinkId" theme="secondary">
         @for (navItem of navItems; track navItem) {
-          <a [routerLink]="navItem.link" emr-navigation-item [key]="navItem.link">{{ navItem.name }}</a>
+          <a [routerLink]="navItem.link" fac-navigation-item [key]="navItem.link">{{ navItem.name }}</a>
         }
-      </emr-navigation>
-    </emr-layout-sidebar>
-    <emr-layout-body>
+      </fac-navigation>
+    </fac-layout-sidebar>
+    <fac-layout-body>
       <router-outlet></router-outlet>
-    </emr-layout-body>
-  </emr-layout>
-</emr-layout-body>
+    </fac-layout-body>
+  </fac-layout>
+</fac-layout-body>

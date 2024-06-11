@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { TAB_PANEL_ASIDE } from '../types';
 
 @Component({
-  selector: 'emr-tab-panel-aside',
-  exportAs: 'emrTabPanelAside',
+  selector: 'fac-tab-panel-aside',
+  exportAs: 'facTabPanelAside',
   templateUrl: './tab-panel-aside.component.html',
   styleUrls: ['./tab-panel-aside.component.scss'],
   providers: [
@@ -13,7 +13,7 @@ import { TAB_PANEL_ASIDE } from '../types';
     }
   ],
   host: {
-    'class': 'emr-tab-panel-aside'
+    'class': 'fac-tab-panel-aside'
   }
 })
 export class TabPanelAsideComponent {

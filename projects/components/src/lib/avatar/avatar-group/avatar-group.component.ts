@@ -3,12 +3,12 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'emr-avatar-group',
-  exportAs: 'emrAvatarGroup',
+  selector: 'fac-avatar-group',
+  exportAs: 'facAvatarGroup',
   styleUrls: ['./avatar-group.component.scss'],
   templateUrl: './avatar-group.component.html',
   host: {
-    class: 'emr-avatar-group'
+    class: 'fac-avatar-group'
   }
 })
 export class AvatarGroupComponent {

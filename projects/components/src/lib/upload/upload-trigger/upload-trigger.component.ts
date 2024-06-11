@@ -5,12 +5,12 @@ import { fromEvent } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
-  selector: 'emr-upload-trigger,[emr-upload-trigger]',
-  exportAs: 'emrUploadTrigger',
+  selector: 'fac-upload-trigger,[fac-upload-trigger]',
+  exportAs: 'facUploadTrigger',
   templateUrl: './upload-trigger.component.html',
   styleUrls: ['./upload-trigger.component.scss'],
   host: {
-    'class': 'emr-upload-trigger'
+    'class': 'fac-upload-trigger'
   }
 })
 export class UploadTriggerComponent {

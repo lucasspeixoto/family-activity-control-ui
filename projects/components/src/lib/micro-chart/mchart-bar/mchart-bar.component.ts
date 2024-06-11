@@ -20,15 +20,15 @@ import { BaseChartTooltip } from '../base-chart.tooltip';
 let nextId = 0;
 
 @Component({
-  selector: 'emr-mchart-bar',
-  exportAs: 'emrMchartBar',
+  selector: 'fac-mchart-bar',
+  exportAs: 'facMchartBar',
   standalone: true,
   imports: [],
   templateUrl: './mchart-bar.component.html',
   styleUrl: './mchart-bar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'class': 'emr-mchart-bar',
+    'class': 'fac-mchart-bar',
     '[class.fill-gradient]': 'fillGradient()',
     '[class.with-tooltip]': '!!tooltip()',
   }
@@ -263,9 +263,9 @@ export class MchartBarComponent extends BaseChartTooltip implements OnDestroy, A
           oldX = null;
           this._overlayRef?.detach();
         } else {
-          if (!target.closest('.emr-mchart-line') ||
-            !target.classList.contains('emr-mchart-tooltip-overlay') ||
-            !target.closest('.emr-mchart-tooltip-overlay')
+          if (!target.closest('.fac-mchart-line') ||
+            !target.classList.contains('fac-mchart-tooltip-overlay') ||
+            !target.closest('.fac-mchart-tooltip-overlay')
           ) {
             oldX = null;
             this._overlayRef?.detach();

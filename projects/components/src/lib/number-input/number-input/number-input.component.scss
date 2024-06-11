@@ -1,6 +1,6 @@
 :host {
   display: flex;
-  gap: var(--emr-number-input-gap);
+  gap: var(--fac-number-input-gap);
   /*opacity: 0;*/
   /*transition: opacity 200ms;*/
 }
@@ -43,15 +43,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--emr-number-input-control-size);
-  height: var(--emr-number-input-control-size);
-  background: var(--emr-number-input-control-bg);
-  color: var(--emr-number-input-control-color);
-  font-size: var(--emr-number-input-control-font-size);
-  line-height: var(--emr-number-input-control-font-size);
-  border-radius: var(--emr-number-input-control-border-radius);
+  width: var(--fac-number-input-control-size);
+  height: var(--fac-number-input-control-size);
+  background: var(--fac-number-input-control-bg);
+  color: var(--fac-number-input-control-color);
+  font-size: var(--fac-number-input-control-font-size);
+  line-height: var(--fac-number-input-control-font-size);
+  border-radius: var(--fac-number-input-control-border-radius);
   position: relative;
-  border: var(--emr-number-input-control-border);
+  border: var(--fac-number-input-control-border);
   top: 1px;
 
   ::ng-deep .mat-icon {
@@ -65,8 +65,8 @@
 }
 
 :host .control:hover {
-  background: var(--emr-number-input-control-hover-bg);
-  color: var(--emr-number-input-control-hover-color);
+  background: var(--fac-number-input-control-hover-bg);
+  color: var(--fac-number-input-control-hover-color);
 }
 
 :host .control[disabled] {

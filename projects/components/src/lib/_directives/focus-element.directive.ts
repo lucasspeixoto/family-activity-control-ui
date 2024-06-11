@@ -11,8 +11,8 @@ import {
 import { FocusMonitor, FocusOrigin } from '@angular/cdk/a11y';
 
 @Directive({
-  selector: '[emrFocusElement]',
-  exportAs: 'emrFocusElement',
+  selector: '[facFocusElement]',
+  exportAs: 'facFocusElement',
   standalone: true
 })
 export class FocusElementDirective implements AfterViewInit, OnDestroy {

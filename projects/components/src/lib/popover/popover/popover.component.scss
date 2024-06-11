@@ -1,34 +1,34 @@
 :host {
   display: block;
   position: relative;
-  border: var(--emr-popover-border);
-  box-shadow: var(--emr-popover-shadow);
-  border-radius: var(--emr-popover-border-radius);
-  background: var(--emr-popover-bg);
-  animation: .15s emr-popover-animation;
+  border: var(--fac-popover-border);
+  box-shadow: var(--fac-popover-shadow);
+  border-radius: var(--fac-popover-border-radius);
+  background: var(--fac-popover-bg);
+  animation: .15s fac-popover-animation;
 }
 
-:host-context(.emr-overlay-above) {
-  margin-bottom: var(--emr-popover-margin);
+:host-context(.fac-overlay-above) {
+  margin-bottom: var(--fac-popover-margin);
   transform-origin: bottom;
 }
 
-:host-context(.emr-overlay-below) {
-  margin-top: var(--emr-popover-margin);
+:host-context(.fac-overlay-below) {
+  margin-top: var(--fac-popover-margin);
   transform-origin: top;
 }
 
-:host-context(.emr-overlay-before) {
-  margin-inline-end: var(--emr-popover-margin);
+:host-context(.fac-overlay-before) {
+  margin-inline-end: var(--fac-popover-margin);
   transform-origin: right;
 }
 
-:host-context(.emr-overlay-after) {
-  margin-inline-start: var(--emr-popover-margin);
+:host-context(.fac-overlay-after) {
+  margin-inline-start: var(--fac-popover-margin);
   transform-origin: left;
 }
 
-@keyframes emr-popover-animation {
+@keyframes fac-popover-animation {
   0% {
     transform: scale(.9);
     opacity: 0;

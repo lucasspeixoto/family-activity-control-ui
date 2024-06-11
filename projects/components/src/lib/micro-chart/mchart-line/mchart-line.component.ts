@@ -34,15 +34,15 @@ import { BaseChartTooltip } from '../base-chart.tooltip';
 let nextId = 0;
 
 @Component({
-  selector: 'emr-mchart-line',
-  exportAs: 'emrMchartLine',
+  selector: 'fac-mchart-line',
+  exportAs: 'facMchartLine',
   standalone: true,
   imports: [],
   templateUrl: './mchart-line.component.html',
   styleUrl: './mchart-line.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'class': 'emr-mchart-line',
+    'class': 'fac-mchart-line',
     '[class.fill-area-gradient]': 'fillAreaGradient()',
   }
 })
@@ -295,9 +295,9 @@ export class MchartLineComponent extends BaseChartTooltip implements OnDestroy, 
             markerLine.attr('opacity', 0);
             markerDot.attr('opacity', 0);
           } else {
-            if (target.closest('.emr-mchart-line') ||
-              target.classList.contains('emr-mchart-tooltip-overlay') ||
-              target.closest('.emr-mchart-tooltip-overlay')
+            if (target.closest('.fac-mchart-line') ||
+              target.classList.contains('fac-mchart-tooltip-overlay') ||
+              target.closest('.fac-mchart-tooltip-overlay')
             ) {
               if (this.showMarkers()) {
                 markerLine.attr('opacity', 1);

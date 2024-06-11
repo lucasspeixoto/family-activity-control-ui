@@ -10,9 +10,9 @@
   <div>
     @switch (state) {
       @case ('uploading') {
-        <emr-gauge class="size-10" [value]="progress">
-          <emr-gauge-value class="text-xs">{{ progress }}%</emr-gauge-value>
-        </emr-gauge>
+        <fac-gauge class="size-10" [value]="progress">
+          <fac-gauge-value class="text-xs">{{ progress }}%</fac-gauge-value>
+        </fac-gauge>
       }
 
       @case ('uploaded') {

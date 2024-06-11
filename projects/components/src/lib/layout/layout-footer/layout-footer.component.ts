@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'emr-layout-footer',
+  selector: 'fac-layout-footer',
   standalone: true,
   imports: [],
   templateUrl: './layout-footer.component.html',

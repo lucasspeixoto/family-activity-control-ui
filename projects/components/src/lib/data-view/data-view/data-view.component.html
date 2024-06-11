@@ -4,7 +4,7 @@
     <ng-container matColumnDef="selection">
       <mat-header-cell *matHeaderCellDef>
         @if (loadingCellRenderers || loading()) {
-          <emr-skeleton-block class="size-6"></emr-skeleton-block>
+          <fac-skeleton-block class="size-6"></fac-skeleton-block>
         } @else {
           <mat-checkbox (change)="$event ? toggleAllRows() : null"
                         [checked]="selection.hasValue() && isAllSelected()"
@@ -14,7 +14,7 @@
       </mat-header-cell>
       <mat-cell *matCellDef="let row">
         @if (loadingCellRenderers || loading()) {
-          <emr-skeleton-block class="size-6 max-w-full"></emr-skeleton-block>
+          <fac-skeleton-block class="size-6 max-w-full"></fac-skeleton-block>
         } @else {
           <mat-checkbox (click)="$event.stopPropagation()"
                         (change)="rowSelectionToggle($event, row)"
@@ -29,20 +29,20 @@
     @if (columnDef.visible) {
       <ng-container [matColumnDef]="columnDef.dataField">
         <mat-header-cell *matHeaderCellDef mat-sort-header class="header-cell"
-                         [style.--emr-data-view-cell-width]="columnDef.width">
+                         [style.--fac-data-view-cell-width]="columnDef.width">
           <div class="overflow-hidden w-full">
             @if (loadingCellRenderers || loading()) {
-              <emr-skeleton-line class="w-24 max-w-full"></emr-skeleton-line>
+              <fac-skeleton-line class="w-24 max-w-full"></fac-skeleton-line>
             } @else {
               {{ columnDef.name }}
             }
           </div>
         </mat-header-cell>
         <mat-cell *matCellDef="let element" class="cell"
-                  [style.--emr-data-view-cell-width]="columnDef.width">
+                  [style.--fac-data-view-cell-width]="columnDef.width">
           <div class="overflow-hidden w-full">
             @if (loadingCellRenderers || loading()) {
-              <emr-skeleton-line></emr-skeleton-line>
+              <fac-skeleton-line></fac-skeleton-line>
             } @else {
               @if (columnDef.dataRenderer && hasCellRenderer(columnDef.dataRenderer)) {
                 <ng-container [ngComponentOutlet]="getCellRenderer(columnDef.dataRenderer)"

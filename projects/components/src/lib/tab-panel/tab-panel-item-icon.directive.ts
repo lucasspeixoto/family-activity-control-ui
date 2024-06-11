@@ -1,10 +1,10 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[emrTabPanelItemIcon]',
-  exportAs: 'emrTabPanelItemIcon',
+  selector: '[facTabPanelItemIcon]',
+  exportAs: 'facTabPanelItemIcon',
   host: {
-    'class': 'emr-tab-panel-item-icon'
+    'class': 'fac-tab-panel-item-icon'
   }
 })
 export class TabPanelItemIconDirective {

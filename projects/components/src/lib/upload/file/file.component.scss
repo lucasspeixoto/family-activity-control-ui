@@ -4,16 +4,16 @@
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: var(--emr-file-padding);
+  padding: var(--fac-file-padding);
 }
 
 :host .name {
-  font-size: var(--emr-file-name-font-size);
+  font-size: var(--fac-file-name-font-size);
 }
 
 :host .info {
-  font-size: var(--emr-file-info-font-size);
-  color: var(--emr-file-info-color);
+  font-size: var(--fac-file-info-font-size);
+  color: var(--fac-file-info-color);
 }
 
 :host .content {
@@ -24,24 +24,24 @@
 :host .controls {
   display: flex;
   align-items: center;
-  gap: var(--emr-file-controls-gap);
+  gap: var(--fac-file-controls-gap);
 }
 
 :host .progress {
-  background: var(--emr-file-progress-bg);
-  height: var(--emr-file-progress-height);
+  background: var(--fac-file-progress-bg);
+  height: var(--fac-file-progress-height);
   flex: none;
-  border-radius: var(--emr-file-progress-border-radius);
-  margin: var(--emr-file-progress-margin);
+  border-radius: var(--fac-file-progress-border-radius);
+  margin: var(--fac-file-progress-margin);
 }
 
 :host .progress-bar {
-  background: var(--emr-file-progress-bar-bg);
-  border-radius: var(--emr-file-progress-border-radius);
+  background: var(--fac-file-progress-bar-bg);
+  border-radius: var(--fac-file-progress-border-radius);
   height: 100%;
 }
 
 :host .error {
-  font-size: var(--emr-file-error-font-size);
-  color: var(--emr-file-error-color);
+  font-size: var(--fac-file-error-font-size);
+  color: var(--fac-file-error-color);
 }

@@ -20,7 +20,7 @@ import { defer, merge, Observable, startWith, Subject, switchMap } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Directive({
-  selector: '[emrMenuOptionGroup]',
+  selector: '[facMenuOptionGroup]',
   standalone: true,
   providers: [
     {

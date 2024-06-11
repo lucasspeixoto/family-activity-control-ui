@@ -10,7 +10,7 @@
   position: absolute;
   inset: 0;
   height: 100%;
-  background: linear-gradient(transparent, var(--emr-expand-fade-color));
+  background: linear-gradient(transparent, var(--fac-expand-fade-color));
   z-index: 1;
 }
 
@@ -28,12 +28,12 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: var(--emr-expand-button-bg);
-  color: var(--emr-expand-button-color);
-  font-size: var(--emr-expand-button-font-size);
-  box-shadow: var(--emr-expand-button-box-shadow);
-  border-radius: var(--emr-expand-button-border-radius);
-  padding: var(--emr-expand-button-padding);
+  background: var(--fac-expand-button-bg);
+  color: var(--fac-expand-button-color);
+  font-size: var(--fac-expand-button-font-size);
+  box-shadow: var(--fac-expand-button-box-shadow);
+  border-radius: var(--fac-expand-button-border-radius);
+  padding: var(--fac-expand-button-padding);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,7 +41,7 @@
 }
 
 :host .button:hover {
-  opacity: var(--emr-expand-button-hover-opacity);
+  opacity: var(--fac-expand-button-hover-opacity);
 }
 
 :host .button:active {
@@ -50,6 +50,6 @@
 
 :host(.is-expanded) .button {
   top: auto;
-  bottom: var(--emr-expand-expanded-button-boottom-position);
+  bottom: var(--fac-expand-expanded-button-boottom-position);
   transform: translateX(-50%);
 }

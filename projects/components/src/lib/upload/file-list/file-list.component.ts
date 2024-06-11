@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'emr-file-list',
-  exportAs: 'emrFileList',
+  selector: 'fac-file-list',
+  exportAs: 'facFileList',
   templateUrl: './file-list.component.html',
   styleUrls: ['file-list.component.scss'],
   host: {
-    'class': 'emr-file-list'
+    'class': 'fac-file-list'
   }
 })
 export class FileListComponent {

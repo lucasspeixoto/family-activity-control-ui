@@ -19,13 +19,13 @@
 
   ::ng-deep {
     .data-item {
-      stroke: var(--emr-mchart-pie-stroke-color);
+      stroke: var(--fac-mchart-pie-stroke-color);
     }
 
     .value {
       text-anchor: middle;
       alignment-baseline: middle;
-      fill: var(--emr-mchart-pie-value-color);
+      fill: var(--fac-mchart-pie-value-color);
     }
 
     .legend-item {
@@ -33,13 +33,13 @@
 
       &:hover {
         .legend-item-text {
-          fill: var(--emr-mchart-pie-legend-item-hover-color);
+          fill: var(--fac-mchart-pie-legend-item-hover-color);
         }
       }
     }
 
     .legend-item-text {
-      fill: var(--emr-mchart-pie-legend-item-color);
+      fill: var(--fac-mchart-pie-legend-item-color);
     }
   }
 }

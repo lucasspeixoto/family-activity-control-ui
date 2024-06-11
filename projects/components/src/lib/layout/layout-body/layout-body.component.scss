@@ -5,7 +5,7 @@
   width: 100%;
   overflow: hidden;
 
-  &:has(:not(.emr-layout-body)) {
+  &:has(:not(.fac-layout-body)) {
     overflow: auto;
   }
 }

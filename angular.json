@@ -140,7 +140,7 @@
       },
       "root": "projects/components",
       "sourceRoot": "projects/components/src",
-      "prefix": "emr",
+      "prefix": "fac",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

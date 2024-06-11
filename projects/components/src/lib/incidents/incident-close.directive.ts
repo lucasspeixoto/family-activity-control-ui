@@ -1,10 +1,10 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[emrIncidentClose]',
-  exportAs: 'emrIncidentClose',
+  selector: '[facIncidentClose]',
+  exportAs: 'facIncidentClose',
   host: {
-    'class': 'emr-incident-close'
+    'class': 'fac-incident-close'
   }
 })
 export class IncidentCloseDirective {

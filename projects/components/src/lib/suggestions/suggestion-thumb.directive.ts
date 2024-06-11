@@ -1,7 +1,7 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[emrSuggestionThumb]',
+  selector: '[facSuggestionThumb]',
   standalone: true
 })
 export class SuggestionThumbDirective {

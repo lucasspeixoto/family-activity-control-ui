@@ -8,84 +8,84 @@ export class PositionManager {
       overlayY: 'top',
       originX: 'start',
       overlayX: 'start',
-      panelClass: ['emr-overlay-below', 'emr-overlay-below-start']
+      panelClass: ['fac-overlay-below', 'fac-overlay-below-start']
     },
     'below-center': {
       originY: 'bottom',
       overlayY: 'top',
       originX: 'center',
       overlayX: 'center',
-      panelClass: ['emr-overlay-below', 'emr-overlay-below-center']
+      panelClass: ['fac-overlay-below', 'fac-overlay-below-center']
     },
     'below-end': {
       originY: 'bottom',
       overlayY: 'top',
       originX: 'end',
       overlayX: 'end',
-      panelClass: ['emr-overlay-below', 'emr-overlay-below-end']
+      panelClass: ['fac-overlay-below', 'fac-overlay-below-end']
     },
     'above-start': {
       originY: 'top',
       overlayY: 'bottom',
       originX: 'start',
       overlayX: 'start',
-      panelClass: ['emr-overlay-above', 'emr-overlay-above-start']
+      panelClass: ['fac-overlay-above', 'fac-overlay-above-start']
     },
     'above-center': {
       originY: 'top',
       overlayY: 'bottom',
       originX: 'center',
       overlayX: 'center',
-      panelClass: ['emr-overlay-above', 'emr-overlay-above-center']
+      panelClass: ['fac-overlay-above', 'fac-overlay-above-center']
     },
     'above-end': {
       originY: 'top',
       overlayY: 'bottom',
       originX: 'end',
       overlayX: 'end',
-      panelClass: ['emr-overlay-above', 'emr-overlay-above-end']
+      panelClass: ['fac-overlay-above', 'fac-overlay-above-end']
     },
     'before-start': {
       originY: 'top',
       overlayY: 'top',
       originX: 'start',
       overlayX: 'end',
-      panelClass: ['emr-overlay-before', 'emr-overlay-before-start']
+      panelClass: ['fac-overlay-before', 'fac-overlay-before-start']
     },
     'before-center': {
       originY: 'center',
       overlayY: 'center',
       originX: 'start',
       overlayX: 'end',
-      panelClass: ['emr-overlay-before', 'emr-overlay-before-center']
+      panelClass: ['fac-overlay-before', 'fac-overlay-before-center']
     },
     'before-end': {
       originY: 'bottom',
       overlayY: 'bottom',
       originX: 'start',
       overlayX: 'end',
-      panelClass: ['emr-overlay-before', 'emr-overlay-before-end']
+      panelClass: ['fac-overlay-before', 'fac-overlay-before-end']
     },
     'after-end': {
       originY: 'bottom',
       overlayY: 'bottom',
       originX: 'end',
       overlayX: 'start',
-      panelClass: ['emr-overlay-after', 'emr-overlay-after-end']
+      panelClass: ['fac-overlay-after', 'fac-overlay-after-end']
     },
     'after-center': {
       originY: 'center',
       overlayY: 'center',
       originX: 'end',
       overlayX: 'start',
-      panelClass: ['emr-overlay-after', 'emr-overlay-after-center']
+      panelClass: ['fac-overlay-after', 'fac-overlay-after-center']
     },
     'after-start': {
       originY: 'top',
       overlayY: 'top',
       originX: 'end',
       overlayX: 'start',
-      panelClass: ['emr-overlay-after', 'emr-overlay-after-start']
+      panelClass: ['fac-overlay-after', 'fac-overlay-after-start']
     }
   };
 

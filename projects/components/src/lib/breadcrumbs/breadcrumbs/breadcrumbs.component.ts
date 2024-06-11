@@ -4,12 +4,12 @@ import { BreadcrumbSeparatorDefDirective } from '../breadcrumb-separator-def.dir
 import { BreadcrumbActiveItemDefDirective } from '../breadcrumb-active-item-def.directive';
 
 @Component({
-  selector: 'emr-breadcrumbs',
-  exportAs: 'emrBreadcrumbs',
+  selector: 'fac-breadcrumbs',
+  exportAs: 'facBreadcrumbs',
   templateUrl: './breadcrumbs.component.html',
   styleUrls: ['./breadcrumbs.component.scss'],
   host: {
-    class: 'emr-breadcrumbs'
+    class: 'fac-breadcrumbs'
   }
 })
 export class BreadcrumbsComponent {

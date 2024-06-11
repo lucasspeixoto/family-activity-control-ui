@@ -1,5 +1,6 @@
 import {
   afterNextRender,
+  ChangeDetectionStrategy,
   Component,
   inject,
   OnInit,
@@ -22,9 +23,10 @@ import { environment } from '../environments/environment';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, ScreenLoaderComponent, PageLoadingBarComponent],
+  /* changeDetection: ChangeDetectionStrategy.OnPush, */
   template: `
     @if (pageLoaded()) {
-    <emr-page-loading-bar fixed></emr-page-loading-bar>
+    <fac-page-loading-bar fixed></fac-page-loading-bar>
     }
     <app-screen-loader [loadingText]="loadingText()"></app-screen-loader>
     <router-outlet />

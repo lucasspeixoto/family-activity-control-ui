@@ -6,14 +6,14 @@
   .panel {
     display: flex;
     flex-direction: column;
-    border-right: var(--emr-tab-panel-border-end);
-    width: var(--emr-tab-panel-width);
+    border-right: var(--fac-tab-panel-border-end);
+    width: var(--fac-tab-panel-width);
     flex: none;
   }
 
   &.is-compact {
     .panel {
-      width: var(--emr-tab-panel-compact-width);
+      width: var(--fac-tab-panel-compact-width);
     }
   }
 }

@@ -1,7 +1,7 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[emrIncidentButton]'
+  selector: '[facIncidentButton]'
 })
 export class IncidentButtonDirective {
 

@@ -21,8 +21,8 @@ import { PinInputDirective } from '../pin-input.directive';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 @Component({
-  selector: 'emr-pin-input',
-  exportAs: 'emrPinInput',
+  selector: 'fac-pin-input',
+  exportAs: 'facPinInput',
   templateUrl: './pin-input.component.html',
   styleUrl: './pin-input.component.scss',
   providers: [
@@ -33,7 +33,7 @@ import { coerceBooleanProperty } from '@angular/cdk/coercion';
     }
   ],
   host: {
-    'class': 'emr-pin-input',
+    'class': 'fac-pin-input',
     '[class.is-disabled]': 'disabled',
   }
 })

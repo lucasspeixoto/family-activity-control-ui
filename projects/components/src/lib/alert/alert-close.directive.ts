@@ -3,10 +3,10 @@ import { ALERT } from './alert.properties';
 import { AlertComponent } from './alert/alert.component';
 
 @Directive({
-  selector: '[emrAlertClose]',
-  exportAs: 'emrAlertClose',
+  selector: '[facAlertClose]',
+  exportAs: 'facAlertClose',
   host: {
-    'class': 'emr-alert-close'
+    'class': 'fac-alert-close'
   }
 })
 export class AlertCloseDirective {

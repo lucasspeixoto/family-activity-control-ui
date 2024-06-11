@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'emr-files-grid',
+  selector: 'fac-files-grid',
   standalone: true,
   imports: [],
   templateUrl: './files-grid.component.html',

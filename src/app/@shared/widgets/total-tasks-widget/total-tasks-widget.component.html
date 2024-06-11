@@ -7,7 +7,7 @@
     </div>
     <div class="font-bold text-sm">136 Tasks</div>
   </div>
-  <emr-mchart-line [data]="data"
+  <fac-mchart-line [data]="data"
                    [labels]="labels"
                    [tooltip]="tooltipRef"
                    showArea
@@ -19,12 +19,12 @@
                    fillAreaGradient
                    class="h-[146px] mt-3 -mx-1 chart">
     <ng-template #tooltipRef let-data>
-      <emr-mchart-tooltip>
-        <emr-mchart-tooltip-title>{{ data.label }}</emr-mchart-tooltip-title>
-        <emr-mchart-tooltip-body>
+      <fac-mchart-tooltip>
+        <fac-mchart-tooltip-title>{{ data.label }}</fac-mchart-tooltip-title>
+        <fac-mchart-tooltip-body>
           Value: <span class="font-medium">{{ data.value }}</span>
-        </emr-mchart-tooltip-body>
-      </emr-mchart-tooltip>
+        </fac-mchart-tooltip-body>
+      </fac-mchart-tooltip>
     </ng-template>
-  </emr-mchart-line>
+  </fac-mchart-line>
 </div>

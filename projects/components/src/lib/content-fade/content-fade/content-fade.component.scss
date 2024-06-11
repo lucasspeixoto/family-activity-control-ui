@@ -9,8 +9,8 @@
   left: 0;
   top: 0;
   bottom: 0;
-  width: var(--emr-content-fade-width);
-  background: linear-gradient(to left, transparent, var(--emr-content-fade-color));
+  width: var(--fac-content-fade-width);
+  background: linear-gradient(to left, transparent, var(--fac-content-fade-color));
 }
 
 :host:after {
@@ -19,6 +19,6 @@
   top: 0;
   bottom: 0;
   right: 0;
-  width: var(--emr-content-fade-width);
-  background: linear-gradient(to right, transparent, var(--emr-content-fade-color));
+  width: var(--fac-content-fade-width);
+  background: linear-gradient(to right, transparent, var(--fac-content-fade-color));
 }

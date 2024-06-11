@@ -1,10 +1,10 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[emrIncidentIcon]',
-  exportAs: 'emrIncidentIcon',
+  selector: '[facIncidentIcon]',
+  exportAs: 'facIncidentIcon',
   host: {
-    'class': 'emr-incident-icon'
+    'class': 'fac-incident-icon'
   }
 })
 export class IncidentIconDirective {

@@ -12,8 +12,8 @@ import { BaseComponent } from '../base.component';
 import { Color } from '../helpers/color';
 
 @Component({
-  selector: 'emr-hue',
-  exportAs: 'emrHue',
+  selector: 'fac-hue',
+  exportAs: 'facHue',
   templateUrl: './hue.component.html',
   styleUrls: ['./hue.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

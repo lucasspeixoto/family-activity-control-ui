@@ -3,7 +3,7 @@ import { CAROUSEL, CarouselInterface } from './types';
 
 
 @Directive({
-  selector: '[emrCarouselNext]',
+  selector: '[facCarouselNext]',
   standalone: true,
   host: {
     '[attr.disabled]': '_carousel?.api.isNextDisabled()  ? true : null'

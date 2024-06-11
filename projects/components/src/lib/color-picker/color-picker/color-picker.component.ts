@@ -17,8 +17,8 @@ import { Color } from '../helpers/color';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
-  selector: 'emr-color-picker',
-  exportAs: 'emrColorPicker',
+  selector: 'fac-color-picker',
+  exportAs: 'facColorPicker',
   templateUrl: './color-picker.component.html',
   styleUrls: ['color-picker.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -30,7 +30,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
     }
   ],
   host: {
-    'class': 'emr-color-picker',
+    'class': 'fac-color-picker',
     '[class.is-disabled]': 'disabled',
   }
 })

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'emr-incidents-description',
-  exportAs: 'emrIncidentsDescription',
+  selector: 'fac-incidents-description',
+  exportAs: 'facIncidentsDescription',
   templateUrl: './incidents-description.component.html',
   styleUrls: ['./incidents-description.component.scss'],
   host: {
-    'class': 'emr-incidents-description'
+    'class': 'fac-incidents-description'
   }
 })
 export class IncidentsDescriptionComponent {

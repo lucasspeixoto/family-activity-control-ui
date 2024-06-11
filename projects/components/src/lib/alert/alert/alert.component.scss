@@ -3,29 +3,29 @@
   display: flex;
   width: 100%;
   align-items: center;
-  border-radius: var(--emr-alert-border-radius);
-  padding: var(--emr-alert-padding);
-  background-color: var(--emr-alert-bg-color);
-  color: var(--emr-alert-color);
-  gap: var(--emr-alert-gap);
-  font-size: var(--emr-alert-font-size);
-  border: var(--emr-alert-border-width) solid transparent;
+  border-radius: var(--fac-alert-border-radius);
+  padding: var(--fac-alert-padding);
+  background-color: var(--fac-alert-bg-color);
+  color: var(--fac-alert-color);
+  gap: var(--fac-alert-gap);
+  font-size: var(--fac-alert-font-size);
+  border: var(--fac-alert-border-width) solid transparent;
 }
 
-:host(:has(.emr-alert-title)) {
+:host(:has(.fac-alert-title)) {
   align-items: stretch;
 }
 
 :host(.is-bordered) {
-  border-color: var(--emr-alert-border-color);
+  border-color: var(--fac-alert-border-color);
 }
 
 :host .thumbnail {
-  background-color: var(--emr-alert-thumbnail-bg);
-  color: var(--emr-alert-icon-color);
-  width: var(--emr-alert-thumbnail-size);
-  height: var(--emr-alert-thumbnail-size);
-  border-radius: var(--emr-alert-thumbnail-border-radius);
+  background-color: var(--fac-alert-thumbnail-bg);
+  color: var(--fac-alert-icon-color);
+  width: var(--fac-alert-thumbnail-size);
+  height: var(--fac-alert-thumbnail-size);
+  border-radius: var(--fac-alert-thumbnail-border-radius);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,9 +38,9 @@
 
 :host .title {
   display: block;
-  font-weight: var(--emr-alert-title-font-weight);
+  font-weight: var(--fac-alert-title-font-weight);
   margin-bottom: 0.25rem;
-  font-size: var(--emr-alert-title-font-size);
+  font-size: var(--fac-alert-title-font-size);
   text-transform: uppercase;
 }
 
@@ -48,25 +48,25 @@
   margin-inline-start: auto;
   display: flex;
   align-items: center;
-  gap: var(--emr-alert-actions-gap);
+  gap: var(--fac-alert-actions-gap);
   line-height: 0;
 }
 
-:host ::ng-deep .emr-alert-action {
-  height: var(--emr-alert-action-height);
+:host ::ng-deep .fac-alert-action {
+  height: var(--fac-alert-action-height);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--emr-alert-action-padding);
-  border-radius: var(--emr-alert-action-border-radius);
+  padding: var(--fac-alert-action-padding);
+  border-radius: var(--fac-alert-action-border-radius);
   text-transform: uppercase;
-  font-weight: var(--emr-alert-action-font-weight);
+  font-weight: var(--fac-alert-action-font-weight);
 }
 
-:host ::ng-deep .emr-alert-action:hover {
-  background: var(--emr-alert-action-hover-bg);
+:host ::ng-deep .fac-alert-action:hover {
+  background: var(--fac-alert-action-hover-bg);
 }
 
-:host ::ng-deep .emr-alert-action:has(.mat-icon) {
-  padding: var(--emr-alert-action-with-icon-padding);
+:host ::ng-deep .fac-alert-action:has(.mat-icon) {
+  padding: var(--fac-alert-action-with-icon-padding);
 }

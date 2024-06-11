@@ -1,8 +1,8 @@
 import { Directive, inject, TemplateRef } from '@angular/core';
 
 @Directive({
-  selector: '[emrNumberInputPrefix]',
-  exportAs: 'emrNumberInputPrefix'
+  selector: '[facNumberInputPrefix]',
+  exportAs: 'facNumberInputPrefix'
 })
 export class NumberInputPrefixDirective {
   readonly templateRef = inject(TemplateRef);

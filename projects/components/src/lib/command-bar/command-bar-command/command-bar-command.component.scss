@@ -4,11 +4,11 @@
   align-items: center;
   justify-content: space-between;
   white-space: nowrap;
-  padding: var(--emr-command-bar-command-padding);
-  font-size: var(--emr-command-bar-command-font-size);
+  padding: var(--fac-command-bar-command-padding);
+  font-size: var(--fac-command-bar-command-font-size);
   cursor: pointer;
-  gap: var(--emr-command-bar-command-gap);
-  color: var(--emr-command-bar-command-color);
+  gap: var(--fac-command-bar-command-gap);
+  color: var(--fac-command-bar-command-color);
 }
 
 :host:first-child {
@@ -22,8 +22,8 @@
 }
 
 :host:hover {
-  color: var(--emr-command-bar-command-hover-color);
-  background: var(--emr-command-bar-command-hover-bg);
+  color: var(--fac-command-bar-command-hover-color);
+  background: var(--fac-command-bar-command-hover-bg);
 }
 
 :host .shortcut {
@@ -31,10 +31,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--emr-command-bar-command-shortcut-bg);
-  border-radius: var(--emr-command-bar-command-shortcut-border-radius);
-  font-size: var(--emr-command-bar-command-shortcut-font-size);
-  color: var(--emr-command-bar-command-shortcut-color);
-  padding: var(--emr-command-bar-command-shortcut-padding);
-  border: var(--emr-command-bar-command-shortcut-border);
+  background: var(--fac-command-bar-command-shortcut-bg);
+  border-radius: var(--fac-command-bar-command-shortcut-border-radius);
+  font-size: var(--fac-command-bar-command-shortcut-font-size);
+  color: var(--fac-command-bar-command-shortcut-color);
+  padding: var(--fac-command-bar-command-shortcut-padding);
+  border: var(--fac-command-bar-command-shortcut-border);
 }

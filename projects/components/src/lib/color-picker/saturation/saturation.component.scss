@@ -2,9 +2,9 @@
   display: block;
   flex: none;
   position: relative;
-  width: var(--emr-color-picker-saturation-width);
-  height: var(--emr-color-picker-saturation-height);
-  border-radius: var(--emr-color-picker-border-radius) var(--emr-color-picker-border-radius) 0 0;
+  width: var(--fac-color-picker-saturation-width);
+  height: var(--fac-color-picker-saturation-height);
+  border-radius: var(--fac-color-picker-border-radius) var(--fac-color-picker-border-radius) 0 0;
 }
 
 :host:before {
@@ -30,13 +30,13 @@
   flex: none;
   position: absolute;
   cursor: pointer;
-  border: var(--emr-color-picker-saturation-pointer-border);
+  border: var(--fac-color-picker-saturation-pointer-border);
   top: 0;
   left: 0;
   border-radius: 50%;
-  width: var(--emr-color-picker-saturation-pointer-size);
-  height: var(--emr-color-picker-saturation-pointer-size);
+  width: var(--fac-color-picker-saturation-pointer-size);
+  height: var(--fac-color-picker-saturation-pointer-size);
   transform: translate(-50%, -50%);
-  box-shadow: var(--emr-color-picker-saturation-pointer-shadow);
-  border: var(--emr-color-picker-saturation-pointer-border);
+  box-shadow: var(--fac-color-picker-saturation-pointer-shadow);
+  border: var(--fac-color-picker-saturation-pointer-border);
 }

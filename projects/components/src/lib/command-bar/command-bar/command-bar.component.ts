@@ -2,12 +2,12 @@ import { booleanAttribute, Component, ElementRef, inject, Input, OnInit, Rendere
 import { CommandBarPosition } from '../types';
 
 @Component({
-  selector: 'emr-command-bar',
-  exportAs: 'emrCommandBar',
+  selector: 'fac-command-bar',
+  exportAs: 'facCommandBar',
   templateUrl: './command-bar.component.html',
   styleUrl: './command-bar.component.scss',
   host: {
-    'class': 'emr-command-bar',
+    'class': 'fac-command-bar',
     '[class.is-open]': 'open',
   }
 })
@@ -21,11 +21,11 @@ export class CommandBarComponent implements OnInit {
   @Input()
   set position(position: CommandBarPosition) {
     this._position = position;
-    this._renderer.setAttribute(this._elementRef.nativeElement, 'emr-command-bar-position', this._position);
+    this._renderer.setAttribute(this._elementRef.nativeElement, 'fac-command-bar-position', this._position);
   }
   private _position: CommandBarPosition = 'bottom';
 
   ngOnInit() {
-    this._renderer.setAttribute(this._elementRef.nativeElement, 'emr-command-bar-position', this._position);
+    this._renderer.setAttribute(this._elementRef.nativeElement, 'fac-command-bar-position', this._position);
   }
 }

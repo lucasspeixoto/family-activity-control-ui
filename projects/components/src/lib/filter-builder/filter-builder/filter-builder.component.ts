@@ -22,13 +22,13 @@ import {
 } from '../types';
 
 @Component({
-  selector: 'emr-filter-builder',
-  exportAs: 'emrFilterBuilder',
+  selector: 'fac-filter-builder',
+  exportAs: 'facFilterBuilder',
   templateUrl: './filter-builder.component.html',
   styleUrl: './filter-builder.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'class': 'emr-filter-builder'
+    'class': 'fac-filter-builder'
   }
 })
 export class FilterBuilderComponent implements OnInit, AfterViewInit {

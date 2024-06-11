@@ -18,8 +18,8 @@ import { PasswordStrengthValidator } from '../validator';
 import { RegExpValidator } from '../validator/regexp.class';
 
 @Component({
-  selector: 'emr-password-strength',
-  exportAs: 'emrPasswordStrength',
+  selector: 'fac-password-strength',
+  exportAs: 'facPasswordStrength',
   templateUrl: './password-strength.component.html',
   styleUrls: ['./password-strength.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

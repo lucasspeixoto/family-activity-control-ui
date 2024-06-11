@@ -1,11 +1,11 @@
 :host {
   display: inline-block;
   position: relative;
-  border-radius: var(--emr-color-picker-thumbnail-border-radius);
-  width: var(--emr-color-picker-thumbnail-size);
-  height: var(--emr-color-picker-thumbnail-size);
+  border-radius: var(--fac-color-picker-thumbnail-border-radius);
+  width: var(--fac-color-picker-thumbnail-size);
+  height: var(--fac-color-picker-thumbnail-size);
   flex: none;
-  border: var(--emr-color-picker-thumbnail-border);
+  border: var(--fac-color-picker-thumbnail-border);
 }
 
 :host::before {
@@ -27,10 +27,10 @@
   z-index: 1;
   inset: 0;
   position: absolute;
-  background: var(--emr-color-picker-thumbnail-bg);
+  background: var(--fac-color-picker-thumbnail-bg);
 }
 
 :host(:active) {
-  transition: var(--emr-transition-transform);
+  transition: var(--fac-transition-transform);
   transform: scale(.97);
 }

@@ -4,8 +4,8 @@ import {
 import { INCIDENTS } from '../properties';
 
 @Component({
-  selector: 'emr-incidents',
-  exportAs: 'emrIncidents',
+  selector: 'fac-incidents',
+  exportAs: 'facIncidents',
   templateUrl: './incidents.component.html',
   styleUrls: ['./incidents.component.scss'],
   providers: [
@@ -15,7 +15,7 @@ import { INCIDENTS } from '../properties';
     }
   ],
   host: {
-    'class': 'emr-incidents',
+    'class': 'fac-incidents',
     '[class.is-visible]': 'isVisible',
   }
 })

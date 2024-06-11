@@ -1,10 +1,10 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[emrSegmentedIcon]',
-  exportAs: 'emrSegmentedIcon',
+  selector: '[facSegmentedIcon]',
+  exportAs: 'facSegmentedIcon',
   host: {
-    'class': 'emr-segmented-icon'
+    'class': 'fac-segmented-icon'
   }
 })
 export class SegmentedIconDirective {

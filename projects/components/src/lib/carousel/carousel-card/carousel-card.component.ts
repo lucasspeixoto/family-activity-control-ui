@@ -2,8 +2,8 @@ import { Component, ElementRef, inject } from '@angular/core';
 import { CAROUSEL_CARD } from '../types';
 
 @Component({
-  selector: 'emr-carousel-card,[emr-carousel-card]',
-  exportAs: 'emrCarouselCard',
+  selector: 'fac-carousel-card,[fac-carousel-card]',
+  exportAs: 'facCarouselCard',
   standalone: true,
   imports: [],
   providers: [

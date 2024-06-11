@@ -24,7 +24,7 @@
             </div>
             <div class="mt-14">
               <div class="flex items-center gap-4">
-                <div class="text-2xl font-bold">Pavel Salauyou</div>
+                <div class="text-2xl font-bold">Lucas Peixoto</div>
                 <div class="flex items-center">
                   <mat-icon class="font-icon text-neutral-600 dark:text-neutral-500
                                !text-lg !w-6 !h-7 flex items-center justify-center">location_on</mat-icon>
@@ -175,7 +175,7 @@
           <div class="space-y-5 mt-5">
             <div>
               <div class="text-tiny text-neutral-500">Email address</div>
-              <div class="text-md mt-0.5">pavel.salauyou&#64;example.com</div>
+              <div class="text-md mt-0.5">lspeixotodev&#64;example.com</div>
             </div>
             <div>
               <div class="text-tiny text-neutral-500">Mobile Phone</div>
@@ -185,13 +185,13 @@
               <div class="text-tiny text-neutral-500">Social media</div>
               <div class="flex items-center gap-3 mt-1">
                 <a href="https://x.com" target="_blank" class="hover:text-primary">
-                  <emr-icon name="ph:x-logo"></emr-icon>
+                  <fac-icon name="ph:x-logo"></fac-icon>
                 </a>
                 <a href="https://facebook.com" target="_blank" class="hover:text-primary">
-                  <emr-icon name="ph:facebook-logo"></emr-icon>
+                  <fac-icon name="ph:facebook-logo"></fac-icon>
                 </a>
                 <a href="https://instagram.com" target="_blank" class="hover:text-primary">
-                  <emr-icon name="ph:instagram-logo"></emr-icon>
+                  <fac-icon name="ph:instagram-logo"></fac-icon>
                 </a>
               </div>
             </div>
@@ -202,7 +202,7 @@
           <div class="mt-5 space-y-5">
             @for (person of peopleAlsoViewed; track person) {
               <div class="flex items-center gap-3">
-                <emr-avatar [src]="person.avatarUrl" class="size-10"></emr-avatar>
+                <fac-avatar [src]="person.avatarUrl" class="size-10"></fac-avatar>
                 <div>
                   <div class="text-tiny font-semibold">{{ person.name }}</div>
                   <div class="text-xs text-neutral-500 dark:text-neutral-400">{{ person.occupation }}</div>
@@ -219,7 +219,7 @@
           <div class="mt-5 space-y-5">
             @for (person of peopleAlsoViewed; track person) {
               <div class="flex items-center gap-3">
-                <emr-avatar [src]="person.avatarUrl" class="size-10"></emr-avatar>
+                <fac-avatar [src]="person.avatarUrl" class="size-10"></fac-avatar>
                 <div>
                   <div class="text-tiny font-semibold">{{ person.name }}</div>
                   <div class="text-xs text-neutral-500 dark:text-neutral-400">{{ person.occupation }}</div>

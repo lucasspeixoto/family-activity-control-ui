@@ -17,12 +17,12 @@ import { DOCUMENT } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
-  selector: 'emr-resizable-container',
-  exportAs: 'emrResizableContainer',
+  selector: 'fac-resizable-container',
+  exportAs: 'facResizableContainer',
   templateUrl: './resizable-container.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'class': 'emr-resizable-container'
+    'class': 'fac-resizable-container'
   }
 })
 export class ResizableContainerComponent implements OnInit {

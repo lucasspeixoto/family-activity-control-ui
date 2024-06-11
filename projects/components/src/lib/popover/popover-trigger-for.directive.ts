@@ -23,11 +23,11 @@ import { PopoverTrigger, PopoverPosition } from './types';
 import { PositionManager } from '../overlay';
 
 @Directive({
-  selector: '[emrPopoverTriggerFor]',
-  exportAs: 'emrPopoverTriggerFor',
+  selector: '[facPopoverTriggerFor]',
+  exportAs: 'facPopoverTriggerFor',
   host: {
-    class: 'emr-popover-trigger-for',
-    '[class.emr-popover-trigger-for--is-open]': 'api.isOpen()',
+    class: 'fac-popover-trigger-for',
+    '[class.fac-popover-trigger-for--is-open]': 'api.isOpen()',
   }
 })
 export class PopoverTriggerForDirective implements  OnDestroy {
@@ -43,7 +43,7 @@ export class PopoverTriggerForDirective implements  OnDestroy {
   private _closeTimeout: any = null;
   private _closeDelay = 500;
 
-  @Input('emrPopoverTriggerFor')
+  @Input('facPopoverTriggerFor')
   popoverTemplateRef!: TemplateRef<unknown>;
 
   @Input()

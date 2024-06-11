@@ -5,7 +5,7 @@ import { MarkdownComponent, provideMarkdown } from 'ngx-markdown';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'emr-playground',
+  selector: 'fac-playground',
   standalone: true,
   imports: [
     MatIconButton,

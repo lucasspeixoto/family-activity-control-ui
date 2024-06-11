@@ -17,7 +17,7 @@
             <mat-icon class="font-icon">add</mat-icon>
           </div>
           <mat-menu #nestedGroupOperationsMenu>
-            <div emrMenuOptionGroup [(ngModel)]="item['logicalOperator']">
+            <div facMenuOptionGroup [(ngModel)]="item['logicalOperator']">
               @for (groupOperation of groupOperations; track groupOperation.id) {
                 <mat-option [value]="groupOperation.id">{{ groupOperation.name }}</mat-option>
               }
@@ -51,7 +51,7 @@
                       @case ('equals') {
                         <mat-form-field class="form-field">
                           <mat-select placeholder="Select..."
-                                      emrAutoFocus
+                                      facAutoFocus
                                       (blur)="selectBlur($event)"
                                       [(ngModel)]="item['value'][2]"
                                       (ngModelChange)="_emitChangeEvent()">
@@ -65,7 +65,7 @@
                       @case ('isAnyOf') {
                         <mat-form-field class="form-field">
                           <mat-select placeholder="Select..." multiple
-                                      emrAutoFocus
+                                      facAutoFocus
                                       (blur)="selectBlur($event)"
                                       [(ngModel)]="item['value'][2]"
                                       (closed)="selectClosed()">
@@ -82,9 +82,9 @@
                     @switch (editItem['value'][1]) {
                       @case ('isBetween') {
                         <div class="flex gap-2 items-center"
-                             emrFocusElement (elementBlurred)="cancelEdit()">
+                             facFocusElement (elementBlurred)="cancelEdit()">
                           <mat-form-field class="form-field-number">
-                            <input type="number" matInput emrAutoFocus
+                            <input type="number" matInput facAutoFocus
                                    [(ngModel)]="item['value'][2][0]"
                                    (ngModelChange)="_emitChangeEvent()">
                           </mat-form-field>
@@ -98,7 +98,7 @@
                       }
                       @default {
                         <mat-form-field class="form-field-number">
-                          <input type="number" matInput emrAutoFocus
+                          <input type="number" matInput facAutoFocus
                                  (blur)="cancelEdit()"
                                  [(ngModel)]="item['value'][2]"
                                  (ngModelChange)="_emitChangeEvent()">
@@ -109,7 +109,7 @@
 
                   @default {
                     <mat-form-field class="form-field">
-                      <input type="text" matInput emrAutoFocus
+                      <input type="text" matInput facAutoFocus
                              (blur)="cancelEdit()"
                              [(ngModel)]="item['value'][2]"
                              (ngModelChange)="_emitChangeEvent()">
@@ -158,7 +158,7 @@
           </div>
         </div>
         <mat-menu #fieldsMenu>
-          <div emrMenuOptionGroup [(ngModel)]="item['value'][0]">
+          <div facMenuOptionGroup [(ngModel)]="item['value'][0]">
             @for (fieldDef of fieldDefs; track fieldDef) {
               <mat-option [value]="fieldDef.dataField"
                           (click)="selectConditionField(item, fieldDef)">{{ fieldDef.name }}</mat-option>
@@ -166,7 +166,7 @@
           </div>
         </mat-menu>
         <mat-menu #operationsMenu>
-          <div emrMenuOptionGroup [ngModel]="item['value'][1]" (ngModelChange)="operationChanged(item, $event)">
+          <div facMenuOptionGroup [ngModel]="item['value'][1]" (ngModelChange)="operationChanged(item, $event)">
             @for (operation of _operationDefs; track operation.id) {
               <div [hidden]="!isOperationAllowedForCondition(item['value'][0], operation.id)">
                 <mat-option [value]="operation.id">
@@ -201,7 +201,7 @@
 </div>
 
 <mat-menu #groupOperationsMenu>
-  <div emrMenuOptionGroup [(ngModel)]="_logicalOperator" (ngModelChange)="_emitChangeEvent()">
+  <div facMenuOptionGroup [(ngModel)]="_logicalOperator" (ngModelChange)="_emitChangeEvent()">
     @for (groupOperation of groupOperations; track groupOperation.id) {
       <mat-option [value]="groupOperation.id">{{ groupOperation.name }}</mat-option>
     }
@@ -212,45 +212,45 @@
   <button mat-menu-item (click)="addGroup()">Add Group</button>
 </mat-menu>
 
-<ng-container emrFilterBuilderOperationDef="contains" [allowedDataTypes]="['string']">
-  <ng-template emrFilterBuilderOperationName>Contains</ng-template>
+<ng-container facFilterBuilderOperationDef="contains" [allowedDataTypes]="['string']">
+  <ng-template facFilterBuilderOperationName>Contains</ng-template>
 </ng-container>
-<ng-container emrFilterBuilderOperationDef="doesNotContain" [allowedDataTypes]="['string']">
-  <ng-template emrFilterBuilderOperationName>Does not contain</ng-template>
+<ng-container facFilterBuilderOperationDef="doesNotContain" [allowedDataTypes]="['string']">
+  <ng-template facFilterBuilderOperationName>Does not contain</ng-template>
 </ng-container>
-<ng-container emrFilterBuilderOperationDef="startsWith" [allowedDataTypes]="['string']">
-  <ng-template emrFilterBuilderOperationName>Starts with</ng-template>
+<ng-container facFilterBuilderOperationDef="startsWith" [allowedDataTypes]="['string']">
+  <ng-template facFilterBuilderOperationName>Starts with</ng-template>
 </ng-container>
-<ng-container emrFilterBuilderOperationDef="endsWith" [allowedDataTypes]="['string']">
-  <ng-template emrFilterBuilderOperationName>Ends with</ng-template>
+<ng-container facFilterBuilderOperationDef="endsWith" [allowedDataTypes]="['string']">
+  <ng-template facFilterBuilderOperationName>Ends with</ng-template>
 </ng-container>
-<ng-container emrFilterBuilderOperationDef="equals" [allowedDataTypes]="['string', 'number', 'array', 'boolean']">
-  <ng-template emrFilterBuilderOperationName>Equals</ng-template>
+<ng-container facFilterBuilderOperationDef="equals" [allowedDataTypes]="['string', 'number', 'array', 'boolean']">
+  <ng-template facFilterBuilderOperationName>Equals</ng-template>
 </ng-container>
-<ng-container emrFilterBuilderOperationDef="notEquals" [allowedDataTypes]="['string', 'number', 'boolean']">
-  <ng-template emrFilterBuilderOperationName>Not equals</ng-template>
+<ng-container facFilterBuilderOperationDef="notEquals" [allowedDataTypes]="['string', 'number', 'boolean']">
+  <ng-template facFilterBuilderOperationName>Not equals</ng-template>
 </ng-container>
-<ng-container emrFilterBuilderOperationDef="isLessThen" [allowedDataTypes]="['number']">
-  <ng-template emrFilterBuilderOperationName>Is less then</ng-template>
+<ng-container facFilterBuilderOperationDef="isLessThen" [allowedDataTypes]="['number']">
+  <ng-template facFilterBuilderOperationName>Is less then</ng-template>
 </ng-container>
-<ng-container emrFilterBuilderOperationDef="isLessThenOrEqual" [allowedDataTypes]="['number']">
-  <ng-template emrFilterBuilderOperationName>Is less then or equal to</ng-template>
+<ng-container facFilterBuilderOperationDef="isLessThenOrEqual" [allowedDataTypes]="['number']">
+  <ng-template facFilterBuilderOperationName>Is less then or equal to</ng-template>
 </ng-container>
-<ng-container emrFilterBuilderOperationDef="isGreaterThen" [allowedDataTypes]="['number']">
-  <ng-template emrFilterBuilderOperationName>Is greater then</ng-template>
+<ng-container facFilterBuilderOperationDef="isGreaterThen" [allowedDataTypes]="['number']">
+  <ng-template facFilterBuilderOperationName>Is greater then</ng-template>
 </ng-container>
-<ng-container emrFilterBuilderOperationDef="isGreaterThenOrEqual" [allowedDataTypes]="['number']">
-  <ng-template emrFilterBuilderOperationName>Is greater then or equal to</ng-template>
+<ng-container facFilterBuilderOperationDef="isGreaterThenOrEqual" [allowedDataTypes]="['number']">
+  <ng-template facFilterBuilderOperationName>Is greater then or equal to</ng-template>
 </ng-container>
-<ng-container emrFilterBuilderOperationDef="isBlank" [allowedDataTypes]="['string']">
-  <ng-template emrFilterBuilderOperationName>Is blank</ng-template>
+<ng-container facFilterBuilderOperationDef="isBlank" [allowedDataTypes]="['string']">
+  <ng-template facFilterBuilderOperationName>Is blank</ng-template>
 </ng-container>
-<ng-container emrFilterBuilderOperationDef="isNotBlank" [allowedDataTypes]="['string']">
-  <ng-template emrFilterBuilderOperationName>Is not blank</ng-template>
+<ng-container facFilterBuilderOperationDef="isNotBlank" [allowedDataTypes]="['string']">
+  <ng-template facFilterBuilderOperationName>Is not blank</ng-template>
 </ng-container>
-<ng-container emrFilterBuilderOperationDef="isBetween" [allowedDataTypes]="['number']">
-  <ng-template emrFilterBuilderOperationName>Is between</ng-template>
+<ng-container facFilterBuilderOperationDef="isBetween" [allowedDataTypes]="['number']">
+  <ng-template facFilterBuilderOperationName>Is between</ng-template>
 </ng-container>
-<ng-container emrFilterBuilderOperationDef="isAnyOf" [allowedDataTypes]="['array']">
-  <ng-template emrFilterBuilderOperationName>Is any of</ng-template>
+<ng-container facFilterBuilderOperationDef="isAnyOf" [allowedDataTypes]="['array']">
+  <ng-template facFilterBuilderOperationName>Is any of</ng-template>
 </ng-container>

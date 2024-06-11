@@ -1,10 +1,10 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[emrScrollSpyContainer]',
-  exportAs: 'emrScrollSpyContainer',
+  selector: '[facScrollSpyContainer]',
+  exportAs: 'facScrollSpyContainer',
   host: {
-    'class': 'emr-scroll-spy-container'
+    'class': 'fac-scroll-spy-container'
   }
 })
 export class ScrollSpyContainerDirective {

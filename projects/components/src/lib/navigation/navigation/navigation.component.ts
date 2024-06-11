@@ -7,13 +7,13 @@ import { NavigationApiService } from '../navigation-api.service';
 import { NavigationItemComponent } from '../navigation-item/navigation-item.component';
 
 @Component({
-  selector: 'emr-navigation',
-  exportAs: 'emrNavigation',
+  selector: 'fac-navigation',
+  exportAs: 'facNavigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
   providers: [NavigationApiService],
   host: {
-    class: 'emr-navigation'
+    class: 'fac-navigation'
   }
 })
 export class NavigationComponent {

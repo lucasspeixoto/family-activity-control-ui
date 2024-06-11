@@ -1,10 +1,10 @@
 :host {
   touch-action: none;
   display: block;
-  width: var(--emr-color-picker-alpha-width);
-  height: var(--emr-color-picker-alpha-height);
+  width: var(--fac-color-picker-alpha-width);
+  height: var(--fac-color-picker-alpha-height);
   position: relative;
-  border-radius: 0 0 var(--emr-color-picker-border-radius) var(--emr-color-picker-border-radius);
+  border-radius: 0 0 var(--fac-color-picker-border-radius) var(--fac-color-picker-border-radius);
   background-position: 0 0, 6px 6px;
   background-size: 12px 12px;
   background-image: repeating-linear-gradient(45deg,#dbdbdb 25%,transparent 25%,transparent 75%,#dbdbdb 75%,#dbdbdb),repeating-linear-gradient(45deg,#dbdbdb 25%,#fff 25%,#fff 75%,#dbdbdb 75%,#dbdbdb);
@@ -20,8 +20,8 @@
 }
 
 :host([vertical]) {
-  width: var(--emr-color-picker-alpha-height);
-  height: var(--emr-color-picker-alpha-width);
+  width: var(--fac-color-picker-alpha-height);
+  height: var(--fac-color-picker-alpha-width);
 }
 
 :host .pointer {
@@ -31,10 +31,10 @@
   cursor: pointer;
   left: 0;
   border-radius: 50%;
-  width: var(--emr-color-picker-alpha-pointer-size);
-  height: var(--emr-color-picker-alpha-pointer-size);
-  box-shadow: var(--emr-color-picker-alpha-pointer-shadow);
-  border: var(--emr-color-picker-alpha-pointer-border);
+  width: var(--fac-color-picker-alpha-pointer-size);
+  height: var(--fac-color-picker-alpha-pointer-size);
+  box-shadow: var(--fac-color-picker-alpha-pointer-shadow);
+  border: var(--fac-color-picker-alpha-pointer-border);
   top: 50%;
   transform: translate(-50%, -50%);
 }

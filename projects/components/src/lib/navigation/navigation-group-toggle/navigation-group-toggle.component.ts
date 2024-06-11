@@ -4,15 +4,15 @@ import { NavigationGroupToggleIconDirective } from '../navigation-group-toggle-i
 import { MatRipple } from '@angular/material/core';
 
 @Component({
-  selector: 'emr-navigation-group-toggle',
-  exportAs: 'emrNavigationGroupToggle',
+  selector: 'fac-navigation-group-toggle',
+  exportAs: 'facNavigationGroupToggle',
   templateUrl: './navigation-group-toggle.component.html',
   styleUrls: ['./navigation-group-toggle.component.scss'],
   hostDirectives: [
     MatRipple
   ],
   host: {
-    class: 'emr-navigation-group-toggle',
+    class: 'fac-navigation-group-toggle',
     '[class.is-active]': 'active'
   }
 })

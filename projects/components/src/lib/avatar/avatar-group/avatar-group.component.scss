@@ -6,12 +6,12 @@
 }
 
 :host ::ng-deep * + * {
-  margin-left: calc(var(--emr-avatar-group-item-offset) * -1);
+  margin-left: calc(var(--fac-avatar-group-item-offset) * -1);
 }
 
-:host ::ng-deep .emr-avatar,
-:host ::ng-deep .emr-avatar-total {
-  border: var(--emr-avatar-group-item-border);
+:host ::ng-deep .fac-avatar,
+:host ::ng-deep .fac-avatar-total {
+  border: var(--fac-avatar-group-item-border);
   z-index: 0;
 }
 

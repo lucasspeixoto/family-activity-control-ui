@@ -3,12 +3,12 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'emr-navigation-group',
-  exportAs: 'emrNavigationGroup',
+  selector: 'fac-navigation-group',
+  exportAs: 'facNavigationGroup',
   templateUrl: './navigation-group.component.html',
   styleUrls: ['./navigation-group.component.scss'],
   host: {
-    class: 'emr-navigation-group'
+    class: 'fac-navigation-group'
   }
 })
 export class NavigationGroupComponent {

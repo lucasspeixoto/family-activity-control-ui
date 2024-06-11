@@ -1,12 +1,12 @@
 import { booleanAttribute, Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'emr-panel',
-  exportAs: 'emrPanel',
+  selector: 'fac-panel',
+  exportAs: 'facPanel',
   templateUrl: './panel.component.html',
   styleUrls: ['./panel.component.scss'],
   host: {
-    'class': 'emr-panel',
+    'class': 'fac-panel',
     '[class.is-absolute]': 'absolute'
   }
 })

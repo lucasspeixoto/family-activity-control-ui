@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'emr-layout-aside',
+  selector: 'fac-layout-aside',
   standalone: true,
   imports: [],
   templateUrl: './layout-aside.component.html',

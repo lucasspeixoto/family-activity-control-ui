@@ -15,13 +15,13 @@ import { Color } from '../helpers/color';
 import { BaseComponent } from '../base.component';
 
 @Component({
-  selector: 'emr-saturation',
-  exportAs: 'emrSaturation',
+  selector: 'fac-saturation',
+  exportAs: 'facSaturation',
   templateUrl: './saturation.component.html',
   styleUrls: ['./saturation.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'class': 'emr-saturation'
+    'class': 'fac-saturation'
   }
 })
 export class SaturationComponent extends BaseComponent {

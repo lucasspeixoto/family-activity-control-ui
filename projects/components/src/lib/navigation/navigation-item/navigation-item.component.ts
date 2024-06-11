@@ -9,12 +9,12 @@ import { NavigationApiService } from '../navigation-api.service';
 import { NavigationItemIconDirective } from '../navigation-item-icon.directive';
 
 @Component({
-  selector: 'emr-navigation-item,[emr-navigation-item]',
-  exportAs: 'emrNavigationItem',
+  selector: 'fac-navigation-item,[fac-navigation-item]',
+  exportAs: 'facNavigationItem',
   templateUrl: './navigation-item.component.html',
   styleUrls: ['./navigation-item.component.scss'],
   host: {
-    'class': 'emr-navigation-item',
+    'class': 'fac-navigation-item',
     '[class.is-active]': 'forceActive || active'
   }
 })

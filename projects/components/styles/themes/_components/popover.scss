@@ -1,12 +1,12 @@
 :root {
-  --emr-popover-border: theme('width.px') solid theme('colors.neutral.200');
-  --emr-popover-shadow: theme('boxShadow.lg');
-  --emr-popover-border-radius: theme('borderRadius.lg');
-  --emr-popover-bg: theme('colors.white');
-  --emr-popover-margin: theme('spacing[2.5]');
+  --fac-popover-border: theme('width.px') solid theme('colors.neutral.200');
+  --fac-popover-shadow: theme('boxShadow.lg');
+  --fac-popover-border-radius: theme('borderRadius.lg');
+  --fac-popover-bg: theme('colors.white');
+  --fac-popover-margin: theme('spacing[2.5]');
 }
 
 html.dark {
-  --emr-popover-border: theme('width.px') solid theme('colors.neutral.700');
-  --emr-popover-bg: theme('colors.neutral.500');
+  --fac-popover-border: theme('width.px') solid theme('colors.neutral.700');
+  --fac-popover-bg: theme('colors.neutral.500');
 }

@@ -156,7 +156,7 @@
 
 <mat-menu #groupByMenu="matMenu" [formGroup]="form" xPosition="before" class="w-[180px]">
   <div class="text-xs my-2 px-3.5 text-neutral-600 dark:text-neutral-400">Group by</div>
-  <div emrMenuOptionGroup formControlName="groupBy">
+  <div facMenuOptionGroup formControlName="groupBy">
     @for (groupItem of groupByList; track groupItem) {
       <mat-option [value]="groupItem.id">{{ groupItem.name }}</mat-option>
     }

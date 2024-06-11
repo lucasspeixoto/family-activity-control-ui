@@ -65,11 +65,11 @@ export class FinanceComponent {
       },
       sender: {
         id: 1,
-        name: 'Pavel Salauyou'
+        name: 'Lucas Peixoto'
       },
       recipient: {
         id: 1,
-        name: 'Pavel Salauyou'
+        name: 'Lucas Peixoto'
       }
     },
     {
@@ -85,11 +85,11 @@ export class FinanceComponent {
       },
       sender: {
         id: 1,
-        name: 'Pavel Salauyou'
+        name: 'Lucas Peixoto'
       },
       recipient: {
         id: 1,
-        name: 'Pavel Salauyou'
+        name: 'Lucas Peixoto'
       }
     },
     {
@@ -105,11 +105,11 @@ export class FinanceComponent {
       },
       sender: {
         id: 1,
-        name: 'Pavel Salauyou'
+        name: 'Lucas Peixoto'
       },
       recipient: {
         id: 1,
-        name: 'Pavel Salauyou'
+        name: 'Lucas Peixoto'
       }
     },
     {
@@ -125,11 +125,11 @@ export class FinanceComponent {
       },
       sender: {
         id: 1,
-        name: 'Pavel Salauyou'
+        name: 'Lucas Peixoto'
       },
       recipient: {
         id: 1,
-        name: 'Pavel Salauyou'
+        name: 'Lucas Peixoto'
       }
     },
   ];

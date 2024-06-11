@@ -3,15 +3,15 @@
   width: 100%;
   align-items: center;
   justify-content: center;
-  background: var(--emr-upload-area-bg);
-  padding: var(--emr-upload-area-padding);
-  border: var(--emr-upload-area-border);
-  border-radius: var(--emr-upload-area-border-radius);
-  color: var(--emr-upload-area-color);
-  font-size: var(--emr-upload-area-font-size);
+  background: var(--fac-upload-area-bg);
+  padding: var(--fac-upload-area-padding);
+  border: var(--fac-upload-area-border);
+  border-radius: var(--fac-upload-area-border-radius);
+  color: var(--fac-upload-area-color);
+  font-size: var(--fac-upload-area-font-size);
 }
 
 :host(.is-drop-active) {
-  border: var(--emr-upload-area-drop-active-border);
-  color: var(--emr-upload-area-drop-active-color);
+  border: var(--fac-upload-area-drop-active-border);
+  color: var(--fac-upload-area-drop-active-color);
 }
