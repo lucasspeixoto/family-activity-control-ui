@@ -163,7 +163,7 @@ export class PhoneInputComponent
   stateChanges = new Subject<void>()
   focused = false
   describedBy = ''
-  phoneNumber?: E164Number | NationalNumber = ''
+  phoneNumber?: E164Number | NationalNumber | string | undefined;
   allCountries: Country[] = [];
   preferredCountriesInDropDown: Country[] = [];
   selectedCountry!: Country

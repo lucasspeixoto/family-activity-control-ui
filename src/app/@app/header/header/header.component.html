@@ -1,5 +1,7 @@
 <div class="h-20 w-full px-10 bg-background">
-  <div class="h-full flex items-center border-b dark:border-b-neutral-600 gap-7">
+  <div
+    class="h-full flex items-center border-b dark:border-b-neutral-600 gap-7"
+  >
     <div class="flex items-center gap-3 -ms-3">
       <button mat-icon-button (click)="toggleSidebar()">
         <mat-icon class="font-icon">menu</mat-icon>
@@ -7,25 +9,47 @@
       <app-assistant-search></app-assistant-search>
     </div>
     <div class="ms-auto flex items-center gap-3">
-      
-      <button mat-icon-button [matMenuTriggerFor]="appsMenu" matTooltip="Applications">
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="appsMenu"
+        matTooltip="Applications"
+      >
         <mat-icon class="font-icon">apps</mat-icon>
       </button>
-      <button mat-icon-button matTooltip="Notifications"
-              [facPopoverTriggerFor]="notificationsPopover" position="below-end">
-        <mat-icon class="font-icon"
-                  matBadge="3" matBadgeColor="warn" matBadgeSize="small">notifications</mat-icon>
+      <button
+        mat-icon-button
+        matTooltip="Notifications"
+        [facPopoverTriggerFor]="notificationsPopover"
+        position="below-end"
+      >
+        <mat-icon
+          class="font-icon"
+          matBadge="3"
+          matBadgeColor="warn"
+          matBadgeSize="small"
+          >notifications</mat-icon
+        >
       </button>
-      <button mat-icon-button (click)="_themeManager.toggleColorScheme()" matTooltip="Color Theme"
-              facSoundEffect soundSrc="/assets/sound-effects/mouse-click.ogg">
+      <button
+        mat-icon-button
+        (click)="_themeManager.toggleColorScheme()"
+        matTooltip="Color Theme"
+        facSoundEffect
+        soundSrc="/assets/sound-effects/mouse-click.ogg"
+      >
         @if (isDark | async) {
-          <mat-icon class="font-icon">light_mode</mat-icon>
+        <mat-icon class="font-icon">light_mode</mat-icon>
         } @else {
-          <mat-icon class="font-icon">dark_mode</mat-icon>
+        <mat-icon class="font-icon">dark_mode</mat-icon>
         }
       </button>
-      <fac-avatar text="PS" [clickable]="true" [matMenuTriggerFor]="accountMenu"
-                  matTooltip="Account" class="w-10 h-10"></fac-avatar>
+      <fac-avatar
+        text="PS"
+        [clickable]="true"
+        [matMenuTriggerFor]="accountMenu"
+        matTooltip="Account"
+        class="w-10 h-10"
+      ></fac-avatar>
     </div>
   </div>
 </div>
@@ -34,9 +58,19 @@
   <div class="w-80">
     <a routerLink="/" mat-menu-item>
       <div class="flex items-center gap-3 my-3">
-        <div class="w-14 h-14 border border-neutral-400 dark:border-inverse rounded-lg flex-none flex items-center justify-center">
-          <img src="assets/applications/file-storage.svg" alt="File Storage" class="w-8 h-8 dark:hidden">
-          <img src="assets/applications/file-storage-dark.svg" alt="File Storage" class="w-8 h-8 hidden dark:block">
+        <div
+          class="w-14 h-14 border border-neutral-400 dark:border-inverse rounded-lg flex-none flex items-center justify-center"
+        >
+          <img
+            src="assets/applications/file-storage.svg"
+            alt="File Storage"
+            class="w-8 h-8 dark:hidden"
+          />
+          <img
+            src="assets/applications/file-storage-dark.svg"
+            alt="File Storage"
+            class="w-8 h-8 hidden dark:block"
+          />
         </div>
         <div class="-mt-0.5">
           <div>File Storage</div>
@@ -48,9 +82,19 @@
     </a>
     <a routerLink="/" mat-menu-item>
       <div class="flex items-center gap-3 my-3">
-        <div class="w-14 h-14 border border-neutral-400 dark:border-inverse rounded-lg flex-none flex items-center justify-center">
-          <img src="assets/applications/sign.svg" alt="Sign" class="w-8 h-8 dark:hidden">
-          <img src="assets/applications/sign-dark.svg" alt="Sign" class="w-8 h-8 hidden dark:block">
+        <div
+          class="w-14 h-14 border border-neutral-400 dark:border-inverse rounded-lg flex-none flex items-center justify-center"
+        >
+          <img
+            src="assets/applications/sign.svg"
+            alt="Sign"
+            class="w-8 h-8 dark:hidden"
+          />
+          <img
+            src="assets/applications/sign-dark.svg"
+            alt="Sign"
+            class="w-8 h-8 hidden dark:block"
+          />
         </div>
         <div class="-mt-0.5">
           <div>Sign</div>
@@ -62,9 +106,19 @@
     </a>
     <a routerLink="/" mat-menu-item>
       <div class="flex items-center gap-3 my-3">
-        <div class="w-14 h-14 border border-neutral-400 dark:border-inverse rounded-lg flex-none flex items-center justify-center">
-          <img src="assets/applications/backup.svg" alt="Backup" class="w-8 h-8 dark:hidden">
-          <img src="assets/applications/backup-dark.svg" alt="Backup" class="w-8 h-8 hidden dark:block">
+        <div
+          class="w-14 h-14 border border-neutral-400 dark:border-inverse rounded-lg flex-none flex items-center justify-center"
+        >
+          <img
+            src="assets/applications/backup.svg"
+            alt="Backup"
+            class="w-8 h-8 dark:hidden"
+          />
+          <img
+            src="assets/applications/backup-dark.svg"
+            alt="Backup"
+            class="w-8 h-8 hidden dark:block"
+          />
         </div>
         <div class="-mt-0.5">
           <div>Backup</div>
@@ -77,14 +131,22 @@
     <div class="my-3">
       <mat-divider></mat-divider>
     </div>
-    <div class="text-base py-3 px-4">
-      See what other options there are
-    </div>
+    <div class="text-base py-3 px-4">See what other options there are</div>
     <a routerLink="/" mat-menu-item>
       <div class="flex items-center gap-3 my-3">
-        <div class="w-14 h-14 border border-neutral-400 dark:border-inverse rounded-lg flex-none flex items-center justify-center">
-          <img src="assets/applications/passwords.svg" alt="Passwords" class="w-8 h-8 dark:hidden">
-          <img src="assets/applications/passwords-dark.svg" alt="Passwords" class="w-8 h-8 hidden dark:block">
+        <div
+          class="w-14 h-14 border border-neutral-400 dark:border-inverse rounded-lg flex-none flex items-center justify-center"
+        >
+          <img
+            src="assets/applications/passwords.svg"
+            alt="Passwords"
+            class="w-8 h-8 dark:hidden"
+          />
+          <img
+            src="assets/applications/passwords-dark.svg"
+            alt="Passwords"
+            class="w-8 h-8 hidden dark:block"
+          />
         </div>
         <div class="-mt-0.5">
           <div>Passwords</div>
@@ -99,8 +161,12 @@
     </div>
     <a routerLink="/" mat-menu-item>
       <div class="flex items-center gap-3 my-3">
-        <div class="w-14 h-14 border border-neutral-400 dark:border-inverse rounded-lg flex-none flex items-center justify-center">
-          <mat-icon class="font-icon !text-2xl !w-5 !h-8 relative -right-1">arrow_forward</mat-icon>
+        <div
+          class="w-14 h-14 border border-neutral-400 dark:border-inverse rounded-lg flex-none flex items-center justify-center"
+        >
+          <mat-icon class="font-icon !text-2xl !w-5 !h-8 relative -right-1"
+            >arrow_forward</mat-icon
+          >
         </div>
         <div class="-mt-0.5">
           <div>App Center</div>
@@ -125,10 +191,15 @@
     <div class="-mt-0.5">
       <div class="flex items-center gap-2">
         Lucas Peixoto
-        <div class="border flex items-center border-neutral-900 dark:border-neutral-200 h-5 leading-3 px-2
-                    rounded-full font-bold text-4xs uppercase text-neutral-500 dark:text-neutral-200">Free</div>
+        <div
+          class="border flex items-center border-neutral-900 dark:border-neutral-200 h-5 leading-3 px-2 rounded-full font-bold text-4xs uppercase text-neutral-500 dark:text-neutral-200"
+        >
+          Free
+        </div>
       </div>
-      <div class="text-xs text-gray-500 mt-0.5 dark:text-gray-400">lspeixotodev&#64;mail.com</div>
+      <div class="text-xs text-gray-500 mt-0.5 dark:text-gray-400">
+        lspeixotodev&#64;gmail.com
+      </div>
     </div>
   </div>
   <div class="px-4 pb-4">
@@ -160,7 +231,7 @@
     <span>Add Account</span>
   </a>
   <mat-divider></mat-divider>
-  <a mat-menu-item>
+  <a mat-menu-item (click)="logoutHandler()">
     <mat-icon class="font-icon">logout</mat-icon>
     <span>Logout</span>
   </a>

@@ -8,7 +8,7 @@ import { MatBadge } from '@angular/material/badge';
 import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
 import { MatDivider } from '@angular/material/divider';
 import { MatTooltip } from '@angular/material/tooltip';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { EmrAvatarModule, IconComponent, SoundEffectDirective } from '@elementar/components';
 import { NotificationListComponent } from '@app/header/_notifications/notification-list/notification-list.component';
 import { EmrPopoverModule } from '@elementar/components';
@@ -51,10 +51,14 @@ import { LayoutApiService } from '@elementar/components';
 export class HeaderComponent {
   protected _themeManager = inject(ThemeManagerService);
   private _layoutApi = inject(LayoutApiService);
-  isDark = this._themeManager.isDark();
+
+  private _router = inject(Router);
+
+  public isDark = this._themeManager.isDark();
+
 
   @Input()
-  sidebarHidden = false;
+  public sidebarHidden = false;
 
   toggleSidebar(): void {
     if (!this.sidebarHidden) {
@@ -64,5 +68,9 @@ export class HeaderComponent {
     }
 
     this.sidebarHidden = !this.sidebarHidden;
+  }
+
+  public logoutHandler(): void {
+    this._router.navigateByUrl('/auth/sign-in');
   }
 }

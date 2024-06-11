@@ -41,15 +41,30 @@ export interface NavItem {
   }
 })
 export class SidebarComponent {
-  router = inject(Router);
-  location = inject(Location);
-  height: string | null = '200px';
+  public router = inject(Router);
+  public location = inject(Location);
+  public height: string | null = '200px';
 
   @ViewChild('navigation', { static: true })
-  navigation!: any;
+  public navigation!: any;
 
-  navItems: NavItem[] = [
+  public navItems: NavItem[] = [
     {
+      id: 'content',
+      type: 'group',
+      icon: 'edit_note',
+      name: 'Content',
+      children: [
+        {
+          type: 'link',
+          name: 'Post List',
+          link: '/pages/content/posts/list'
+        }
+      ]
+    },
+   
+    /* 
+     {
       id: 'customization',
       type: 'group',
       name: 'Customization',
@@ -565,7 +580,7 @@ export class SidebarComponent {
           link: '/pages/service-pages/pending-email-activation'
         }
       ]
-    },
+    }, */
   ];
   navItemLinks: NavItem[] = [];
   activeLinkId: any = '/';
