@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LayoutComponent } from '@elementar/components';
-import { LayoutBodyComponent } from '@elementar/components';
-import { LayoutSidebarComponent } from '@elementar/components';
-import { LayoutHeaderComponent } from '@elementar/components';
-import { LayoutTopbarComponent } from '@elementar/components';
+
 import { HeaderComponent } from '@app/header/header/header.component';
 import { SidebarComponent } from '@app/sidebar/sidebar/sidebar.component';
+import { LayoutComponent, LayoutBodyComponent, LayoutSidebarComponent, LayoutHeaderComponent, LayoutTopbarComponent } from '../../layout';
 
 @Component({
   standalone: true,
@@ -18,9 +15,8 @@ import { SidebarComponent } from '@app/sidebar/sidebar/sidebar.component';
     LayoutBodyComponent,
     LayoutSidebarComponent,
     LayoutHeaderComponent,
-    LayoutTopbarComponent
+    LayoutTopbarComponent,
   ],
-  templateUrl: './common.component.html'
+  templateUrl: './common.component.html',
 })
-export class CommonComponent {
-}
+export class CommonComponent {}

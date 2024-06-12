@@ -8,16 +8,19 @@ import {
   signal,
 } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { ThemeManagerService } from '@elementar/components';
+
 import { ScreenLoaderComponent } from '@app/screen-loader/screen-loader.component';
-import { ScreenLoaderService } from '@elementar/components';
+
 import { isPlatformBrowser } from '@angular/common';
 import { filter } from 'rxjs';
-import { AnalyticsService } from '@elementar/components';
-import { SeoService } from '@elementar/components';
-import { PageLoadingBarComponent } from '@elementar/components';
-import { InactivityTrackerService } from '@elementar/components';
+
 import { environment } from '../environments/environment';
+import { ThemeManagerService } from '../lib/_services/theme-manager.service';
+import { AnalyticsService } from '../lib/_services/analytics.service';
+import { InactivityTrackerService } from '../lib/_services/inactivity-tracker.service';
+import { ScreenLoaderService } from '../lib/_services/screen-loader.service';
+import { SeoService } from '../lib/_services/seo.service';
+import { PageLoadingBarComponent } from '../lib/page-loading-bar';
 
 @Component({
   selector: 'app-root',

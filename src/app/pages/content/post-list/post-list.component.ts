@@ -1,17 +1,19 @@
 import { Component, inject, OnInit } from '@angular/core';
-import {
-  DataViewCellRenderer,
-  DataViewColumnDef,
-  DataViewComponent,
-  DataViewRowSelectionEvent,
-  EmrPanelModule,
-  EmrSegmentedModule, VDividerComponent
-} from '@elementar/components';
+
 import { MatPaginator } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
 import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { HttpClient } from '@angular/common/http';
+import { DataViewComponent } from '../../../../lib/data-view/public-api';
+import {
+  DataViewColumnDef,
+  DataViewCellRenderer,
+  DataViewRowSelectionEvent,
+} from '../../../../lib/data-view/types';
+import { VDividerComponent } from '../../../../lib/divider';
+import { EmrPanelModule } from '../../../../lib/panel';
+import { EmrSegmentedModule } from '../../../../lib/segmented/segmented.module';
 
 export interface User {
   id: string;
@@ -41,10 +43,10 @@ export interface Post {
     MatButton,
     MatIcon,
     VDividerComponent,
-    MatIconButton
+    MatIconButton,
   ],
   templateUrl: './post-list.component.html',
-  styleUrl: './post-list.component.scss'
+  styleUrl: './post-list.component.scss',
 })
 export class PostListComponent implements OnInit {
   private _httpClient = inject(HttpClient);
@@ -54,52 +56,57 @@ export class PostListComponent implements OnInit {
     {
       name: 'Id',
       dataField: 'id',
-      visible: false
+      visible: false,
     },
     {
       name: 'Title',
       dataField: 'title',
-      visible: true
+      visible: true,
     },
     {
       name: 'Author',
       dataField: 'author',
       dataRenderer: 'author',
-      visible: true
+      visible: true,
     },
     {
       name: 'Created At',
       dataField: 'createdAt',
       dataRenderer: 'date',
-      visible: true
+      visible: true,
     },
     {
       name: 'Published At',
       dataField: 'publishedAt',
       dataRenderer: 'date',
-      visible: true
-    }
+      visible: true,
+    },
   ];
   data: Post[] = [];
   selectedRows: Post[] = [];
   cellRenderers: DataViewCellRenderer[] = [
     {
       dataRenderer: 'author',
-      component: () => import('../_renderers/dv-author-renderer/dv-author-renderer.component').then(c => c.DvAuthorRendererComponent)
+      component: () =>
+        import(
+          '../_renderers/dv-author-renderer/dv-author-renderer.component'
+        ).then((c) => c.DvAuthorRendererComponent),
     },
     {
       dataRenderer: 'date',
-      component: () => import('../_renderers/dv-date-renderer/dv-date-renderer.component').then(c => c.DvDateRendererComponent)
-    }
+      component: () =>
+        import(
+          '../_renderers/dv-date-renderer/dv-date-renderer.component'
+        ).then((c) => c.DvDateRendererComponent),
+    },
   ];
 
   ngOnInit() {
     this._httpClient
       .get<Post[]>('/assets/mockdata/content-post-list.json')
-      .subscribe(data => {
+      .subscribe((data) => {
         this.data = data;
-      })
-    ;
+      });
   }
 
   rowSelectionChanged(event: DataViewRowSelectionEvent<Post>): void {

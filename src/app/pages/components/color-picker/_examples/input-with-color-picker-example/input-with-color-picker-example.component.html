@@ -1,9 +1,0 @@
-<mat-form-field class="w-1/2">
-  <mat-label>Color</mat-label>
-  <input type="text" [(ngModel)]="color" matInput placeholder="Select color">
-  <button fac-color-picker-thumbnail [color]="color"
-          [facColorPickerTriggerFor]="colorPicker" matSuffix class="mr-2"></button>
-</mat-form-field>
-<ng-template #colorPicker>
-  <fac-color-picker [(color)]="color"></fac-color-picker>
-</ng-template>

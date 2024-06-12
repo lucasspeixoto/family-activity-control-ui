@@ -1,9 +1,0 @@
-<form [formGroup]="form">
-  <mat-form-field class="w-1/2">
-    <mat-label>Phone</mat-label>
-    <fac-phone-input formControlName="phone"></fac-phone-input>
-    @if (form.get('phone')?.hasError('invalidPhone')) {
-      <mat-error>Invalid phone</mat-error>
-    }
-  </mat-form-field>
-</form>

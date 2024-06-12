@@ -1,5 +1,0 @@
-<fac-breadcrumbs [dataSource]="dataSource">
-  <a *facBreadcrumbItemDef="let item" fac-breadcrumb-item [routerLink]="item.link">{{ item.name }}</a>
-  <fac-breadcrumb-separator *facBreadcrumbSeparatorDef>/</fac-breadcrumb-separator>
-  <fac-breadcrumb-item *facBreadcrumbActiveItemDef="let item">{{ item.name }}</fac-breadcrumb-item>
-</fac-breadcrumbs>

@@ -11,17 +11,11 @@
       "@app/*": [
         "./src/app/@app/*"
       ],
-      "@components/*": [
-        "./src/app/@components/*"
-      ],
       "@state/*": [
         "./src/app/@state/*"
       ],
-      "@meta/*": [
-        "./src/app/@meta/*"
-      ],
-      "@elementar/components": [
-        "./projects/components/src"
+      "@lib": [
+        "./src/lib/*"
       ]
     },
     "outDir": "./dist/out-tsc",

@@ -3,13 +3,14 @@ import { MatIcon } from '@angular/material/icon';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
 import { Location } from '@angular/common';
-import { EmrNavigationModule } from '@elementar/components';
+import { EmrNavigationModule } from '../../../../lib/navigation';
 import { MatRipple } from '@angular/material/core';
-import { OrderByPipe } from '@elementar/components';
+
 import { ToolbarComponent } from '@app/sidebar/_toolbar/toolbar.component';
 import { UpgradeToProComponent } from '@app/sidebar/_upgrade-to-pro/upgrade-to-pro.component';
 import { UpgradeNowComponent } from '@app/sidebar/_upgrade-now/upgrade-now.component';
 import { UsedSpaceComponent } from '@app/sidebar/_used-space/used-space.component';
+import { OrderByPipe } from '../../../../lib/order-by.pipe';
 
 export interface NavItem {
   type: string;

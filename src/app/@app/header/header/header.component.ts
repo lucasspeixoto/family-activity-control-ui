@@ -9,12 +9,16 @@ import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
 import { MatDivider } from '@angular/material/divider';
 import { MatTooltip } from '@angular/material/tooltip';
 import { Router, RouterLink } from '@angular/router';
-import { EmrAvatarModule, IconComponent, SoundEffectDirective } from '@elementar/components';
+
 import { NotificationListComponent } from '@app/header/_notifications/notification-list/notification-list.component';
-import { EmrPopoverModule } from '@elementar/components';
+
 import { AssistantSearchComponent } from '@app/header/_assistant-search/assistant-search.component';
-import { ThemeManagerService } from '@elementar/components';
-import { LayoutApiService } from '@elementar/components';
+import { SoundEffectDirective } from '../../../../lib/_directives/sound-effect.directive';
+import { ThemeManagerService } from '../../../../lib/_services/theme-manager.service';
+import { EmrAvatarModule } from '../../../../lib/avatar';
+import { IconComponent } from '../../../../lib/icon';
+import { EmrPopoverModule } from '../../../../lib/popover';
+import { LayoutApiService } from '../../../layout';
 
 @Component({
   selector: 'app-header',
@@ -40,13 +44,13 @@ import { LayoutApiService } from '@elementar/components';
     AssistantSearchComponent,
     IconComponent,
     MatAnchor,
-    SoundEffectDirective
+    SoundEffectDirective,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   host: {
-    'class': 'block w-full h-full'
-  }
+    class: 'block w-full h-full',
+  },
 })
 export class HeaderComponent {
   protected _themeManager = inject(ThemeManagerService);
@@ -55,7 +59,6 @@ export class HeaderComponent {
   private _router = inject(Router);
 
   public isDark = this._themeManager.isDark();
-
 
   @Input()
   public sidebarHidden = false;
