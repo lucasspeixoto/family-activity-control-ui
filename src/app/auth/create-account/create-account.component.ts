@@ -4,9 +4,9 @@ import { MatButton } from '@angular/material/button';
 import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { RouterLink } from '@angular/router';
-import { HDividerComponent } from '../../../lib/divider';
-import { PasswordStrengthModule } from '../../../lib/password-strength';
-import { EmrPhoneInputModule, phoneValidator } from '../../../lib/phone-input';
+import { HDividerComponent } from '@shared/components/divider';
+import { PasswordStrengthModule } from '@shared/components/password-strength';
+import { EmrPhoneInputModule, phoneValidator } from '@shared/components/phone-input';
 
 
 @Component({

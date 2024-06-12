@@ -4,16 +4,16 @@ import { EventEmitter, Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LayoutApiService {
-  readonly sidebarVisibility = new EventEmitter<{ layoutId: string, hidden: boolean }>();
+  public readonly sidebarVisibility = new EventEmitter<{ layoutId: string, hidden: boolean }>();
 
-  hideSidebar(layoutId: string): void {
+  public hideSidebar(layoutId: string): void {
     this.sidebarVisibility.emit({
       layoutId,
       hidden: true
     });
   }
 
-  showSidebar(layoutId: string): void {
+  public showSidebar(layoutId: string): void {
     this.sidebarVisibility.emit({
       layoutId,
       hidden: false

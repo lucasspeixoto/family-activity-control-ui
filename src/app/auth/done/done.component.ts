@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatAnchor, MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
-import { EmrPinInputModule } from '../../../lib/pin-input/pin-input.module';
+import { EmrPinInputModule } from '@shared/components/pin-input/pin-input.module';
 
 @Component({
   selector: 'app-done',

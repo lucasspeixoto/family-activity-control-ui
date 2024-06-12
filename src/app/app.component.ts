@@ -1,6 +1,5 @@
 import {
   afterNextRender,
-  ChangeDetectionStrategy,
   Component,
   inject,
   OnInit,
@@ -9,24 +8,22 @@ import {
 } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 
-import { ScreenLoaderComponent } from '@app/screen-loader/screen-loader.component';
-
 import { isPlatformBrowser } from '@angular/common';
 import { filter } from 'rxjs';
 
 import { environment } from '../environments/environment';
-import { ThemeManagerService } from '../lib/_services/theme-manager.service';
-import { AnalyticsService } from '../lib/_services/analytics.service';
-import { InactivityTrackerService } from '../lib/_services/inactivity-tracker.service';
-import { ScreenLoaderService } from '../lib/_services/screen-loader.service';
-import { SeoService } from '../lib/_services/seo.service';
-import { PageLoadingBarComponent } from '../lib/page-loading-bar';
+import { ThemeManagerService } from '@shared/services/theme-manager.service';
+import { AnalyticsService } from '@shared/services/analytics.service';
+import { InactivityTrackerService } from '@shared/services/inactivity-tracker.service';
+import { ScreenLoaderService } from '@shared/services/screen-loader.service';
+import { SeoService } from '@shared/services/seo.service';
+import { PageLoadingBarComponent } from '@shared/components/page-loading-bar';
+import { ScreenLoaderComponent } from './layout/components/screen-loader/screen-loader.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, ScreenLoaderComponent, PageLoadingBarComponent],
-  /* changeDetection: ChangeDetectionStrategy.OnPush, */
   template: `
     @if (pageLoaded()) {
     <fac-page-loading-bar fixed></fac-page-loading-bar>

@@ -5,15 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { HttpClient } from '@angular/common/http';
-import { DataViewComponent } from '../../../../lib/data-view/public-api';
-import {
-  DataViewColumnDef,
-  DataViewCellRenderer,
-  DataViewRowSelectionEvent,
-} from '../../../../lib/data-view/types';
-import { VDividerComponent } from '../../../../lib/divider';
-import { EmrPanelModule } from '../../../../lib/panel';
-import { EmrSegmentedModule } from '../../../../lib/segmented/segmented.module';
+import { DataViewCellRenderer, DataViewColumnDef, DataViewComponent, DataViewRowSelectionEvent } from '@shared/components/data-view/public-api';
+
+import { EmrPanelModule } from '@shared/components/panel';
+import { EmrSegmentedModule } from '@shared/components/segmented/segmented.module';
+import { VDividerComponent } from '@shared/components/divider';
+
 
 export interface User {
   id: string;
