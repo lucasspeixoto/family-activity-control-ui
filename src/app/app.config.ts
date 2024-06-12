@@ -10,12 +10,11 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { provideNativeDateAdapter } from '@angular/material/core';
 
 import { environment } from '../environments/environment';
-import { ENVIRONMENT } from '../lib/_services/environment.service';
-import { PageTitleStrategyService } from '../lib/_services/page-title-strategy.service';
+import { ENVIRONMENT } from '@shared/services/environment.service';
+import { PageTitleStrategyService } from '@shared/services/page-title-strategy.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    /* provideExperimentalZonelessChangeDetection(), */
     provideRouter(routes, withViewTransitions()),
     provideClientHydration(),
     provideAnimationsAsync(),

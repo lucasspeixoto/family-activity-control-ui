@@ -11,7 +11,7 @@ import { MatInput } from '@angular/material/input';
 import { Router, RouterLink } from '@angular/router';
 
 import { MatIcon } from '@angular/material/icon';
-import { EmrPinInputModule } from '../../../lib/pin-input/pin-input.module';
+import { EmrPinInputModule } from '@shared/components/pin-input/pin-input.module';
 
 @Component({
   selector: 'app-password-reset',

@@ -1,21 +1,19 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "paths": {
       "@shared/*": [
-        "./src/app/@shared/*"
-      ],
-      "@services/*": [
-        "./src/app/@services/*"
+        "./src/app/shared/*"
       ],
       "@app/*": [
-        "./src/app/@app/*"
+        "./src/app/*"
       ],
       "@state/*": [
-        "./src/app/@state/*"
+        "./src/app/state/*"
       ],
-      "@lib": [
-        "./src/lib/*"
+      "@layoutC/*": [
+        "./src/app/layout/components/*"
       ]
     },
     "outDir": "./dist/out-tsc",

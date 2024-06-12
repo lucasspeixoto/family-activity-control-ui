@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { HeaderComponent } from '@app/header/header/header.component';
-import { SidebarComponent } from '@app/sidebar/sidebar/sidebar.component';
+import { HeaderComponent } from '@layoutC/header/header/header.component';
+import { SidebarComponent } from '@layoutC/sidebar/sidebar/sidebar.component';
 import { LayoutComponent, LayoutBodyComponent, LayoutSidebarComponent, LayoutHeaderComponent, LayoutTopbarComponent } from '../../layout';
 
 @Component({
