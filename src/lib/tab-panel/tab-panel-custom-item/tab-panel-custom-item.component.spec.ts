@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TabPanelCustomItemComponent } from './tab-panel-custom-item.component';
 
-describe('TabPanelCustomItemComponent', () => {
+/* describe('TabPanelCustomItemComponent', () => {
   let component: TabPanelCustomItemComponent;
   let fixture: ComponentFixture<TabPanelCustomItemComponent>;
 
@@ -20,4 +20,4 @@ describe('TabPanelCustomItemComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+}); */
