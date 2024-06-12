@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { EmrAvatarModule, InitialsPipe } from '@elementar/components';
+import { InitialsPipe } from '../../../../../lib/_pipes/initials.pipe';
+import { EmrAvatarModule } from '../../../../../lib/avatar';
 
 @Component({
   selector: 'app-dv-author-renderer',

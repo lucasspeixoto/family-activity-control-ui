@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EmrSkeletonModule } from '@elementar/components';
+import { EmrSkeletonModule } from '../../../../lib/skeleton';
 
 @Component({
   selector: 'app-dashboard-chart-skeleton-widget',

@@ -1,12 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { Router, RouterLink } from '@angular/router';
-import { EmrPinInputModule } from '@elementar/components';
+
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatFormField, MatHint, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
-import { PasswordStrengthModule } from '@elementar/components';
+import { EmrPinInputModule } from '../../../lib/pin-input/pin-input.module';
+import { PasswordStrengthModule } from '../../../lib/password-strength';
 
 @Component({
   selector: 'app-set-new-password',

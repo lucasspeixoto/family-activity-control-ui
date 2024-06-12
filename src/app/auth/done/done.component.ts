@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { EmrPinInputModule } from '@elementar/components';
+
 import { FormsModule } from '@angular/forms';
 import { MatAnchor, MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { EmrPinInputModule } from '../../../lib/pin-input/pin-input.module';
 
 @Component({
   selector: 'app-done',

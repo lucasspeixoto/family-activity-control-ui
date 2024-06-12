@@ -4,7 +4,8 @@ import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatFormField, MatLabel, MatSuffix } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { MatIcon } from '@angular/material/icon';
-import { HDividerComponent } from '@elementar/components';
+import { HDividerComponent } from '../../../lib/divider';
+
 
 @Component({
   selector: 'app-signin',
@@ -27,6 +28,6 @@ export class SigninComponent {
   private router = inject(Router);
 
   public loginHandler(): void {
-    this.router.navigateByUrl('/pages/dashboard');
+    this.router.navigateByUrl('/pages/content/posts/list');
   }
 }
