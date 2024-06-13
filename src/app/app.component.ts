@@ -42,8 +42,8 @@ export class AppComponent implements OnInit {
   private _platformId = inject(PLATFORM_ID);
   private _router = inject(Router);
 
-  loadingText = signal('Carregando...');
-  pageLoaded = signal(false);
+  public loadingText = signal('Carregando...');
+  public pageLoaded = signal(false);
 
   constructor() {
     afterNextRender(() => {
@@ -58,7 +58,7 @@ export class AppComponent implements OnInit {
           setTimeout(() => {
             this._screenLoader.hide();
             this.pageLoaded.set(true);
-          }, 3000);
+          }, 2000);
         });
 
       this._analyticsService.trackPageViews();
@@ -70,7 +70,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this._themeManager.setColorScheme(
       this._themeManager.getPreferredColorScheme()
     );

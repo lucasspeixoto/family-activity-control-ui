@@ -2,7 +2,7 @@ import { afterNextRender, inject, Injectable } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-const LOCAL_STORAGE_KEY = 'fac-admin';
+const LOCAL_STORAGE_KEY = 'Family-Control:Theme';
 
 function getClassNameForKey(key: string) {
   return `style-manager-${key}`;
@@ -34,7 +34,7 @@ export class ThemeManagerService {
     });
   }
 
-  toggleColorScheme() {
+  public toggleColorScheme() {
     if (this._isDarkSub.value) {
       this.changeColorScheme('light');
     } else {
@@ -42,12 +42,12 @@ export class ThemeManagerService {
     }
   }
 
-  changeColorScheme(colorScheme: string): void {
+  public changeColorScheme(colorScheme: string): void {
     this._setStoredColorScheme(colorScheme);
     this.setColorScheme(colorScheme);
   }
 
-  isDark(): Observable<boolean> {
+  public isDark(): Observable<boolean> {
     return this._isDark$;
   }
 
@@ -69,7 +69,7 @@ export class ThemeManagerService {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(meta));
   };
 
-  getPreferredColorScheme = (): 'dark' | 'light' => {
+  public getPreferredColorScheme = (): 'dark' | 'light' => {
     const storedTheme = this._getStoredColorScheme();
 
     if (storedTheme) {
@@ -83,7 +83,7 @@ export class ThemeManagerService {
     return 'light';
   };
 
-  setColorScheme = (colorScheme: string): void => {
+  public setColorScheme = (colorScheme: string): void => {
     if (this._window !== null && this._window.matchMedia) {
       if (
         colorScheme === 'auto' &&

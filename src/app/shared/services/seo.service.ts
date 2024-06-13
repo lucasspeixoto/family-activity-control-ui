@@ -5,7 +5,7 @@ import { DOCUMENT, isPlatformServer } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SeoService {
   private readonly _router = inject(Router);
@@ -21,12 +21,16 @@ export class SeoService {
       return;
     }
 
-    this._router.events.pipe(
-      filter((event) => event instanceof NavigationEnd),
-      takeUntilDestroyed(this._destroyRef),
-    )
+    this._router.events
+      .pipe(
+        filter((event) => event instanceof NavigationEnd),
+        takeUntilDestroyed(this._destroyRef)
+      )
       .subscribe(() => {
-        this._linkCanonical?.setAttribute('href', this.getCanonicalUrl(siteUrl));
+        this._linkCanonical?.setAttribute(
+          'href',
+          this.getCanonicalUrl(siteUrl)
+        );
       });
   }
 

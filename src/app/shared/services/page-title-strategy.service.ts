@@ -12,9 +12,9 @@ export class PageTitleStrategyService extends TitleStrategy {
     const title = this.buildTitle(routerState);
 
     if (title !== undefined) {
-      this._title.setTitle(`${title} | Controle Familiar`);
+      this._title.setTitle(`${title} | Family Control`);
     } else {
-      this._title.setTitle('Controle Familiar');
+      this._title.setTitle('Family Control');
     }
   }
 }
