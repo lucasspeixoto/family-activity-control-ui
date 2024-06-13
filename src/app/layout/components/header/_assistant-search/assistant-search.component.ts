@@ -14,7 +14,7 @@ import { TemplatePortal } from '@angular/cdk/portal';
 import { MatButton, MatIconButton } from '@angular/material/button';
 
 import { FormsModule } from '@angular/forms';
-import { EmrAvatarModule } from '@shared/components/avatar';
+
 import { SuggestionsComponent, SuggestionBlockComponent, SuggestionComponent, SuggestionIconDirective, SuggestionThumbDirective } from '@shared/components/suggestions';
 
 @Component({
@@ -30,11 +30,10 @@ import { SuggestionsComponent, SuggestionBlockComponent, SuggestionComponent, Su
     SuggestionComponent,
     MatButton,
     SuggestionIconDirective,
-    EmrAvatarModule,
     SuggestionThumbDirective,
     FormsModule,
     MatIconButton
-  ],
+],
   templateUrl: './assistant-search.component.html',
   styleUrl: './assistant-search.component.scss',
   host: {

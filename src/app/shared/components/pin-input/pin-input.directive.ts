@@ -10,7 +10,8 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: '[facPinInput]'
+    selector: '[facPinInput]',
+    standalone: true
 })
 export class PinInputDirective implements OnInit {
   private _elementRef = inject(ElementRef);

@@ -26,8 +26,9 @@ import {
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, MatSortHeader, Sort } from '@angular/material/sort';
-import { EmrSkeletonModule } from '../../skeleton';
+
 import { NgComponentOutlet } from '@angular/common';
+import { SkeletonComponent, SkeletonLineComponent, SkeletonBlockComponent } from '@shared/components/skeleton';
 
 @Component({
   selector: 'fac-data-view',
@@ -47,9 +48,9 @@ import { NgComponentOutlet } from '@angular/common';
     MatHeaderCellDef,
     MatSort,
     MatSortHeader,
-    EmrSkeletonModule,
-    NgComponentOutlet
-  ],
+    NgComponentOutlet,
+    SkeletonComponent, SkeletonLineComponent, SkeletonBlockComponent
+],
   templateUrl: './data-view.component.html',
   styleUrl: './data-view.component.scss',
   host: {

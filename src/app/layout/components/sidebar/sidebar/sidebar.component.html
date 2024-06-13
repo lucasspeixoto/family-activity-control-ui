@@ -4,8 +4,8 @@
   </div>
   <div class="body">
     <fac-navigation #navigation [activeKey]="activeLinkId" class="navigation">
-      @for (navItem of navItems; track navItem) { @switch (navItem.type) { @case
-      ('heading') {
+      @for (navItem of navItems; track navItem) { @switch (navItem.type) {
+      @case ('heading') {
       <fac-navigation-heading>{{ navItem.name }}</fac-navigation-heading>
       } @case ('group') {
       <fac-navigation-group>
@@ -13,21 +13,15 @@
           @if (navItem.icon) {
           <mat-icon facNavigationItemIcon class="font-icon">{{
             navItem.icon
-          }}</mat-icon>
+            }}</mat-icon>
           }
           {{ navItem.name }}
-          <mat-icon facNavigationGroupToggleIcon class="font-icon"
-            >arrow_drop_down</mat-icon
-          >
+          <mat-icon facNavigationGroupToggleIcon class="font-icon">arrow_drop_down</mat-icon>
         </fac-navigation-group-toggle>
         <fac-navigation-group-menu [key]="navItem.id">
           @for (childItem of navItem.children | orderBy:'name'; track childItem)
           {
-          <a
-            fac-navigation-item
-            [routerLink]="childItem.link"
-            [key]="childItem.link"
-          >
+          <a fac-navigation-item [routerLink]="childItem.link" [key]="childItem.link">
             {{ childItem.name }}
           </a>
           }
@@ -38,7 +32,7 @@
         @if (navItem.icon) {
         <mat-icon facNavigationItemIcon class="font-icon">{{
           navItem.icon
-        }}</mat-icon>
+          }}</mat-icon>
         }
         {{ navItem.name }}
       </a>
@@ -46,10 +40,6 @@
     </fac-navigation>
   </div>
   <div class="footer p-7">
-    <!--  <app-sidebar-go-to-premium></app-sidebar-go-to-premium>-->
-    <!--  <app-sidebar-upgrade-to-pro></app-sidebar-upgrade-to-pro>-->
-    <!--  <app-sidebar-upgrade-now></app-sidebar-upgrade-now>-->
-    <!--    <app-used-space></app-used-space>-->
     <app-sidebar-toolbar></app-sidebar-toolbar>
   </div>
 </div>

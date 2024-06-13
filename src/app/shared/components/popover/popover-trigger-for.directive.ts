@@ -21,14 +21,16 @@ import { TemplatePortal } from '@angular/cdk/portal';
 import { _getEventTarget } from '@angular/cdk/platform';
 import { PopoverTrigger, PopoverPosition } from './types';
 import { PositionManager } from '../overlay';
+import { MatIcon } from '@angular/material/icon';
 
 @Directive({
-  selector: '[facPopoverTriggerFor]',
-  exportAs: 'facPopoverTriggerFor',
-  host: {
-    class: 'fac-popover-trigger-for',
-    '[class.fac-popover-trigger-for--is-open]': 'api.isOpen()',
-  }
+    selector: '[facPopoverTriggerFor]',
+    exportAs: 'facPopoverTriggerFor',
+    host: {
+        class: 'fac-popover-trigger-for',
+        '[class.fac-popover-trigger-for--is-open]': 'api.isOpen()',
+    },
+    standalone: true
 })
 export class PopoverTriggerForDirective implements  OnDestroy {
   private _overlay = inject(Overlay);

@@ -6,13 +6,14 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'fac-gauge',
-  exportAs: 'facGauge',
-  templateUrl: './gauge.component.html',
-  styleUrls: ['./gauge.component.scss'],
-  host: {
-    'class': 'fac-gauge'
-  }
+    selector: 'fac-gauge',
+    exportAs: 'facGauge',
+    templateUrl: './gauge.component.html',
+    styleUrls: ['./gauge.component.scss'],
+    host: {
+        'class': 'fac-gauge'
+    },
+    standalone: true
 })
 export class GaugeComponent implements OnInit {
   value = input(0, {

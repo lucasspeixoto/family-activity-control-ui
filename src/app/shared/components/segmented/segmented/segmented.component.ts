@@ -17,26 +17,27 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
 
 @Component({
-  selector: 'fac-segmented',
-  exportAs: 'facSegmented',
-  templateUrl: './segmented.component.html',
-  styleUrl: './segmented.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => SegmentedComponent),
-      multi: true
+    selector: 'fac-segmented',
+    exportAs: 'facSegmented',
+    templateUrl: './segmented.component.html',
+    styleUrl: './segmented.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => SegmentedComponent),
+            multi: true
+        },
+        {
+            provide: ULT_SEGMENTED,
+            useExisting: forwardRef(() => SegmentedComponent)
+        }
+    ],
+    host: {
+        'class': 'fac-segmented',
+        '[class.is-disabled]': 'disabled',
     },
-    {
-      provide: ULT_SEGMENTED,
-      useExisting: forwardRef(() => SegmentedComponent)
-    }
-  ],
-  host: {
-    'class': 'fac-segmented',
-    '[class.is-disabled]': 'disabled',
-  },
+    standalone: true,
 })
 export class SegmentedComponent implements OnInit, ControlValueAccessor {
   private _elementRef = inject(ElementRef);

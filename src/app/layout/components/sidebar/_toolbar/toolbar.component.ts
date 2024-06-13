@@ -1,12 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { MatDivider } from '@angular/material/divider';
 import { AsyncPipe } from '@angular/common';
-import { EmrAvatarModule } from '@shared/components/avatar';
+
 import { MatBadge } from '@angular/material/badge';
 import { MatIcon } from '@angular/material/icon';
 import { MatIconButton } from '@angular/material/button';
 import { MatTooltip } from '@angular/material/tooltip';
 import { Router } from '@angular/router';
+import { AvatarComponent } from '@shared/components/avatar';
 
 @Component({
   selector: 'app-sidebar-toolbar',
@@ -14,12 +15,12 @@ import { Router } from '@angular/router';
   imports: [
     MatDivider,
     AsyncPipe,
-    EmrAvatarModule,
     MatBadge,
     MatIcon,
     MatIconButton,
-    MatTooltip
-  ],
+    MatTooltip,
+    AvatarComponent
+],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.scss'
 })

@@ -7,14 +7,15 @@ import { NavigationApiService } from '../navigation-api.service';
 import { NavigationItemComponent } from '../navigation-item/navigation-item.component';
 
 @Component({
-  selector: 'fac-navigation',
-  exportAs: 'facNavigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss'],
-  providers: [NavigationApiService],
-  host: {
-    class: 'fac-navigation'
-  }
+    selector: 'fac-navigation',
+    exportAs: 'facNavigation',
+    templateUrl: './navigation.component.html',
+    styleUrls: ['./navigation.component.scss'],
+    providers: [NavigationApiService],
+    host: {
+        class: 'fac-navigation'
+    },
+    standalone: true
 })
 export class NavigationComponent {
   readonly api = inject(NavigationApiService);

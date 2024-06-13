@@ -5,8 +5,9 @@ import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { RouterLink } from '@angular/router';
 import { HDividerComponent } from '@shared/components/divider';
-import { PasswordStrengthModule } from '@shared/components/password-strength';
-import { EmrPhoneInputModule, phoneValidator } from '@shared/components/phone-input';
+import { PasswordStrengthComponent } from '@shared/components/password-strength';
+
+import { phoneValidator } from '@shared/components/phone-input';
 
 
 @Component({
@@ -20,11 +21,10 @@ import { EmrPhoneInputModule, phoneValidator } from '@shared/components/phone-in
     MatLabel,
     ReactiveFormsModule,
     RouterLink,
-    PasswordStrengthModule,
-    EmrPhoneInputModule,
     MatError,
-    HDividerComponent
-  ],
+    HDividerComponent,
+    PasswordStrengthComponent
+],
   templateUrl: './create-account.component.html',
   styleUrl: './create-account.component.scss'
 })

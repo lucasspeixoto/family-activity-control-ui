@@ -9,33 +9,30 @@ import {
   QueryList,
   ViewChildren
 } from '@angular/core';
-import {
-  ControlValueAccessor,
-  FormArray,
-  FormBuilder,
-  FormGroup,
-  NG_VALUE_ACCESSOR,
-  Validators
-} from '@angular/forms';
+import { ControlValueAccessor, FormArray, FormBuilder, FormGroup, NG_VALUE_ACCESSOR, Validators, ReactiveFormsModule } from '@angular/forms';
 import { PinInputDirective } from '../pin-input.directive';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { MatInput } from '@angular/material/input';
+import { MatFormField } from '@angular/material/form-field';
 
 @Component({
-  selector: 'fac-pin-input',
-  exportAs: 'facPinInput',
-  templateUrl: './pin-input.component.html',
-  styleUrl: './pin-input.component.scss',
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => PinInputComponent),
-      multi: true
-    }
-  ],
-  host: {
-    'class': 'fac-pin-input',
-    '[class.is-disabled]': 'disabled',
-  }
+    selector: 'fac-pin-input',
+    exportAs: 'facPinInput',
+    templateUrl: './pin-input.component.html',
+    styleUrl: './pin-input.component.scss',
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => PinInputComponent),
+            multi: true
+        }
+    ],
+    host: {
+        'class': 'fac-pin-input',
+        '[class.is-disabled]': 'disabled',
+    },
+    standalone: true,
+    imports: [ReactiveFormsModule, MatFormField, MatInput, PinInputDirective]
 })
 export class PinInputComponent implements ControlValueAccessor, OnInit {
   private _fb = inject(FormBuilder);

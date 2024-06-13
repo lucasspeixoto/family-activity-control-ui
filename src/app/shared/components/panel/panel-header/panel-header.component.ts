@@ -1,13 +1,14 @@
 import { Component, ElementRef, inject, Input, OnDestroy } from '@angular/core';
 
 @Component({
-  selector: 'fac-panel-header',
-  exportAs: 'facPanelHeader',
-  templateUrl: './panel-header.component.html',
-  styleUrls: ['./panel-header.component.scss'],
-  host: {
-    'class': 'fac-panel-header'
-  }
+    selector: 'fac-panel-header',
+    exportAs: 'facPanelHeader',
+    templateUrl: './panel-header.component.html',
+    styleUrls: ['./panel-header.component.scss'],
+    host: {
+        'class': 'fac-panel-header'
+    },
+    standalone: true
 })
 export class PanelHeaderComponent implements OnDestroy {
   private _elementRef = inject(ElementRef);

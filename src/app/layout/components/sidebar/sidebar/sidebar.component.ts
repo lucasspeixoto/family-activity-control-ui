@@ -7,14 +7,9 @@ import { Location } from '@angular/common';
 import { MatRipple } from '@angular/material/core';
 
 import { ToolbarComponent } from '@layoutC/sidebar/_toolbar/toolbar.component';
-import { UpgradeToProComponent } from '@layoutC/sidebar/_upgrade-to-pro/upgrade-to-pro.component';
-import { UpgradeNowComponent } from '@layoutC/sidebar/_upgrade-now/upgrade-now.component';
-import { UsedSpaceComponent } from '@layoutC/sidebar/_used-space/used-space.component';
-import { EmrNavigationModule } from '@shared/components/navigation';
+
 import { OrderByPipe } from '@shared/pipes/order-by.pipe';
-
-
-
+import { NavigationComponent, NavigationDividerComponent, NavigationGroupComponent, NavigationGroupMenuComponent, NavigationGroupToggleComponent, NavigationGroupToggleIconDirective, NavigationHeadingComponent, NavigationItemComponent, NavigationItemIconDirective } from '@shared/components/navigation';
 
 export interface NavItem {
   type: string;
@@ -31,14 +26,19 @@ export interface NavItem {
   imports: [
     MatIcon,
     RouterLink,
-    EmrNavigationModule,
     MatRipple,
     ToolbarComponent,
     OrderByPipe,
-    UpgradeToProComponent,
-    UpgradeNowComponent,
-    UsedSpaceComponent
-  ],
+    NavigationComponent,
+    NavigationGroupMenuComponent,
+    NavigationGroupComponent,
+    NavigationGroupToggleComponent,
+    NavigationHeadingComponent,
+    NavigationItemComponent,
+    NavigationDividerComponent,
+    NavigationItemIconDirective,
+    NavigationGroupToggleIconDirective
+],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
   host: {
