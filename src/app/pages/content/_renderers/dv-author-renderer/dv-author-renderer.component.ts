@@ -1,14 +1,15 @@
 import { Component, Input } from '@angular/core';
+import { AvatarComponent } from '@shared/components/avatar';
 import { InitialsPipe } from '@shared/pipes/initials.pipe';
-import { EmrAvatarModule } from '@shared/components/avatar';
+
 
 @Component({
   selector: 'app-dv-author-renderer',
   standalone: true,
   imports: [
-    EmrAvatarModule,
-    InitialsPipe
-  ],
+    InitialsPipe,
+    AvatarComponent
+],
   templateUrl: './dv-author-renderer.component.html',
   styleUrl: './dv-author-renderer.component.scss'
 })

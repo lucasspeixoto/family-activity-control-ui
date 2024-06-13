@@ -7,10 +7,9 @@ import { MatIcon } from '@angular/material/icon';
 import { HttpClient } from '@angular/common/http';
 import { DataViewCellRenderer, DataViewColumnDef, DataViewComponent, DataViewRowSelectionEvent } from '@shared/components/data-view/public-api';
 
-import { EmrPanelModule } from '@shared/components/panel';
-import { EmrSegmentedModule } from '@shared/components/segmented/segmented.module';
 import { VDividerComponent } from '@shared/components/divider';
-
+import { PanelBodyComponent, PanelComponent, PanelFooterComponent, PanelHeaderComponent } from '@shared/components/panel';
+import { SegmentedButtonComponent, SegmentedComponent } from '@shared/components/segmented/public-api';
 
 export interface User {
   id: string;
@@ -32,16 +31,20 @@ export interface Post {
 @Component({
   standalone: true,
   imports: [
-    EmrPanelModule,
     DataViewComponent,
     MatPaginator,
     FormsModule,
-    EmrSegmentedModule,
     MatButton,
     MatIcon,
     VDividerComponent,
     MatIconButton,
-  ],
+    PanelBodyComponent,
+    SegmentedButtonComponent,
+    PanelComponent,
+    PanelHeaderComponent,
+    PanelFooterComponent,
+    SegmentedComponent
+],
   templateUrl: './post-list.component.html',
   styleUrl: './post-list.component.scss',
 })

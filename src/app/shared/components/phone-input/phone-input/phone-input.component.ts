@@ -26,16 +26,11 @@ import {
   NgForm,
   ReactiveFormsModule,
 } from '@angular/forms'
-import {
-  ErrorStateMatcher,
-  MatRippleModule,
-  _AbstractConstructor,
-  mixinErrorState,
-} from '@angular/material/core'
-import { MatDividerModule } from '@angular/material/divider'
+import { ErrorStateMatcher, MatRippleModule, _AbstractConstructor, mixinErrorState, MatRipple } from '@angular/material/core'
+import { MatDividerModule, MatDivider } from '@angular/material/divider'
 import { MatFormFieldControl } from '@angular/material/form-field'
-import { MatInputModule } from '@angular/material/input'
-import { MatMenu, MatMenuModule } from '@angular/material/menu'
+import { MatInputModule, MatInput } from '@angular/material/input'
+import { MatMenu, MatMenuModule, MatMenuTrigger, MatMenuItem } from '@angular/material/menu'
 import {
   AsYouType,
   CountryCode as CC,
@@ -51,6 +46,8 @@ import { Country } from '../model/country.model'
 import { PhoneNumberFormat } from '../model/phone-number-format.model'
 import { phoneValidator } from '../phone.validator';
 import { SearchPipe } from '../search.pipe';
+import { MatIcon } from '@angular/material/icon';
+import { IconComponent } from '../../icon/icon/icon.component';
 
 class facPhoneInputBase {
   constructor(
@@ -66,25 +63,27 @@ const _facPhoneInputMixinBase: typeof facPhoneInputBase = mixinErrorState(
 )
 
 @Component({
-  selector: 'fac-phone-input',
-  templateUrl: './phone-input.component.html',
-  styleUrls: ['./phone-input.component.scss'],
-  providers: [
-    CountryCode,
-    {
-      provide: MatFormFieldControl,
-      useExisting: PhoneInputComponent
+    selector: 'fac-phone-input',
+    templateUrl: './phone-input.component.html',
+    styleUrls: ['./phone-input.component.scss'],
+    providers: [
+        CountryCode,
+        {
+            provide: MatFormFieldControl,
+            useExisting: PhoneInputComponent
+        },
+        {
+            provide: NG_VALIDATORS,
+            useValue: phoneValidator,
+            multi: true,
+        },
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: {
+        'class': 'fac-phone-input'
     },
-    {
-      provide: NG_VALIDATORS,
-      useValue: phoneValidator,
-      multi: true,
-    },
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {
-    'class': 'fac-phone-input'
-  }
+    standalone: true,
+    imports: [MatRipple, MatMenuTrigger, IconComponent, NgIf, MatIcon, MatMenu, ReactiveFormsModule, FormsModule, MatMenuItem, NgClass, MatDivider, MatInput, SearchPipe]
 })
 export class PhoneInputComponent
   extends _facPhoneInputMixinBase

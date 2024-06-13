@@ -2,31 +2,42 @@ import {
   AfterContentInit,
   ChangeDetectorRef,
   Component,
-  ContentChildren, DestroyRef,
+  ContentChildren,
+  DestroyRef,
   inject,
   Input,
-  QueryList
+  QueryList,
 } from '@angular/core';
 import { NavigationApiService } from '../navigation-api.service';
 import { NavigationItemComponent } from '../navigation-item/navigation-item.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { CommonModule } from '@angular/common';
+import { MatRipple } from '@angular/material/core';
 
 @Component({
   selector: 'fac-navigation-group-menu',
   exportAs: 'facNavigationGroupMenu',
   templateUrl: './navigation-group-menu.component.html',
   styleUrls: ['./navigation-group-menu.component.scss'],
+  imports: [
+    CommonModule,
+    MatRipple
+  ],
   host: {
-    'class': 'fac-navigation-group-menu',
-    '[class.is-active]': 'active'
-  }
+    class: 'fac-navigation-group-menu',
+    '[class.is-active]': 'active',
+  },
+  standalone: true,
 })
 export class NavigationGroupMenuComponent implements AfterContentInit {
   readonly api = inject(NavigationApiService);
   private _cdr = inject(ChangeDetectorRef);
   private _destroyRef = inject(DestroyRef);
 
-  @ContentChildren(NavigationItemComponent, { descendants: true, emitDistinctChangesOnly: true })
+  @ContentChildren(NavigationItemComponent, {
+    descendants: true,
+    emitDistinctChangesOnly: true,
+  })
   private _items!: QueryList<NavigationItemComponent>;
 
   @Input()
@@ -43,14 +54,14 @@ export class NavigationGroupMenuComponent implements AfterContentInit {
       .pipe(takeUntilDestroyed(this._destroyRef))
       .subscribe(() => {
         this._detectGroupIsActive();
-      })
-    ;
+      });
   }
 
   private _detectGroupIsActive() {
-    const isGroupActive = this._items.filter(
-      itemComponent => this.api.isItemActive(itemComponent.key)
-    ).length > 0;
+    const isGroupActive =
+      this._items.filter((itemComponent) =>
+        this.api.isItemActive(itemComponent.key)
+      ).length > 0;
 
     if (isGroupActive) {
       if (!this.api.isGroupActive(this.key)) {

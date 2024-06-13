@@ -1,7 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { MatAnchor, MatButton, MatIconButton } from '@angular/material/button';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
 import { MatFormField, MatPrefix } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { MatBadge } from '@angular/material/badge';
@@ -15,10 +15,12 @@ import { NotificationListComponent } from '@layoutC/header/_notifications/notifi
 import { AssistantSearchComponent } from '@layoutC/header/_assistant-search/assistant-search.component';
 import { SoundEffectDirective } from '@shared/directives/sound-effect.directive';
 import { ThemeManagerService } from '@shared/services/theme-manager.service';
-import { EmrAvatarModule } from '@shared/components/avatar';
+
 import { IconComponent } from '@shared/components/icon';
-import { EmrPopoverModule } from '@shared/components/popover';
+
 import { LayoutApiService } from '../../../layout-api.service';
+import { AvatarComponent } from '@shared/components/avatar';
+import { PopoverComponent, PopoverTriggerForDirective } from '@shared/components/popover';
 
 
 @Component({
@@ -34,19 +36,22 @@ import { LayoutApiService } from '../../../layout-api.service';
     MatBadge,
     MatMenu,
     MatMenuTrigger,
+    NgTemplateOutlet,
     MatMenuItem,
-    EmrAvatarModule,
     MatDivider,
     MatButton,
     MatTooltip,
     NotificationListComponent,
-    EmrPopoverModule,
     RouterLink,
     AssistantSearchComponent,
     IconComponent,
     MatAnchor,
     SoundEffectDirective,
-  ],
+    AvatarComponent,
+    PopoverComponent,
+    PopoverTriggerForDirective,
+    MatIcon
+],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   host: {

@@ -2,19 +2,22 @@ import { Component, ContentChild, HostListener, inject, Input } from '@angular/c
 import { NavigationApiService } from '../navigation-api.service';
 import { NavigationGroupToggleIconDirective } from '../navigation-group-toggle-icon.directive';
 import { MatRipple } from '@angular/material/core';
+import { NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({
-  selector: 'fac-navigation-group-toggle',
-  exportAs: 'facNavigationGroupToggle',
-  templateUrl: './navigation-group-toggle.component.html',
-  styleUrls: ['./navigation-group-toggle.component.scss'],
-  hostDirectives: [
-    MatRipple
-  ],
-  host: {
-    class: 'fac-navigation-group-toggle',
-    '[class.is-active]': 'active'
-  }
+    selector: 'fac-navigation-group-toggle',
+    exportAs: 'facNavigationGroupToggle',
+    templateUrl: './navigation-group-toggle.component.html',
+    styleUrls: ['./navigation-group-toggle.component.scss'],
+    hostDirectives: [
+        MatRipple
+    ],
+    host: {
+        class: 'fac-navigation-group-toggle',
+        '[class.is-active]': 'active'
+    },
+    standalone: true,
+    imports: [NgIf, NgTemplateOutlet]
 })
 export class NavigationGroupToggleComponent {
   readonly api = inject(NavigationApiService);

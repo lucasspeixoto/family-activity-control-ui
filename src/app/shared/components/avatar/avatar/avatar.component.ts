@@ -12,23 +12,24 @@ import { ULT_AVATAR_ACCESSOR } from '../avatar.properties';
 const alreadyLoadedImages: string[] = [];
 
 @Component({
-  selector: 'fac-avatar,[fac-avatar]',
-  exportAs: 'facAvatar',
-  templateUrl: './avatar.component.html',
-  styleUrls: ['./avatar.component.scss'],
-  providers: [
-    {
-      provide: ULT_AVATAR_ACCESSOR,
-      useExisting: forwardRef(() => AvatarComponent),
-      multi: true
-    }
-  ],
-  host: {
-    'class': 'fac-avatar',
-    '[class.is-clickable]': 'clickable()',
-    '[class.has-automatic-color]': '!!automaticColor()',
-    '[class.has-loaded-image]': 'src() && imageLoaded',
-  }
+    selector: 'fac-avatar,[fac-avatar]',
+    exportAs: 'facAvatar',
+    templateUrl: './avatar.component.html',
+    styleUrls: ['./avatar.component.scss'],
+    providers: [
+        {
+            provide: ULT_AVATAR_ACCESSOR,
+            useExisting: forwardRef(() => AvatarComponent),
+            multi: true
+        }
+    ],
+    host: {
+        'class': 'fac-avatar',
+        '[class.is-clickable]': 'clickable()',
+        '[class.has-automatic-color]': '!!automaticColor()',
+        '[class.has-loaded-image]': 'src() && imageLoaded',
+    },
+    standalone: true
 })
 export class AvatarComponent implements OnInit, OnChanges {
   private _elementRef = inject(ElementRef);

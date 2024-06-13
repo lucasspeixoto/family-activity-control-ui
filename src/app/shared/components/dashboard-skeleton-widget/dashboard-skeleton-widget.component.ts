@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { EmrSkeletonModule } from '@shared/components/skeleton';
+import {
+  SkeletonComponent,
+  SkeletonLineComponent,
+  SkeletonBlockComponent,
+} from '../skeleton';
 
 @Component({
   selector: 'app-dashboard-skeleton-widget',
   standalone: true,
-  imports: [
-    EmrSkeletonModule
-  ],
+  imports: [SkeletonComponent, SkeletonLineComponent, SkeletonBlockComponent],
   templateUrl: './dashboard-skeleton-widget.component.html',
-  styleUrl: './dashboard-skeleton-widget.component.scss'
+  styleUrl: './dashboard-skeleton-widget.component.scss',
 })
-export class DashboardSkeletonWidgetComponent {
-
-}
+export class DashboardSkeletonWidgetComponent {}
