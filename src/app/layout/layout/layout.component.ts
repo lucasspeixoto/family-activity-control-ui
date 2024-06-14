@@ -10,13 +10,13 @@ import { LAYOUT } from '../types';
   providers: [
     {
       provide: LAYOUT,
-      useExisting: LayoutComponent
-    }
+      useExisting: LayoutComponent,
+    },
   ],
   host: {
-    'class': 'fac-layout',
-    '[class.is-window-mode]': 'windowMode'
-  }
+    class: 'fac-layout',
+    '[class.is-window-mode]': 'windowMode',
+  },
 })
 export class LayoutComponent {
   @Input()

@@ -4,12 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'posts/list',
-    loadComponent: () => import('./post-list/post-list.component').then(c => c.PostListComponent)
-  }
+    loadComponent: () =>
+      import('./post-list/post-list.component').then(c => c.PostListComponent),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ContentRoutingModule { }
+export class ContentRoutingModule {}

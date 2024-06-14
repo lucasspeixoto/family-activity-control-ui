@@ -20,8 +20,10 @@ import { IconComponent } from '@shared/components/icon';
 
 import { LayoutApiService } from '../../../layout-api.service';
 import { AvatarComponent } from '@shared/components/avatar';
-import { PopoverComponent, PopoverTriggerForDirective } from '@shared/components/popover';
-
+import {
+  PopoverComponent,
+  PopoverTriggerForDirective,
+} from '@shared/components/popover';
 
 @Component({
   selector: 'app-header',
@@ -50,8 +52,8 @@ import { PopoverComponent, PopoverTriggerForDirective } from '@shared/components
     AvatarComponent,
     PopoverComponent,
     PopoverTriggerForDirective,
-    MatIcon
-],
+    MatIcon,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   host: {

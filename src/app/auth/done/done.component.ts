@@ -5,20 +5,11 @@ import { MatAnchor, MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 
-
 @Component({
   selector: 'app-done',
   standalone: true,
-  imports: [
-    FormsModule,
-    MatButton,
-    MatIcon,
-    RouterLink,
-    MatAnchor
-],
+  imports: [FormsModule, MatButton, MatIcon, RouterLink, MatAnchor],
   templateUrl: './done.component.html',
-  styleUrl: './done.component.scss'
+  styleUrl: './done.component.scss',
 })
-export class DoneComponent {
-
-}
+export class DoneComponent {}

@@ -1,6 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { MatButton } from '@angular/material/button';
-import { MatFormField, MatLabel, MatSuffix } from '@angular/material/form-field';
+import {
+  MatFormField,
+  MatLabel,
+  MatSuffix,
+} from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { Router, RouterLink } from '@angular/router';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -17,10 +21,10 @@ import { MatIcon } from '@angular/material/icon';
     MatSuffix,
     RouterLink,
     ReactiveFormsModule,
-    MatIcon
+    MatIcon,
   ],
   templateUrl: './forgot-password.component.html',
-  styleUrl: './forgot-password.component.scss'
+  styleUrl: './forgot-password.component.scss',
 })
 export class ForgotPasswordComponent {
   private _router = inject(Router);

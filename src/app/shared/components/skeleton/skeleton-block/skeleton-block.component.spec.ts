@@ -8,8 +8,8 @@ describe('SkeletonBlockComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [SkeletonBlockComponent]
-});
+      imports: [SkeletonBlockComponent],
+    });
     fixture = TestBed.createComponent(SkeletonBlockComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

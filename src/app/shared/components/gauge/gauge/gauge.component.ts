@@ -1,29 +1,30 @@
 import {
-  Component, input,
+  Component,
+  input,
   Input,
   numberAttribute,
-  OnInit
+  OnInit,
 } from '@angular/core';
 
 @Component({
-    selector: 'fac-gauge',
-    exportAs: 'facGauge',
-    templateUrl: './gauge.component.html',
-    styleUrls: ['./gauge.component.scss'],
-    host: {
-        'class': 'fac-gauge'
-    },
-    standalone: true
+  selector: 'fac-gauge',
+  exportAs: 'facGauge',
+  templateUrl: './gauge.component.html',
+  styleUrls: ['./gauge.component.scss'],
+  host: {
+    class: 'fac-gauge',
+  },
+  standalone: true,
 })
 export class GaugeComponent implements OnInit {
   value = input(0, {
-    transform: numberAttribute
+    transform: numberAttribute,
   });
   strokeWidth = input(10, {
-    transform: numberAttribute
+    transform: numberAttribute,
   });
   radius = input(50, {
-    transform: numberAttribute
+    transform: numberAttribute,
   });
 
   protected strokeDasharray: string;

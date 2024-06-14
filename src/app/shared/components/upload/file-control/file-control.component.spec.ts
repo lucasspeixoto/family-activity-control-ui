@@ -8,8 +8,8 @@ describe('FileControlComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    declarations: [FileControlComponent]
-});
+      declarations: [FileControlComponent],
+    });
     fixture = TestBed.createComponent(FileControlComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

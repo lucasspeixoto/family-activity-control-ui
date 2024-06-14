@@ -3,20 +3,18 @@
   type="text"
   [(ngModel)]="searchText"
   placeholder="Recommend to search: My orders"
-  (focus)="focus($event, suggestionDropdown)"
-/>
+  (focus)="focus($event, suggestionDropdown)" />
 @if (searchText) {
-<div class="absolute end-1 w-max">
-  <button mat-icon-button (click)="clearText()">
-    <mat-icon class="font-icon">close</mat-icon>
-  </button>
-</div>
+  <div class="absolute end-1 w-max">
+    <button mat-icon-button (click)="clearText()">
+      <mat-icon class="font-icon">close</mat-icon>
+    </button>
+  </div>
 }
 
 <ng-template #suggestionDropdown>
   <fac-suggestions
-    class="rounded-b border-t dark:border-t-neutral-600 w-[600px] dark:bg-neutral-700 p-4 space-y-4"
-  >
+    class="rounded-b border-t dark:border-t-neutral-600 w-[600px] dark:bg-neutral-700 p-4 space-y-4">
     <fac-suggestion-block heading="Recently Viewed">
       <fac-suggestion (click)="close()">
         <mat-icon facSuggestionIcon class="font-icon">tune</mat-icon>
@@ -38,8 +36,7 @@
         <fac-avatar
           src="https://avatar.iran.liara.run/public"
           text="JJ"
-          facSuggestionThumb
-        ></fac-avatar>
+          facSuggestionThumb></fac-avatar>
         Liana Fernandes
       </fac-suggestion>
     </fac-suggestion-block>
@@ -47,8 +44,7 @@
       <fac-suggestion>
         <div
           class="size-8 rounded bg-neutral-200 dark:bg-neutral-500 text-neutral-800 shadow-sm flex items-center justify-center dark:text-neutral-200"
-          facSuggestionThumb
-        >
+          facSuggestionThumb>
           <mat-icon class="font-icon">image</mat-icon>
         </div>
         <span>Application flow.png</span> &ndash;
@@ -57,8 +53,7 @@
       <fac-suggestion>
         <div
           class="size-8 rounded bg-neutral-200 dark:bg-neutral-500 text-neutral-800 shadow-sm flex items-center justify-center dark:text-neutral-200"
-          facSuggestionThumb
-        >
+          facSuggestionThumb>
           <mat-icon class="font-icon">description</mat-icon>
         </div>
         <span>Monthly Report.pdf</span> &ndash;

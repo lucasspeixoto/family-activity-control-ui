@@ -4,12 +4,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 const LOCAL_STORAGE_KEY = 'Family-Control:Theme';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getClassNameForKey(key: string) {
   return `style-manager-${key}`;
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ThemeManagerService {
   private _document = inject(DOCUMENT);
@@ -28,8 +29,7 @@ export class ThemeManagerService {
             if (storedColorScheme !== 'light' && storedColorScheme !== 'dark') {
               this.setColorScheme(this.getPreferredColorScheme());
             }
-          })
-        ;
+          });
       }
     });
   }
@@ -56,7 +56,8 @@ export class ThemeManagerService {
       return;
     }
 
-    return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) ?? '{}').colorScheme;
+    return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) ?? '{}')
+      .colorScheme;
   };
 
   private _setStoredColorScheme = (colorScheme: string): void => {
@@ -77,7 +78,9 @@ export class ThemeManagerService {
     }
 
     if (this._window !== null && this._window.matchMedia) {
-      return this._window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      return this._window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
     }
 
     return 'light';

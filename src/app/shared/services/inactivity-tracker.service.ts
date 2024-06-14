@@ -4,7 +4,7 @@ import { DOCUMENT } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class InactivityTrackerService {
   private _destroyRef = inject(DestroyRef);
@@ -25,15 +25,13 @@ export class InactivityTrackerService {
     }
 
     this._setupTimer();
-    this._interactionEvents$.pipe(
-      takeUntilDestroyed(this._destroyRef),
-    ).subscribe(() => {
-      this._setupTimer();
-    });
+    this._interactionEvents$
+      .pipe(takeUntilDestroyed(this._destroyRef))
+      .subscribe(() => {
+        this._setupTimer();
+      });
 
-    return this._noInteraction.pipe(
-      takeUntilDestroyed(this._destroyRef)
-    );
+    return this._noInteraction.pipe(takeUntilDestroyed(this._destroyRef));
   }
 
   reset(): void {

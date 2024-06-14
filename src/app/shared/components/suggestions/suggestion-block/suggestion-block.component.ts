@@ -5,11 +5,9 @@ import { MatDivider } from '@angular/material/divider';
   selector: 'fac-suggestion-block',
   exportAs: 'facSuggestionBlock',
   standalone: true,
-  imports: [
-    MatDivider
-  ],
+  imports: [MatDivider],
   templateUrl: './suggestion-block.component.html',
-  styleUrl: './suggestion-block.component.scss'
+  styleUrl: './suggestion-block.component.scss',
 })
 export class SuggestionBlockComponent {
   @Input()

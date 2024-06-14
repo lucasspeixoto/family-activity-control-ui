@@ -8,10 +8,9 @@ describe('FilesGridComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FilesGridComponent]
-    })
-    .compileComponents();
-    
+      imports: [FilesGridComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(FilesGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

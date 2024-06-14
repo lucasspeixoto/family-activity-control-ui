@@ -1,4 +1,12 @@
-import { booleanAttribute, Component, EventEmitter, inject, input, Input, Output } from '@angular/core';
+import {
+  booleanAttribute,
+  Component,
+  EventEmitter,
+  inject,
+  input,
+  Input,
+  Output,
+} from '@angular/core';
 import { TabPanelApiService } from '../tab-panel-api.service';
 
 @Component({
@@ -6,14 +14,13 @@ import { TabPanelApiService } from '../tab-panel-api.service';
   exportAs: 'facTabPanel',
   templateUrl: './tab-panel.component.html',
   styleUrls: ['tab-panel.component.scss'],
-  providers: [
-    TabPanelApiService
-  ],
+  providers: [TabPanelApiService],
   host: {
-    'class': 'fac-tab-panel',
-    '[class.is-hide-content-if-tab-not-selected]': 'hideContentIfTabNotSelected',
+    class: 'fac-tab-panel',
+    '[class.is-hide-content-if-tab-not-selected]':
+      'hideContentIfTabNotSelected',
     '[class.is-compact]': 'compact()',
-  }
+  },
 })
 export class TabPanelComponent {
   readonly api = inject(TabPanelApiService);
@@ -27,7 +34,7 @@ export class TabPanelComponent {
   }
 
   compact = input(false, {
-    transform: booleanAttribute
+    transform: booleanAttribute,
   });
 
   @Output()

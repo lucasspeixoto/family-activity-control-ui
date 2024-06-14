@@ -1,7 +1,8 @@
 :root {
   --fac-skeleton-gap: theme('gap.4');
   --fac-skeleton-item-border-radius: theme('borderRadius.xl');
-  --fac-skeleton-item-animation: fac-skeleton-loading 1s linear infinite alternate;
+  --fac-skeleton-item-animation: fac-skeleton-loading 1s linear infinite
+    alternate;
   --fac-skeleton-block-width: theme('width.full');
   --fac-skeleton-block-height: theme('height.20');
   --fac-skeleton-line-height: theme('height.5');

@@ -2,13 +2,16 @@ import { Component, inject } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { Router, RouterLink } from '@angular/router';
 
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatFormField, MatHint, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
-import { PasswordStrengthComponent } from '@shared/components/password-strength';
-
-
 
 @Component({
   selector: 'app-set-new-password',
@@ -23,10 +26,9 @@ import { PasswordStrengthComponent } from '@shared/components/password-strength'
     MatLabel,
     ReactiveFormsModule,
     MatHint,
-    PasswordStrengthComponent
-],
+  ],
   templateUrl: './set-new-password.component.html',
-  styleUrl: './set-new-password.component.scss'
+  styleUrl: './set-new-password.component.scss',
 })
 export class SetNewPasswordComponent {
   private _router = inject(Router);

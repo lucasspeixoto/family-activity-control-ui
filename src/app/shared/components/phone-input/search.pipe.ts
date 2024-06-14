@@ -1,10 +1,10 @@
-import { Pipe, PipeTransform } from '@angular/core'
+import { Pipe, PipeTransform } from '@angular/core';
 
 import { Country } from './model/country.model';
 
 @Pipe({
-    name: 'search',
-    standalone: true
+  name: 'search',
+  standalone: true,
 })
 export class SearchPipe implements PipeTransform {
   transform(countries: Country[], searchCriteria?: string): Country[] {
@@ -12,12 +12,12 @@ export class SearchPipe implements PipeTransform {
       return countries;
     }
 
-    return countries.filter((country) => {
+    return countries.filter(country => {
       return `${country.name}+${country.dialCode}${
         country.areaCodes ? country.areaCodes.join(',') : ''
       }`
         .toLowerCase()
-        .includes(searchCriteria.toLowerCase())
+        .includes(searchCriteria.toLowerCase());
     });
   }
 }

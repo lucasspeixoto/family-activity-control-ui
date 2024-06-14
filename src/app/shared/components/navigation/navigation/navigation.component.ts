@@ -1,21 +1,26 @@
 import {
   afterNextRender,
-  Component, ContentChildren, ElementRef,
-  inject, Input, QueryList, Renderer2
+  Component,
+  ContentChildren,
+  ElementRef,
+  inject,
+  Input,
+  QueryList,
+  Renderer2,
 } from '@angular/core';
 import { NavigationApiService } from '../navigation-api.service';
 import { NavigationItemComponent } from '../navigation-item/navigation-item.component';
 
 @Component({
-    selector: 'fac-navigation',
-    exportAs: 'facNavigation',
-    templateUrl: './navigation.component.html',
-    styleUrls: ['./navigation.component.scss'],
-    providers: [NavigationApiService],
-    host: {
-        class: 'fac-navigation'
-    },
-    standalone: true
+  selector: 'fac-navigation',
+  exportAs: 'facNavigation',
+  templateUrl: './navigation.component.html',
+  styleUrls: ['./navigation.component.scss'],
+  providers: [NavigationApiService],
+  host: {
+    class: 'fac-navigation',
+  },
+  standalone: true,
 })
 export class NavigationComponent {
   readonly api = inject(NavigationApiService);
@@ -27,7 +32,11 @@ export class NavigationComponent {
 
   @Input()
   set theme(theme: string) {
-    this._renderer.setAttribute(this._elementRef.nativeElement, 'data-theme', theme);
+    this._renderer.setAttribute(
+      this._elementRef.nativeElement,
+      'data-theme',
+      theme
+    );
   }
 
   constructor() {
@@ -43,7 +52,8 @@ export class NavigationComponent {
               if (!this._isScrolledIntoView(itemElement, parentElement)) {
                 const parentRect = parentElement.getBoundingClientRect();
                 const elementRect = itemElement.getBoundingClientRect();
-                parentElement.scrollTop = elementRect.top - parentRect.height / 2;
+                parentElement.scrollTop =
+                  elementRect.top - parentRect.height / 2;
               }
 
               parentElement = null;
@@ -66,13 +76,16 @@ export class NavigationComponent {
       return false;
     }
 
-    return Math.ceil(element.scrollHeight) > Math.ceil(element.getBoundingClientRect().height);
+    return (
+      Math.ceil(element.scrollHeight) >
+      Math.ceil(element.getBoundingClientRect().height)
+    );
   }
 
   private _isScrolledIntoView(element: HTMLElement, parent: HTMLElement) {
     const elementRect = element.getBoundingClientRect();
     const parentRect = parent.getBoundingClientRect();
 
-    return (elementRect.top >= 0) && (elementRect.bottom <= parentRect.height);
+    return elementRect.top >= 0 && elementRect.bottom <= parentRect.height;
   }
 }

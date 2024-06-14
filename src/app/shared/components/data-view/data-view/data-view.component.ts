@@ -3,32 +3,42 @@ import {
   ChangeDetectorRef,
   Component,
   computed,
-  inject, Injector,
+  inject,
+  Injector,
   input,
   OnInit,
   output,
-  viewChild
+  viewChild,
 } from '@angular/core';
 import {
   MatCell,
   MatCellDef,
   MatColumnDef,
-  MatHeaderCell, MatHeaderCellDef,
+  MatHeaderCell,
+  MatHeaderCellDef,
   MatHeaderRow,
-  MatHeaderRowDef, MatRow, MatRowDef, MatTable, MatTableDataSource
+  MatHeaderRowDef,
+  MatRow,
+  MatRowDef,
+  MatTable,
+  MatTableDataSource,
 } from '@angular/material/table';
 import { MatCheckbox, MatCheckboxChange } from '@angular/material/checkbox';
 import {
   DataViewCellRenderer,
   DataViewColumnDef,
-  DataViewRowSelectionEvent
+  DataViewRowSelectionEvent,
 } from '../types';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, MatSortHeader, Sort } from '@angular/material/sort';
 
 import { NgComponentOutlet } from '@angular/common';
-import { SkeletonComponent, SkeletonLineComponent, SkeletonBlockComponent } from '@shared/components/skeleton';
+import {
+  SkeletonComponent,
+  SkeletonLineComponent,
+  SkeletonBlockComponent,
+} from '@shared/components/skeleton';
 
 @Component({
   selector: 'fac-data-view',
@@ -49,14 +59,16 @@ import { SkeletonComponent, SkeletonLineComponent, SkeletonBlockComponent } from
     MatSort,
     MatSortHeader,
     NgComponentOutlet,
-    SkeletonComponent, SkeletonLineComponent, SkeletonBlockComponent
-],
+    SkeletonComponent,
+    SkeletonLineComponent,
+    SkeletonBlockComponent,
+  ],
   templateUrl: './data-view.component.html',
   styleUrl: './data-view.component.scss',
   host: {
-    'class': 'fac-data-view',
-    '[class.highlight-header]': 'highlightHeader()'
-  }
+    class: 'fac-data-view',
+    '[class.highlight-header]': 'highlightHeader()',
+  },
 })
 export class DataViewComponent<T> implements OnInit {
   private _cdr = inject(ChangeDetectorRef);
@@ -67,24 +79,21 @@ export class DataViewComponent<T> implements OnInit {
   columnDefs = input<DataViewColumnDef[]>([]);
   data = input<T[]>([]);
   withSelection = input(false, {
-    transform: booleanAttribute
+    transform: booleanAttribute,
   });
   highlightHeader = input(false, {
-    transform: booleanAttribute
+    transform: booleanAttribute,
   });
   withSorting = input(false, {
-    transform: booleanAttribute
+    transform: booleanAttribute,
   });
   stickyHeader = input(false, {
-    transform: booleanAttribute
+    transform: booleanAttribute,
   });
   displayedColumns = computed((): string[] => {
-    const displayedColumns = this
-      .columnDefs()
+    const displayedColumns = this.columnDefs()
       .filter(colDef => colDef.visible)
-      .map(colDef => colDef.dataField)
-    ;
-
+      .map(colDef => colDef.dataField);
     if (this.withSelection()) {
       displayedColumns.unshift('selection');
     }
@@ -106,7 +115,7 @@ export class DataViewComponent<T> implements OnInit {
   });
   cellRenderers = input<DataViewCellRenderer[]>([]);
   loading = input(false, {
-    transform: booleanAttribute
+    transform: booleanAttribute,
   });
 
   protected injector = inject(Injector);
@@ -125,10 +134,15 @@ export class DataViewComponent<T> implements OnInit {
     }
 
     this.loadingCellRenderers = true;
-    const components = this.cellRenderers().map(cellRenderer => cellRenderer.component());
+    const components = this.cellRenderers().map(cellRenderer =>
+      cellRenderer.component()
+    );
     Promise.all(components).then(components => {
       components.forEach((component, index: number) => {
-        this.cellRenderersMap.set(this.cellRenderers()[index].dataRenderer, component)
+        this.cellRenderersMap.set(
+          this.cellRenderers()[index].dataRenderer,
+          component
+        );
       });
       this.loadingCellRenderers = false;
       this._cdr.detectChanges();
@@ -182,7 +196,7 @@ export class DataViewComponent<T> implements OnInit {
     this.rowSelectionChanged.emit({
       matCheckboxChange: event,
       row,
-      checked: event.checked
+      checked: event.checked,
     });
     this.selectionChanged.emit(this.selection.selected);
   }

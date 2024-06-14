@@ -24,11 +24,9 @@ import { TabPanelCustomItemComponent } from './tab-panel-custom-item/tab-panel-c
     TabPanelBodyComponent,
     TabPanelCustomItemComponent,
     TabPanelAsideContentDirective,
-    TabPanelItemIconDirective
+    TabPanelItemIconDirective,
   ],
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   exports: [
     TabPanelComponent,
     TabPanelHeaderComponent,
@@ -40,8 +38,7 @@ import { TabPanelCustomItemComponent } from './tab-panel-custom-item/tab-panel-c
     TabPanelBodyComponent,
     TabPanelCustomItemComponent,
     TabPanelAsideContentDirective,
-    TabPanelItemIconDirective
-  ]
+    TabPanelItemIconDirective,
+  ],
 })
-export class EmrTabPanelModule {
-}
+export class EmrTabPanelModule {}

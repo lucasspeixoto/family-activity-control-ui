@@ -23,7 +23,7 @@ export class SeoService {
 
     this._router.events
       .pipe(
-        filter((event) => event instanceof NavigationEnd),
+        filter(event => event instanceof NavigationEnd),
         takeUntilDestroyed(this._destroyRef)
       )
       .subscribe(() => {

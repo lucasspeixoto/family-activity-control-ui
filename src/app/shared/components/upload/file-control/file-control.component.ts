@@ -6,8 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './file-control.component.html',
   styleUrls: ['./file-control.component.scss'],
   host: {
-    'class': 'fac-file-control'
-  }
+    class: 'fac-file-control',
+  },
 })
-export class FileControlComponent {
-}
+export class FileControlComponent {}

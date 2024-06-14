@@ -8,10 +8,6 @@ import { MatRipple } from '@angular/material/core';
   imports: [],
   templateUrl: './suggestion.component.html',
   styleUrl: './suggestion.component.scss',
-  hostDirectives: [
-    MatRipple
-  ]
+  hostDirectives: [MatRipple],
 })
-export class SuggestionComponent {
-
-}
+export class SuggestionComponent {}

@@ -6,8 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './file-list.component.html',
   styleUrls: ['file-list.component.scss'],
   host: {
-    'class': 'fac-file-list'
-  }
+    class: 'fac-file-list',
+  },
 })
-export class FileListComponent {
-}
+export class FileListComponent {}

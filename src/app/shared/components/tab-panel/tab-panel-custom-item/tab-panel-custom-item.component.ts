@@ -5,7 +5,7 @@ import { TabPanelApiService } from '../tab-panel-api.service';
   selector: 'fac-tab-panel-custom-item',
   exportAs: 'facTabPanelCustomItem',
   templateUrl: './tab-panel-custom-item.component.html',
-  styleUrl: './tab-panel-custom-item.component.scss'
+  styleUrl: './tab-panel-custom-item.component.scss',
 })
 export class TabPanelCustomItemComponent {
   readonly api = inject(TabPanelApiService);

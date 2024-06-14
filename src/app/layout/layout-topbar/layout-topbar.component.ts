@@ -8,9 +8,7 @@ import { Component } from '@angular/core';
   templateUrl: './layout-topbar.component.html',
   styleUrl: './layout-topbar.component.scss',
   host: {
-    'class': 'fac-layout-topbar'
-  }
+    class: 'fac-layout-topbar',
+  },
 })
-export class LayoutTopbarComponent {
-
-}
+export class LayoutTopbarComponent {}

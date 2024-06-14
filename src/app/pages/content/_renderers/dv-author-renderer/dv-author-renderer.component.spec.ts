@@ -8,10 +8,9 @@ describe('DvAuthorRendererComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DvAuthorRendererComponent]
-    })
-    .compileComponents();
-    
+      imports: [DvAuthorRendererComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(DvAuthorRendererComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

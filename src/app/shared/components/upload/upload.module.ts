@@ -12,17 +12,15 @@ import { UploadTriggerComponent } from './upload-trigger/upload-trigger.componen
     FileListComponent,
     FileComponent,
     FileControlComponent,
-    UploadTriggerComponent
+    UploadTriggerComponent,
   ],
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   exports: [
     UploadAreaComponent,
     FileListComponent,
     FileComponent,
     FileControlComponent,
-    UploadTriggerComponent
-  ]
+    UploadTriggerComponent,
+  ],
 })
-export class EmrUploadModule { }
+export class EmrUploadModule {}

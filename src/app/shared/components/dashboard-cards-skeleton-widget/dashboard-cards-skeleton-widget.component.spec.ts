@@ -8,10 +8,9 @@ describe('DashboardCardsSkeletonWidgetComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DashboardCardsSkeletonWidgetComponent]
-    })
-    .compileComponents();
-    
+      imports: [DashboardCardsSkeletonWidgetComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(DashboardCardsSkeletonWidgetComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

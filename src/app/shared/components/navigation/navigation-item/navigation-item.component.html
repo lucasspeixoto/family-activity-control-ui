@@ -1,7 +1,9 @@
 <div class="inner" matRipple>
   <div class="icon">
     <ng-content select="[facNavigationItemIcon]"></ng-content>
-    <ng-container [ngTemplateOutlet]="iconRef.templateRef" *ngIf="iconRef"></ng-container>
+    <ng-container
+      [ngTemplateOutlet]="iconRef.templateRef"
+      *ngIf="iconRef"></ng-container>
   </div>
   <ng-content></ng-content>
 </div>

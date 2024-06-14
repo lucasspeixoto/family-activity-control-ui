@@ -8,13 +8,9 @@ import { UploadFileState } from '../properties';
   selector: 'fac-grid-file',
   exportAs: 'facGridFile',
   standalone: true,
-  imports: [
-    MatIcon,
-    EmrGaugeModule,
-    MatIconButton
-  ],
+  imports: [MatIcon, EmrGaugeModule, MatIconButton],
   templateUrl: './grid-file.component.html',
-  styleUrl: './grid-file.component.scss'
+  styleUrl: './grid-file.component.scss',
 })
 export class GridFileComponent {
   @Input()

@@ -8,11 +8,11 @@
   user-select: none;
 }
 
-:host:not([class*="w-"]):not([class*="size-"]) {
+:host:not([class*='w-']):not([class*='size-']) {
   width: var(--fac-gauge-size);
 }
 
-:host:not([class*="h-"]):not([class*="size-"]) {
+:host:not([class*='h-']):not([class*='size-']) {
   height: var(--fac-gauge-size);
 }
 
@@ -21,7 +21,9 @@
 }
 
 :host .fill {
-  transition: stroke-dasharray 1s ease 0s, stroke 1s ease 0s;
+  transition:
+    stroke-dasharray 1s ease 0s,
+    stroke 1s ease 0s;
   animation: fac-gauge-fill 1s ease forwards;
   color: var(--fac-gauge-fill);
 }

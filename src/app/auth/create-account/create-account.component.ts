@@ -1,14 +1,17 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { RouterLink } from '@angular/router';
 import { HDividerComponent } from '@shared/components/divider';
-import { PasswordStrengthComponent } from '@shared/components/password-strength';
 
 import { phoneValidator } from '@shared/components/phone-input';
-
 
 @Component({
   selector: 'app-create-account',
@@ -23,10 +26,9 @@ import { phoneValidator } from '@shared/components/phone-input';
     RouterLink,
     MatError,
     HDividerComponent,
-    PasswordStrengthComponent
-],
+  ],
   templateUrl: './create-account.component.html',
-  styleUrl: './create-account.component.scss'
+  styleUrl: './create-account.component.scss',
 })
 export class CreateAccountComponent {
   private _formBuilder = inject(FormBuilder);
@@ -36,7 +38,7 @@ export class CreateAccountComponent {
     lastName: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required]],
-    phone: ['', [Validators.required, phoneValidator]]
+    phone: ['', [Validators.required, phoneValidator]],
   });
 
   get passwordValue(): string {

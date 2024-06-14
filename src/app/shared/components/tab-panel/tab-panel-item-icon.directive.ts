@@ -4,8 +4,7 @@ import { Directive } from '@angular/core';
   selector: '[facTabPanelItemIcon]',
   exportAs: 'facTabPanelItemIcon',
   host: {
-    'class': 'fac-tab-panel-item-icon'
-  }
+    class: 'fac-tab-panel-item-icon',
+  },
 })
-export class TabPanelItemIconDirective {
-}
+export class TabPanelItemIconDirective {}

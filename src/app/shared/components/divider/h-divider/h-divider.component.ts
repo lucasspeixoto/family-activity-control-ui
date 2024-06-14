@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './h-divider.component.html',
-  styleUrl: './h-divider.component.scss'
+  styleUrl: './h-divider.component.scss',
 })
-export class HDividerComponent {
-
-}
+export class HDividerComponent {}

@@ -19,10 +19,7 @@ import { MatRipple } from '@angular/material/core';
   exportAs: 'facNavigationGroupMenu',
   templateUrl: './navigation-group-menu.component.html',
   styleUrls: ['./navigation-group-menu.component.scss'],
-  imports: [
-    CommonModule,
-    MatRipple
-  ],
+  imports: [CommonModule, MatRipple],
   host: {
     class: 'fac-navigation-group-menu',
     '[class.is-active]': 'active',
@@ -59,7 +56,7 @@ export class NavigationGroupMenuComponent implements AfterContentInit {
 
   private _detectGroupIsActive() {
     const isGroupActive =
-      this._items.filter((itemComponent) =>
+      this._items.filter(itemComponent =>
         this.api.isItemActive(itemComponent.key)
       ).length > 0;
 

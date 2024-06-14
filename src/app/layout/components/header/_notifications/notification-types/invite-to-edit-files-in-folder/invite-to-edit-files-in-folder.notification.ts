@@ -18,10 +18,10 @@ import { AvatarComponent } from '@shared/components/avatar';
     RouterLink,
     MatButton,
     IconComponent,
-    AvatarComponent
-],
+    AvatarComponent,
+  ],
   templateUrl: './invite-to-edit-files-in-folder.notification.html',
-  styleUrl: './invite-to-edit-files-in-folder.notification.scss'
+  styleUrl: './invite-to-edit-files-in-folder.notification.scss',
 })
 export class InviteToEditFilesInFolderNotification {
   @Input()

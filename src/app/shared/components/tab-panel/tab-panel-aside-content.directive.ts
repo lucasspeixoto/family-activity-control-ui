@@ -5,7 +5,7 @@ import {
   Input,
   OnInit,
   TemplateRef,
-  ViewContainerRef
+  ViewContainerRef,
 } from '@angular/core';
 import { TabPanelApiService } from './tab-panel-api.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -14,10 +14,12 @@ import { TabPanelAsideComponent } from './tab-panel-aside/tab-panel-aside.compon
 
 @Directive({
   selector: '[facTabPanelAsideContent]',
-  exportAs: 'facTabPanelAsideContent'
+  exportAs: 'facTabPanelAsideContent',
 })
 export class TabPanelAsideContentDirective implements OnInit {
-  private _aside = inject<TabPanelAsideComponent>(TAB_PANEL_ASIDE, { optional: true });
+  private _aside = inject<TabPanelAsideComponent>(TAB_PANEL_ASIDE, {
+    optional: true,
+  });
   private _api = inject(TabPanelApiService);
   private _templateRef = inject(TemplateRef);
   private _viewContainer = inject(ViewContainerRef);
@@ -44,9 +46,7 @@ export class TabPanelAsideContentDirective implements OnInit {
         } else {
           this._hide();
         }
-      })
-    ;
-
+      });
   }
 
   private _show() {

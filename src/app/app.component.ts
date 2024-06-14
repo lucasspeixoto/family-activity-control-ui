@@ -26,7 +26,7 @@ import { ScreenLoaderComponent } from './layout/components/screen-loader/screen-
   imports: [RouterOutlet, ScreenLoaderComponent, PageLoadingBarComponent],
   template: `
     @if (pageLoaded()) {
-    <fac-page-loading-bar fixed></fac-page-loading-bar>
+      <fac-page-loading-bar fixed></fac-page-loading-bar>
     }
     <app-screen-loader [loadingText]="loadingText()"></app-screen-loader>
     <router-outlet />
@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
     afterNextRender(() => {
       // Scroll a page to top if url changed
       this._router.events
-        .pipe(filter((event) => event instanceof NavigationEnd))
+        .pipe(filter(event => event instanceof NavigationEnd))
         .subscribe(() => {
           window.scrollTo({
             top: 0,

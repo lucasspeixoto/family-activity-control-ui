@@ -14,10 +14,10 @@
   }
 }
 
-:host:not([class*="w-"]):not([class*="size-"]) {
+:host:not([class*='w-']):not([class*='size-']) {
   width: var(--fac-avatar-size);
 }
 
-:host:not([class*="h-"]):not([class*="size-"]) {
+:host:not([class*='h-']):not([class*='size-']) {
   height: var(--fac-avatar-size);
 }

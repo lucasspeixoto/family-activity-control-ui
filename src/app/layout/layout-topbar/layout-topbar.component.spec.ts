@@ -8,10 +8,9 @@ describe('LayoutTopbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LayoutTopbarComponent]
-    })
-    .compileComponents();
-    
+      imports: [LayoutTopbarComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(LayoutTopbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

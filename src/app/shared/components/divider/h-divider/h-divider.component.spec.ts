@@ -8,10 +8,9 @@ describe('HDividerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HDividerComponent]
-    })
-    .compileComponents();
-    
+      imports: [HDividerComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(HDividerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

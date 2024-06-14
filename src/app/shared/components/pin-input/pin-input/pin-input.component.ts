@@ -1,38 +1,47 @@
 import {
   booleanAttribute,
   Component,
-  forwardRef, HostListener,
+  forwardRef,
+  HostListener,
   inject,
   Input,
   numberAttribute,
   OnInit,
   QueryList,
-  ViewChildren
+  ViewChildren,
 } from '@angular/core';
-import { ControlValueAccessor, FormArray, FormBuilder, FormGroup, NG_VALUE_ACCESSOR, Validators, ReactiveFormsModule } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  FormArray,
+  FormBuilder,
+  FormGroup,
+  NG_VALUE_ACCESSOR,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { PinInputDirective } from '../pin-input.directive';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { MatInput } from '@angular/material/input';
 import { MatFormField } from '@angular/material/form-field';
 
 @Component({
-    selector: 'fac-pin-input',
-    exportAs: 'facPinInput',
-    templateUrl: './pin-input.component.html',
-    styleUrl: './pin-input.component.scss',
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => PinInputComponent),
-            multi: true
-        }
-    ],
-    host: {
-        'class': 'fac-pin-input',
-        '[class.is-disabled]': 'disabled',
+  selector: 'fac-pin-input',
+  exportAs: 'facPinInput',
+  templateUrl: './pin-input.component.html',
+  styleUrl: './pin-input.component.scss',
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => PinInputComponent),
+      multi: true,
     },
-    standalone: true,
-    imports: [ReactiveFormsModule, MatFormField, MatInput, PinInputDirective]
+  ],
+  host: {
+    class: 'fac-pin-input',
+    '[class.is-disabled]': 'disabled',
+  },
+  standalone: true,
+  imports: [ReactiveFormsModule, MatFormField, MatInput, PinInputDirective],
 })
 export class PinInputComponent implements ControlValueAccessor, OnInit {
   private _fb = inject(FormBuilder);
@@ -69,12 +78,14 @@ export class PinInputComponent implements ControlValueAccessor, OnInit {
 
     for (let i = 0; i < this.length; i++) {
       inputs.push(
-        this._fb.control({ value: '', disabled: this.disabled }, [Validators.required])
+        this._fb.control({ value: '', disabled: this.disabled }, [
+          Validators.required,
+        ])
       );
     }
 
     this.form = this._fb.group({
-      value: this._fb.array(inputs)
+      value: this._fb.array(inputs),
     });
   }
 
@@ -112,14 +123,18 @@ export class PinInputComponent implements ControlValueAccessor, OnInit {
 
   @HostListener('paste', ['$event'])
   _valuePaste(event: ClipboardEvent) {
-      event.preventDefault();
-      event.stopPropagation();
-      // const value = event.clipboardData?.getData('text/plain');
+    event.preventDefault();
+    event.stopPropagation();
+    // const value = event.clipboardData?.getData('text/plain');
   }
 
   @HostListener('keydown', ['$event'])
   private _handleKeyDown(event: KeyboardEvent) {
-    if (event.key === 'Delete' || event.key === 'Backspace' || event.key === 'Tab') {
+    if (
+      event.key === 'Delete' ||
+      event.key === 'Backspace' ||
+      event.key === 'Tab'
+    ) {
       const element = event.target as HTMLInputElement;
 
       if (event.key === 'Backspace' && !element.value) {
@@ -145,13 +160,20 @@ export class PinInputComponent implements ControlValueAccessor, OnInit {
 
   @HostListener('keyup', ['$event'])
   private _handleKeyUp(event: KeyboardEvent) {
-    if (event.key === 'Shift' || (event.keyCode >= 112 && event.keyCode <= 123)) {
+    if (
+      event.key === 'Shift' ||
+      (event.keyCode >= 112 && event.keyCode <= 123)
+    ) {
       event.preventDefault();
       event.stopPropagation();
       return;
     }
 
-    if (event.key === 'Delete' || event.key === 'Backspace' || event.key === 'Tab') {
+    if (
+      event.key === 'Delete' ||
+      event.key === 'Backspace' ||
+      event.key === 'Tab'
+    ) {
       this.onChange(this.form.value.value.join(''));
       return;
     }

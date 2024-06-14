@@ -7,8 +7,8 @@ import { UploadFileState } from '../properties';
   templateUrl: './file.component.html',
   styleUrls: ['./file.component.scss'],
   host: {
-    'class': 'fac-file'
-  }
+    class: 'fac-file',
+  },
 })
 export class FileComponent {
   @Input()

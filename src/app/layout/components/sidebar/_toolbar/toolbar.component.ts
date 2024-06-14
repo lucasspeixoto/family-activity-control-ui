@@ -19,17 +19,15 @@ import { AvatarComponent } from '@shared/components/avatar';
     MatIcon,
     MatIconButton,
     MatTooltip,
-    AvatarComponent
-],
+    AvatarComponent,
+  ],
   templateUrl: './toolbar.component.html',
-  styleUrl: './toolbar.component.scss'
+  styleUrl: './toolbar.component.scss',
 })
 export class ToolbarComponent {
-
   public router = inject(Router);
 
   public logoutHandler(): void {
     this.router.navigateByUrl('/auth/sign-in');
   }
-
 }

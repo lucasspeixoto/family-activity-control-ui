@@ -1,7 +1,7 @@
-:host {;
+:host {
   flex: none;
 
-  &:not([class*="h-"]) {
+  &:not([class*='h-']) {
     height: var(--fac-panel-footer-height);
   }
 }

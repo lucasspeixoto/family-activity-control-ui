@@ -12,7 +12,6 @@ import { Router, RouterLink } from '@angular/router';
 
 import { MatIcon } from '@angular/material/icon';
 
-
 @Component({
   selector: 'app-password-reset',
   standalone: true,
@@ -25,7 +24,7 @@ import { MatIcon } from '@angular/material/icon';
     RouterLink,
     ReactiveFormsModule,
     MatIcon,
-],
+  ],
   templateUrl: './password-reset.component.html',
   styleUrl: './password-reset.component.scss',
 })

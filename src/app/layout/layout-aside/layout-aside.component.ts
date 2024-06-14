@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './layout-aside.component.html',
-  styleUrl: './layout-aside.component.scss'
+  styleUrl: './layout-aside.component.scss',
 })
-export class LayoutAsideComponent {
-
-}
+export class LayoutAsideComponent {}

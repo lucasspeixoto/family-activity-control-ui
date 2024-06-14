@@ -1,9 +1,9 @@
 import { Directive, ElementRef, inject } from '@angular/core';
 
 @Directive({
-    selector: '[facPopoverOrigin]',
-    exportAs: 'facPopoverOrigin',
-    standalone: true
+  selector: '[facPopoverOrigin]',
+  exportAs: 'facPopoverOrigin',
+  standalone: true,
 })
 export class PopoverOriginDirective {
   private _elementRef = inject(ElementRef);
@@ -12,7 +12,7 @@ export class PopoverOriginDirective {
     return {
       nativeElement: () => {
         return this._elementRef?.nativeElement;
-      }
-    }
+      },
+    };
   }
 }
