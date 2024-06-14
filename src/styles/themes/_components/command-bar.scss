@@ -19,9 +19,12 @@
   --fac-command-bar-separator-height: 100%;
   --fac-command-bar-separator-bg: theme('colors.neutral.200');
   --fac-command-bar-command-shortcut-bg: theme('colors.neutral.100');
-  --fac-command-bar-command-shortcut-border-radius: theme('borderRadius.DEFAULT');
+  --fac-command-bar-command-shortcut-border-radius: theme(
+    'borderRadius.DEFAULT'
+  );
   --fac-command-bar-command-shortcut-font-size: theme('fontSize.xs');
   --fac-command-bar-command-shortcut-color: theme('colors.neutral.600');
   --fac-command-bar-command-shortcut-padding: 0 5px;
-  --fac-command-bar-command-shortcut-border: 1px solid theme('colors.neutral.200');
+  --fac-command-bar-command-shortcut-border: 1px solid
+    theme('colors.neutral.200');
 }

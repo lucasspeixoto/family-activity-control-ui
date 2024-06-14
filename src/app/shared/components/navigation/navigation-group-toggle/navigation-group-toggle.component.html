@@ -1,8 +1,13 @@
-<div class="flex items-center h-full w-full whitespace-nowrap overflow-hidden overflow-ellipsis">
-  <div class="icon"><ng-content select="[facNavigationItemIcon]"></ng-content></div>
+<div
+  class="flex items-center h-full w-full whitespace-nowrap overflow-hidden overflow-ellipsis">
+  <div class="icon">
+    <ng-content select="[facNavigationItemIcon]"></ng-content>
+  </div>
   <ng-content></ng-content>
 </div>
 <div class="toggle">
   <ng-content select="[facNavigationGroupToggleIcon]"></ng-content>
-  <ng-container [ngTemplateOutlet]="iconRef.templateRef" *ngIf="iconRef"></ng-container>
+  <ng-container
+    [ngTemplateOutlet]="iconRef.templateRef"
+    *ngIf="iconRef"></ng-container>
 </div>

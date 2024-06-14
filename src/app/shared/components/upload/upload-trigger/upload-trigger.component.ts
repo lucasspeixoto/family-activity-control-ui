@@ -1,4 +1,13 @@
-import { Component, DestroyRef, EventEmitter, HostListener, inject, Input, Output, Renderer2 } from '@angular/core';
+import {
+  Component,
+  DestroyRef,
+  EventEmitter,
+  HostListener,
+  inject,
+  Input,
+  Output,
+  Renderer2,
+} from '@angular/core';
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
 import { UploadSelectedEvent } from '../properties';
 import { fromEvent } from 'rxjs';
@@ -10,8 +19,8 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   templateUrl: './upload-trigger.component.html',
   styleUrls: ['./upload-trigger.component.scss'],
   host: {
-    'class': 'fac-upload-trigger'
-  }
+    class: 'fac-upload-trigger',
+  },
 })
 export class UploadTriggerComponent {
   protected _renderer = inject(Renderer2);
@@ -57,10 +66,9 @@ export class UploadTriggerComponent {
           multiple: this._multiple,
           fileList: element.files,
           event,
-          files
+          files,
         });
-      })
-    ;
+      });
 
     element.click();
   }

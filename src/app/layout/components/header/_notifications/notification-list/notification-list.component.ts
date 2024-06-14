@@ -12,7 +12,12 @@ import { InviteToEditFilesInFolderNotification } from '../notification-types/inv
 import { HDividerComponent } from '@shared/components/divider';
 
 import { Notification } from '../types';
-import { SkeletonBlockComponent, SkeletonCircleComponent, SkeletonComponent, SkeletonLineComponent } from '@shared/components/skeleton';
+import {
+  SkeletonBlockComponent,
+  SkeletonCircleComponent,
+  SkeletonComponent,
+  SkeletonLineComponent,
+} from '@shared/components/skeleton';
 
 @Component({
   selector: 'app-header-notification-list',
@@ -28,7 +33,7 @@ import { SkeletonBlockComponent, SkeletonCircleComponent, SkeletonComponent, Ske
     SkeletonLineComponent,
     SkeletonComponent,
     SkeletonBlockComponent,
-    SkeletonCircleComponent
+    SkeletonCircleComponent,
   ],
   templateUrl: './notification-list.component.html',
   styleUrl: './notification-list.component.scss',

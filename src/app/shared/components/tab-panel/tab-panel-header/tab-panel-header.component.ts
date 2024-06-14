@@ -6,8 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './tab-panel-header.component.html',
   styleUrls: ['./tab-panel-header.component.scss'],
   host: {
-    'class': 'fac-tab-panel-header'
-  }
+    class: 'fac-tab-panel-header',
+  },
 })
-export class TabPanelHeaderComponent {
-}
+export class TabPanelHeaderComponent {}

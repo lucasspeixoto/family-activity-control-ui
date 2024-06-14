@@ -1,6 +1,7 @@
 import {
   booleanAttribute,
-  ChangeDetectionStrategy, ChangeDetectorRef,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   EventEmitter,
@@ -9,7 +10,7 @@ import {
   Input,
   OnInit,
   Output,
-  Renderer2
+  Renderer2,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SegmentedTriggerSize, ULT_SEGMENTED } from '../types';
@@ -17,27 +18,27 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
 
 @Component({
-    selector: 'fac-segmented',
-    exportAs: 'facSegmented',
-    templateUrl: './segmented.component.html',
-    styleUrl: './segmented.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => SegmentedComponent),
-            multi: true
-        },
-        {
-            provide: ULT_SEGMENTED,
-            useExisting: forwardRef(() => SegmentedComponent)
-        }
-    ],
-    host: {
-        'class': 'fac-segmented',
-        '[class.is-disabled]': 'disabled',
+  selector: 'fac-segmented',
+  exportAs: 'facSegmented',
+  templateUrl: './segmented.component.html',
+  styleUrl: './segmented.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => SegmentedComponent),
+      multi: true,
     },
-    standalone: true,
+    {
+      provide: ULT_SEGMENTED,
+      useExisting: forwardRef(() => SegmentedComponent),
+    },
+  ],
+  host: {
+    class: 'fac-segmented',
+    '[class.is-disabled]': 'disabled',
+  },
+  standalone: true,
 })
 export class SegmentedComponent implements OnInit, ControlValueAccessor {
   private _elementRef = inject(ElementRef);
@@ -56,7 +57,11 @@ export class SegmentedComponent implements OnInit, ControlValueAccessor {
   @Input()
   set size(size: SegmentedTriggerSize) {
     this._size = size;
-    this._renderer.setAttribute(this._elementRef.nativeElement, 'fac-segmented-size', this._size);
+    this._renderer.setAttribute(
+      this._elementRef.nativeElement,
+      'fac-segmented-size',
+      this._size
+    );
   }
   private _size: SegmentedTriggerSize = 'default';
 
@@ -69,12 +74,16 @@ export class SegmentedComponent implements OnInit, ControlValueAccessor {
   get api() {
     return {
       isSelected: (value: any) => this._selectedValue.isSelected(value),
-      select: (value: any) => this._select(value)
+      select: (value: any) => this._select(value),
     };
   }
 
   ngOnInit() {
-    this._renderer.setAttribute(this._elementRef.nativeElement, 'fac-segmented-size', this._size);
+    this._renderer.setAttribute(
+      this._elementRef.nativeElement,
+      'fac-segmented-size',
+      this._size
+    );
   }
 
   writeValue(value: any) {

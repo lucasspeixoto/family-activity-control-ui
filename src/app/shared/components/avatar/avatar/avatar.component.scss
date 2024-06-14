@@ -9,23 +9,23 @@
   position: relative;
   box-shadow: var(--fac-avatar-inner-border);
 
-  &:not([class*="text-"]) {
+  &:not([class*='text-']) {
     color: var(--fac-avatar-color);
   }
 
-  &:not([class*="rounded"]) {
+  &:not([class*='rounded']) {
     border-radius: var(--fac-avatar-border-radius);
   }
 
-  &:not([class*="w-"]):not([class*="size-"]) {
+  &:not([class*='w-']):not([class*='size-']) {
     width: var(--fac-avatar-size);
   }
 
-  &:not([class*="h-"]):not([class*="size-"]) {
+  &:not([class*='h-']):not([class*='size-']) {
     height: var(--fac-avatar-size);
   }
 
-  &:not([class*="bg-"]):not(.has-loaded-image) {
+  &:not([class*='bg-']):not(.has-loaded-image) {
     background: var(--fac-avatar-bg);
   }
 
@@ -44,7 +44,7 @@
   }
 
   &.is-clickable:active {
-    scale: .97;
+    scale: 0.97;
   }
 
   .image {

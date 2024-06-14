@@ -5,10 +5,10 @@
   border-radius: 50%;
 }
 
-:host:not([class*="w-"]):not([class*="size-"]) {
+:host:not([class*='w-']):not([class*='size-']) {
   width: var(--fac-skeleton-circle-size);
 }
 
-:host:not([class*="h-"]):not([class*="size-"]) {
+:host:not([class*='h-']):not([class*='size-']) {
   height: var(--fac-skeleton-circle-size);
 }

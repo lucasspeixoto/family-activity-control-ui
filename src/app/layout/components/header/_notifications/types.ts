@@ -3,15 +3,15 @@ export interface Notification {
     name: string;
     username: string;
     avatarUrl?: string;
-  },
+  };
   notifier: {
     name: string;
     username: string;
     avatarUrl?: string;
-  },
+  };
   entity: {
     content: any;
-  },
-  typeId: string,
+  };
+  typeId: string;
   createdAt: string;
 }

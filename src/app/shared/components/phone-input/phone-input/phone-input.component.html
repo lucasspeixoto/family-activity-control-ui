@@ -6,9 +6,15 @@
     class="country-selector"
     [disabled]="disabled"
     (menuOpened)="menuSearchInput?.nativeElement?.focus()">
-    <fac-icon [name]="'circle-flags:' + selectedCountry.flagClass.toLowerCase()" class="flag-icon" />
-    <span class="country-selector-code" *ngIf="selectedCountry?.dialCode">+{{ selectedCountry.dialCode }}</span>
-    <mat-icon class="font-icon text-lg text-neutral-500 relative -top-px">expand_more</mat-icon>
+    <fac-icon
+      [name]="'circle-flags:' + selectedCountry.flagClass.toLowerCase()"
+      class="flag-icon" />
+    <span class="country-selector-code" *ngIf="selectedCountry?.dialCode"
+      >+{{ selectedCountry.dialCode }}</span
+    >
+    <mat-icon class="font-icon text-lg text-neutral-500 relative -top-px"
+      >expand_more</mat-icon
+    >
   </button>
   <mat-menu #menu="matMenu" class="w-[320px]">
     @if (enableSearch) {
@@ -18,7 +24,7 @@
         [(ngModel)]="searchCriteria"
         type="text"
         [placeholder]="searchPlaceholder"
-        (click)="$event.stopPropagation()">
+        (click)="$event.stopPropagation()" />
     }
 
     @for (country of preferredCountriesInDropDown; track country) {
@@ -33,7 +39,10 @@
         <div class="label-wrapper">
           {{ country.name }}
           @if (country?.dialCode) {
-            <span [class.whitespace-nowrap]="!searchCriteria" class="text-neutral-500">+{{ country.dialCode }}
+            <span
+              [class.whitespace-nowrap]="!searchCriteria"
+              class="text-neutral-500"
+              >+{{ country.dialCode }}
               @if (country.areaCodes) {
                 {{ country.areaCodes.join(', ') }}
               }
@@ -47,7 +56,7 @@
       <mat-divider></mat-divider>
     }
 
-    @for (country of allCountries | search : searchCriteria; track country) {
+    @for (country of allCountries | search: searchCriteria; track country) {
       <button
         type="button"
         mat-menu-item
@@ -59,7 +68,10 @@
         <div>
           {{ country.name }}
           @if (country?.dialCode) {
-            <span [class.whitespace-nowrap]="!searchCriteria" class="text-neutral-500">+{{ country.dialCode }}
+            <span
+              [class.whitespace-nowrap]="!searchCriteria"
+              class="text-neutral-500"
+              >+{{ country.dialCode }}
               @if (country.areaCodes) {
                 {{ country.areaCodes.join(', ') }}
               }
@@ -82,5 +94,5 @@
     [errorStateMatcher]="errorStateMatcher"
     [placeholder]="inputPlaceholder"
     [disabled]="disabled"
-    #focusable>
+    #focusable />
 </div>

@@ -8,8 +8,8 @@ describe('UploadTriggerComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    declarations: [UploadTriggerComponent]
-});
+      declarations: [UploadTriggerComponent],
+    });
     fixture = TestBed.createComponent(UploadTriggerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

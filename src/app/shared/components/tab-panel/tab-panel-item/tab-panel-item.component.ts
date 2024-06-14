@@ -9,17 +9,17 @@ import { MatRipple } from '@angular/material/core';
   exportAs: 'facTabPanelItem',
   templateUrl: './tab-panel-item.component.html',
   styleUrls: ['tab-panel-item.component.scss'],
-  hostDirectives: [
-    MatRipple
-  ],
+  hostDirectives: [MatRipple],
   host: {
-    'class': 'fac-tab-panel-item',
+    class: 'fac-tab-panel-item',
     '[class.is-active]': 'api.isActive(this.for)',
-  }
+  },
 })
 export class TabPanelItemComponent {
   readonly api = inject(TabPanelApiService);
-  private _nav = inject<TabPanelNavComponent>(TAB_PANEL_NAV, { optional: true });
+  private _nav = inject<TabPanelNavComponent>(TAB_PANEL_NAV, {
+    optional: true,
+  });
 
   @Input()
   for: any = this._nav ? this._nav.nextId++ : null;

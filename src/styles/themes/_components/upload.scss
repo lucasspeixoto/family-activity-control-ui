@@ -5,7 +5,8 @@
   --fac-upload-area-border-radius: theme('borderRadius.md');
   --fac-upload-area-font-size: theme('fontSize.sm');
   --fac-upload-area-color: theme('colors.neutral.500');
-  --fac-upload-area-drop-active-border: theme('width.px') dashed theme('colors.primary.DEFAULT');
+  --fac-upload-area-drop-active-border: theme('width.px') dashed
+    theme('colors.primary.DEFAULT');
   --fac-upload-area-drop-active-color: theme('colors.primary.DEFAULT');
   --fac-file-list-gap: theme('gap.3');
   --fac-file-padding: theme('padding.4') 0;
@@ -29,7 +30,8 @@ html.dark {
   --fac-upload-area-bg: theme('colors.neutral.600');
   --fac-upload-area-color: theme('colors.neutral.200');
   --fac-upload-area-border: theme('width.px') dashed theme('colors.neutral.400');
-  --fac-upload-area-drop-active-border: theme('width.px') dashed theme('colors.primary.DEFAULT');
+  --fac-upload-area-drop-active-border: theme('width.px') dashed
+    theme('colors.primary.DEFAULT');
   --fac-upload-area-drop-active-color: theme('colors.primary.DEFAULT');
   --fac-file-error-color: theme('colors.red.300');
   --fac-file-progress-bg: theme('colors.neutral.500');

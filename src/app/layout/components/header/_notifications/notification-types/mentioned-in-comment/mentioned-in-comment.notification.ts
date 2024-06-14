@@ -11,15 +11,9 @@ import { AvatarComponent } from '@shared/components/avatar';
 @Component({
   selector: 'app-mentioned-in-comment',
   standalone: true,
-  imports: [
-    MatIcon,
-    MatRipple,
-    RouterLink,
-    IconComponent,
-    AvatarComponent
-],
+  imports: [MatIcon, MatRipple, RouterLink, IconComponent, AvatarComponent],
   templateUrl: './mentioned-in-comment.notification.html',
-  styleUrl: './mentioned-in-comment.notification.scss'
+  styleUrl: './mentioned-in-comment.notification.scss',
 })
 export class MentionedInCommentNotification {
   @Input()

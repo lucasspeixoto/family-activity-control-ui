@@ -6,7 +6,7 @@ import {
   input,
   OnChanges,
   OnInit,
-  SimpleChanges
+  SimpleChanges,
 } from '@angular/core';
 import { loadIcon } from 'iconify-icon';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -19,9 +19,9 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   styleUrls: ['./icon.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'class': 'fac-icon',
+    class: 'fac-icon',
     '[innerHTML]': '_iconHtml',
-  }
+  },
 })
 export class IconComponent implements OnInit, OnChanges {
   private _cdr = inject(ChangeDetectorRef);

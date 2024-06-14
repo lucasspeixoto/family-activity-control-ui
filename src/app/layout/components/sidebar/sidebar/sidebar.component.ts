@@ -1,4 +1,4 @@
-import { Component, inject, ViewChild } from '@angular/core';
+import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
@@ -9,7 +9,17 @@ import { MatRipple } from '@angular/material/core';
 import { ToolbarComponent } from '@layoutC/sidebar/_toolbar/toolbar.component';
 
 import { OrderByPipe } from '@shared/pipes/order-by.pipe';
-import { NavigationComponent, NavigationDividerComponent, NavigationGroupComponent, NavigationGroupMenuComponent, NavigationGroupToggleComponent, NavigationGroupToggleIconDirective, NavigationHeadingComponent, NavigationItemComponent, NavigationItemIconDirective } from '@shared/components/navigation';
+import {
+  NavigationComponent,
+  NavigationDividerComponent,
+  NavigationGroupComponent,
+  NavigationGroupMenuComponent,
+  NavigationGroupToggleComponent,
+  NavigationGroupToggleIconDirective,
+  NavigationHeadingComponent,
+  NavigationItemComponent,
+  NavigationItemIconDirective,
+} from '@shared/components/navigation';
 
 export interface NavItem {
   type: string;
@@ -37,21 +47,21 @@ export interface NavItem {
     NavigationItemComponent,
     NavigationDividerComponent,
     NavigationItemIconDirective,
-    NavigationGroupToggleIconDirective
-],
+    NavigationGroupToggleIconDirective,
+  ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
   host: {
-    'class': 'sidebar'
-  }
+    class: 'sidebar',
+  },
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
   public router = inject(Router);
   public location = inject(Location);
   public height: string | null = '200px';
 
   @ViewChild('navigation', { static: true })
-  public navigation!: any;
+  public navigation!: string;
 
   public navItems: NavItem[] = [
     {
@@ -63,11 +73,11 @@ export class SidebarComponent {
         {
           type: 'link',
           name: 'Post List',
-          link: '/pages/content/posts/list'
-        }
-      ]
+          link: '/pages/content/posts/list',
+        },
+      ],
     },
-   
+
     /* 
      {
       id: 'customization',
@@ -588,25 +598,24 @@ export class SidebarComponent {
     }, */
   ];
   navItemLinks: NavItem[] = [];
-  activeLinkId: any = '/';
+  activeLinkId: string | null = '/';
 
   ngOnInit() {
     this.navItems.forEach(navItem => {
       this.navItemLinks.push(navItem);
 
       if (navItem.children) {
-        this.navItemLinks = this.navItemLinks.concat(navItem.children as NavItem[]);
+        this.navItemLinks = this.navItemLinks.concat(
+          navItem.children as NavItem[]
+        );
       }
     });
     this._activateLink();
     this.router.events
-      .pipe(
-        filter(event => event instanceof NavigationEnd)
-      )
+      .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
         this._activateLink();
-      })
-    ;
+      });
   }
 
   private _activateLink() {
@@ -615,7 +624,7 @@ export class SidebarComponent {
     );
 
     if (activeLink) {
-      this.activeLinkId = activeLink.link;
+      this.activeLinkId = activeLink.link!;
     } else {
       this.activeLinkId = null;
     }

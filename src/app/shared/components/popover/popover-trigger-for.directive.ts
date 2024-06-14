@@ -1,19 +1,23 @@
 import {
-  Directive, ElementRef,
+  Directive,
+  ElementRef,
   EventEmitter,
   HostListener,
-  inject, Injector,
-  Input, OnDestroy,
+  inject,
+  Injector,
+  Input,
+  OnDestroy,
   Output,
   TemplateRef,
-  ViewContainerRef
+  ViewContainerRef,
 } from '@angular/core';
 import {
   ConnectedPosition,
-  FlexibleConnectedPositionStrategy, FlexibleConnectedPositionStrategyOrigin,
+  FlexibleConnectedPositionStrategy,
+  FlexibleConnectedPositionStrategyOrigin,
   Overlay,
   OverlayConfig,
-  OverlayRef
+  OverlayRef,
 } from '@angular/cdk/overlay';
 import { fromEvent, merge, Subject, takeUntil } from 'rxjs';
 import { Directionality } from '@angular/cdk/bidi';
@@ -24,15 +28,15 @@ import { PositionManager } from '../overlay';
 import { MatIcon } from '@angular/material/icon';
 
 @Directive({
-    selector: '[facPopoverTriggerFor]',
-    exportAs: 'facPopoverTriggerFor',
-    host: {
-        class: 'fac-popover-trigger-for',
-        '[class.fac-popover-trigger-for--is-open]': 'api.isOpen()',
-    },
-    standalone: true
+  selector: '[facPopoverTriggerFor]',
+  exportAs: 'facPopoverTriggerFor',
+  host: {
+    class: 'fac-popover-trigger-for',
+    '[class.fac-popover-trigger-for--is-open]': 'api.isOpen()',
+  },
+  standalone: true,
 })
-export class PopoverTriggerForDirective implements  OnDestroy {
+export class PopoverTriggerForDirective implements OnDestroy {
   private _overlay = inject(Overlay);
   private _elementRef: ElementRef<HTMLElement> = inject(ElementRef);
   private _directionality = inject(Directionality, { optional: true });
@@ -139,9 +143,7 @@ export class PopoverTriggerForDirective implements  OnDestroy {
     if (this._overlayRef) {
       this._overlayRef
         .outsidePointerEvents()
-        .pipe(
-          takeUntil(this._destroy$)
-        )
+        .pipe(takeUntil(this._destroy$))
         .subscribe(event => {
           const target = _getEventTarget(event) as Element;
           const element = this._elementRef.nativeElement;
@@ -149,8 +151,7 @@ export class PopoverTriggerForDirective implements  OnDestroy {
           if (target !== element && !element.contains(target)) {
             this._close();
           }
-        })
-      ;
+        });
     }
   }
 
@@ -169,7 +170,7 @@ export class PopoverTriggerForDirective implements  OnDestroy {
     return new OverlayConfig({
       positionStrategy: this._getOverlayPositionStrategy(),
       scrollStrategy: this._overlay.scrollStrategies.reposition(),
-      direction: this._directionality || undefined
+      direction: this._directionality || undefined,
     });
   }
 
@@ -179,12 +180,11 @@ export class PopoverTriggerForDirective implements  OnDestroy {
       .flexibleConnectedTo(this.origin ? this.origin : this._elementRef)
       .withLockedPosition()
       .withGrowAfterOpen()
-      .withPositions(this._getOverlayPositions())
-    ;
+      .withPositions(this._getOverlayPositions());
   }
 
   private _getOverlayPositions(): ConnectedPosition[] {
-    return (new PositionManager()).build(this.position);
+    return new PositionManager().build(this.position);
   }
 
   private _setType() {
@@ -208,24 +208,21 @@ export class PopoverTriggerForDirective implements  OnDestroy {
           this._closeTimeout = setTimeout(() => {
             this._close();
           }, this._closeDelay);
-        })
-      ;
+        });
       const popoverElement = this._overlayRef.overlayElement;
       fromEvent(popoverElement, 'mouseenter')
         .pipe(takeUntil(merge(this.closed, this._destroy$)))
         .subscribe(event => {
           clearTimeout(this._closeTimeout);
           this._closeTimeout = null;
-        })
-      ;
+        });
       fromEvent(popoverElement, 'mouseleave')
         .pipe(takeUntil(merge(this.closed, this._destroy$)))
         .subscribe(event => {
           this._closeTimeout = setTimeout(() => {
             this._close();
           }, this._closeDelay);
-        })
-      ;
+        });
     }
   }
 }

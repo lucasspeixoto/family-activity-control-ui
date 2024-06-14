@@ -2,7 +2,6 @@ import { Directive } from '@angular/core';
 
 @Directive({
   selector: '[facSuggestionIcon]',
-  standalone: true
+  standalone: true,
 })
-export class SuggestionIconDirective {
-}
+export class SuggestionIconDirective {}

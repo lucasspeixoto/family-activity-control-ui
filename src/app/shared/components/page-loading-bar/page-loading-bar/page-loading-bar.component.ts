@@ -1,8 +1,22 @@
-import { booleanAttribute, ChangeDetectorRef, Component, DestroyRef, inject, input, OnInit } from '@angular/core';
+import {
+  booleanAttribute,
+  ChangeDetectorRef,
+  Component,
+  DestroyRef,
+  inject,
+  input,
+  OnInit,
+} from '@angular/core';
 import { NgIf } from '@angular/common';
 import { MatProgressBar } from '@angular/material/progress-bar';
 import { Subscription, timer } from 'rxjs';
-import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
+import {
+  NavigationCancel,
+  NavigationEnd,
+  NavigationError,
+  NavigationStart,
+  Router,
+} from '@angular/router';
 import { map, take } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
@@ -10,17 +24,14 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   selector: 'fac-page-loading-bar',
   exportAs: 'facPageLoadingBar',
   standalone: true,
-  imports: [
-    NgIf,
-    MatProgressBar
-  ],
+  imports: [NgIf, MatProgressBar],
   templateUrl: './page-loading-bar.component.html',
   styleUrl: './page-loading-bar.component.scss',
   host: {
-    'class': 'fac--page-loading-bar',
+    class: 'fac--page-loading-bar',
     '[class.is-visible]': 'visible',
-    '[class.is-fixed]': 'fixed'
-  }
+    '[class.is-fixed]': 'fixed',
+  },
 })
 export class PageLoadingBarComponent implements OnInit {
   private _router = inject(Router);
@@ -28,8 +39,8 @@ export class PageLoadingBarComponent implements OnInit {
   private _cdr = inject(ChangeDetectorRef);
 
   fixed = input(false, {
-    transform: booleanAttribute
-  })
+    transform: booleanAttribute,
+  });
 
   protected visible = false;
   protected value = 0;
@@ -43,11 +54,14 @@ export class PageLoadingBarComponent implements OnInit {
           this._start();
         }
 
-        if ((event instanceof NavigationError || event instanceof NavigationEnd || event instanceof NavigationCancel)) {
+        if (
+          event instanceof NavigationError ||
+          event instanceof NavigationEnd ||
+          event instanceof NavigationCancel
+        ) {
           this._finish();
         }
-      })
-    ;
+      });
   }
 
   private _start(): void {
@@ -58,21 +72,24 @@ export class PageLoadingBarComponent implements OnInit {
         takeUntilDestroyed(this._destroyRef),
         take(6),
         map(_result => {
-          const min = ((_result + 1) * 25) - 25;
+          const min = (_result + 1) * 25 - 25;
           const max = (_result + 1) * 25;
           const loading = this._getRandom(min, max);
 
           return loading < 100 ? loading : 100;
         })
-      ).subscribe(_result => {
-        this.value = _result;
-        this._cdr.markForCheck();
-      }, _ => {
-      }, () => {
-        this.visible = false;
-        this._cdr.markForCheck();
-      })
-    ;
+      )
+      .subscribe(
+        _result => {
+          this.value = _result;
+          this._cdr.markForCheck();
+        },
+        _ => {},
+        () => {
+          this.visible = false;
+          this._cdr.markForCheck();
+        }
+      );
     this.visible = true;
     this.value = 0;
   }
@@ -85,6 +102,6 @@ export class PageLoadingBarComponent implements OnInit {
   }
 
   private _getRandom(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min) ) + min;
+    return Math.floor(Math.random() * (max - min)) + min;
   }
 }

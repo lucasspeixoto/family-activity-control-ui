@@ -18,14 +18,14 @@
   --fac-segmented-button-icon-offset-margin: -6px;
 }
 
-[fac-segmented-size="sm"] {
+[fac-segmented-size='sm'] {
   --fac-segmented-button-height: calc(theme('height.10') - theme('padding.2'));
   --fac-segmented-button-font-size: theme('fontSize.xs');
   --fac-segmented-button-padding: 0 theme('padding.2');
   --fac-segmented-button-gap: theme('gap[0.5]');
 }
 
-[fac-segmented-size="lg"] {
+[fac-segmented-size='lg'] {
   --fac-segmented-button-height: calc(theme('height.14') - theme('padding.2'));
   --fac-segmented-button-font-size: theme('fontSize.sm');
   --fac-segmented-button-padding: 0 theme('padding.4');
@@ -40,7 +40,7 @@ html.dark {
   --fac-segmented-button-hover-color: theme('colors.white');
 }
 
-.fac-segmented[theme="simple"] {
+.fac-segmented[theme='simple'] {
   --fac-segmented-bg: none;
   --fac-segmented-button-hover-bg: none;
   --fac-segmented-button-color: theme('colors.neutral.600');
@@ -56,7 +56,7 @@ html.dark {
 }
 
 html.dark {
-  .fac-segmented[theme="simple"] {
+  .fac-segmented[theme='simple'] {
     --fac-segmented-button-color: theme('colors.neutral.400');
     --fac-segmented-button-hover-color: theme('colors.white');
   }

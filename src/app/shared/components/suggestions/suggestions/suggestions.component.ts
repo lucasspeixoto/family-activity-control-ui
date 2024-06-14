@@ -8,9 +8,7 @@ import { Component } from '@angular/core';
   templateUrl: './suggestions.component.html',
   styleUrl: './suggestions.component.scss',
   host: {
-    'class': 'fac-suggestions'
-  }
+    class: 'fac-suggestions',
+  },
 })
-export class SuggestionsComponent {
-
-}
+export class SuggestionsComponent {}

@@ -5,11 +5,24 @@ import { FormsModule } from '@angular/forms';
 import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { HttpClient } from '@angular/common/http';
-import { DataViewCellRenderer, DataViewColumnDef, DataViewComponent, DataViewRowSelectionEvent } from '@shared/components/data-view/public-api';
+import {
+  DataViewCellRenderer,
+  DataViewColumnDef,
+  DataViewComponent,
+  DataViewRowSelectionEvent,
+} from '@shared/components/data-view/public-api';
 
 import { VDividerComponent } from '@shared/components/divider';
-import { PanelBodyComponent, PanelComponent, PanelFooterComponent, PanelHeaderComponent } from '@shared/components/panel';
-import { SegmentedButtonComponent, SegmentedComponent } from '@shared/components/segmented/public-api';
+import {
+  PanelBodyComponent,
+  PanelComponent,
+  PanelFooterComponent,
+  PanelHeaderComponent,
+} from '@shared/components/panel';
+import {
+  SegmentedButtonComponent,
+  SegmentedComponent,
+} from '@shared/components/segmented/public-api';
 
 export interface User {
   id: string;
@@ -43,8 +56,8 @@ export interface Post {
     PanelComponent,
     PanelHeaderComponent,
     PanelFooterComponent,
-    SegmentedComponent
-],
+    SegmentedComponent,
+  ],
   templateUrl: './post-list.component.html',
   styleUrl: './post-list.component.scss',
 })
@@ -90,21 +103,21 @@ export class PostListComponent implements OnInit {
       component: () =>
         import(
           '../_renderers/dv-author-renderer/dv-author-renderer.component'
-        ).then((c) => c.DvAuthorRendererComponent),
+        ).then(c => c.DvAuthorRendererComponent),
     },
     {
       dataRenderer: 'date',
       component: () =>
         import(
           '../_renderers/dv-date-renderer/dv-date-renderer.component'
-        ).then((c) => c.DvDateRendererComponent),
+        ).then(c => c.DvDateRendererComponent),
     },
   ];
 
   ngOnInit() {
     this._httpClient
       .get<Post[]>('/assets/mockdata/content-post-list.json')
-      .subscribe((data) => {
+      .subscribe(data => {
         this.data = data;
       });
   }

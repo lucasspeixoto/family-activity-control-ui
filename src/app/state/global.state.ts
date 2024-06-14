@@ -7,17 +7,17 @@ export type GlobalState = {
 
 const initialGlobalState: GlobalState = {
   screenLoading: true,
-  sidebarHidden: false
+  sidebarHidden: false,
 };
 
 export const GlobalStore = signalStore(
   { providedIn: 'root' },
   withState(initialGlobalState),
-  withMethods((store) => ({
+  withMethods(store => ({
     setScreenLoading(isLoading: boolean) {
       patchState(store, {
-        screenLoading: isLoading
+        screenLoading: isLoading,
       });
-    }
+    },
   }))
 );

@@ -9,12 +9,12 @@ import { TAB_PANEL_ASIDE } from '../types';
   providers: [
     {
       provide: TAB_PANEL_ASIDE,
-      useExisting: TabPanelAsideComponent
-    }
+      useExisting: TabPanelAsideComponent,
+    },
   ],
   host: {
-    'class': 'fac-tab-panel-aside'
-  }
+    class: 'fac-tab-panel-aside',
+  },
 })
 export class TabPanelAsideComponent {
   nextId = 0;

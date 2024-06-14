@@ -5,8 +5,9 @@ import {
   ElementRef,
   inject,
   Input,
-  OnChanges, SimpleChanges,
-  ViewChild
+  OnChanges,
+  SimpleChanges,
+  ViewChild,
 } from '@angular/core';
 import { GlobalState, GlobalStore } from '@state/global.state';
 import { getState } from '@ngrx/signals';
@@ -17,7 +18,7 @@ import { getState } from '@ngrx/signals';
   imports: [],
   templateUrl: './screen-loader.component.html',
   styleUrl: './screen-loader.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ScreenLoaderComponent {
   private _globalStore = inject(GlobalStore);

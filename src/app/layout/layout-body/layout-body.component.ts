@@ -1,4 +1,12 @@
-import { booleanAttribute, Component, ElementRef, inject, Input, OnInit, PLATFORM_ID } from '@angular/core';
+import {
+  booleanAttribute,
+  Component,
+  ElementRef,
+  inject,
+  Input,
+  OnInit,
+  PLATFORM_ID,
+} from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { isPlatformServer } from '@angular/common';
@@ -11,8 +19,8 @@ import { isPlatformServer } from '@angular/common';
   templateUrl: './layout-body.component.html',
   styleUrl: './layout-body.component.scss',
   host: {
-    'class': 'fac-layout-body fac-scroll-lg'
-  }
+    class: 'fac-layout-body fac-scroll-lg',
+  },
 })
 export class LayoutBodyComponent implements OnInit {
   private _router = inject(Router);
@@ -25,9 +33,7 @@ export class LayoutBodyComponent implements OnInit {
   ngOnInit() {
     // Scroll a page to top if url changed
     this._router.events
-      .pipe(
-        filter(event=> event instanceof NavigationStart)
-      )
+      .pipe(filter(event => event instanceof NavigationStart))
       .subscribe(() => {
         if (!this.autoscrollToTop) {
           return;
@@ -39,9 +45,8 @@ export class LayoutBodyComponent implements OnInit {
 
         this._elementRef.nativeElement.scrollTo({
           top: 0,
-          left: 0
+          left: 0,
         });
-      })
-    ;
+      });
   }
 }

@@ -5,17 +5,28 @@ import {
   inject,
   OnDestroy,
   TemplateRef,
-  ViewContainerRef
+  ViewContainerRef,
 } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { CdkConnectedOverlay, CdkOverlayOrigin, Overlay, OverlayRef } from '@angular/cdk/overlay';
+import {
+  CdkConnectedOverlay,
+  CdkOverlayOrigin,
+  Overlay,
+  OverlayRef,
+} from '@angular/cdk/overlay';
 import { TemplatePortal } from '@angular/cdk/portal';
 
 import { MatButton, MatIconButton } from '@angular/material/button';
 
 import { FormsModule } from '@angular/forms';
 
-import { SuggestionsComponent, SuggestionBlockComponent, SuggestionComponent, SuggestionIconDirective, SuggestionThumbDirective } from '@shared/components/suggestions';
+import {
+  SuggestionsComponent,
+  SuggestionBlockComponent,
+  SuggestionComponent,
+  SuggestionIconDirective,
+  SuggestionThumbDirective,
+} from '@shared/components/suggestions';
 
 @Component({
   selector: 'app-assistant-search',
@@ -32,14 +43,14 @@ import { SuggestionsComponent, SuggestionBlockComponent, SuggestionComponent, Su
     SuggestionIconDirective,
     SuggestionThumbDirective,
     FormsModule,
-    MatIconButton
-],
+    MatIconButton,
+  ],
   templateUrl: './assistant-search.component.html',
   styleUrl: './assistant-search.component.scss',
   host: {
-    'class': 'assistant-search',
-    '[class.has-dropdown]': '_isAttached'
-  }
+    class: 'assistant-search',
+    '[class.has-dropdown]': '_isAttached',
+  },
 })
 export class AssistantSearchComponent implements OnDestroy {
   private _overlay = inject(Overlay);
@@ -65,32 +76,30 @@ export class AssistantSearchComponent implements OnDestroy {
         .flexibleConnectedTo(this._elementRef)
         .withLockedPosition()
         .withGrowAfterOpen()
-        .withPositions(
-          [
-            {
-              originY: 'bottom',
-              overlayY: 'top',
-              originX: 'start',
-              overlayX: 'start',
-            }
-          ]
-        )
+        .withPositions([
+          {
+            originY: 'bottom',
+            overlayY: 'top',
+            originX: 'start',
+            overlayX: 'start',
+          },
+        ]),
     });
-    const portal = new TemplatePortal(suggestionDropdown, this._viewContainerRef);
+    const portal = new TemplatePortal(
+      suggestionDropdown,
+      this._viewContainerRef
+    );
     this._overlayRef.attach(portal);
     this._isAttached = true;
-    this._overlayRef
-      .outsidePointerEvents()
-      .subscribe((event: MouseEvent) => {
-        const target = event.target as HTMLElement;
+    this._overlayRef.outsidePointerEvents().subscribe((event: MouseEvent) => {
+      const target = event.target as HTMLElement;
 
-        if (target.closest('.assistant-search')) {
-          return;
-        }
+      if (target.closest('.assistant-search')) {
+        return;
+      }
 
-        this.close();
-      })
-    ;
+      this.close();
+    });
   }
 
   close(): void {

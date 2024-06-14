@@ -3,9 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{html,ts}",
-  ],
+  content: ['./src/**/*.{html,ts}'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -14,24 +12,24 @@ module.exports = {
         '4xs': '9px',
         '3xs': '10px',
         '2xs': '11px',
-        'tiny': '13px',
-        'md': '15px'
+        tiny: '13px',
+        md: '15px',
       },
       fontFamily: {
-        'sans': ['"Poppins"', ...defaultTheme.fontFamily.sans],
-        'serif': ['Open Sans', ...defaultTheme.fontFamily.serif],
-        'icon': [
+        sans: ['"Poppins"', ...defaultTheme.fontFamily.sans],
+        serif: ['Open Sans', ...defaultTheme.fontFamily.serif],
+        icon: [
           'Material Symbols Outlined',
           {
             fontsize: '24px',
-            fontVariationSettings: `"FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24`
+            fontVariationSettings: `"FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24`,
           },
         ],
         'icon-filled': [
           'Material Symbols Outlined',
           {
             fontsize: '24px',
-            fontVariationSettings: `"FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24`
+            fontVariationSettings: `"FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24`,
           },
         ],
       },
@@ -145,7 +143,7 @@ module.exports = {
           800: 'var(--fac-error-800)',
           900: 'var(--fac-error-900)',
           950: 'var(--fac-error-950)',
-          1000: 'var(--fac-error-1000)'
+          1000: 'var(--fac-error-1000)',
         },
         'on-primary': 'var(--fac-on-primary)',
         'primary-container': 'var(--fac-primary-container)',
@@ -175,7 +173,7 @@ module.exports = {
         'error-container': 'var(--fac-error-container)',
         'on-error-container': 'var(--fac-on-error-container)',
 
-        'surface': 'var(--fac-surface)',
+        surface: 'var(--fac-surface)',
         'surface-dim': 'var(--fac-surface-dim)',
         'surface-bright': 'var(--fac-surface-bright)',
         'surface-container-lowest': 'var(--fac-surface-container-lowest)',
@@ -186,24 +184,24 @@ module.exports = {
         'on-surface': 'var(--fac-on-surface)',
         'on-surface-variant': 'var(--fac-on-surface-variant)',
 
-        'outline': 'var(--fac-outline)',
+        outline: 'var(--fac-outline)',
         'outline-variant': 'var(--fac-outline-variant)',
 
         'inverse-surface': 'var(--fac-inverse-surface)',
         'inverse-on-surface': 'var(--fac-inverse-on-surface)',
         'inverse-primary': 'var(--fac-inverse-primary)',
 
-        'scrim': 'var(--fac-scrim)',
-        'shadow': 'var(--fac-shadow)',
+        scrim: 'var(--fac-scrim)',
+        shadow: 'var(--fac-shadow)',
 
         accent: 'var(--fac-accent)',
         warn: 'var(--fac-warn)',
-        dark: '#303030'
-      }
-    }
+        dark: '#303030',
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),
-    require('@tailwindcss/container-queries')
-  ]
-}
+    require('@tailwindcss/container-queries'),
+  ],
+};

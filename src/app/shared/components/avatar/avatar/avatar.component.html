@@ -1,11 +1,17 @@
 @if (src()) {
-  <img class="image" loading="lazy" [src]="src()" [alt]="alt() || ''" (load)="onImageLoaded()">
+  <img
+    class="image"
+    loading="lazy"
+    [src]="src()"
+    [alt]="alt() || ''"
+    (load)="onImageLoaded()" />
 }
 
 @if (presenceIndicator()) {
-  <div class="presence-indicator"
-       [class.is-online]="presenceIndicator() === 'online'"
-       [class.is-offline]="presenceIndicator() === 'offline'"></div>
+  <div
+    class="presence-indicator"
+    [class.is-online]="presenceIndicator() === 'online'"
+    [class.is-offline]="presenceIndicator() === 'offline'"></div>
 }
 
 @if (text()) {
@@ -13,7 +19,8 @@
     width="100%"
     viewBox="0 0 250 250"
     height="100%"
-    xmlns="http://www.w3.org/2000/svg" class="relative z-[0] text">
+    xmlns="http://www.w3.org/2000/svg"
+    class="relative z-[0] text">
     <text
       x="50%"
       y="50%"
@@ -21,7 +28,9 @@
       text-anchor="middle"
       font-weight="inherit"
       font-size="90"
-      fill="currentColor">{{ text() }}</text>
+      fill="currentColor">
+      {{ text() }}
+    </text>
   </svg>
 }
 

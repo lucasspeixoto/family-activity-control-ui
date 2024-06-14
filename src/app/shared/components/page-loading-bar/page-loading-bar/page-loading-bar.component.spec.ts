@@ -8,10 +8,9 @@ describe('PageLoadingBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PageLoadingBarComponent]
-    })
-    .compileComponents();
-    
+      imports: [PageLoadingBarComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(PageLoadingBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

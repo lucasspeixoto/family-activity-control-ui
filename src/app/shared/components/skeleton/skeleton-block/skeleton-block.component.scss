@@ -4,14 +4,14 @@
   flex: none;
 }
 
-:host:not([class*="rounded"]) {
+:host:not([class*='rounded']) {
   border-radius: var(--fac-skeleton-item-border-radius);
 }
 
-:host:not([class*="w-"]):not([class*="size-"]) {
+:host:not([class*='w-']):not([class*='size-']) {
   width: var(--fac-skeleton-block-width);
 }
 
-:host:not([class*="h-"]):not([class*="size-"]) {
+:host:not([class*='h-']):not([class*='size-']) {
   height: var(--fac-skeleton-block-height);
 }

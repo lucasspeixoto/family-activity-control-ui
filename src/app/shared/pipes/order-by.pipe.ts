@@ -2,10 +2,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'orderBy',
-  standalone: true
+  standalone: true,
 })
 export class OrderByPipe implements PipeTransform {
-  transform(value: any, property: string, direction: 'asc' | 'desc' = 'asc'): any {
+  transform(
+    value: any,
+    property: string,
+    direction: 'asc' | 'desc' = 'asc'
+  ): any {
     if (!Array.isArray(value)) {
       throw new Error('Order By value should be an array');
     }

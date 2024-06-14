@@ -6,8 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './tab-panel-item-text.component.html',
   styleUrls: ['./tab-panel-item-text.component.scss'],
   host: {
-    'class': 'fac-tab-panel-item-text'
-  }
+    class: 'fac-tab-panel-item-text',
+  },
 })
-export class TabPanelItemTextComponent {
-}
+export class TabPanelItemTextComponent {}

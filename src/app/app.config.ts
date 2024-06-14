@@ -1,5 +1,12 @@
-import { ApplicationConfig, provideExperimentalZonelessChangeDetection } from '@angular/core';
-import { provideRouter, TitleStrategy, withViewTransitions } from '@angular/router';
+import {
+  ApplicationConfig,
+  provideExperimentalZonelessChangeDetection,
+} from '@angular/core';
+import {
+  provideRouter,
+  TitleStrategy,
+  withViewTransitions,
+} from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
@@ -23,15 +30,15 @@ export const appConfig: ApplicationConfig = {
     provideNativeDateAdapter(),
     {
       provide: ENVIRONMENT,
-      useValue: environment
+      useValue: environment,
     },
     {
       provide: TitleStrategy,
-      useClass: PageTitleStrategyService
+      useClass: PageTitleStrategyService,
     },
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
-      useValue: { appearance: 'outline' }
-    }
-  ]
+      useValue: { appearance: 'outline' },
+    },
+  ],
 };

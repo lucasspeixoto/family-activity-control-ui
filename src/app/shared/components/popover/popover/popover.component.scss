@@ -5,7 +5,7 @@
   box-shadow: var(--fac-popover-shadow);
   border-radius: var(--fac-popover-border-radius);
   background: var(--fac-popover-bg);
-  animation: .15s fac-popover-animation;
+  animation: 0.15s fac-popover-animation;
 }
 
 :host-context(.fac-overlay-above) {
@@ -30,7 +30,7 @@
 
 @keyframes fac-popover-animation {
   0% {
-    transform: scale(.9);
+    transform: scale(0.9);
     opacity: 0;
   }
 

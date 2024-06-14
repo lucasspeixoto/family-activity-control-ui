@@ -6,22 +6,22 @@
   }
 }
 
-:host:not([class*="h-"]) {
+:host:not([class*='h-']) {
   @apply h-px;
 }
 
-:host:not([class*="bg-"]) {
+:host:not([class*='bg-']) {
   @apply bg-neutral-300;
 }
 
-:host:not([class*="text-"]) {
+:host:not([class*='text-']) {
   @apply text-neutral-500;
 }
 
-:host-context(html.dark):not([class*="dark:bg-"]) {
+:host-context(html.dark):not([class*='dark:bg-']) {
   @apply bg-neutral-variant-800;
 }
 
-:host-context(html.dark):not([class*="dark:text-"]) {
+:host-context(html.dark):not([class*='dark:text-']) {
   @apply text-neutral-400;
 }

@@ -3,7 +3,7 @@ import { RouterStateSnapshot, TitleStrategy } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PageTitleStrategyService extends TitleStrategy {
   private _title = inject(Title);

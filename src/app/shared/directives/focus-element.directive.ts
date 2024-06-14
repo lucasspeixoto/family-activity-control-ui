@@ -1,26 +1,28 @@
 import {
-  AfterViewInit, booleanAttribute,
+  AfterViewInit,
+  booleanAttribute,
   ChangeDetectorRef,
   Directive,
   ElementRef,
-  inject, input,
+  inject,
+  input,
   NgZone,
   OnDestroy,
-  output
+  output,
 } from '@angular/core';
 import { FocusMonitor, FocusOrigin } from '@angular/cdk/a11y';
 
 @Directive({
   selector: '[facFocusElement]',
   exportAs: 'facFocusElement',
-  standalone: true
+  standalone: true,
 })
 export class FocusElementDirective implements AfterViewInit, OnDestroy {
   private _elementRef = inject(ElementRef);
   private _focusMonitor = inject(FocusMonitor);
 
   checkChildren = input(true, {
-    transform: booleanAttribute
+    transform: booleanAttribute,
   });
 
   readonly elementFocused = output<void>();
@@ -31,8 +33,7 @@ export class FocusElementDirective implements AfterViewInit, OnDestroy {
       .monitor(this._elementRef.nativeElement, this.checkChildren())
       .subscribe(origin => {
         this._emitFocusEvent(origin);
-      })
-    ;
+      });
   }
 
   ngOnDestroy() {

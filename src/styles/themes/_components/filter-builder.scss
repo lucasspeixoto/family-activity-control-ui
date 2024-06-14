@@ -4,14 +4,19 @@
   --fac-filter-builder-group-operation-color: theme('colors.neutral.800');
   --fac-filter-builder-group-operation-bg: theme('colors.transparent');
   --fac-filter-builder-group-operation-font-weight: theme('fontWeight.normal');
-  --fac-filter-builder-group-operation-border-radius: theme('borderRadius.DEFAULT');
+  --fac-filter-builder-group-operation-border-radius: theme(
+    'borderRadius.DEFAULT'
+  );
   --fac-filter-builder-group-operation-bpadding: 0 theme('padding[2]');
   --fac-filter-builder-group-operation-height: theme('height.7');
   --fac-filter-builder-group-operation-hover-color: theme('colors.neutral.800');
   --fac-filter-builder-group-operation-hover-bg: theme('colors.neutral.200');
-  --fac-filter-builder-group-operation-active-color: theme('colors.neutral.900');
+  --fac-filter-builder-group-operation-active-color: theme(
+    'colors.neutral.900'
+  );
   --fac-filter-builder-group-operation-active-bg: theme('colors.neutral.300');
-  --fac-filter-builder-group-operation-border: 1px solid theme('colors.neutral.500');
+  --fac-filter-builder-group-operation-border: 1px solid
+    theme('colors.neutral.500');
   --fac-filter-builder-group-add-color: theme('colors.primary.DEFAULT');
   --fac-filter-builder-group-add-hover-color: theme('colors.primary.DEFAULT');
   --fac-filter-builder-group-margin: 0;
@@ -23,8 +28,11 @@
   --fac-filter-builder-condition-field-color: theme('colors.gray.800');
   --fac-filter-builder-condition-field-bg: theme('colors.primary.300');
   --fac-filter-builder-condition-field-font-weight: theme('fontWeight.normal');
-  --fac-filter-builder-condition-field-border-radius: theme('borderRadius.DEFAULT');
-  --fac-filter-builder-condition-field-bpadding: theme('padding[0.5]') theme('padding[2]');
+  --fac-filter-builder-condition-field-border-radius: theme(
+    'borderRadius.DEFAULT'
+  );
+  --fac-filter-builder-condition-field-bpadding: theme('padding[0.5]')
+    theme('padding[2]');
   --fac-filter-builder-condition-field-hover-color: theme('colors.gray.800');
   --fac-filter-builder-condition-field-hover-bg: theme('colors.primary.400');
   --fac-filter-builder-condition-field-active-color: theme('colors.white');
@@ -33,20 +41,34 @@
   --fac-filter-builder-condition-operation-font-size: theme('fontSize.tiny');
   --fac-filter-builder-condition-operation-color: theme('colors.gray.800');
   --fac-filter-builder-condition-operation-bg: theme('colors.tertiary.300');
-  --fac-filter-builder-condition-operation-font-weight: theme('fontWeight.normal');
-  --fac-filter-builder-condition-operation-border-radius: theme('borderRadius.DEFAULT');
-  --fac-filter-builder-condition-operation-bpadding: theme('padding[0.5]') theme('padding[2]');
-  --fac-filter-builder-condition-operation-hover-color: theme('colors.gray.800');
-  --fac-filter-builder-condition-operation-hover-bg: theme('colors.tertiary.400');
+  --fac-filter-builder-condition-operation-font-weight: theme(
+    'fontWeight.normal'
+  );
+  --fac-filter-builder-condition-operation-border-radius: theme(
+    'borderRadius.DEFAULT'
+  );
+  --fac-filter-builder-condition-operation-bpadding: theme('padding[0.5]')
+    theme('padding[2]');
+  --fac-filter-builder-condition-operation-hover-color: theme(
+    'colors.gray.800'
+  );
+  --fac-filter-builder-condition-operation-hover-bg: theme(
+    'colors.tertiary.400'
+  );
   --fac-filter-builder-condition-operation-active-color: theme('colors.white');
-  --fac-filter-builder-condition-operation-active-bg: theme('colors.tertiary.500');
+  --fac-filter-builder-condition-operation-active-bg: theme(
+    'colors.tertiary.500'
+  );
   --fac-filter-builder-condition-value-height: theme('height.7');
   --fac-filter-builder-condition-value-font-size: theme('fontSize.tiny');
   --fac-filter-builder-condition-value-color: theme('colors.gray.800');
   --fac-filter-builder-condition-value-bg: theme('colors.gray.200');
   --fac-filter-builder-condition-value-font-weight: theme('fontWeight.normal');
-  --fac-filter-builder-condition-value-border-radius: theme('borderRadius.DEFAULT');
-  --fac-filter-builder-condition-value-bpadding: theme('padding[0.5]') theme('padding[2]');
+  --fac-filter-builder-condition-value-border-radius: theme(
+    'borderRadius.DEFAULT'
+  );
+  --fac-filter-builder-condition-value-bpadding: theme('padding[0.5]')
+    theme('padding[2]');
   --fac-filter-builder-condition-value-hover-color: theme('colors.gray.800');
   --fac-filter-builder-condition-value-hover-bg: theme('colors.gray.300');
   --fac-filter-builder-condition-remove-color: theme('colors.red.500');

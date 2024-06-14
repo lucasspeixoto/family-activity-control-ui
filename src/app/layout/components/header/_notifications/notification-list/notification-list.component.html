@@ -1,12 +1,9 @@
 <div
-  class="w-[360px] text-base list-none bg-white dark:border-inverse shadow-lg dark:divide-inverse dark:bg-surface-container"
->
+  class="w-[360px] text-base list-none bg-white dark:border-inverse shadow-lg dark:divide-inverse dark:bg-surface-container">
   <div
-    class="flex items-center justify-between bg-neutral-200 text-sm dark:bg-neutral-900 h-11 px-4 border-b dark:border-b-inverse"
-  >
+    class="flex items-center justify-between bg-neutral-200 text-sm dark:bg-neutral-900 h-11 px-4 border-b dark:border-b-inverse">
     <div
-      class="text-center text-neutral-700 font-semibold dark:text-neutral-100"
-    >
+      class="text-center text-neutral-700 font-semibold dark:text-neutral-100">
       Notifications
     </div>
     <a
@@ -16,22 +13,33 @@
     >
   </div>
   <div class="h-[300px] overflow-y-auto">
-    @for (notification of notifications; track notification) { @switch
-    (notification.typeId) { @case ('mentioned-in-comment') { @defer {
-    <app-mentioned-in-comment
-      [notification]="notification"
-    ></app-mentioned-in-comment>
-    } @placeholder (minimum 500ms) {
-    <ng-container [ngTemplateOutlet]="notificationSkeleton"></ng-container>
-    } } @case ('invite-to-edit-files-in-folder') { @defer {
-    <app-invite-to-edit-files-in-folder
-      [notification]="notification"
-    ></app-invite-to-edit-files-in-folder>
-    } @placeholder (minimum 500ms) {
-    <ng-container [ngTemplateOutlet]="notificationSkeleton"></ng-container>
-    } } }
-    <fac-h-divider></fac-h-divider>
-    } @empty { asfasf }
+    @for (notification of notifications; track notification) {
+      @switch (notification.typeId) {
+        @case ('mentioned-in-comment') {
+          @defer {
+            <app-mentioned-in-comment
+              [notification]="notification"></app-mentioned-in-comment>
+          } @placeholder (minimum 500ms) {
+            <ng-container
+              [ngTemplateOutlet]="notificationSkeleton"></ng-container>
+          }
+        }
+        @case ('invite-to-edit-files-in-folder') {
+          @defer {
+            <app-invite-to-edit-files-in-folder
+              [notification]="
+                notification
+              "></app-invite-to-edit-files-in-folder>
+          } @placeholder (minimum 500ms) {
+            <ng-container
+              [ngTemplateOutlet]="notificationSkeleton"></ng-container>
+          }
+        }
+      }
+      <fac-h-divider></fac-h-divider>
+    } @empty {
+      asfasf
+    }
   </div>
 </div>
 

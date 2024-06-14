@@ -8,10 +8,9 @@ describe('LayoutBodyComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LayoutBodyComponent]
-    })
-    .compileComponents();
-    
+      imports: [LayoutBodyComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(LayoutBodyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

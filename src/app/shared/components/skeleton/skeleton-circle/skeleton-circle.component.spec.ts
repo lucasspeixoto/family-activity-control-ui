@@ -8,8 +8,8 @@ describe('SkeletonCircleComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [SkeletonCircleComponent]
-});
+      imports: [SkeletonCircleComponent],
+    });
     fixture = TestBed.createComponent(SkeletonCircleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

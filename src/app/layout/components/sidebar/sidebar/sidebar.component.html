@@ -4,39 +4,54 @@
   </div>
   <div class="body">
     <fac-navigation #navigation [activeKey]="activeLinkId" class="navigation">
-      @for (navItem of navItems; track navItem) { @switch (navItem.type) {
-      @case ('heading') {
-      <fac-navigation-heading>{{ navItem.name }}</fac-navigation-heading>
-      } @case ('group') {
-      <fac-navigation-group>
-        <fac-navigation-group-toggle [for]="navItem.id">
-          @if (navItem.icon) {
-          <mat-icon facNavigationItemIcon class="font-icon">{{
-            navItem.icon
-            }}</mat-icon>
+      @for (navItem of navItems; track navItem) {
+        @switch (navItem.type) {
+          @case ('heading') {
+            <fac-navigation-heading>{{ navItem.name }}</fac-navigation-heading>
           }
-          {{ navItem.name }}
-          <mat-icon facNavigationGroupToggleIcon class="font-icon">arrow_drop_down</mat-icon>
-        </fac-navigation-group-toggle>
-        <fac-navigation-group-menu [key]="navItem.id">
-          @for (childItem of navItem.children | orderBy:'name'; track childItem)
-          {
-          <a fac-navigation-item [routerLink]="childItem.link" [key]="childItem.link">
-            {{ childItem.name }}
-          </a>
+          @case ('group') {
+            <fac-navigation-group>
+              <fac-navigation-group-toggle [for]="navItem.id">
+                @if (navItem.icon) {
+                  <mat-icon facNavigationItemIcon class="font-icon">{{
+                    navItem.icon
+                  }}</mat-icon>
+                }
+                {{ navItem.name }}
+                <mat-icon facNavigationGroupToggleIcon class="font-icon"
+                  >arrow_drop_down</mat-icon
+                >
+              </fac-navigation-group-toggle>
+              <fac-navigation-group-menu [key]="navItem.id">
+                @for (
+                  childItem of navItem.children | orderBy: 'name';
+                  track childItem
+                ) {
+                  <a
+                    fac-navigation-item
+                    [routerLink]="childItem.link"
+                    [key]="childItem.link">
+                    {{ childItem.name }}
+                  </a>
+                }
+              </fac-navigation-group-menu>
+            </fac-navigation-group>
           }
-        </fac-navigation-group-menu>
-      </fac-navigation-group>
-      } @default {
-      <a fac-navigation-item [routerLink]="navItem.link" [key]="navItem.link">
-        @if (navItem.icon) {
-        <mat-icon facNavigationItemIcon class="font-icon">{{
-          navItem.icon
-          }}</mat-icon>
+          @default {
+            <a
+              fac-navigation-item
+              [routerLink]="navItem.link"
+              [key]="navItem.link">
+              @if (navItem.icon) {
+                <mat-icon facNavigationItemIcon class="font-icon">{{
+                  navItem.icon
+                }}</mat-icon>
+              }
+              {{ navItem.name }}
+            </a>
+          }
         }
-        {{ navItem.name }}
-      </a>
-      } } }
+      }
     </fac-navigation>
   </div>
   <div class="footer p-7">

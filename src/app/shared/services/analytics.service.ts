@@ -7,7 +7,7 @@ import { EnvironmentService } from './environment.service';
 declare const gtag: any;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AnalyticsService {
   private _router = inject(Router);
@@ -15,7 +15,8 @@ export class AnalyticsService {
   private _environmentService = inject(EnvironmentService);
 
   trackPageViews(): void {
-    const googleAnalyticsId = this._environmentService.getValue('googleAnalyticsId');
+    const googleAnalyticsId =
+      this._environmentService.getValue('googleAnalyticsId');
 
     if (isDevMode() || !googleAnalyticsId) {
       return;
@@ -32,20 +33,17 @@ export class AnalyticsService {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', '${googleAnalyticsId}');`
-      ;
+        gtag('config', '${googleAnalyticsId}');`;
       this._document.head.appendChild(dataLayerScript);
-      this._router.events.pipe(
-        filter((event) => event instanceof NavigationEnd),
-      ).subscribe((event: any) => {
-        gtag('event', 'page_view', {
+      this._router.events
+        .pipe(filter(event => event instanceof NavigationEnd))
+        .subscribe((event: any) => {
+          gtag('event', 'page_view', {
             page_title: this._document.head.title,
             page_path: event.urlAfterRedirects,
-            page_location: this._document.location.href
+            page_location: this._document.location.href,
           });
-        })
-      ;
-    } catch (e) {
-    }
+        });
+    } catch (e) {}
   }
 }

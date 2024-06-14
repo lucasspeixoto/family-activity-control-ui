@@ -8,10 +8,9 @@ describe('SuggestionBlockComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SuggestionBlockComponent]
-    })
-    .compileComponents();
-    
+      imports: [SuggestionBlockComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(SuggestionBlockComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

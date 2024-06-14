@@ -1,42 +1,45 @@
 import {
   booleanAttribute,
-  Component, computed,
+  Component,
+  computed,
   ElementRef,
   forwardRef,
-  inject, input,
-  OnChanges, OnInit,
-  SimpleChanges
+  inject,
+  input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
 } from '@angular/core';
 import { ULT_AVATAR_ACCESSOR } from '../avatar.properties';
 
 const alreadyLoadedImages: string[] = [];
 
 @Component({
-    selector: 'fac-avatar,[fac-avatar]',
-    exportAs: 'facAvatar',
-    templateUrl: './avatar.component.html',
-    styleUrls: ['./avatar.component.scss'],
-    providers: [
-        {
-            provide: ULT_AVATAR_ACCESSOR,
-            useExisting: forwardRef(() => AvatarComponent),
-            multi: true
-        }
-    ],
-    host: {
-        'class': 'fac-avatar',
-        '[class.is-clickable]': 'clickable()',
-        '[class.has-automatic-color]': '!!automaticColor()',
-        '[class.has-loaded-image]': 'src() && imageLoaded',
+  selector: 'fac-avatar,[fac-avatar]',
+  exportAs: 'facAvatar',
+  templateUrl: './avatar.component.html',
+  styleUrls: ['./avatar.component.scss'],
+  providers: [
+    {
+      provide: ULT_AVATAR_ACCESSOR,
+      useExisting: forwardRef(() => AvatarComponent),
+      multi: true,
     },
-    standalone: true
+  ],
+  host: {
+    class: 'fac-avatar',
+    '[class.is-clickable]': 'clickable()',
+    '[class.has-automatic-color]': '!!automaticColor()',
+    '[class.has-loaded-image]': 'src() && imageLoaded',
+  },
+  standalone: true,
 })
 export class AvatarComponent implements OnInit, OnChanges {
   private _elementRef = inject(ElementRef);
 
   src = input<string>();
   clickable = input(false, {
-    transform: booleanAttribute
+    transform: booleanAttribute,
   });
   text = input();
   alt = input();
@@ -66,18 +69,26 @@ export class AvatarComponent implements OnInit, OnChanges {
 
   private _setAutomaticColor(color: any): void {
     if (!this.isValidHex(color)) {
-      throw new Error(`Invalid ${color} color, automatic color supports only a valid hex color`);
+      throw new Error(
+        `Invalid ${color} color, automatic color supports only a valid hex color`
+      );
     }
 
     const element = this._elementRef.nativeElement as HTMLElement;
     element.style.setProperty('--fac-avatar-bg', color);
-    element.style.setProperty('--fac-avatar-border-color', this._newShade(color, -25));
-    element.style.setProperty('--fac-avatar-color', this._newShade(color, -150));
+    element.style.setProperty(
+      '--fac-avatar-border-color',
+      this._newShade(color, -25)
+    );
+    element.style.setProperty(
+      '--fac-avatar-color',
+      this._newShade(color, -150)
+    );
   }
 
   private _newShade(hexColor: string, magnitude: number): string {
     hexColor = hexColor.replace(`#`, ``);
-      if (hexColor.length === 6) {
+    if (hexColor.length === 6) {
       const decimalColor = parseInt(hexColor, 16);
       let r = (decimalColor >> 16) + magnitude;
       r > 255 && (r = 255);
@@ -92,19 +103,19 @@ export class AvatarComponent implements OnInit, OnChanges {
     } else {
       return hexColor;
     }
-  };
+  }
 
   isValidHex(color: any): boolean {
-    if(!color || typeof color !== 'string') {
+    if (!color || typeof color !== 'string') {
       return false;
     }
 
     // Validate hex values
-    if(color.substring(0, 1) === '#') {
+    if (color.substring(0, 1) === '#') {
       color = color.substring(1);
     }
 
-    switch(color.length) {
+    switch (color.length) {
       case 3: {
         return /^[0-9A-F]{3}$/i.test(color);
       }

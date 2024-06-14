@@ -1,10 +1,17 @@
-import { afterNextRender, DestroyRef, Directive, ElementRef, inject, input } from '@angular/core';
+import {
+  afterNextRender,
+  DestroyRef,
+  Directive,
+  ElementRef,
+  inject,
+  input,
+} from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Directive({
   selector: '[facSoundEffect]',
-  standalone: true
+  standalone: true,
 })
 export class SoundEffectDirective {
   soundSrc = input.required<string>();
@@ -22,12 +29,9 @@ export class SoundEffectDirective {
     const audio = new Audio(this.soundSrc());
     audio.volume = 0.15;
     fromEvent(this._elementRef.nativeElement, 'click')
-      .pipe(
-        takeUntilDestroyed(this._destroyRef)
-      )
-      .subscribe(async (e) => {
+      .pipe(takeUntilDestroyed(this._destroyRef))
+      .subscribe(async e => {
         await audio.play();
-      })
-    ;
+      });
   }
 }

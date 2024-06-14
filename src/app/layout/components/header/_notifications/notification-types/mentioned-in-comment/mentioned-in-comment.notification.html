@@ -1,18 +1,15 @@
 <a
   routerLink="/notifications/view"
   matRipple
-  class="flex py-4 px-4 hover:bg-neutral-100 dark:hover:bg-neutral-950"
->
+  class="flex py-4 px-4 hover:bg-neutral-100 dark:hover:bg-neutral-950">
   <div class="flex-shrink-0">
     <div class="relative mt-1">
       <fac-avatar
         text="PS"
         [src]="notification.actor.avatarUrl"
-        class="size-10"
-      ></fac-avatar>
+        class="size-10"></fac-avatar>
       <div
-        class="flex absolute justify-center z-10 text-white items-center -right-0 -bottom-0 w-5 h-5 bg-green-400 rounded-full border border-white dark:border-inverse"
-      >
+        class="flex absolute justify-center z-10 text-white items-center -right-0 -bottom-0 w-5 h-5 bg-green-400 rounded-full border border-white dark:border-inverse">
         <mat-icon class="font-icon-filled text-xs !h-[16px] !w-[12px]"
           >comment</mat-icon
         >
@@ -21,15 +18,13 @@
   </div>
   <div class="pl-3 w-full">
     <div
-      class="text-neutral-500 font-normal text-sm mb-1.5 dark:text-neutral-400"
-    >
+      class="text-neutral-500 font-normal text-sm mb-1.5 dark:text-neutral-400">
       <span class="font-semibold text-neutral-900 dark:text-white"
         >{{ notification.actor.name }}</span
       >
       mentioned you in a comment:
       <span
-        class="font-medium text-primary-500 hover:text-primary-600 dark:text-tertiary-300 dark:hover:text-tertiary-400"
-      >
+        class="font-medium text-primary-500 hover:text-primary-600 dark:text-tertiary-300 dark:hover:text-tertiary-400">
         &#64;{{ notification.notifier.username }}
       </span>
       {{ notification.entity.content }}

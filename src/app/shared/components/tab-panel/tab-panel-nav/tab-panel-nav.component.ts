@@ -9,12 +9,12 @@ import { TAB_PANEL_NAV } from '../types';
   providers: [
     {
       provide: TAB_PANEL_NAV,
-      useExisting: TabPanelNavComponent
-    }
+      useExisting: TabPanelNavComponent,
+    },
   ],
   host: {
-    'class': 'fac-tab-panel-nav'
-  }
+    class: 'fac-tab-panel-nav',
+  },
 })
 export class TabPanelNavComponent {
   nextId = 0;

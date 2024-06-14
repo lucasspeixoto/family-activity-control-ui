@@ -8,8 +8,8 @@ describe('GaugeComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [GaugeComponent]
-});
+      imports: [GaugeComponent],
+    });
     fixture = TestBed.createComponent(GaugeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

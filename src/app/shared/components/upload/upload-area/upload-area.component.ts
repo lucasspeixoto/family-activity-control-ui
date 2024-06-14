@@ -7,7 +7,7 @@ import {
   inject,
   Input,
   Output,
-  Renderer2
+  Renderer2,
 } from '@angular/core';
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
 import { UploadSelectedEvent } from '../properties';
@@ -19,9 +19,9 @@ import { UploadSelectedEvent } from '../properties';
   styleUrls: ['./upload-area.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'class': 'fac-upload-area',
-    '[class.is-drop-active]': 'isDropActive'
-  }
+    class: 'fac-upload-area',
+    '[class.is-drop-active]': 'isDropActive',
+  },
 })
 export class UploadAreaComponent {
   protected _renderer = inject(Renderer2);
@@ -46,8 +46,8 @@ export class UploadAreaComponent {
 
   get api() {
     return {
-      isDropActive: this.isDropActive
-    }
+      isDropActive: this.isDropActive,
+    };
   }
 
   @HostListener('dragover', ['$event'])
@@ -96,7 +96,7 @@ export class UploadAreaComponent {
         multiple: this.multiple,
         fileList: event.dataTransfer.files,
         event,
-        files
+        files,
       });
     }
   }

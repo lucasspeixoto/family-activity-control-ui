@@ -8,10 +8,9 @@ describe('DvDateRendererComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DvDateRendererComponent]
-    })
-    .compileComponents();
-    
+      imports: [DvDateRendererComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(DvDateRendererComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
