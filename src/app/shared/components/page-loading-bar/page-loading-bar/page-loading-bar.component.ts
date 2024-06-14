@@ -84,7 +84,7 @@ export class PageLoadingBarComponent implements OnInit {
           this.value = _result;
           this._cdr.markForCheck();
         },
-        _ => {},
+        () => {},
         () => {
           this.visible = false;
           this._cdr.markForCheck();
