@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "cstart": "ng serve --host 0.0.0.0",
     "build": "ng build",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",

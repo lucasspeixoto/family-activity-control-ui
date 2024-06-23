@@ -1,0 +1,20 @@
+version: '3.5'
+
+services:
+  family-activity-control-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: lspeixotodev/family-activity-control-ui
+    restart: on-failure
+    container_name: family-activity-control-ui
+    ports:
+      - '4200:4200'
+    volumes:
+      - .:/app
+      - /app/node_modules
+    networks:
+      - family-activity-control-network
+networks:
+  family-activity-control-network:
+    driver: bridge
