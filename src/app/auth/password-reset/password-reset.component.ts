@@ -30,7 +30,7 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class PasswordResetComponent {
   private _router = inject(Router);
-  pin = new FormControl('', [Validators.required]);
+  public pin = new FormControl('', [Validators.required]);
 
   resendCode(): void {}
 
