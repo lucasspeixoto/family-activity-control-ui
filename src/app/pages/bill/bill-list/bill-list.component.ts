@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { MatPaginator } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
@@ -43,21 +43,13 @@ export interface Post {
   ],
   templateUrl: './bill-list.component.html',
 })
-export class BillListComponent implements OnInit {
+export class BillListComponent {
   private _httpClient = inject(HttpClient);
 
   status = 'all';
 
   data: Post[] = [];
   selectedRows: Post[] = [];
-
-  ngOnInit() {
-    this._httpClient
-      .get<Post[]>('/assets/mockdata/content-post-list.json')
-      .subscribe(data => {
-        this.data = data;
-      });
-  }
 
   selectionChanged(rows: Post[]): void {
     this.selectedRows = rows;
