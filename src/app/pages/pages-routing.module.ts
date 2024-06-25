@@ -8,9 +8,9 @@ const routes: Routes = [
       import('./common/common.component').then(c => c.CommonComponent),
     children: [
       {
-        path: 'content',
+        path: 'bill',
         loadChildren: () =>
-          import('./content/content.module').then(m => m.ContentModule),
+          import('./bill/bill.module').then(m => m.BillModule),
       },
     ],
   },

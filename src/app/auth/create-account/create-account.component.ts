@@ -11,8 +11,6 @@ import { MatInput } from '@angular/material/input';
 import { RouterLink } from '@angular/router';
 import { HDividerComponent } from '@shared/components/divider';
 
-import { phoneValidator } from '@shared/components/phone-input';
-
 @Component({
   selector: 'app-create-account',
   standalone: true,
@@ -38,7 +36,6 @@ export class CreateAccountComponent {
     lastName: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required]],
-    phone: ['', [Validators.required, phoneValidator]],
   });
 
   get passwordValue(): string {

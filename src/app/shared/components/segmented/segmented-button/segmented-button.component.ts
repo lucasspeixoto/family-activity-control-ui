@@ -32,7 +32,7 @@ export class SegmentedButtonComponent {
   });
 
   @Input({ required: true })
-  value: any;
+  value: string;
 
   @Input({ transform: booleanAttribute })
   disabled = false;

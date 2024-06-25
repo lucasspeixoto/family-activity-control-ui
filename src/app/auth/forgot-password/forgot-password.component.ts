@@ -31,7 +31,5 @@ export class ForgotPasswordComponent {
 
   email = new FormControl('', [Validators.required, Validators.email]);
 
-  resetPassword() {
-    this._router.navigateByUrl('/auth/password-reset');
-  }
+  resetPassword() {}
 }

@@ -1,7 +1,0 @@
-:host {
-  flex: none;
-
-  &:not([class*='h-']) {
-    height: var(--fac-panel-header-height);
-  }
-}

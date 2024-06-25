@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'posts/list',
+    path: 'bills/list',
     loadComponent: () =>
-      import('./post-list/post-list.component').then(c => c.PostListComponent),
+      import('./bill-list/bill-list.component').then(c => c.BillListComponent),
   },
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ContentRoutingModule {}
+export class BillRoutingModule {}

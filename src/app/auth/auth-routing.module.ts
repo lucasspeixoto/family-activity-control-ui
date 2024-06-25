@@ -20,25 +20,6 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'password-reset',
-    loadComponent: () =>
-      import('./password-reset/password-reset.component').then(
-        c => c.PasswordResetComponent
-      ),
-  },
-  {
-    path: 'set-new-password',
-    loadComponent: () =>
-      import('./set-new-password/set-new-password.component').then(
-        c => c.SetNewPasswordComponent
-      ),
-  },
-  {
-    path: 'done',
-    loadComponent: () =>
-      import('./done/done.component').then(c => c.DoneComponent),
-  },
-  {
     path: 'create-account',
     loadComponent: () =>
       import('./create-account/create-account.component').then(

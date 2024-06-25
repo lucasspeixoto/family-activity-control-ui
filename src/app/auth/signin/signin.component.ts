@@ -31,6 +31,6 @@ export class SigninComponent {
   private router = inject(Router);
 
   public loginHandler(): void {
-    this.router.navigateByUrl('/pages/content/posts/list');
+    this.router.navigateByUrl('/pages/bill/bills/list');
   }
 }
