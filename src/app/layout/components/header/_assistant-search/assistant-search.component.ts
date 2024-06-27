@@ -60,11 +60,12 @@ export class AssistantSearchComponent implements OnDestroy {
   private _overlayRef: OverlayRef;
   protected searchText = '';
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     this.close();
   }
 
-  focus(event: FocusEvent, suggestionDropdown: TemplateRef<any>) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  public focus(event: FocusEvent, suggestionDropdown: TemplateRef<any>) {
     if (this._isAttached) {
       return;
     }

@@ -1,35 +1,22 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { MatPaginator } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
 import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
-import { HttpClient } from '@angular/common/http';
 
 import { VDividerComponent } from '@shared/components/divider';
 import {
   SegmentedButtonComponent,
   SegmentedComponent,
 } from '@shared/components/segmented/public-api';
-
-export interface User {
-  id: string;
-  username: string;
-  name: string;
-  email: string;
-  avatarUrl: string;
-}
-
-export interface Post {
-  id: string;
-  title: string;
-  author: User;
-  status: string;
-  createdAt: Date;
-  publishedAt?: Date;
-}
+import { BillService } from '../services/bill.service';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { Bill } from '../model/bill';
+import { AsyncPipe, JsonPipe, NgIf } from '@angular/common';
 
 @Component({
+  selector: 'app-bill-list',
   standalone: true,
   imports: [
     MatPaginator,
@@ -40,18 +27,23 @@ export interface Post {
     MatIconButton,
     SegmentedButtonComponent,
     SegmentedComponent,
+    JsonPipe,
+    NgIf,
+    AsyncPipe,
   ],
   templateUrl: './bill-list.component.html',
+  providers: [BillService],
 })
-export class BillListComponent {
-  private _httpClient = inject(HttpClient);
+export class BillListComponent implements OnInit {
+  constructor(private billService: BillService) {}
 
-  status = 'all';
+  public bill$ = this.billService.getBills();
 
-  data: Post[] = [];
-  selectedRows: Post[] = [];
+  public bill = toSignal(this.bill$, { initialValue: [] as Bill[] });
 
-  selectionChanged(rows: Post[]): void {
-    this.selectedRows = rows;
+  public ngOnInit(): void {
+    this.billService.getBills().subscribe(bills => {
+      console.log(bills);
+    });
   }
 }

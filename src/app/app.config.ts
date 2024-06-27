@@ -1,7 +1,4 @@
-import {
-  ApplicationConfig,
-  provideExperimentalZonelessChangeDetection,
-} from '@angular/core';
+import { ApplicationConfig } from '@angular/core';
 import {
   provideRouter,
   TitleStrategy,
@@ -19,13 +16,15 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { environment } from '../environments/environment';
 import { ENVIRONMENT } from '@shared/services/environment.service';
 import { PageTitleStrategyService } from '@shared/services/page-title-strategy.service';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes, withViewTransitions()),
+    provideHttpClient(withFetch()),
     provideClientHydration(),
     provideAnimationsAsync(),
-    provideHttpClient(withFetch()),
+    provideHttpClientTesting(),
     provideStore(),
     provideNativeDateAdapter(),
     {
