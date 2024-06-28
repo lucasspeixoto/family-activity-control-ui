@@ -16,7 +16,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": ["app","fac"],
+            "prefix": ["app", "fac"],
             "style": "camelCase"
           }
         ],
@@ -24,8 +24,20 @@
           "error",
           {
             "type": "element",
-            "prefix": ["app","fac"],
+            "prefix": ["app", "fac"],
             "style": "kebab-case"
+          }
+        ],
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "args": "all",
+            "argsIgnorePattern": "^_",
+            "caughtErrors": "all",
+            "caughtErrorsIgnorePattern": "^_",
+            "destructuredArrayIgnorePattern": "^_",
+            "varsIgnorePattern": "^_",
+            "ignoreRestSiblings": true
           }
         ]
       }

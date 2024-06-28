@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { MatPaginator } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +14,7 @@ import { BillService } from '../services/bill.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Bill } from '../model/bill';
 import { AsyncPipe, JsonPipe, NgIf } from '@angular/common';
+import { MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'app-bill-list',
@@ -30,20 +31,19 @@ import { AsyncPipe, JsonPipe, NgIf } from '@angular/common';
     JsonPipe,
     NgIf,
     AsyncPipe,
+    MatTableModule,
   ],
   templateUrl: './bill-list.component.html',
   providers: [BillService],
 })
-export class BillListComponent implements OnInit {
+export class BillListComponent {
+  public status = 'all';
+
   constructor(private billService: BillService) {}
 
-  public bill$ = this.billService.getBills();
+  public bills$ = this.billService.getBills();
 
-  public bill = toSignal(this.bill$, { initialValue: [] as Bill[] });
+  public bills = toSignal(this.bills$, { initialValue: [] as Bill[] });
 
-  public ngOnInit(): void {
-    this.billService.getBills().subscribe(bills => {
-      console.log(bills);
-    });
-  }
+  displayedColumns: string[] = ['id', 'title', 'owner', 'amount'];
 }
