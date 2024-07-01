@@ -4,7 +4,12 @@ import { Component } from '@angular/core';
   selector: 'fac-layout-header',
   standalone: true,
   imports: [],
-  templateUrl: './layout-header.component.html',
-  styleUrl: './layout-header.component.scss',
+  template: `<ng-content></ng-content>`,
+  styles: `
+    :host {
+      display: block;
+      flex: none;
+    }
+  `,
 })
 export class LayoutHeaderComponent {}

@@ -6,8 +6,7 @@ import { MatRipple } from '@angular/material/core';
 
 import { NgTemplateOutlet } from '@angular/common';
 
-import { MentionedInCommentNotification } from '../notification-types/mentioned-in-comment/mentioned-in-comment.notification';
-import { InviteToEditFilesInFolderNotification } from '../notification-types/invite-to-edit-files-in-folder/invite-to-edit-files-in-folder.notification';
+import { NotificationComponent } from '../notification/notification.component';
 
 import { HDividerComponent } from '@shared/components/divider';
 
@@ -26,8 +25,7 @@ import {
     RouterLink,
     MatIcon,
     MatRipple,
-    MentionedInCommentNotification,
-    InviteToEditFilesInFolderNotification,
+    NotificationComponent,
     NgTemplateOutlet,
     HDividerComponent,
     SkeletonLineComponent,
@@ -42,39 +40,13 @@ export class NotificationListComponent {
   notifications: Notification[] = [
     {
       actor: {
-        name: 'Justin Hansen',
-        username: 'justin.hansen',
+        name: 'Liana Fernandes',
+        username: 'liana.fernandes',
         avatarUrl: 'https://avatar.iran.liara.run/public',
       },
-      notifier: {
-        name: 'Elma Johnson',
-        username: 'elma.johnson',
-        avatarUrl: 'https://avatar.iran.liara.run/public',
-      },
-      entity: {
-        content: 'what did you say?',
-      },
-      typeId: 'mentioned-in-comment',
+      message:
+        'Hey there, how are you ? I have news, the Family Activity Control is ready to use',
       createdAt: '1 hour ago',
-    },
-    {
-      actor: {
-        name: 'Johnny Gladden',
-        username: 'johnny.gladden',
-        avatarUrl: 'https://avatar.iran.liara.run/public',
-      },
-      notifier: {
-        name: 'Angela Naylor',
-        username: 'angela.naylor',
-        avatarUrl: 'https://avatar.iran.liara.run/public',
-      },
-      entity: {
-        content: {
-          folderName: 'My New Project',
-        },
-      },
-      typeId: 'invite-to-edit-files-in-folder',
-      createdAt: '2 hours ago',
     },
   ];
 }

@@ -5,8 +5,29 @@ import { LAYOUT } from '../types';
   selector: 'fac-layout',
   exportAs: 'facLayout',
   standalone: true,
-  templateUrl: './layout.component.html',
-  styleUrl: './layout.component.scss',
+  template: `
+    <ng-content select="fac-layout-header"></ng-content>
+    <div class="flex grow overflow-hidden">
+      <ng-content select="fac-layout-sidebar"></ng-content>
+      <div class="grow flex flex-col relative overflow-hidden">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  `,
+  styles: `
+    :host {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      &.is-window-mode {
+        width: 100dvw;
+        height: 100dvh;
+      }
+    }
+  `,
   providers: [
     {
       provide: LAYOUT,
@@ -19,9 +40,7 @@ import { LAYOUT } from '../types';
   },
 })
 export class LayoutComponent {
-  @Input()
-  layoutId: string;
+  @Input() public layoutId: string;
 
-  @Input({ transform: booleanAttribute })
-  windowMode = false;
+  @Input({ transform: booleanAttribute }) public windowMode = false;
 }

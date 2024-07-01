@@ -30,7 +30,7 @@ export class SoundEffectDirective {
     audio.volume = 0.15;
     fromEvent(this._elementRef.nativeElement, 'click')
       .pipe(takeUntilDestroyed(this._destroyRef))
-      .subscribe(async e => {
+      .subscribe(async () => {
         await audio.play();
       });
   }

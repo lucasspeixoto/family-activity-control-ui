@@ -1,7 +1,14 @@
-import { Component } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  DestroyRef,
+  inject,
+  OnInit,
+  signal,
+  ViewChild,
+} from '@angular/core';
 
-import { MatPaginator } from '@angular/material/paginator';
-import { FormsModule } from '@angular/forms';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 
@@ -11,39 +18,80 @@ import {
   SegmentedComponent,
 } from '@shared/components/segmented/public-api';
 import { BillService } from '../services/bill.service';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { Bill } from '../model/bill';
-import { AsyncPipe, JsonPipe, NgIf } from '@angular/common';
-import { MatTableModule } from '@angular/material/table';
+import { AsyncPipe, DatePipe } from '@angular/common';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+import { BILLS_TABLE_COLUMNS } from '../constants/bills-table';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { BillListActionsComponent } from './bill-list-actions/bill-list-actions.component';
 
 @Component({
   selector: 'app-bill-list',
   standalone: true,
   imports: [
     MatPaginator,
-    FormsModule,
     MatButton,
     MatIcon,
     VDividerComponent,
     MatIconButton,
     SegmentedButtonComponent,
     SegmentedComponent,
-    JsonPipe,
-    NgIf,
     AsyncPipe,
     MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatLabel,
+    DatePipe,
+    MatSortModule,
+
+    BillListActionsComponent,
   ],
   templateUrl: './bill-list.component.html',
   providers: [BillService],
+  styles: ``,
 })
-export class BillListComponent {
-  public status = 'all';
+export class BillListComponent implements AfterViewInit, OnInit {
+  @ViewChild(MatPaginator) public paginator: MatPaginator;
+  @ViewChild(MatSort) public sort: MatSort;
 
-  constructor(private billService: BillService) {}
+  private billService = inject(BillService);
+
+  private destroy$ = inject(DestroyRef);
 
   public bills$ = this.billService.getBills();
 
-  public bills = toSignal(this.bills$, { initialValue: [] as Bill[] });
+  public billsDataSource = new MatTableDataSource<Bill>();
 
-  displayedColumns: string[] = ['id', 'title', 'owner', 'amount'];
+  public billsTableColumns = BILLS_TABLE_COLUMNS;
+
+  public selectedFilterBillWord = signal('');
+
+  public ngOnInit(): void {
+    this.fetchBillsListHandler();
+  }
+
+  public ngAfterViewInit() {
+    this.billsDataSource.paginator = this.paginator;
+    this.billsDataSource.sort = this.sort;
+  }
+
+  public fetchBillsListHandler(): void {
+    this.bills$.pipe(takeUntilDestroyed(this.destroy$)).subscribe(bills => {
+      this.billsDataSource.data = bills;
+    });
+  }
+
+  public applyBillsFilterHandler(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+
+    const selectedFilterBillWord = filterValue.trim().toLowerCase();
+
+    this.selectedFilterBillWord.set(selectedFilterBillWord);
+
+    this.billsDataSource.filter = selectedFilterBillWord;
+  }
 }

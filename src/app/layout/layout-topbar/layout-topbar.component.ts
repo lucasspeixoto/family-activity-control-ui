@@ -5,8 +5,13 @@ import { Component } from '@angular/core';
   exportAs: 'fac-layout-topbar',
   standalone: true,
   imports: [],
-  templateUrl: './layout-topbar.component.html',
-  styleUrl: './layout-topbar.component.scss',
+  template: `<ng-content></ng-content>`,
+  styles: `
+    :host {
+      display: block;
+      grid-area: topbar;
+    }
+  `,
   host: {
     class: 'fac-layout-topbar',
   },

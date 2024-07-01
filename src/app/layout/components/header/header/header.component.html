@@ -1,13 +1,12 @@
 <div class="h-20 w-full px-10 bg-background">
   <div
-    class="h-full flex items-center border-b dark:border-b-neutral-600 gap-7">
-    <div class="flex items-center gap-3 -ms-3">
+    class="h-full flex items-center justify-between border-b dark:border-b-neutral-600 gap-7">
+    <div class="flex items-center gap-3">
       <button mat-icon-button (click)="toggleSidebar()">
         <mat-icon class="font-icon">menu</mat-icon>
       </button>
-      <app-assistant-search></app-assistant-search>
     </div>
-    <div class="ms-auto flex items-center gap-3">
+    <div class="flex items-center gap-3">
       <button
         mat-icon-button
         [matMenuTriggerFor]="appsMenu"
@@ -168,7 +167,7 @@
   </fac-popover>
 </ng-template>
 
-<mat-menu xPosition="before" #accountMenu="matMenu">
+<mat-menu class="mt-2" xPosition="before" #accountMenu="matMenu">
   <div class="flex items-center px-4 pb-4 pt-2 gap-3">
     <fac-avatar text="PS" class="w-14 h-14"></fac-avatar>
     <div class="-mt-0.5">
@@ -176,7 +175,7 @@
         Lucas Peixoto
         <div
           class="border flex items-center border-neutral-900 dark:border-neutral-200 h-5 leading-3 px-2 rounded-full font-bold text-4xs uppercase text-neutral-500 dark:text-neutral-200">
-          Free
+          Admin
         </div>
       </div>
       <div class="text-xs text-gray-500 mt-0.5 dark:text-gray-400">

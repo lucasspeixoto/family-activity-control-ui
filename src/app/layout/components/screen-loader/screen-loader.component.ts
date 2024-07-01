@@ -5,19 +5,31 @@ import {
   ElementRef,
   inject,
   Input,
-  OnChanges,
-  SimpleChanges,
   ViewChild,
 } from '@angular/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { GlobalState, GlobalStore } from '@state/global.state';
 import { getState } from '@ngrx/signals';
 
 @Component({
   selector: 'app-screen-loader',
   standalone: true,
-  imports: [],
-  templateUrl: './screen-loader.component.html',
-  styleUrl: './screen-loader.component.scss',
+  imports: [MatProgressSpinnerModule],
+  template: `
+    <div
+      #loader
+      class="fixed z-[9999] inset-0 bg-white dark:bg-neutral-700 flex items-center justify-center">
+      <div class="flex items-center justify-center flex-col">
+        <mat-spinner />
+        @if (loadingText) {
+          <div class="text-sm text-neutral-500 mt-3 dark:text-neutral-100">
+            {{ loadingText }}
+          </div>
+        }
+      </div>
+    </div>
+  `,
+  styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ScreenLoaderComponent {

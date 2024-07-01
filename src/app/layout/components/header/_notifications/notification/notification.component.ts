@@ -9,13 +9,16 @@ import { IconComponent } from '@shared/components/icon';
 import { AvatarComponent } from '@shared/components/avatar';
 
 @Component({
-  selector: 'app-mentioned-in-comment',
+  selector: 'app-notification',
   standalone: true,
   imports: [MatIcon, MatRipple, RouterLink, IconComponent, AvatarComponent],
-  templateUrl: './mentioned-in-comment.notification.html',
-  styleUrl: './mentioned-in-comment.notification.scss',
+  templateUrl: './notification.component.html',
+  styles: `
+    :host {
+      display: block;
+    }
+  `,
 })
-export class MentionedInCommentNotification {
-  @Input()
-  notification: Notification;
+export class NotificationComponent {
+  @Input() public notification: Notification;
 }

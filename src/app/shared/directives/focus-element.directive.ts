@@ -1,12 +1,10 @@
 import {
   AfterViewInit,
   booleanAttribute,
-  ChangeDetectorRef,
   Directive,
   ElementRef,
   inject,
   input,
-  NgZone,
   OnDestroy,
   output,
 } from '@angular/core';

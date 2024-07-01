@@ -14,4 +14,9 @@ export class BillService {
   public getBills(): Observable<Bill[]> {
     return this.http.get<Bill[]>(`${this.apiUrl}/bill`);
   }
+
+  public applyBillsFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    return filterValue.trim().toLowerCase();
+  }
 }

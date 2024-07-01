@@ -16,8 +16,20 @@ import { isPlatformServer } from '@angular/common';
   exportAs: 'facLayoutBody',
   standalone: true,
   imports: [],
-  templateUrl: './layout-body.component.html',
-  styleUrl: './layout-body.component.scss',
+  template: `<ng-content></ng-content>`,
+  styles: `
+    :host {
+      display: block;
+      position: relative;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+
+      &:has(:not(.fac-layout-body)) {
+        overflow: auto;
+      }
+    }
+  `,
   host: {
     class: 'fac-layout-body fac-scroll-lg',
   },
@@ -30,7 +42,7 @@ export class LayoutBodyComponent implements OnInit {
   @Input({ transform: booleanAttribute })
   autoscrollToTop = true;
 
-  ngOnInit() {
+  public ngOnInit() {
     // Scroll a page to top if url changed
     this._router.events
       .pipe(filter(event => event instanceof NavigationStart))

@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, HostListener, inject, Input } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { MatAnchor, MatButton, MatIconButton } from '@angular/material/button';
 import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
@@ -12,7 +12,6 @@ import { Router, RouterLink } from '@angular/router';
 
 import { NotificationListComponent } from '@layoutC/header/_notifications/notification-list/notification-list.component';
 
-import { AssistantSearchComponent } from '@layoutC/header/_assistant-search/assistant-search.component';
 import { SoundEffectDirective } from '@shared/directives/sound-effect.directive';
 import { ThemeManagerService } from '@shared/services/theme-manager.service';
 
@@ -45,7 +44,6 @@ import {
     MatTooltip,
     NotificationListComponent,
     RouterLink,
-    AssistantSearchComponent,
     IconComponent,
     MatAnchor,
     SoundEffectDirective,
@@ -55,23 +53,23 @@ import {
     MatIcon,
   ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
-  host: {
-    class: 'block w-full h-full',
-  },
+  styles: ``,
+  host: {},
 })
 export class HeaderComponent {
+  @Input() public sidebarHidden = false;
+
   protected _themeManager = inject(ThemeManagerService);
+
   private _layoutApi = inject(LayoutApiService);
 
   private _router = inject(Router);
 
   public isDark = this._themeManager.isDark();
 
-  @Input()
-  public sidebarHidden = false;
+  public innerWidth: number;
 
-  toggleSidebar(): void {
+  public toggleSidebar(): void {
     if (!this.sidebarHidden) {
       this._layoutApi.hideSidebar('root');
     } else {
@@ -83,5 +81,17 @@ export class HeaderComponent {
 
   public logoutHandler(): void {
     this._router.navigateByUrl('/auth/sign-in');
+  }
+
+  @HostListener('window:resize', ['$event'])
+  public onResize(_event: Event) {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth <= 991) {
+      this._layoutApi.hideSidebar('root');
+      this.sidebarHidden = true;
+    } else {
+      this._layoutApi.showSidebar('root');
+      this.sidebarHidden = false;
+    }
   }
 }

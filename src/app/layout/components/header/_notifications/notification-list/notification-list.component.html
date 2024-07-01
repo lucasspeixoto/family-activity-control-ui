@@ -12,33 +12,12 @@
       >View All</a
     >
   </div>
-  <div class="h-[300px] overflow-y-auto">
+  <div class="h-auto mb-2 overflow-y-auto">
     @for (notification of notifications; track notification) {
-      @switch (notification.typeId) {
-        @case ('mentioned-in-comment') {
-          @defer {
-            <app-mentioned-in-comment
-              [notification]="notification"></app-mentioned-in-comment>
-          } @placeholder (minimum 500ms) {
-            <ng-container
-              [ngTemplateOutlet]="notificationSkeleton"></ng-container>
-          }
-        }
-        @case ('invite-to-edit-files-in-folder') {
-          @defer {
-            <app-invite-to-edit-files-in-folder
-              [notification]="
-                notification
-              "></app-invite-to-edit-files-in-folder>
-          } @placeholder (minimum 500ms) {
-            <ng-container
-              [ngTemplateOutlet]="notificationSkeleton"></ng-container>
-          }
-        }
-      }
+      <app-notification [notification]="notification"></app-notification>
       <fac-h-divider></fac-h-divider>
     } @empty {
-      asfasf
+      No notifications!
     }
   </div>
 </div>
