@@ -13,7 +13,6 @@ import { filter } from 'rxjs';
 
 import { environment } from '../environments/environment';
 import { ThemeManagerService } from '@shared/services/theme-manager.service';
-import { AnalyticsService } from '@shared/services/analytics.service';
 import { InactivityTrackerService } from '@shared/services/inactivity-tracker.service';
 import { ScreenLoaderService } from '@shared/services/screen-loader.service';
 import { SeoService } from '@shared/services/seo.service';
@@ -36,7 +35,6 @@ import { ScreenLoaderComponent } from './layout/components/screen-loader/screen-
 export class AppComponent implements OnInit {
   private _themeManager = inject(ThemeManagerService);
   private _screenLoader = inject(ScreenLoaderService);
-  private _analyticsService = inject(AnalyticsService);
   private _inactivityTracker = inject(InactivityTrackerService);
   private _seoService = inject(SeoService);
   private _platformId = inject(PLATFORM_ID);
@@ -60,8 +58,6 @@ export class AppComponent implements OnInit {
             this.pageLoaded.set(true);
           }, 2000);
         });
-
-      this._analyticsService.trackPageViews();
 
       this._inactivityTracker.setupInactivityTimer().subscribe(() => {
         console.log('Inactive mode has been activated!');

@@ -70,6 +70,6 @@ export class ToolbarComponent {
   public router = inject(Router);
 
   public logoutHandler(): void {
-    this.router.navigateByUrl('/auth/sign-in');
+    this.router.navigateByUrl('/auth/signin');
   }
 }

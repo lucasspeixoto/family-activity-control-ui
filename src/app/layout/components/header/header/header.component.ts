@@ -65,7 +65,7 @@ export class HeaderComponent {
 
   private _router = inject(Router);
 
-  public isDark = this._themeManager.isDark();
+  public isDark$ = this._themeManager.isDark();
 
   public innerWidth: number;
 
@@ -80,7 +80,7 @@ export class HeaderComponent {
   }
 
   public logoutHandler(): void {
-    this._router.navigateByUrl('/auth/sign-in');
+    this._router.navigateByUrl('/auth/signin');
   }
 
   @HostListener('window:resize', ['$event'])

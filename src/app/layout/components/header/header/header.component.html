@@ -31,9 +31,9 @@
         mat-icon-button
         (click)="_themeManager.toggleColorScheme()"
         matTooltip="Color Theme"
-        facSoundEffect
+        appSoundEffect
         soundSrc="/assets/sound-effects/mouse-click.ogg">
-        @if (isDark | async) {
+        @if (isDark$ | async) {
           <mat-icon class="font-icon">light_mode</mat-icon>
         } @else {
           <mat-icon class="font-icon">dark_mode</mat-icon>

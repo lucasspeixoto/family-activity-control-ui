@@ -15,7 +15,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'auth/sign-in',
+    redirectTo: 'auth/signin',
     pathMatch: 'full',
   },
   {

@@ -10,7 +10,7 @@ import { fromEvent } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Directive({
-  selector: '[facSoundEffect]',
+  selector: '[appSoundEffect]',
   standalone: true,
 })
 export class SoundEffectDirective {

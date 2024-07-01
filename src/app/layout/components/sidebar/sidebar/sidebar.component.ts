@@ -8,8 +8,6 @@ import { MatRipple } from '@angular/material/core';
 
 import { ToolbarComponent } from '@layoutC/sidebar/_toolbar/toolbar.component';
 
-import { OrderByPipe } from '@shared/pipes/order-by.pipe';
-
 import {
   NavigationComponent,
   NavigationDividerComponent,
@@ -39,7 +37,6 @@ export interface NavItem {
     RouterLink,
     MatRipple,
     ToolbarComponent,
-    OrderByPipe,
     NavigationComponent,
     NavigationGroupMenuComponent,
     NavigationGroupComponent,
@@ -84,10 +81,7 @@ export interface NavItem {
                     >
                   </fac-navigation-group-toggle>
                   <fac-navigation-group-menu [key]="navItem.id">
-                    @for (
-                      childItem of navItem.children | orderBy: 'name';
-                      track childItem
-                    ) {
+                    @for (childItem of navItem.children; track childItem) {
                       <a
                         fac-navigation-item
                         [routerLink]="childItem.link"

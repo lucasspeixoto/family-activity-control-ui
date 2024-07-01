@@ -21,10 +21,6 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     provideStore(),
     provideNativeDateAdapter(),
-    /* {
-      provide: ENVIRONMENT,
-      useValue: environment,
-    }, */
     {
       provide: TitleStrategy,
       useClass: PageTitleStrategyService,
@@ -33,5 +29,9 @@ export const appConfig: ApplicationConfig = {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'outline' },
     },
+    /* {
+      provide: MatDialogRef,
+      useValue: {},
+    }, */
   ],
 };
