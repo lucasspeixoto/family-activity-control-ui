@@ -1,6 +1,5 @@
 export * from './navigation/navigation.component';
 export * from './navigation-item/navigation-item.component';
-export * from './navigation-heading/navigation-heading.component';
 export * from './navigation-divider/navigation-divider.component';
 export * from './navigation-group/navigation-group.component';
 export * from './navigation-group-menu/navigation-group-menu.component';

@@ -15,19 +15,10 @@ import {
   NavigationGroupMenuComponent,
   NavigationGroupToggleComponent,
   NavigationGroupToggleIconDirective,
-  NavigationHeadingComponent,
   NavigationItemComponent,
   NavigationItemIconDirective,
 } from '@shared/components/navigation';
-
-export interface NavItem {
-  type: string;
-  name: string;
-  icon?: string;
-  id?: string | number;
-  link?: string;
-  children?: NavItem[];
-}
+import { MenuItem } from '@app/layout/types';
 
 @Component({
   selector: 'app-sidebar',
@@ -41,7 +32,6 @@ export interface NavItem {
     NavigationGroupMenuComponent,
     NavigationGroupComponent,
     NavigationGroupToggleComponent,
-    NavigationHeadingComponent,
     NavigationItemComponent,
     NavigationDividerComponent,
     NavigationItemIconDirective,
@@ -60,52 +50,30 @@ export interface NavItem {
           #navigation
           [activeKey]="activeLinkId"
           class="navigation">
-          @for (navItem of navItems; track navItem) {
-            @switch (navItem.type) {
-              @case ('heading') {
-                <fac-navigation-heading>{{
-                  navItem.name
-                }}</fac-navigation-heading>
-              }
-              @case ('group') {
-                <fac-navigation-group>
-                  <fac-navigation-group-toggle [for]="navItem.id">
-                    @if (navItem.icon) {
-                      <mat-icon facNavigationItemIcon class="font-icon">{{
-                        navItem.icon
-                      }}</mat-icon>
-                    }
-                    {{ navItem.name }}
-                    <mat-icon facNavigationGroupToggleIcon class="font-icon"
-                      >arrow_drop_down</mat-icon
-                    >
-                  </fac-navigation-group-toggle>
-                  <fac-navigation-group-menu [key]="navItem.id">
-                    @for (childItem of navItem.children; track childItem) {
-                      <a
-                        fac-navigation-item
-                        [routerLink]="childItem.link"
-                        [key]="childItem.link">
-                        {{ childItem.name }}
-                      </a>
-                    }
-                  </fac-navigation-group-menu>
-                </fac-navigation-group>
-              }
-              @default {
-                <a
-                  fac-navigation-item
-                  [routerLink]="navItem.link"
-                  [key]="navItem.link">
-                  @if (navItem.icon) {
-                    <mat-icon facNavigationItemIcon class="font-icon">{{
-                      navItem.icon
-                    }}</mat-icon>
-                  }
-                  {{ navItem.name }}
-                </a>
-              }
-            }
+          @for (menuItem of menuItems; track menuItem) {
+            <fac-navigation-group>
+              <fac-navigation-group-toggle [for]="menuItem.id">
+                @if (menuItem.icon) {
+                  <mat-icon facNavigationItemIcon class="font-icon">{{
+                    menuItem.icon
+                  }}</mat-icon>
+                }
+                {{ menuItem.name }}
+                <mat-icon facNavigationGroupToggleIcon class="font-icon"
+                  >arrow_drop_down</mat-icon
+                >
+              </fac-navigation-group-toggle>
+              <fac-navigation-group-menu [key]="menuItem.id">
+                @for (childItem of menuItem.children; track childItem) {
+                  <a
+                    fac-navigation-item
+                    [routerLink]="childItem.link"
+                    [key]="childItem.link">
+                    {{ childItem.name }}
+                  </a>
+                }
+              </fac-navigation-group-menu>
+            </fac-navigation-group>
           }
         </fac-navigation>
       </div>
@@ -124,31 +92,31 @@ export class SidebarComponent implements OnInit {
   @ViewChild('navigation', { static: true })
   public navigation!: string;
 
-  public navItems: NavItem[] = [
+  public menuItems: MenuItem[] = [
     {
       id: 'bill',
-      type: 'group',
       icon: 'paid',
       name: 'Bill',
       children: [
         {
-          type: 'link',
           name: 'Bill List',
           link: '/pages/bill/bills/list',
         },
       ],
     },
   ];
-  navItemLinks: NavItem[] = [];
+
+  navItemLinks: MenuItem[] = [];
+
   activeLinkId: string | null = '/';
 
   public ngOnInit() {
-    this.navItems.forEach(navItem => {
-      this.navItemLinks.push(navItem);
+    this.menuItems.forEach(menuItem => {
+      this.navItemLinks.push(menuItem);
 
-      if (navItem.children) {
+      if (menuItem.children) {
         this.navItemLinks = this.navItemLinks.concat(
-          navItem.children as NavItem[]
+          menuItem.children as MenuItem[]
         );
       }
     });
@@ -162,7 +130,7 @@ export class SidebarComponent implements OnInit {
 
   private _activateLink() {
     const activeLink = this.navItemLinks.find(
-      navItem => navItem.link === this.location.path()
+      menuItem => menuItem.link === this.location.path()
     );
 
     if (activeLink) {
