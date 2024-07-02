@@ -36,10 +36,10 @@ import { AvatarComponent } from '@shared/components/avatar';
       <mat-divider></mat-divider>
     </div>
     <div class="ms-auto flex items-center gap-2.5">
-      <fac-avatar
+      <app-avatar
         text="PS"
         src="https://avatar.iran.liara.run/public"
-        class="size-12"></fac-avatar>
+        class="size-12"></app-avatar>
       <div
         class="flex items-center rounded-full p-1 gap-[0.5] bg-neutral-200 dark:bg-neutral-700 hover:text-neutral-900">
         <button mat-icon-button matTooltip="Settings">

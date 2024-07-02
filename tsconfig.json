@@ -5,8 +5,11 @@
     "baseUrl": "./",
     "paths": {
       "@shared/*": ["./src/app/shared/*"],
+      "@sharedC/*": ["./src/app/shared/services/*"],
+      "@sharedD/*": ["./src/app/shared/directives/*"],
       "@app/*": ["./src/app/*"],
       "@state/*": ["./src/app/state/*"],
+      "@layout/*": ["./src/app/layout/*"],
       "@layoutC/*": ["./src/app/layout/components/*"],
       "@bill/*": ["./src/app/pages/bill/*"]
     },

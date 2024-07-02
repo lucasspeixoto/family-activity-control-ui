@@ -1,298 +1,298 @@
 @use '@angular/material' as mat;
 
 :root {
-  --fac-background: #fff;
-  --fac-on-background: #{mat.get-theme-color($m3-light-theme, neutral, 20)};
-  --fac-inverse: #{mat.get-theme-color($m3-light-theme, neutral, 50)};
+  --app-background: #fff;
+  --app-on-background: #{mat.get-theme-color($m3-light-theme, neutral, 20)};
+  --app-inverse: #{mat.get-theme-color($m3-light-theme, neutral, 50)};
 
-  --fac-neutral: #{mat.get-theme-color($m3-light-theme, neutral, 60)};
-  --fac-neutral-0: #{mat.get-theme-color($m3-light-theme, neutral, 100)};
-  --fac-neutral-50: #{mat.get-theme-color($m3-light-theme, neutral, 99)};
-  --fac-neutral-100: #{mat.get-theme-color($m3-light-theme, neutral, 98)};
-  --fac-neutral-200: #{mat.get-theme-color($m3-light-theme, neutral, 95)};
-  --fac-neutral-300: #{mat.get-theme-color($m3-light-theme, neutral, 90)};
-  --fac-neutral-400: #{mat.get-theme-color($m3-light-theme, neutral, 80)};
-  --fac-neutral-450: #{mat.get-theme-color($m3-light-theme, neutral, 70)};
-  --fac-neutral-500: #{mat.get-theme-color($m3-light-theme, neutral, 60)};
-  --fac-neutral-600: #{mat.get-theme-color($m3-light-theme, neutral, 50)};
-  --fac-neutral-650: #{mat.get-theme-color($m3-light-theme, neutral, 40)};
-  --fac-neutral-700: #{mat.get-theme-color($m3-light-theme, neutral, 35)};
-  --fac-neutral-800: #{mat.get-theme-color($m3-light-theme, neutral, 30)};
-  --fac-neutral-900: #{mat.get-theme-color($m3-light-theme, neutral, 25)};
-  --fac-neutral-950: #{mat.get-theme-color($m3-light-theme, neutral, 20)};
-  --fac-neutral-1000: #{mat.get-theme-color($m3-light-theme, neutral, 10)};
+  --app-neutral: #{mat.get-theme-color($m3-light-theme, neutral, 60)};
+  --app-neutral-0: #{mat.get-theme-color($m3-light-theme, neutral, 100)};
+  --app-neutral-50: #{mat.get-theme-color($m3-light-theme, neutral, 99)};
+  --app-neutral-100: #{mat.get-theme-color($m3-light-theme, neutral, 98)};
+  --app-neutral-200: #{mat.get-theme-color($m3-light-theme, neutral, 95)};
+  --app-neutral-300: #{mat.get-theme-color($m3-light-theme, neutral, 90)};
+  --app-neutral-400: #{mat.get-theme-color($m3-light-theme, neutral, 80)};
+  --app-neutral-450: #{mat.get-theme-color($m3-light-theme, neutral, 70)};
+  --app-neutral-500: #{mat.get-theme-color($m3-light-theme, neutral, 60)};
+  --app-neutral-600: #{mat.get-theme-color($m3-light-theme, neutral, 50)};
+  --app-neutral-650: #{mat.get-theme-color($m3-light-theme, neutral, 40)};
+  --app-neutral-700: #{mat.get-theme-color($m3-light-theme, neutral, 35)};
+  --app-neutral-800: #{mat.get-theme-color($m3-light-theme, neutral, 30)};
+  --app-neutral-900: #{mat.get-theme-color($m3-light-theme, neutral, 25)};
+  --app-neutral-950: #{mat.get-theme-color($m3-light-theme, neutral, 20)};
+  --app-neutral-1000: #{mat.get-theme-color($m3-light-theme, neutral, 10)};
 
-  --fac-neutral-variant: #{mat.get-theme-color(
+  --app-neutral-variant: #{mat.get-theme-color(
       $m3-light-theme,
       neutral-variant,
       60
     )};
-  --fac-neutral-variant-0: #{mat.get-theme-color(
+  --app-neutral-variant-0: #{mat.get-theme-color(
       $m3-light-theme,
       neutral-variant,
       100
     )};
-  --fac-neutral-variant-50: #{mat.get-theme-color(
+  --app-neutral-variant-50: #{mat.get-theme-color(
       $m3-light-theme,
       neutral-variant,
       99
     )};
-  --fac-neutral-variant-100: #{mat.get-theme-color(
+  --app-neutral-variant-100: #{mat.get-theme-color(
       $m3-light-theme,
       neutral-variant,
       98
     )};
-  --fac-neutral-variant-200: #{mat.get-theme-color(
+  --app-neutral-variant-200: #{mat.get-theme-color(
       $m3-light-theme,
       neutral-variant,
       95
     )};
-  --fac-neutral-variant-300: #{mat.get-theme-color(
+  --app-neutral-variant-300: #{mat.get-theme-color(
       $m3-light-theme,
       neutral-variant,
       90
     )};
-  --fac-neutral-variant-400: #{mat.get-theme-color(
+  --app-neutral-variant-400: #{mat.get-theme-color(
       $m3-light-theme,
       neutral-variant,
       80
     )};
-  --fac-neutral-variant-450: #{mat.get-theme-color(
+  --app-neutral-variant-450: #{mat.get-theme-color(
       $m3-light-theme,
       neutral-variant,
       70
     )};
-  --fac-neutral-variant-500: #{mat.get-theme-color(
+  --app-neutral-variant-500: #{mat.get-theme-color(
       $m3-light-theme,
       neutral-variant,
       60
     )};
-  --fac-neutral-variant-600: #{mat.get-theme-color(
+  --app-neutral-variant-600: #{mat.get-theme-color(
       $m3-light-theme,
       neutral-variant,
       50
     )};
-  --fac-neutral-variant-650: #{mat.get-theme-color(
+  --app-neutral-variant-650: #{mat.get-theme-color(
       $m3-light-theme,
       neutral-variant,
       40
     )};
-  --fac-neutral-variant-700: #{mat.get-theme-color(
+  --app-neutral-variant-700: #{mat.get-theme-color(
       $m3-light-theme,
       neutral-variant,
       35
     )};
-  --fac-neutral-variant-800: #{mat.get-theme-color(
+  --app-neutral-variant-800: #{mat.get-theme-color(
       $m3-light-theme,
       neutral-variant,
       30
     )};
-  --fac-neutral-variant-900: #{mat.get-theme-color(
+  --app-neutral-variant-900: #{mat.get-theme-color(
       $m3-light-theme,
       neutral-variant,
       25
     )};
-  --fac-neutral-variant-950: #{mat.get-theme-color(
+  --app-neutral-variant-950: #{mat.get-theme-color(
       $m3-light-theme,
       neutral-variant,
       20
     )};
-  --fac-neutral-variant-1000: #{mat.get-theme-color(
+  --app-neutral-variant-1000: #{mat.get-theme-color(
       $m3-light-theme,
       neutral-variant,
       10
     )};
 
   // primary color
-  --fac-primary-0: #{mat.get-theme-color($m3-light-theme, primary, 100)};
-  --fac-primary-50: #{mat.get-theme-color($m3-light-theme, primary, 99)};
-  --fac-primary-100: #{mat.get-theme-color($m3-light-theme, primary, 98)};
-  --fac-primary-200: #{mat.get-theme-color($m3-light-theme, primary, 95)};
-  --fac-primary-300: #{mat.get-theme-color($m3-light-theme, primary, 90)};
-  --fac-primary-400: #{mat.get-theme-color($m3-light-theme, primary, 80)};
-  --fac-primary-450: #{mat.get-theme-color($m3-light-theme, primary, 70)};
-  --fac-primary-500: #{mat.get-theme-color($m3-light-theme, primary, 60)};
-  --fac-primary-600: #{mat.get-theme-color($m3-light-theme, primary, 50)};
-  --fac-primary-650: #{mat.get-theme-color($m3-light-theme, primary, 40)};
-  --fac-primary-700: #{mat.get-theme-color($m3-light-theme, primary, 35)};
-  --fac-primary-800: #{mat.get-theme-color($m3-light-theme, primary, 30)};
-  --fac-primary-900: #{mat.get-theme-color($m3-light-theme, primary, 25)};
-  --fac-primary-950: #{mat.get-theme-color($m3-light-theme, primary, 20)};
-  --fac-primary-1000: #{mat.get-theme-color($m3-light-theme, primary, 10)};
+  --app-primary-0: #{mat.get-theme-color($m3-light-theme, primary, 100)};
+  --app-primary-50: #{mat.get-theme-color($m3-light-theme, primary, 99)};
+  --app-primary-100: #{mat.get-theme-color($m3-light-theme, primary, 98)};
+  --app-primary-200: #{mat.get-theme-color($m3-light-theme, primary, 95)};
+  --app-primary-300: #{mat.get-theme-color($m3-light-theme, primary, 90)};
+  --app-primary-400: #{mat.get-theme-color($m3-light-theme, primary, 80)};
+  --app-primary-450: #{mat.get-theme-color($m3-light-theme, primary, 70)};
+  --app-primary-500: #{mat.get-theme-color($m3-light-theme, primary, 60)};
+  --app-primary-600: #{mat.get-theme-color($m3-light-theme, primary, 50)};
+  --app-primary-650: #{mat.get-theme-color($m3-light-theme, primary, 40)};
+  --app-primary-700: #{mat.get-theme-color($m3-light-theme, primary, 35)};
+  --app-primary-800: #{mat.get-theme-color($m3-light-theme, primary, 30)};
+  --app-primary-900: #{mat.get-theme-color($m3-light-theme, primary, 25)};
+  --app-primary-950: #{mat.get-theme-color($m3-light-theme, primary, 20)};
+  --app-primary-1000: #{mat.get-theme-color($m3-light-theme, primary, 10)};
 
-  --fac-secondary-0: #{mat.get-theme-color($m3-light-theme, secondary, 100)};
-  --fac-secondary-50: #{mat.get-theme-color($m3-light-theme, secondary, 99)};
-  --fac-secondary-100: #{mat.get-theme-color($m3-light-theme, secondary, 98)};
-  --fac-secondary-200: #{mat.get-theme-color($m3-light-theme, secondary, 95)};
-  --fac-secondary-300: #{mat.get-theme-color($m3-light-theme, secondary, 90)};
-  --fac-secondary-400: #{mat.get-theme-color($m3-light-theme, secondary, 80)};
-  --fac-secondary-450: #{mat.get-theme-color($m3-light-theme, secondary, 70)};
-  --fac-secondary-500: #{mat.get-theme-color($m3-light-theme, secondary, 60)};
-  --fac-secondary-600: #{mat.get-theme-color($m3-light-theme, secondary, 50)};
-  --fac-secondary-650: #{mat.get-theme-color($m3-light-theme, secondary, 40)};
-  --fac-secondary-700: #{mat.get-theme-color($m3-light-theme, secondary, 35)};
-  --fac-secondary-800: #{mat.get-theme-color($m3-light-theme, secondary, 30)};
-  --fac-secondary-900: #{mat.get-theme-color($m3-light-theme, secondary, 25)};
-  --fac-secondary-950: #{mat.get-theme-color($m3-light-theme, secondary, 20)};
-  --fac-secondary-1000: #{mat.get-theme-color($m3-light-theme, secondary, 10)};
+  --app-secondary-0: #{mat.get-theme-color($m3-light-theme, secondary, 100)};
+  --app-secondary-50: #{mat.get-theme-color($m3-light-theme, secondary, 99)};
+  --app-secondary-100: #{mat.get-theme-color($m3-light-theme, secondary, 98)};
+  --app-secondary-200: #{mat.get-theme-color($m3-light-theme, secondary, 95)};
+  --app-secondary-300: #{mat.get-theme-color($m3-light-theme, secondary, 90)};
+  --app-secondary-400: #{mat.get-theme-color($m3-light-theme, secondary, 80)};
+  --app-secondary-450: #{mat.get-theme-color($m3-light-theme, secondary, 70)};
+  --app-secondary-500: #{mat.get-theme-color($m3-light-theme, secondary, 60)};
+  --app-secondary-600: #{mat.get-theme-color($m3-light-theme, secondary, 50)};
+  --app-secondary-650: #{mat.get-theme-color($m3-light-theme, secondary, 40)};
+  --app-secondary-700: #{mat.get-theme-color($m3-light-theme, secondary, 35)};
+  --app-secondary-800: #{mat.get-theme-color($m3-light-theme, secondary, 30)};
+  --app-secondary-900: #{mat.get-theme-color($m3-light-theme, secondary, 25)};
+  --app-secondary-950: #{mat.get-theme-color($m3-light-theme, secondary, 20)};
+  --app-secondary-1000: #{mat.get-theme-color($m3-light-theme, secondary, 10)};
 
   // tertiary color
-  --fac-tertiary-0: #{mat.get-theme-color($m3-light-theme, tertiary, 100)};
-  --fac-tertiary-50: #{mat.get-theme-color($m3-light-theme, tertiary, 99)};
-  --fac-tertiary-100: #{mat.get-theme-color($m3-light-theme, tertiary, 98)};
-  --fac-tertiary-200: #{mat.get-theme-color($m3-light-theme, tertiary, 95)};
-  --fac-tertiary-300: #{mat.get-theme-color($m3-light-theme, tertiary, 90)};
-  --fac-tertiary-400: #{mat.get-theme-color($m3-light-theme, tertiary, 80)};
-  --fac-tertiary-450: #{mat.get-theme-color($m3-light-theme, tertiary, 70)};
-  --fac-tertiary-500: #{mat.get-theme-color($m3-light-theme, tertiary, 60)};
-  --fac-tertiary-600: #{mat.get-theme-color($m3-light-theme, tertiary, 50)};
-  --fac-tertiary-650: #{mat.get-theme-color($m3-light-theme, tertiary, 40)};
-  --fac-tertiary-700: #{mat.get-theme-color($m3-light-theme, tertiary, 35)};
-  --fac-tertiary-800: #{mat.get-theme-color($m3-light-theme, tertiary, 30)};
-  --fac-tertiary-900: #{mat.get-theme-color($m3-light-theme, tertiary, 25)};
-  --fac-tertiary-950: #{mat.get-theme-color($m3-light-theme, tertiary, 20)};
-  --fac-tertiary-1000: #{mat.get-theme-color($m3-light-theme, tertiary, 10)};
+  --app-tertiary-0: #{mat.get-theme-color($m3-light-theme, tertiary, 100)};
+  --app-tertiary-50: #{mat.get-theme-color($m3-light-theme, tertiary, 99)};
+  --app-tertiary-100: #{mat.get-theme-color($m3-light-theme, tertiary, 98)};
+  --app-tertiary-200: #{mat.get-theme-color($m3-light-theme, tertiary, 95)};
+  --app-tertiary-300: #{mat.get-theme-color($m3-light-theme, tertiary, 90)};
+  --app-tertiary-400: #{mat.get-theme-color($m3-light-theme, tertiary, 80)};
+  --app-tertiary-450: #{mat.get-theme-color($m3-light-theme, tertiary, 70)};
+  --app-tertiary-500: #{mat.get-theme-color($m3-light-theme, tertiary, 60)};
+  --app-tertiary-600: #{mat.get-theme-color($m3-light-theme, tertiary, 50)};
+  --app-tertiary-650: #{mat.get-theme-color($m3-light-theme, tertiary, 40)};
+  --app-tertiary-700: #{mat.get-theme-color($m3-light-theme, tertiary, 35)};
+  --app-tertiary-800: #{mat.get-theme-color($m3-light-theme, tertiary, 30)};
+  --app-tertiary-900: #{mat.get-theme-color($m3-light-theme, tertiary, 25)};
+  --app-tertiary-950: #{mat.get-theme-color($m3-light-theme, tertiary, 20)};
+  --app-tertiary-1000: #{mat.get-theme-color($m3-light-theme, tertiary, 10)};
 
-  --fac-error-0: #{mat.get-theme-color($m3-light-theme, error, 100)};
-  --fac-error-50: #{mat.get-theme-color($m3-light-theme, error, 99)};
-  --fac-error-100: #{mat.get-theme-color($m3-light-theme, error, 98)};
-  --fac-error-200: #{mat.get-theme-color($m3-light-theme, error, 95)};
-  --fac-error-300: #{mat.get-theme-color($m3-light-theme, error, 90)};
-  --fac-error-400: #{mat.get-theme-color($m3-light-theme, error, 80)};
-  --fac-error-450: #{mat.get-theme-color($m3-light-theme, error, 70)};
-  --fac-error-500: #{mat.get-theme-color($m3-light-theme, error, 60)};
-  --fac-error-600: #{mat.get-theme-color($m3-light-theme, error, 50)};
-  --fac-error-650: #{mat.get-theme-color($m3-light-theme, error, 40)};
-  --fac-error-700: #{mat.get-theme-color($m3-light-theme, error, 35)};
-  --fac-error-800: #{mat.get-theme-color($m3-light-theme, error, 30)};
-  --fac-error-900: #{mat.get-theme-color($m3-light-theme, error, 25)};
-  --fac-error-950: #{mat.get-theme-color($m3-light-theme, error, 20)};
-  --fac-error-1000: #{mat.get-theme-color($m3-light-theme, error, 10)};
+  --app-error-0: #{mat.get-theme-color($m3-light-theme, error, 100)};
+  --app-error-50: #{mat.get-theme-color($m3-light-theme, error, 99)};
+  --app-error-100: #{mat.get-theme-color($m3-light-theme, error, 98)};
+  --app-error-200: #{mat.get-theme-color($m3-light-theme, error, 95)};
+  --app-error-300: #{mat.get-theme-color($m3-light-theme, error, 90)};
+  --app-error-400: #{mat.get-theme-color($m3-light-theme, error, 80)};
+  --app-error-450: #{mat.get-theme-color($m3-light-theme, error, 70)};
+  --app-error-500: #{mat.get-theme-color($m3-light-theme, error, 60)};
+  --app-error-600: #{mat.get-theme-color($m3-light-theme, error, 50)};
+  --app-error-650: #{mat.get-theme-color($m3-light-theme, error, 40)};
+  --app-error-700: #{mat.get-theme-color($m3-light-theme, error, 35)};
+  --app-error-800: #{mat.get-theme-color($m3-light-theme, error, 30)};
+  --app-error-900: #{mat.get-theme-color($m3-light-theme, error, 25)};
+  --app-error-950: #{mat.get-theme-color($m3-light-theme, error, 20)};
+  --app-error-1000: #{mat.get-theme-color($m3-light-theme, error, 10)};
 
-  --fac-primary: #{mat.get-theme-color($m3-light-theme, primary)};
-  --fac-on-primary: #{mat.get-theme-color($m3-light-theme, on-primary)};
-  --fac-primary-container: #{mat.get-theme-color(
+  --app-primary: #{mat.get-theme-color($m3-light-theme, primary)};
+  --app-on-primary: #{mat.get-theme-color($m3-light-theme, on-primary)};
+  --app-primary-container: #{mat.get-theme-color(
       $m3-light-theme,
       primary-container
     )};
-  --fac-on-primary-container: #{mat.get-theme-color(
+  --app-on-primary-container: #{mat.get-theme-color(
       $m3-light-theme,
       on-primary-container
     )};
-  --fac-primary-fixed-dim: #{mat.get-theme-color(
+  --app-primary-fixed-dim: #{mat.get-theme-color(
       $m3-light-theme,
       primary-fixed-dim
     )};
-  --fac-on-primary-fixed: #{mat.get-theme-color(
+  --app-on-primary-fixed: #{mat.get-theme-color(
       $m3-light-theme,
       on-primary-fixed
     )};
-  --fac-on-primary-fixed-variant: #{mat.get-theme-color(
+  --app-on-primary-fixed-variant: #{mat.get-theme-color(
       $m3-light-theme,
       on-primary-fixed-variant
     )};
 
-  --fac-secondary: #{mat.get-theme-color($m3-light-theme, secondary)};
-  --fac-on-secondary: #{mat.get-theme-color($m3-light-theme, on-secondary)};
-  --fac-secondary-container: #{mat.get-theme-color(
+  --app-secondary: #{mat.get-theme-color($m3-light-theme, secondary)};
+  --app-on-secondary: #{mat.get-theme-color($m3-light-theme, on-secondary)};
+  --app-secondary-container: #{mat.get-theme-color(
       $m3-light-theme,
       secondary-container
     )};
-  --fac-on-secondary-container: #{mat.get-theme-color(
+  --app-on-secondary-container: #{mat.get-theme-color(
       $m3-light-theme,
       on-secondary-container
     )};
-  --fac-secondary-fixed-dim: #{mat.get-theme-color(
+  --app-secondary-fixed-dim: #{mat.get-theme-color(
       $m3-light-theme,
       secondary-fixed-dim
     )};
-  --fac-on-secondary-fixed: #{mat.get-theme-color(
+  --app-on-secondary-fixed: #{mat.get-theme-color(
       $m3-light-theme,
       on-secondary-fixed
     )};
-  --fac-on-secondary-fixed-variant: #{mat.get-theme-color(
+  --app-on-secondary-fixed-variant: #{mat.get-theme-color(
       $m3-light-theme,
       on-secondary-fixed-variant
     )};
 
-  --fac-tertiary: #{mat.get-theme-color($m3-light-theme, tertiary)};
-  --fac-on-tertiary: #{mat.get-theme-color($m3-light-theme, on-tertiary)};
-  --fac-tertiary-container: #{mat.get-theme-color(
+  --app-tertiary: #{mat.get-theme-color($m3-light-theme, tertiary)};
+  --app-on-tertiary: #{mat.get-theme-color($m3-light-theme, on-tertiary)};
+  --app-tertiary-container: #{mat.get-theme-color(
       $m3-light-theme,
       tertiary-container
     )};
-  --fac-on-tertiary-container: #{mat.get-theme-color(
+  --app-on-tertiary-container: #{mat.get-theme-color(
       $m3-light-theme,
       on-tertiary-container
     )};
-  --fac-tertiary-fixed-dim: #{mat.get-theme-color(
+  --app-tertiary-fixed-dim: #{mat.get-theme-color(
       $m3-light-theme,
       tertiary-fixed-dim
     )};
-  --fac-on-tertiary-fixed: #{mat.get-theme-color(
+  --app-on-tertiary-fixed: #{mat.get-theme-color(
       $m3-light-theme,
       on-tertiary-fixed
     )};
-  --fac-on-tertiary-fixed-variant: #{mat.get-theme-color(
+  --app-on-tertiary-fixed-variant: #{mat.get-theme-color(
       $m3-light-theme,
       on-tertiary-fixed-variant
     )};
 
-  --fac-error: #{mat.get-theme-color($m3-light-theme, error)};
-  --fac-on-error: #{mat.get-theme-color($m3-light-theme, on-error)};
-  --fac-error-container: #{mat.get-theme-color($m3-light-theme, error-container)};
-  --fac-on-error-container: #{mat.get-theme-color(
+  --app-error: #{mat.get-theme-color($m3-light-theme, error)};
+  --app-on-error: #{mat.get-theme-color($m3-light-theme, on-error)};
+  --app-error-container: #{mat.get-theme-color($m3-light-theme, error-container)};
+  --app-on-error-container: #{mat.get-theme-color(
       $m3-light-theme,
       on-error-container
     )};
 
-  --fac-surface: #{mat.get-theme-color($m3-light-theme, surface)};
-  --fac-surface-dim: #{mat.get-theme-color($m3-light-theme, surface-dim)};
-  --fac-surface-bright: #{mat.get-theme-color($m3-light-theme, surface-bright)};
-  --fac-surface-container-lowest: #{mat.get-theme-color(
+  --app-surface: #{mat.get-theme-color($m3-light-theme, surface)};
+  --app-surface-dim: #{mat.get-theme-color($m3-light-theme, surface-dim)};
+  --app-surface-bright: #{mat.get-theme-color($m3-light-theme, surface-bright)};
+  --app-surface-container-lowest: #{mat.get-theme-color(
       $m3-light-theme,
       surface-container-lowest
     )};
-  --fac-surface-container-low: #{mat.get-theme-color(
+  --app-surface-container-low: #{mat.get-theme-color(
       $m3-light-theme,
       surface-container-low
     )};
-  --fac-surface-container: #{mat.get-theme-color(
+  --app-surface-container: #{mat.get-theme-color(
       $m3-light-theme,
       surface-container
     )};
-  --fac-surface-container-high: #{mat.get-theme-color(
+  --app-surface-container-high: #{mat.get-theme-color(
       $m3-light-theme,
       surface-container-high
     )};
-  --fac-surface-container-highest: #{mat.get-theme-color(
+  --app-surface-container-highest: #{mat.get-theme-color(
       $m3-light-theme,
       surface-container-highest
     )};
-  --fac-on-surface: #{mat.get-theme-color($m3-light-theme, on-surface)};
-  --fac-on-surface-variant: #{mat.get-theme-color(
+  --app-on-surface: #{mat.get-theme-color($m3-light-theme, on-surface)};
+  --app-on-surface-variant: #{mat.get-theme-color(
       $m3-light-theme,
       on-surface-variant
     )};
 
-  --fac-outline: #{mat.get-theme-color($m3-light-theme, outline)};
-  --fac-outline-variant: #{mat.get-theme-color($m3-light-theme, outline-variant)};
+  --app-outline: #{mat.get-theme-color($m3-light-theme, outline)};
+  --app-outline-variant: #{mat.get-theme-color($m3-light-theme, outline-variant)};
 
-  --fac-inverse-surface: #{mat.get-theme-color($m3-light-theme, inverse-surface)};
-  --fac-inverse-on-surface: #{mat.get-theme-color(
+  --app-inverse-surface: #{mat.get-theme-color($m3-light-theme, inverse-surface)};
+  --app-inverse-on-surface: #{mat.get-theme-color(
       $m3-light-theme,
       inverse-on-surface
     )};
-  --fac-inverse-primary: #{mat.get-theme-color($m3-light-theme, inverse-primary)};
+  --app-inverse-primary: #{mat.get-theme-color($m3-light-theme, inverse-primary)};
 
-  --fac-scrim: #{mat.get-theme-color($m3-light-theme, scrim)};
-  --fac-shadow: #{mat.get-theme-color($m3-light-theme, shadow)};
+  --app-scrim: #{mat.get-theme-color($m3-light-theme, scrim)};
+  --app-shadow: #{mat.get-theme-color($m3-light-theme, shadow)};
 
-  --mat-table-background-color: var(--fac-background);
+  --mat-table-background-color: var(--app-background);
   --mat-table-row-item-outline-color: theme('borderColor.DEFAULT');
   --mat-paginator-container-background-color: none;
 
-  --fac-transition-transform: transform 0.15s linear;
+  --app-transition-transform: transform 0.15s linear;
   --mdc-protected-button-container-height: 2.375rem;
   --mat-menu-item-label-text-size: theme('fontSize.tiny');
   --mat-option-label-text-size: theme('fontSize.tiny');
@@ -302,298 +302,298 @@ html {
   @include mat.all-component-themes($m3-light-theme);
   @include mat.color-variants-backwards-compatibility($m3-light-theme);
 
-  background: var(--fac-background);
-  color: var(--fac-on-background);
+  background: var(--app-background);
+  color: var(--app-on-background);
 }
 
 html.dark {
   @include mat.all-component-colors($m3-dark-theme);
   @include mat.color-variants-backwards-compatibility($m3-dark-theme);
 
-  --fac-background: #{mat.get-theme-color($m3-dark-theme, neutral, 20)};
-  --fac-on-background: #fff;
-  --fac-inverse: #{mat.get-theme-color($m3-dark-theme, neutral, 50)};
+  --app-background: #{mat.get-theme-color($m3-dark-theme, neutral, 20)};
+  --app-on-background: #fff;
+  --app-inverse: #{mat.get-theme-color($m3-dark-theme, neutral, 50)};
 
-  --fac-neutral-0: #{mat.get-theme-color($m3-dark-theme, neutral, 100)};
-  --fac-neutral-50: #{mat.get-theme-color($m3-dark-theme, neutral, 99)};
-  --fac-neutral-100: #{mat.get-theme-color($m3-dark-theme, neutral, 98)};
-  --fac-neutral-200: #{mat.get-theme-color($m3-dark-theme, neutral, 95)};
-  --fac-neutral-300: #{mat.get-theme-color($m3-dark-theme, neutral, 90)};
-  --fac-neutral-400: #{mat.get-theme-color($m3-dark-theme, neutral, 80)};
-  --fac-neutral-450: #{mat.get-theme-color($m3-dark-theme, neutral, 70)};
-  --fac-neutral-500: #{mat.get-theme-color($m3-dark-theme, neutral, 60)};
-  --fac-neutral-600: #{mat.get-theme-color($m3-dark-theme, neutral, 50)};
-  --fac-neutral-650: #{mat.get-theme-color($m3-dark-theme, neutral, 40)};
-  --fac-neutral-700: #{mat.get-theme-color($m3-dark-theme, neutral, 35)};
-  --fac-neutral-800: #{mat.get-theme-color($m3-dark-theme, neutral, 30)};
-  --fac-neutral-900: #{mat.get-theme-color($m3-dark-theme, neutral, 25)};
-  --fac-neutral-950: #{mat.get-theme-color($m3-dark-theme, neutral, 20)};
-  --fac-neutral-1000: #{mat.get-theme-color($m3-dark-theme, neutral, 10)};
+  --app-neutral-0: #{mat.get-theme-color($m3-dark-theme, neutral, 100)};
+  --app-neutral-50: #{mat.get-theme-color($m3-dark-theme, neutral, 99)};
+  --app-neutral-100: #{mat.get-theme-color($m3-dark-theme, neutral, 98)};
+  --app-neutral-200: #{mat.get-theme-color($m3-dark-theme, neutral, 95)};
+  --app-neutral-300: #{mat.get-theme-color($m3-dark-theme, neutral, 90)};
+  --app-neutral-400: #{mat.get-theme-color($m3-dark-theme, neutral, 80)};
+  --app-neutral-450: #{mat.get-theme-color($m3-dark-theme, neutral, 70)};
+  --app-neutral-500: #{mat.get-theme-color($m3-dark-theme, neutral, 60)};
+  --app-neutral-600: #{mat.get-theme-color($m3-dark-theme, neutral, 50)};
+  --app-neutral-650: #{mat.get-theme-color($m3-dark-theme, neutral, 40)};
+  --app-neutral-700: #{mat.get-theme-color($m3-dark-theme, neutral, 35)};
+  --app-neutral-800: #{mat.get-theme-color($m3-dark-theme, neutral, 30)};
+  --app-neutral-900: #{mat.get-theme-color($m3-dark-theme, neutral, 25)};
+  --app-neutral-950: #{mat.get-theme-color($m3-dark-theme, neutral, 20)};
+  --app-neutral-1000: #{mat.get-theme-color($m3-dark-theme, neutral, 10)};
 
-  --fac-neutral-variant-0: #{mat.get-theme-color(
+  --app-neutral-variant-0: #{mat.get-theme-color(
       $m3-dark-theme,
       neutral-variant,
       100
     )};
-  --fac-neutral-variant-50: #{mat.get-theme-color(
+  --app-neutral-variant-50: #{mat.get-theme-color(
       $m3-dark-theme,
       neutral-variant,
       99
     )};
-  --fac-neutral-variant-100: #{mat.get-theme-color(
+  --app-neutral-variant-100: #{mat.get-theme-color(
       $m3-dark-theme,
       neutral-variant,
       98
     )};
-  --fac-neutral-variant-200: #{mat.get-theme-color(
+  --app-neutral-variant-200: #{mat.get-theme-color(
       $m3-dark-theme,
       neutral-variant,
       95
     )};
-  --fac-neutral-variant-300: #{mat.get-theme-color(
+  --app-neutral-variant-300: #{mat.get-theme-color(
       $m3-dark-theme,
       neutral-variant,
       90
     )};
-  --fac-neutral-variant-400: #{mat.get-theme-color(
+  --app-neutral-variant-400: #{mat.get-theme-color(
       $m3-dark-theme,
       neutral-variant,
       80
     )};
-  --fac-neutral-variant-450: #{mat.get-theme-color(
+  --app-neutral-variant-450: #{mat.get-theme-color(
       $m3-dark-theme,
       neutral-variant,
       70
     )};
-  --fac-neutral-variant-500: #{mat.get-theme-color(
+  --app-neutral-variant-500: #{mat.get-theme-color(
       $m3-dark-theme,
       neutral-variant,
       60
     )};
-  --fac-neutral-variant-600: #{mat.get-theme-color(
+  --app-neutral-variant-600: #{mat.get-theme-color(
       $m3-dark-theme,
       neutral-variant,
       50
     )};
-  --fac-neutral-variant-650: #{mat.get-theme-color(
+  --app-neutral-variant-650: #{mat.get-theme-color(
       $m3-dark-theme,
       neutral-variant,
       40
     )};
-  --fac-neutral-variant-700: #{mat.get-theme-color(
+  --app-neutral-variant-700: #{mat.get-theme-color(
       $m3-dark-theme,
       neutral-variant,
       35
     )};
-  --fac-neutral-variant-800: #{mat.get-theme-color(
+  --app-neutral-variant-800: #{mat.get-theme-color(
       $m3-dark-theme,
       neutral-variant,
       30
     )};
-  --fac-neutral-variant-900: #{mat.get-theme-color(
+  --app-neutral-variant-900: #{mat.get-theme-color(
       $m3-dark-theme,
       neutral-variant,
       25
     )};
-  --fac-neutral-variant-950: #{mat.get-theme-color(
+  --app-neutral-variant-950: #{mat.get-theme-color(
       $m3-dark-theme,
       neutral-variant,
       20
     )};
-  --fac-neutral-variant-1000: #{mat.get-theme-color(
+  --app-neutral-variant-1000: #{mat.get-theme-color(
       $m3-dark-theme,
       neutral-variant,
       10
     )};
 
   // primary color
-  --fac-primary-0: #{mat.get-theme-color($m3-dark-theme, primary, 100)};
-  --fac-primary-50: #{mat.get-theme-color($m3-dark-theme, primary, 99)};
-  --fac-primary-100: #{mat.get-theme-color($m3-dark-theme, primary, 98)};
-  --fac-primary-200: #{mat.get-theme-color($m3-dark-theme, primary, 95)};
-  --fac-primary-300: #{mat.get-theme-color($m3-dark-theme, primary, 90)};
-  --fac-primary-400: #{mat.get-theme-color($m3-dark-theme, primary, 80)};
-  --fac-primary-450: #{mat.get-theme-color($m3-dark-theme, primary, 70)};
-  --fac-primary-500: #{mat.get-theme-color($m3-dark-theme, primary, 60)};
-  --fac-primary-600: #{mat.get-theme-color($m3-dark-theme, primary, 50)};
-  --fac-primary-650: #{mat.get-theme-color($m3-dark-theme, primary, 40)};
-  --fac-primary-700: #{mat.get-theme-color($m3-dark-theme, primary, 35)};
-  --fac-primary-800: #{mat.get-theme-color($m3-dark-theme, primary, 30)};
-  --fac-primary-900: #{mat.get-theme-color($m3-dark-theme, primary, 25)};
-  --fac-primary-950: #{mat.get-theme-color($m3-dark-theme, primary, 20)};
-  --fac-primary-1000: #{mat.get-theme-color($m3-dark-theme, primary, 10)};
+  --app-primary-0: #{mat.get-theme-color($m3-dark-theme, primary, 100)};
+  --app-primary-50: #{mat.get-theme-color($m3-dark-theme, primary, 99)};
+  --app-primary-100: #{mat.get-theme-color($m3-dark-theme, primary, 98)};
+  --app-primary-200: #{mat.get-theme-color($m3-dark-theme, primary, 95)};
+  --app-primary-300: #{mat.get-theme-color($m3-dark-theme, primary, 90)};
+  --app-primary-400: #{mat.get-theme-color($m3-dark-theme, primary, 80)};
+  --app-primary-450: #{mat.get-theme-color($m3-dark-theme, primary, 70)};
+  --app-primary-500: #{mat.get-theme-color($m3-dark-theme, primary, 60)};
+  --app-primary-600: #{mat.get-theme-color($m3-dark-theme, primary, 50)};
+  --app-primary-650: #{mat.get-theme-color($m3-dark-theme, primary, 40)};
+  --app-primary-700: #{mat.get-theme-color($m3-dark-theme, primary, 35)};
+  --app-primary-800: #{mat.get-theme-color($m3-dark-theme, primary, 30)};
+  --app-primary-900: #{mat.get-theme-color($m3-dark-theme, primary, 25)};
+  --app-primary-950: #{mat.get-theme-color($m3-dark-theme, primary, 20)};
+  --app-primary-1000: #{mat.get-theme-color($m3-dark-theme, primary, 10)};
 
-  --fac-secondary-0: #{mat.get-theme-color($m3-dark-theme, secondary, 100)};
-  --fac-secondary-50: #{mat.get-theme-color($m3-dark-theme, secondary, 99)};
-  --fac-secondary-100: #{mat.get-theme-color($m3-dark-theme, secondary, 98)};
-  --fac-secondary-200: #{mat.get-theme-color($m3-dark-theme, secondary, 95)};
-  --fac-secondary-300: #{mat.get-theme-color($m3-dark-theme, secondary, 90)};
-  --fac-secondary-400: #{mat.get-theme-color($m3-dark-theme, secondary, 80)};
-  --fac-secondary-450: #{mat.get-theme-color($m3-dark-theme, secondary, 70)};
-  --fac-secondary-500: #{mat.get-theme-color($m3-dark-theme, secondary, 60)};
-  --fac-secondary-600: #{mat.get-theme-color($m3-dark-theme, secondary, 50)};
-  --fac-secondary-650: #{mat.get-theme-color($m3-dark-theme, secondary, 40)};
-  --fac-secondary-700: #{mat.get-theme-color($m3-dark-theme, secondary, 35)};
-  --fac-secondary-800: #{mat.get-theme-color($m3-dark-theme, secondary, 30)};
-  --fac-secondary-900: #{mat.get-theme-color($m3-dark-theme, secondary, 25)};
-  --fac-secondary-950: #{mat.get-theme-color($m3-dark-theme, secondary, 20)};
-  --fac-secondary-1000: #{mat.get-theme-color($m3-dark-theme, secondary, 10)};
+  --app-secondary-0: #{mat.get-theme-color($m3-dark-theme, secondary, 100)};
+  --app-secondary-50: #{mat.get-theme-color($m3-dark-theme, secondary, 99)};
+  --app-secondary-100: #{mat.get-theme-color($m3-dark-theme, secondary, 98)};
+  --app-secondary-200: #{mat.get-theme-color($m3-dark-theme, secondary, 95)};
+  --app-secondary-300: #{mat.get-theme-color($m3-dark-theme, secondary, 90)};
+  --app-secondary-400: #{mat.get-theme-color($m3-dark-theme, secondary, 80)};
+  --app-secondary-450: #{mat.get-theme-color($m3-dark-theme, secondary, 70)};
+  --app-secondary-500: #{mat.get-theme-color($m3-dark-theme, secondary, 60)};
+  --app-secondary-600: #{mat.get-theme-color($m3-dark-theme, secondary, 50)};
+  --app-secondary-650: #{mat.get-theme-color($m3-dark-theme, secondary, 40)};
+  --app-secondary-700: #{mat.get-theme-color($m3-dark-theme, secondary, 35)};
+  --app-secondary-800: #{mat.get-theme-color($m3-dark-theme, secondary, 30)};
+  --app-secondary-900: #{mat.get-theme-color($m3-dark-theme, secondary, 25)};
+  --app-secondary-950: #{mat.get-theme-color($m3-dark-theme, secondary, 20)};
+  --app-secondary-1000: #{mat.get-theme-color($m3-dark-theme, secondary, 10)};
 
   // tertiary color
-  --fac-tertiary-0: #{mat.get-theme-color($m3-dark-theme, tertiary, 100)};
-  --fac-tertiary-50: #{mat.get-theme-color($m3-dark-theme, tertiary, 99)};
-  --fac-tertiary-100: #{mat.get-theme-color($m3-dark-theme, tertiary, 98)};
-  --fac-tertiary-200: #{mat.get-theme-color($m3-dark-theme, tertiary, 95)};
-  --fac-tertiary-300: #{mat.get-theme-color($m3-dark-theme, tertiary, 90)};
-  --fac-tertiary-400: #{mat.get-theme-color($m3-dark-theme, tertiary, 80)};
-  --fac-tertiary-450: #{mat.get-theme-color($m3-dark-theme, tertiary, 70)};
-  --fac-tertiary-500: #{mat.get-theme-color($m3-dark-theme, tertiary, 60)};
-  --fac-tertiary-600: #{mat.get-theme-color($m3-dark-theme, tertiary, 50)};
-  --fac-tertiary-650: #{mat.get-theme-color($m3-dark-theme, tertiary, 40)};
-  --fac-tertiary-700: #{mat.get-theme-color($m3-dark-theme, tertiary, 35)};
-  --fac-tertiary-800: #{mat.get-theme-color($m3-dark-theme, tertiary, 30)};
-  --fac-tertiary-900: #{mat.get-theme-color($m3-dark-theme, tertiary, 25)};
-  --fac-tertiary-950: #{mat.get-theme-color($m3-dark-theme, tertiary, 20)};
-  --fac-tertiary-1000: #{mat.get-theme-color($m3-dark-theme, tertiary, 10)};
+  --app-tertiary-0: #{mat.get-theme-color($m3-dark-theme, tertiary, 100)};
+  --app-tertiary-50: #{mat.get-theme-color($m3-dark-theme, tertiary, 99)};
+  --app-tertiary-100: #{mat.get-theme-color($m3-dark-theme, tertiary, 98)};
+  --app-tertiary-200: #{mat.get-theme-color($m3-dark-theme, tertiary, 95)};
+  --app-tertiary-300: #{mat.get-theme-color($m3-dark-theme, tertiary, 90)};
+  --app-tertiary-400: #{mat.get-theme-color($m3-dark-theme, tertiary, 80)};
+  --app-tertiary-450: #{mat.get-theme-color($m3-dark-theme, tertiary, 70)};
+  --app-tertiary-500: #{mat.get-theme-color($m3-dark-theme, tertiary, 60)};
+  --app-tertiary-600: #{mat.get-theme-color($m3-dark-theme, tertiary, 50)};
+  --app-tertiary-650: #{mat.get-theme-color($m3-dark-theme, tertiary, 40)};
+  --app-tertiary-700: #{mat.get-theme-color($m3-dark-theme, tertiary, 35)};
+  --app-tertiary-800: #{mat.get-theme-color($m3-dark-theme, tertiary, 30)};
+  --app-tertiary-900: #{mat.get-theme-color($m3-dark-theme, tertiary, 25)};
+  --app-tertiary-950: #{mat.get-theme-color($m3-dark-theme, tertiary, 20)};
+  --app-tertiary-1000: #{mat.get-theme-color($m3-dark-theme, tertiary, 10)};
 
-  --fac-error-0: #{mat.get-theme-color($m3-dark-theme, error, 100)};
-  --fac-error-50: #{mat.get-theme-color($m3-dark-theme, error, 99)};
-  --fac-error-100: #{mat.get-theme-color($m3-dark-theme, error, 98)};
-  --fac-error-200: #{mat.get-theme-color($m3-dark-theme, error, 95)};
-  --fac-error-300: #{mat.get-theme-color($m3-dark-theme, error, 90)};
-  --fac-error-400: #{mat.get-theme-color($m3-dark-theme, error, 80)};
-  --fac-error-450: #{mat.get-theme-color($m3-dark-theme, error, 70)};
-  --fac-error-500: #{mat.get-theme-color($m3-dark-theme, error, 60)};
-  --fac-error-600: #{mat.get-theme-color($m3-dark-theme, error, 50)};
-  --fac-error-650: #{mat.get-theme-color($m3-dark-theme, error, 40)};
-  --fac-error-700: #{mat.get-theme-color($m3-dark-theme, error, 35)};
-  --fac-error-800: #{mat.get-theme-color($m3-dark-theme, error, 30)};
-  --fac-error-900: #{mat.get-theme-color($m3-dark-theme, error, 25)};
-  --fac-error-950: #{mat.get-theme-color($m3-dark-theme, error, 20)};
-  --fac-error-1000: #{mat.get-theme-color($m3-dark-theme, error, 10)};
+  --app-error-0: #{mat.get-theme-color($m3-dark-theme, error, 100)};
+  --app-error-50: #{mat.get-theme-color($m3-dark-theme, error, 99)};
+  --app-error-100: #{mat.get-theme-color($m3-dark-theme, error, 98)};
+  --app-error-200: #{mat.get-theme-color($m3-dark-theme, error, 95)};
+  --app-error-300: #{mat.get-theme-color($m3-dark-theme, error, 90)};
+  --app-error-400: #{mat.get-theme-color($m3-dark-theme, error, 80)};
+  --app-error-450: #{mat.get-theme-color($m3-dark-theme, error, 70)};
+  --app-error-500: #{mat.get-theme-color($m3-dark-theme, error, 60)};
+  --app-error-600: #{mat.get-theme-color($m3-dark-theme, error, 50)};
+  --app-error-650: #{mat.get-theme-color($m3-dark-theme, error, 40)};
+  --app-error-700: #{mat.get-theme-color($m3-dark-theme, error, 35)};
+  --app-error-800: #{mat.get-theme-color($m3-dark-theme, error, 30)};
+  --app-error-900: #{mat.get-theme-color($m3-dark-theme, error, 25)};
+  --app-error-950: #{mat.get-theme-color($m3-dark-theme, error, 20)};
+  --app-error-1000: #{mat.get-theme-color($m3-dark-theme, error, 10)};
 
-  --fac-primary: #{mat.get-theme-color($m3-dark-theme, primary)};
-  --fac-on-primary: #{mat.get-theme-color($m3-dark-theme, on-primary)};
-  --fac-primary-container: #{mat.get-theme-color(
+  --app-primary: #{mat.get-theme-color($m3-dark-theme, primary)};
+  --app-on-primary: #{mat.get-theme-color($m3-dark-theme, on-primary)};
+  --app-primary-container: #{mat.get-theme-color(
       $m3-dark-theme,
       primary-container
     )};
-  --fac-on-primary-container: #{mat.get-theme-color(
+  --app-on-primary-container: #{mat.get-theme-color(
       $m3-dark-theme,
       on-primary-container
     )};
-  --fac-primary-fixed-dim: #{mat.get-theme-color(
+  --app-primary-fixed-dim: #{mat.get-theme-color(
       $m3-dark-theme,
       primary-fixed-dim
     )};
-  --fac-on-primary-fixed: #{mat.get-theme-color(
+  --app-on-primary-fixed: #{mat.get-theme-color(
       $m3-dark-theme,
       on-primary-fixed
     )};
-  --fac-on-primary-fixed-variant: #{mat.get-theme-color(
+  --app-on-primary-fixed-variant: #{mat.get-theme-color(
       $m3-dark-theme,
       on-primary-fixed-variant
     )};
 
-  --fac-secondary: #{mat.get-theme-color($m3-dark-theme, secondary)};
-  --fac-on-secondary: #{mat.get-theme-color($m3-dark-theme, on-secondary)};
-  --fac-secondary-container: #{mat.get-theme-color(
+  --app-secondary: #{mat.get-theme-color($m3-dark-theme, secondary)};
+  --app-on-secondary: #{mat.get-theme-color($m3-dark-theme, on-secondary)};
+  --app-secondary-container: #{mat.get-theme-color(
       $m3-dark-theme,
       secondary-container
     )};
-  --fac-on-secondary-container: #{mat.get-theme-color(
+  --app-on-secondary-container: #{mat.get-theme-color(
       $m3-dark-theme,
       on-secondary-container
     )};
-  --fac-secondary-fixed-dim: #{mat.get-theme-color(
+  --app-secondary-fixed-dim: #{mat.get-theme-color(
       $m3-dark-theme,
       secondary-fixed-dim
     )};
-  --fac-on-secondary-fixed: #{mat.get-theme-color(
+  --app-on-secondary-fixed: #{mat.get-theme-color(
       $m3-dark-theme,
       on-secondary-fixed
     )};
-  --fac-on-secondary-fixed-variant: #{mat.get-theme-color(
+  --app-on-secondary-fixed-variant: #{mat.get-theme-color(
       $m3-dark-theme,
       on-secondary-fixed-variant
     )};
 
-  --fac-tertiary: #{mat.get-theme-color($m3-dark-theme, tertiary)};
-  --fac-on-tertiary: #{mat.get-theme-color($m3-dark-theme, on-tertiary)};
-  --fac-tertiary-container: #{mat.get-theme-color(
+  --app-tertiary: #{mat.get-theme-color($m3-dark-theme, tertiary)};
+  --app-on-tertiary: #{mat.get-theme-color($m3-dark-theme, on-tertiary)};
+  --app-tertiary-container: #{mat.get-theme-color(
       $m3-dark-theme,
       tertiary-container
     )};
-  --fac-on-tertiary-container: #{mat.get-theme-color(
+  --app-on-tertiary-container: #{mat.get-theme-color(
       $m3-dark-theme,
       on-tertiary-container
     )};
-  --fac-tertiary-fixed-dim: #{mat.get-theme-color(
+  --app-tertiary-fixed-dim: #{mat.get-theme-color(
       $m3-dark-theme,
       tertiary-fixed-dim
     )};
-  --fac-on-tertiary-fixed: #{mat.get-theme-color(
+  --app-on-tertiary-fixed: #{mat.get-theme-color(
       $m3-dark-theme,
       on-tertiary-fixed
     )};
-  --fac-on-tertiary-fixed-variant: #{mat.get-theme-color(
+  --app-on-tertiary-fixed-variant: #{mat.get-theme-color(
       $m3-dark-theme,
       on-tertiary-fixed-variant
     )};
 
-  --fac-error: #{mat.get-theme-color($m3-dark-theme, error)};
-  --fac-on-error: #{mat.get-theme-color($m3-dark-theme, on-error)};
-  --fac-error-container: #{mat.get-theme-color($m3-dark-theme, error-container)};
-  --fac-on-error-container: #{mat.get-theme-color(
+  --app-error: #{mat.get-theme-color($m3-dark-theme, error)};
+  --app-on-error: #{mat.get-theme-color($m3-dark-theme, on-error)};
+  --app-error-container: #{mat.get-theme-color($m3-dark-theme, error-container)};
+  --app-on-error-container: #{mat.get-theme-color(
       $m3-dark-theme,
       on-error-container
     )};
 
-  --fac-surface: #{mat.get-theme-color($m3-dark-theme, surface)};
-  --fac-surface-dim: #{mat.get-theme-color($m3-dark-theme, surface-dim)};
-  --fac-surface-bright: #{mat.get-theme-color($m3-dark-theme, surface-bright)};
-  --fac-surface-container-lowest: #{mat.get-theme-color(
+  --app-surface: #{mat.get-theme-color($m3-dark-theme, surface)};
+  --app-surface-dim: #{mat.get-theme-color($m3-dark-theme, surface-dim)};
+  --app-surface-bright: #{mat.get-theme-color($m3-dark-theme, surface-bright)};
+  --app-surface-container-lowest: #{mat.get-theme-color(
       $m3-dark-theme,
       surface-container-lowest
     )};
-  --fac-surface-container-low: #{mat.get-theme-color(
+  --app-surface-container-low: #{mat.get-theme-color(
       $m3-dark-theme,
       surface-container-low
     )};
-  --fac-surface-container: #{mat.get-theme-color(
+  --app-surface-container: #{mat.get-theme-color(
       $m3-dark-theme,
       surface-container
     )};
-  --fac-surface-container-high: #{mat.get-theme-color(
+  --app-surface-container-high: #{mat.get-theme-color(
       $m3-dark-theme,
       surface-container-high
     )};
-  --fac-surface-container-highest: #{mat.get-theme-color(
+  --app-surface-container-highest: #{mat.get-theme-color(
       $m3-dark-theme,
       surface-container-highest
     )};
-  --fac-on-surface: #{mat.get-theme-color($m3-dark-theme, on-surface)};
-  --fac-on-surface-variant: #{mat.get-theme-color(
+  --app-on-surface: #{mat.get-theme-color($m3-dark-theme, on-surface)};
+  --app-on-surface-variant: #{mat.get-theme-color(
       $m3-light-theme,
       on-surface-variant
     )};
 
-  --fac-outline: #{mat.get-theme-color($m3-dark-theme, outline)};
-  --fac-outline-variant: #{mat.get-theme-color($m3-dark-theme, outline-variant)};
+  --app-outline: #{mat.get-theme-color($m3-dark-theme, outline)};
+  --app-outline-variant: #{mat.get-theme-color($m3-dark-theme, outline-variant)};
 
-  --fac-inverse-surface: #{mat.get-theme-color($m3-dark-theme, inverse-surface)};
-  --fac-inverse-on-surface: #{mat.get-theme-color(
+  --app-inverse-surface: #{mat.get-theme-color($m3-dark-theme, inverse-surface)};
+  --app-inverse-on-surface: #{mat.get-theme-color(
       $m3-dark-theme,
       inverse-on-surface
     )};
-  --fac-inverse-primary: #{mat.get-theme-color($m3-dark-theme, inverse-primary)};
+  --app-inverse-primary: #{mat.get-theme-color($m3-dark-theme, inverse-primary)};
 
-  --fac-scrim: #{mat.get-theme-color($m3-dark-theme, scrim)};
-  --fac-shadow: #{mat.get-theme-color($m3-dark-theme, shadow)};
+  --app-scrim: #{mat.get-theme-color($m3-dark-theme, scrim)};
+  --app-shadow: #{mat.get-theme-color($m3-dark-theme, shadow)};
 
-  --mat-table-background-color: var(--fac-background);
+  --mat-table-background-color: var(--app-background);
   --mat-table-row-item-outline-color: theme('colors.inverse');
   --mat-paginator-container-background-color: none;
 
-  --fac-warn: theme('colors.red.500');
+  --app-warn: theme('colors.red.500');
 }

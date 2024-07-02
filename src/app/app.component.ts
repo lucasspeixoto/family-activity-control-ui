@@ -22,7 +22,7 @@ import { ScreenLoaderComponent } from './layout/components/screen-loader/screen-
   imports: [RouterOutlet, ScreenLoaderComponent, PageLoadingBarComponent],
   template: `
     @if (pageLoaded()) {
-      <fac-page-loading-bar fixed></fac-page-loading-bar>
+      <app-page-loading-bar fixed></app-page-loading-bar>
     }
     <app-screen-loader [loadingText]="loadingText()"></app-screen-loader>
     <router-outlet />

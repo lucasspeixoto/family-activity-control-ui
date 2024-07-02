@@ -1,39 +1,39 @@
 :root {
-  --fac-upload-area-bg: theme('colors.white');
-  --fac-upload-area-padding: theme('padding.10');
-  --fac-upload-area-border: theme('width.px') dashed theme('colors.neutral.300');
-  --fac-upload-area-border-radius: theme('borderRadius.md');
-  --fac-upload-area-font-size: theme('fontSize.sm');
-  --fac-upload-area-color: theme('colors.neutral.500');
-  --fac-upload-area-drop-active-border: theme('width.px') dashed
+  --app-upload-area-bg: theme('colors.white');
+  --app-upload-area-padding: theme('padding.10');
+  --app-upload-area-border: theme('width.px') dashed theme('colors.neutral.300');
+  --app-upload-area-border-radius: theme('borderRadius.md');
+  --app-upload-area-font-size: theme('fontSize.sm');
+  --app-upload-area-color: theme('colors.neutral.500');
+  --app-upload-area-drop-active-border: theme('width.px') dashed
     theme('colors.primary.DEFAULT');
-  --fac-upload-area-drop-active-color: theme('colors.primary.DEFAULT');
-  --fac-file-list-gap: theme('gap.3');
-  --fac-file-padding: theme('padding.4') 0;
-  --fac-file-controls-gap: theme('gap[1.5]');
-  --fac-file-progress-margin: theme('margin.2') 0 0 0;
-  --fac-file-progress-bg: theme('colors.neutral.100');
-  --fac-file-progress-height: theme('height.1');
-  --fac-file-progress-border-radius: theme('borderRadius.lg');
-  --fac-file-progress-bar-bg: theme('colors.primary.DEFAULT');
-  --fac-control-color: theme('colors.neutral.400');
-  --fac-control-hover-color: theme('colors.neutral.700');
-  --fac-control-font-size: theme('fontSize.xl');
-  --fac-file-name-font-size: theme('fontSize.sm');
-  --fac-file-info-font-size: theme('fontSize.xs');
-  --fac-file-info-color: theme('colors.neutral.400');
-  --fac-file-error-font-size: theme('fontSize.xs');
-  --fac-file-error-color: theme('colors.red.500');
+  --app-upload-area-drop-active-color: theme('colors.primary.DEFAULT');
+  --app-file-list-gap: theme('gap.3');
+  --app-file-padding: theme('padding.4') 0;
+  --app-file-controls-gap: theme('gap[1.5]');
+  --app-file-progress-margin: theme('margin.2') 0 0 0;
+  --app-file-progress-bg: theme('colors.neutral.100');
+  --app-file-progress-height: theme('height.1');
+  --app-file-progress-border-radius: theme('borderRadius.lg');
+  --app-file-progress-bar-bg: theme('colors.primary.DEFAULT');
+  --app-control-color: theme('colors.neutral.400');
+  --app-control-hover-color: theme('colors.neutral.700');
+  --app-control-font-size: theme('fontSize.xl');
+  --app-file-name-font-size: theme('fontSize.sm');
+  --app-file-info-font-size: theme('fontSize.xs');
+  --app-file-info-color: theme('colors.neutral.400');
+  --app-file-error-font-size: theme('fontSize.xs');
+  --app-file-error-color: theme('colors.red.500');
 }
 
 html.dark {
-  --fac-upload-area-bg: theme('colors.neutral.600');
-  --fac-upload-area-color: theme('colors.neutral.200');
-  --fac-upload-area-border: theme('width.px') dashed theme('colors.neutral.400');
-  --fac-upload-area-drop-active-border: theme('width.px') dashed
+  --app-upload-area-bg: theme('colors.neutral.600');
+  --app-upload-area-color: theme('colors.neutral.200');
+  --app-upload-area-border: theme('width.px') dashed theme('colors.neutral.400');
+  --app-upload-area-drop-active-border: theme('width.px') dashed
     theme('colors.primary.DEFAULT');
-  --fac-upload-area-drop-active-color: theme('colors.primary.DEFAULT');
-  --fac-file-error-color: theme('colors.red.300');
-  --fac-file-progress-bg: theme('colors.neutral.500');
-  --fac-control-hover-color: theme('colors.neutral.300');
+  --app-upload-area-drop-active-color: theme('colors.primary.DEFAULT');
+  --app-file-error-color: theme('colors.red.300');
+  --app-file-progress-bg: theme('colors.neutral.500');
+  --app-control-hover-color: theme('colors.neutral.300');
 }

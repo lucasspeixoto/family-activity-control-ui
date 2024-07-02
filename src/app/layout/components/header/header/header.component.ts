@@ -12,12 +12,12 @@ import { Router, RouterLink } from '@angular/router';
 
 import { NotificationListComponent } from '@layoutC/header/_notifications/notification-list/notification-list.component';
 
-import { SoundEffectDirective } from '@shared/directives/sound-effect.directive';
-import { ThemeManagerService } from '@shared/services/theme-manager.service';
+import { SoundEffectDirective } from '@sharedD/sound-effect.directive';
+import { ThemeManagerService } from '@sharedC/theme-manager.service';
 
 import { IconComponent } from '@shared/components/icon';
 
-import { LayoutApiService } from '../../../layout-api.service';
+import { LayoutApiService } from '@layout/layout-api.service';
 import { AvatarComponent } from '@shared/components/avatar';
 import {
   PopoverComponent,

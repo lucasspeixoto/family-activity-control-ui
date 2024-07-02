@@ -10,44 +10,44 @@
     cursor: pointer;
     user-select: none;
     margin: 0;
-    width: var(--fac-navigation-item-width);
-    background-color: var(--fac-navigation-item-bg);
-    min-height: var(--fac-navigation-item-height);
-    padding: var(--fac-navigation-item-padding);
-    font-size: var(--fac-navigation-item-font-size);
-    border-radius: var(--fac-navigation-item-border-radius);
-    font-weight: var(--fac-navigation-item-font-weight);
-    color: var(--fac-navigation-item-color);
-    gap: var(--fac-navigation-item-gap);
-    border: var(--fac-navigation-item-border-width) solid
-      var(--fac-navigation-item-border-color);
+    width: var(--app-navigation-item-width);
+    background-color: var(--app-navigation-item-bg);
+    min-height: var(--app-navigation-item-height);
+    padding: var(--app-navigation-item-padding);
+    font-size: var(--app-navigation-item-font-size);
+    border-radius: var(--app-navigation-item-border-radius);
+    font-weight: var(--app-navigation-item-font-weight);
+    color: var(--app-navigation-item-color);
+    gap: var(--app-navigation-item-gap);
+    border: var(--app-navigation-item-border-width) solid
+      var(--app-navigation-item-border-color);
     transition: all 0.2s;
   }
 }
 
-:host-context(.fac-navigation-group-menu) {
+:host-context(.app-navigation-group-menu) {
   .inner {
-    margin: var(--fac-navigation-nested-item-margin);
+    margin: var(--app-navigation-nested-item-margin);
     width: clac(
-      var(--fac-navigation-item-width) - var(
-          --fac-navigation-nested-item-margin
+      var(--app-navigation-item-width) - var(
+          --app-navigation-nested-item-margin
         )
     );
-    background-color: var(--fac-navigation-nested-item-bg);
-    min-height: var(--fac-navigation-nested-item-height);
-    padding: var(--fac-navigation-nested-item-padding);
-    color: var(--fac-navigation-nested-item-color);
+    background-color: var(--app-navigation-nested-item-bg);
+    min-height: var(--app-navigation-nested-item-height);
+    padding: var(--app-navigation-nested-item-padding);
+    color: var(--app-navigation-nested-item-color);
   }
 
   &:hover .inner {
-    background-color: var(--fac-navigation-nested-item-hover-bg);
-    color: var(--fac-navigation-nested-item-hover-color);
+    background-color: var(--app-navigation-nested-item-hover-bg);
+    color: var(--app-navigation-nested-item-hover-color);
   }
 
   &.is-active .inner,
   &.is-active:hover .inner {
-    background-color: var(--fac-navigation-nested-item-active-bg);
-    color: var(--fac-navigation-nested-item-active-color);
+    background-color: var(--app-navigation-nested-item-active-bg);
+    color: var(--app-navigation-nested-item-active-color);
   }
 
   &:not(:last-child) {
@@ -58,7 +58,7 @@
       left: 20px;
       bottom: -10px;
       width: 1px;
-      background: var(--fac-navigation-group-tree-lines-color);
+      background: var(--app-navigation-group-tree-lines-color);
       z-index: 0;
     }
   }
@@ -68,28 +68,28 @@
     position: absolute;
     top: 0;
     left: 20px;
-    width: calc(var(--fac-navigation-nested-item-height) / 1.5);
-    height: calc(var(--fac-navigation-nested-item-height) / 2);
+    width: calc(var(--app-navigation-nested-item-height) / 1.5);
+    height: calc(var(--app-navigation-nested-item-height) / 2);
     border-bottom-left-radius: calc(
-      var(--fac-navigation-nested-item-height) / 4
+      var(--app-navigation-nested-item-height) / 4
     );
-    border-left: 1px solid var(--fac-navigation-group-tree-lines-color);
-    border-bottom: 1px solid var(--fac-navigation-group-tree-lines-color);
+    border-left: 1px solid var(--app-navigation-group-tree-lines-color);
+    border-bottom: 1px solid var(--app-navigation-group-tree-lines-color);
   }
 }
 
 :host(:hover) {
   .inner {
-    background-color: var(--fac-navigation-item-hover-bg);
-    color: var(--fac-navigation-item-hover-color);
+    background-color: var(--app-navigation-item-hover-bg);
+    color: var(--app-navigation-item-hover-color);
   }
 }
 
 :host(.is-active),
 :host(.is-active:hover) {
   .inner {
-    background-color: var(--fac-navigation-item-active-bg);
-    color: var(--fac-navigation-item-active-color);
+    background-color: var(--app-navigation-item-active-bg);
+    color: var(--app-navigation-item-active-color);
   }
 }
 
@@ -98,20 +98,20 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: var(--fac-navigation-item-icon-width);
-    color: var(--fac-navigation-item-icon-color);
+    width: var(--app-navigation-item-icon-width);
+    color: var(--app-navigation-item-icon-color);
   }
 }
 
 :host:not(.is-active):hover {
   .icon {
-    color: var(--fac-navigation-item-hover-icon-color);
+    color: var(--app-navigation-item-hover-icon-color);
   }
 }
 
 :host(.is-active) {
   .icon {
-    color: var(--fac-navigation-item-active-icon-color);
+    color: var(--app-navigation-item-active-icon-color);
   }
 }
 
@@ -122,5 +122,5 @@
 }
 
 //:host:has(.icon:not(:empty)) {
-//  padding-inline-start: var(--fac-navigation-item-has-icon-padding-start);
+//  padding-inline-start: var(--app-navigation-item-has-icon-padding-start);
 //}

@@ -2,13 +2,13 @@
   display: block;
 
   .heading {
-    color: var(--fac-suggestion-block-heading-color);
-    font-size: var(--fac-suggestion-block-font-size);
-    font-weight: var(--fac-suggestion-block-font-weight);
+    color: var(--app-suggestion-block-heading-color);
+    font-size: var(--app-suggestion-block-font-size);
+    font-weight: var(--app-suggestion-block-font-weight);
   }
 
   .content {
-    padding: var(--fac-suggestion-block-content-padding);
+    padding: var(--app-suggestion-block-content-padding);
 
     &.is-inline {
       display: flex;

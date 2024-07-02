@@ -15,7 +15,7 @@
   <div class="h-auto mb-2 overflow-y-auto">
     @for (notification of notifications; track notification) {
       <app-notification [notification]="notification"></app-notification>
-      <fac-h-divider></fac-h-divider>
+      <app-h-divider></app-h-divider>
     } @empty {
       No notifications!
     }
@@ -23,11 +23,11 @@
 </div>
 
 <ng-template #notificationSkeleton>
-  <fac-skeleton class="flex gap-3 p-4">
-    <fac-skeleton-circle class="w-11 h-11"></fac-skeleton-circle>
+  <app-skeleton class="flex gap-3 p-4">
+    <app-skeleton-circle class="w-11 h-11"></app-skeleton-circle>
     <div class="grow space-y-2">
-      <fac-skeleton-block class="h-16"></fac-skeleton-block>
-      <fac-skeleton-line class="w-20 h-3"></fac-skeleton-line>
+      <app-skeleton-block class="h-16"></app-skeleton-block>
+      <app-skeleton-line class="w-20 h-3"></app-skeleton-line>
     </div>
-  </fac-skeleton>
+  </app-skeleton>
 </ng-template>

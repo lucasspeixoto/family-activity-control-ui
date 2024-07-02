@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'fac-avatar-total,[fac-avatar-total]',
-  exportAs: 'facAvatarTotal',
+  selector: 'app-avatar-total,[app-avatar-total]',
+  exportAs: 'appAvatarTotal',
   templateUrl: './avatar-total.component.html',
   styleUrl: './avatar-total.component.scss',
   host: {
-    class: 'fac-avatar-total',
+    class: 'app-avatar-total',
   },
   standalone: true,
 })

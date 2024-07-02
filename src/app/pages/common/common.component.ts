@@ -8,7 +8,6 @@ import {
   LayoutBodyComponent,
   LayoutSidebarComponent,
   LayoutHeaderComponent,
-  LayoutTopbarComponent,
 } from '../../layout';
 
 @Component({
@@ -21,7 +20,6 @@ import {
     LayoutBodyComponent,
     LayoutSidebarComponent,
     LayoutHeaderComponent,
-    LayoutTopbarComponent,
   ],
   templateUrl: './common.component.html',
 })

@@ -7,48 +7,48 @@
   flex: none;
   cursor: pointer;
   user-select: none;
-  background-color: var(--fac-navigation-item-bg);
-  min-height: var(--fac-navigation-item-height);
-  padding: var(--fac-navigation-item-padding);
-  font-size: var(--fac-navigation-item-font-size);
-  border-radius: var(--fac-navigation-item-border-radius);
-  font-weight: var(--fac-navigation-item-font-weight);
-  color: var(--fac-navigation-item-color);
-  gap: var(--fac-navigation-item-gap);
+  background-color: var(--app-navigation-item-bg);
+  min-height: var(--app-navigation-item-height);
+  padding: var(--app-navigation-item-padding);
+  font-size: var(--app-navigation-item-font-size);
+  border-radius: var(--app-navigation-item-border-radius);
+  font-weight: var(--app-navigation-item-font-weight);
+  color: var(--app-navigation-item-color);
+  gap: var(--app-navigation-item-gap);
 }
 
 :host(:hover) {
-  background-color: var(--fac-navigation-item-hover-bg);
-  color: var(--fac-navigation-item-hover-color);
+  background-color: var(--app-navigation-item-hover-bg);
+  color: var(--app-navigation-item-hover-color);
 }
 
 :host(.is-active),
 :host(.is-active:hover) {
-  background-color: var(--fac-navigation-item-active-bg);
-  color: var(--fac-navigation-item-active-color);
+  background-color: var(--app-navigation-item-active-bg);
+  color: var(--app-navigation-item-active-color);
 }
 
 /*:host(:focus-visible) {*/
-/*  outline: var(--fac-outline-size) solid var(--fac-outline-color);*/
-/*  outline-offset: var(--fac-outline-offset);*/
+/*  outline: var(--app-outline-size) solid var(--app-outline-color);*/
+/*  outline-offset: var(--app-outline-offset);*/
 /*}*/
 
 :host .icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: var(--fac-navigation-item-icon-width);
-  color: var(--fac-navigation-item-icon-color);
+  width: var(--app-navigation-item-icon-width);
+  color: var(--app-navigation-item-icon-color);
   margin-right: 0.75rem;
   margin-inline-start: -0.0625rem;
 }
 
 :host:not(.is-active):hover .icon {
-  color: var(--fac-navigation-item-hover-icon-color);
+  color: var(--app-navigation-item-hover-icon-color);
 }
 
 :host(.is-active) .icon {
-  color: var(--fac-navigation-item-active-icon-color);
+  color: var(--app-navigation-item-active-icon-color);
 }
 
 :host .icon:empty {
@@ -59,7 +59,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: var(--fac-transition-transform);
+  transition: var(--app-transition-transform);
 }
 
 :host(.is-active) .toggle {
@@ -71,5 +71,5 @@
 }
 
 :host:has(.toggle:not(:empty)) {
-  padding-inline-end: var(--fac-navigation-group-toggle-has-icon-padding-end);
+  padding-inline-end: var(--app-navigation-group-toggle-has-icon-padding-end);
 }

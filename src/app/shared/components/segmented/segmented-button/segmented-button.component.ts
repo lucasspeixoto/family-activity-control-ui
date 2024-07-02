@@ -12,14 +12,14 @@ import { MatRipple } from '@angular/material/core';
 import { SegmentedIconDirective } from '../public-api';
 
 @Component({
-  selector: 'fac-segmented-button,[fac-segmented-button]',
-  exportAs: 'facSegmentedButton',
+  selector: 'app-segmented-button,[app-segmented-button]',
+  exportAs: 'appSegmentedButton',
   templateUrl: './segmented-button.component.html',
   styleUrl: './segmented-button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   hostDirectives: [MatRipple],
   host: {
-    class: 'fac-segmented-button',
+    class: 'app-segmented-button',
     '[class.is-selected]': '_isSelected',
     '[class.is-disabled]': 'disabled',
   },

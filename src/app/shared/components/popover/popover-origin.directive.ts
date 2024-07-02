@@ -2,7 +2,7 @@ import { Directive, ElementRef, inject } from '@angular/core';
 
 @Directive({
   selector: '[facPopoverOrigin]',
-  exportAs: 'facPopoverOrigin',
+  exportAs: 'appPopoverOrigin',
   standalone: true,
 })
 export class PopoverOriginDirective {

@@ -1,20 +1,20 @@
 :root {
-  --fac-number-input-gap: theme('gap.2');
-  --fac-number-input-control-bg: none;
-  --fac-number-input-control-color: theme('colors.neutral.500');
-  --fac-number-input-control-hover-color: theme('colors.neutral.600');
-  --fac-number-input-control-active-color: theme('colors.neutral.700');
-  --fac-number-input-control-hover-bg: theme('colors.neutral.50');
-  --fac-number-input-control-active-bg: theme('colors.neutral.100');
-  --fac-number-input-control-font-size: theme('fontSize.2xl');
-  --fac-number-input-control-border-radius: theme('borderRadius.md');
-  --fac-number-input-suffix-gap: theme('gap.3');
-  --fac-number-input-control-size: theme('width.7');
-  --fac-number-input-control-border: none;
+  --app-number-input-gap: theme('gap.2');
+  --app-number-input-control-bg: none;
+  --app-number-input-control-color: theme('colors.neutral.500');
+  --app-number-input-control-hover-color: theme('colors.neutral.600');
+  --app-number-input-control-active-color: theme('colors.neutral.700');
+  --app-number-input-control-hover-bg: theme('colors.neutral.50');
+  --app-number-input-control-active-bg: theme('colors.neutral.100');
+  --app-number-input-control-font-size: theme('fontSize.2xl');
+  --app-number-input-control-border-radius: theme('borderRadius.md');
+  --app-number-input-suffix-gap: theme('gap.3');
+  --app-number-input-control-size: theme('width.7');
+  --app-number-input-control-border: none;
 }
 
 html.dark {
-  --fac-number-input-control-color: theme('colors.neutral.300');
-  --fac-number-input-control-hover-color: theme('colors.neutral.200');
-  --fac-number-input-control-hover-bg: theme('colors.neutral.500');
+  --app-number-input-control-color: theme('colors.neutral.300');
+  --app-number-input-control-hover-color: theme('colors.neutral.200');
+  --app-number-input-control-hover-bg: theme('colors.neutral.500');
 }

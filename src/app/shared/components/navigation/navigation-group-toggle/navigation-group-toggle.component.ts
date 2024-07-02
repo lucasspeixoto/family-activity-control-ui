@@ -11,13 +11,13 @@ import { MatRipple } from '@angular/material/core';
 import { NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({
-  selector: 'fac-navigation-group-toggle',
-  exportAs: 'facNavigationGroupToggle',
+  selector: 'app-navigation-group-toggle',
+  exportAs: 'appNavigationGroupToggle',
   templateUrl: './navigation-group-toggle.component.html',
   styleUrls: ['./navigation-group-toggle.component.scss'],
   hostDirectives: [MatRipple],
   host: {
-    class: 'fac-navigation-group-toggle',
+    class: 'app-navigation-group-toggle',
     '[class.is-active]': 'active',
   },
   standalone: true,
@@ -29,8 +29,7 @@ export class NavigationGroupToggleComponent {
   @ContentChild(NavigationGroupToggleIconDirective)
   readonly iconRef!: NavigationGroupToggleIconDirective;
 
-  @Input()
-  for!: any;
+  @Input() public for!: string | number;
 
   get active(): boolean {
     return this.api.isGroupActive(this.for);

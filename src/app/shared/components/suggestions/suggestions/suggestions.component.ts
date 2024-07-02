@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'fac-suggestions',
-  exportAs: 'facSuggestions',
+  selector: 'app-suggestions',
+  exportAs: 'appSuggestions',
   standalone: true,
   imports: [],
   templateUrl: './suggestions.component.html',
   styleUrl: './suggestions.component.scss',
   host: {
-    class: 'fac-suggestions',
+    class: 'app-suggestions',
   },
 })
 export class SuggestionsComponent {}

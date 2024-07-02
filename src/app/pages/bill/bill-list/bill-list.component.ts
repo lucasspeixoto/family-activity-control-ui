@@ -47,7 +47,6 @@ import { BillListActionsComponent } from './bill-list-actions/bill-list-actions.
     MatLabel,
     DatePipe,
     MatSortModule,
-
     BillListActionsComponent,
   ],
   templateUrl: './bill-list.component.html',
@@ -56,6 +55,7 @@ import { BillListActionsComponent } from './bill-list-actions/bill-list-actions.
 })
 export class BillListComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) public paginator: MatPaginator;
+
   @ViewChild(MatSort) public sort: MatSort;
 
   private billService = inject(BillService);

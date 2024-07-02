@@ -24,7 +24,7 @@ import { HDividerComponent } from '@shared/components/divider';
     HDividerComponent,
   ],
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.scss',
+  styles: ``,
 })
 export class SignupComponent {
   private _formBuilder = inject(FormBuilder);

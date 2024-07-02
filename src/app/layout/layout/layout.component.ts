@@ -2,13 +2,13 @@ import { booleanAttribute, Component, Input } from '@angular/core';
 import { LAYOUT } from '../types';
 
 @Component({
-  selector: 'fac-layout',
-  exportAs: 'facLayout',
+  selector: 'app-layout',
+  exportAs: 'appLayout',
   standalone: true,
   template: `
-    <ng-content select="fac-layout-header"></ng-content>
+    <ng-content select="app-layout-header"></ng-content>
     <div class="flex grow overflow-hidden">
-      <ng-content select="fac-layout-sidebar"></ng-content>
+      <ng-content select="app-layout-sidebar"></ng-content>
       <div class="grow flex flex-col relative overflow-hidden">
         <ng-content></ng-content>
       </div>
@@ -35,7 +35,7 @@ import { LAYOUT } from '../types';
     },
   ],
   host: {
-    class: 'fac-layout',
+    class: 'app-layout',
     '[class.is-window-mode]': 'windowMode',
   },
 })

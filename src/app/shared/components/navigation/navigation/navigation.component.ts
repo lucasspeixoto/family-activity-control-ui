@@ -13,13 +13,13 @@ import { NavigationApiService } from '../navigation-api.service';
 import { NavigationItemComponent } from '../navigation-item/navigation-item.component';
 
 @Component({
-  selector: 'fac-navigation',
-  exportAs: 'facNavigation',
+  selector: 'app-navigation',
+  exportAs: 'appNavigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
   providers: [NavigationApiService],
   host: {
-    class: 'fac-navigation',
+    class: 'app-navigation',
   },
   standalone: true,
 })

@@ -12,7 +12,7 @@ import { FocusMonitor, FocusOrigin } from '@angular/cdk/a11y';
 
 @Directive({
   selector: '[facFocusElement]',
-  exportAs: 'facFocusElement',
+  exportAs: 'appFocusElement',
   standalone: true,
 })
 export class FocusElementDirective implements AfterViewInit, OnDestroy {

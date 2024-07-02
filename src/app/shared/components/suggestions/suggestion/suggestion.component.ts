@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { MatRipple } from '@angular/material/core';
 
 @Component({
-  selector: 'fac-suggestion,[fac-suggestion]',
-  exportAs: 'facSuggestion',
+  selector: 'app-suggestion,[app-suggestion]',
+  exportAs: 'appSuggestion',
   standalone: true,
   imports: [],
   templateUrl: './suggestion.component.html',

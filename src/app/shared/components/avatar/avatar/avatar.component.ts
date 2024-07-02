@@ -15,8 +15,8 @@ import { ULT_AVATAR_ACCESSOR } from '../avatar.properties';
 const alreadyLoadedImages: string[] = [];
 
 @Component({
-  selector: 'fac-avatar,[fac-avatar]',
-  exportAs: 'facAvatar',
+  selector: 'app-avatar,[app-avatar]',
+  exportAs: 'appAvatar',
   templateUrl: './avatar.component.html',
   styleUrls: ['./avatar.component.scss'],
   providers: [
@@ -27,7 +27,7 @@ const alreadyLoadedImages: string[] = [];
     },
   ],
   host: {
-    class: 'fac-avatar',
+    class: 'app-avatar',
     '[class.is-clickable]': 'clickable()',
     '[class.has-automatic-color]': '!!automaticColor()',
     '[class.has-loaded-image]': 'src() && imageLoaded',
@@ -75,13 +75,13 @@ export class AvatarComponent implements OnInit, OnChanges {
     }
 
     const element = this._elementRef.nativeElement as HTMLElement;
-    element.style.setProperty('--fac-avatar-bg', color);
+    element.style.setProperty('--app-avatar-bg', color);
     element.style.setProperty(
-      '--fac-avatar-border-color',
+      '--app-avatar-border-color',
       this._newShade(color, -25)
     );
     element.style.setProperty(
-      '--fac-avatar-color',
+      '--app-avatar-color',
       this._newShade(color, -150)
     );
   }

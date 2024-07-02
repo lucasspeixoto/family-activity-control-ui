@@ -1,63 +1,63 @@
 :root {
-  --fac-segmented-button-height: calc(theme('height.11') - theme('padding.2'));
-  --fac-segmented-bg: theme('colors.neutral.200');
-  --fac-segmented-button-hover-bg: theme('colors.neutral.200');
-  --fac-segmented-button-color: theme('colors.neutral.600');
-  --fac-segmented-button-hover-color: theme('colors.neutral.800');
-  --fac-segmented-button-selected-color: theme('colors.neutral.900');
-  --fac-segmented-button-selected-bg: theme('colors.white');
-  --fac-segmented-button-selected-shadow: theme('boxShadow.sm');
-  --fac-segmented-padding: theme('padding.1');
-  --fac-segmented-border-radius: theme('borderRadius.lg');
-  --fac-segmented-button-border-radius: theme('borderRadius.lg');
-  --fac-segmented-button-padding: 0 theme('padding.3');
-  --fac-segmented-button-min-width: theme('width.12');
-  --fac-segmented-button-font-size: theme('fontSize.tiny');
-  --fac-segmented-gap: theme('gap.1');
-  --fac-segmented-button-gap: theme('gap.1');
-  --fac-segmented-button-icon-offset-margin: -6px;
+  --app-segmented-button-height: calc(theme('height.11') - theme('padding.2'));
+  --app-segmented-bg: theme('colors.neutral.200');
+  --app-segmented-button-hover-bg: theme('colors.neutral.200');
+  --app-segmented-button-color: theme('colors.neutral.600');
+  --app-segmented-button-hover-color: theme('colors.neutral.800');
+  --app-segmented-button-selected-color: theme('colors.neutral.900');
+  --app-segmented-button-selected-bg: theme('colors.white');
+  --app-segmented-button-selected-shadow: theme('boxShadow.sm');
+  --app-segmented-padding: theme('padding.1');
+  --app-segmented-border-radius: theme('borderRadius.lg');
+  --app-segmented-button-border-radius: theme('borderRadius.lg');
+  --app-segmented-button-padding: 0 theme('padding.3');
+  --app-segmented-button-min-width: theme('width.12');
+  --app-segmented-button-font-size: theme('fontSize.tiny');
+  --app-segmented-gap: theme('gap.1');
+  --app-segmented-button-gap: theme('gap.1');
+  --app-segmented-button-icon-offset-margin: -6px;
 }
 
-[fac-segmented-size='sm'] {
-  --fac-segmented-button-height: calc(theme('height.10') - theme('padding.2'));
-  --fac-segmented-button-font-size: theme('fontSize.xs');
-  --fac-segmented-button-padding: 0 theme('padding.2');
-  --fac-segmented-button-gap: theme('gap[0.5]');
+[app-segmented-size='sm'] {
+  --app-segmented-button-height: calc(theme('height.10') - theme('padding.2'));
+  --app-segmented-button-font-size: theme('fontSize.xs');
+  --app-segmented-button-padding: 0 theme('padding.2');
+  --app-segmented-button-gap: theme('gap[0.5]');
 }
 
-[fac-segmented-size='lg'] {
-  --fac-segmented-button-height: calc(theme('height.14') - theme('padding.2'));
-  --fac-segmented-button-font-size: theme('fontSize.sm');
-  --fac-segmented-button-padding: 0 theme('padding.4');
-  --fac-segmented-button-gap: theme('gap[1.5]');
-}
-
-html.dark {
-  --fac-segmented-bg: theme('colors.neutral.600');
-  --fac-segmented-button-hover-bg: theme('colors.neutral.400');
-  --fac-segmented-button-color: theme('colors.neutral.300');
-  --fac-segmented-button-selected-bg: theme('colors.neutral.200');
-  --fac-segmented-button-hover-color: theme('colors.white');
-}
-
-.fac-segmented[theme='simple'] {
-  --fac-segmented-bg: none;
-  --fac-segmented-button-hover-bg: none;
-  --fac-segmented-button-color: theme('colors.neutral.600');
-  --fac-segmented-button-hover-color: theme('colors.neutral.800');
-  --fac-segmented-button-selected-color: theme('colors.primary.DEFAULT');
-  --fac-segmented-button-selected-bg: none;
-  --fac-segmented-button-selected-shadow: none;
-  --fac-segmented-padding: 0;
-  --fac-segmented-border-radius: 0;
-  --fac-segmented-button-border-radius: theme('borderRadius.lg');
-  --fac-segmented-button-padding: 0 theme('padding.2');
-  --fac-segmented-button-min-width: 0;
+[app-segmented-size='lg'] {
+  --app-segmented-button-height: calc(theme('height.14') - theme('padding.2'));
+  --app-segmented-button-font-size: theme('fontSize.sm');
+  --app-segmented-button-padding: 0 theme('padding.4');
+  --app-segmented-button-gap: theme('gap[1.5]');
 }
 
 html.dark {
-  .fac-segmented[theme='simple'] {
-    --fac-segmented-button-color: theme('colors.neutral.400');
-    --fac-segmented-button-hover-color: theme('colors.white');
+  --app-segmented-bg: theme('colors.neutral.600');
+  --app-segmented-button-hover-bg: theme('colors.neutral.400');
+  --app-segmented-button-color: theme('colors.neutral.300');
+  --app-segmented-button-selected-bg: theme('colors.neutral.200');
+  --app-segmented-button-hover-color: theme('colors.white');
+}
+
+.app-segmented[theme='simple'] {
+  --app-segmented-bg: none;
+  --app-segmented-button-hover-bg: none;
+  --app-segmented-button-color: theme('colors.neutral.600');
+  --app-segmented-button-hover-color: theme('colors.neutral.800');
+  --app-segmented-button-selected-color: theme('colors.primary.DEFAULT');
+  --app-segmented-button-selected-bg: none;
+  --app-segmented-button-selected-shadow: none;
+  --app-segmented-padding: 0;
+  --app-segmented-border-radius: 0;
+  --app-segmented-button-border-radius: theme('borderRadius.lg');
+  --app-segmented-button-padding: 0 theme('padding.2');
+  --app-segmented-button-min-width: 0;
+}
+
+html.dark {
+  .app-segmented[theme='simple'] {
+    --app-segmented-button-color: theme('colors.neutral.400');
+    --app-segmented-button-hover-color: theme('colors.white');
   }
 }

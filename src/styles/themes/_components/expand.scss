@@ -1,15 +1,15 @@
 :root {
-  --fac-expand-fade-color: theme('colors.white');
-  --fac-expand-button-bg: theme('colors.neutral.950');
-  --fac-expand-button-color: theme('colors.white');
-  --fac-expand-button-font-size: theme('fontSize.xs');
-  --fac-expand-button-box-shadow: theme('boxShadow.md');
-  --fac-expand-button-border-radius: theme('borderRadius.full');
-  --fac-expand-button-padding: theme('padding[1.5]') theme('padding.4');
-  --fac-expand-button-hover-opacity: theme('opacity.90');
-  --fac-expand-expanded-button-boottom-position: 10px;
+  --app-expand-fade-color: theme('colors.white');
+  --app-expand-button-bg: theme('colors.neutral.950');
+  --app-expand-button-color: theme('colors.white');
+  --app-expand-button-font-size: theme('fontSize.xs');
+  --app-expand-button-box-shadow: theme('boxShadow.md');
+  --app-expand-button-border-radius: theme('borderRadius.full');
+  --app-expand-button-padding: theme('padding[1.5]') theme('padding.4');
+  --app-expand-button-hover-opacity: theme('opacity.90');
+  --app-expand-expanded-button-boottom-position: 10px;
 }
 
 html.dark {
-  --fac-expand-fade-color: theme('colors.neutral.950');
+  --app-expand-fade-color: theme('colors.neutral.950');
 }

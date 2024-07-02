@@ -1,17 +1,17 @@
 :host {
-  animation: var(--fac-skeleton-item-animation);
+  animation: var(--app-skeleton-item-animation);
   display: block;
   flex: none;
 }
 
 :host:not([class*='rounded']) {
-  border-radius: var(--fac-skeleton-item-border-radius);
+  border-radius: var(--app-skeleton-item-border-radius);
 }
 
 :host:not([class*='w-']):not([class*='size-']) {
-  width: var(--fac-skeleton-block-width);
+  width: var(--app-skeleton-block-width);
 }
 
 :host:not([class*='h-']):not([class*='size-']) {
-  height: var(--fac-skeleton-block-height);
+  height: var(--app-skeleton-block-height);
 }

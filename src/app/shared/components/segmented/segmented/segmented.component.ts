@@ -18,8 +18,8 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
 
 @Component({
-  selector: 'fac-segmented',
-  exportAs: 'facSegmented',
+  selector: 'app-segmented',
+  exportAs: 'appSegmented',
   templateUrl: './segmented.component.html',
   styleUrl: './segmented.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -35,7 +35,7 @@ import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
     },
   ],
   host: {
-    class: 'fac-segmented',
+    class: 'app-segmented',
     '[class.is-disabled]': 'disabled',
   },
   standalone: true,
@@ -59,7 +59,7 @@ export class SegmentedComponent implements OnInit, ControlValueAccessor {
     this._size = size;
     this._renderer.setAttribute(
       this._elementRef.nativeElement,
-      'fac-segmented-size',
+      'app-segmented-size',
       this._size
     );
   }
@@ -81,7 +81,7 @@ export class SegmentedComponent implements OnInit, ControlValueAccessor {
   ngOnInit() {
     this._renderer.setAttribute(
       this._elementRef.nativeElement,
-      'fac-segmented-size',
+      'app-segmented-size',
       this._size
     );
   }

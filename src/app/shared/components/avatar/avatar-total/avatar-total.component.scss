@@ -1,23 +1,23 @@
 :host {
-  background: var(--fac-avatar-total-bg);
-  font-size: var(--fac-avatar-total-font-size);
-  font-weight: var(--fac-avatar-total-font-weight);
-  color: var(--fac-avatar-total-color);
-  border-radius: var(--fac-avatar-border-radius);
+  background: var(--app-avatar-total-bg);
+  font-size: var(--app-avatar-total-font-size);
+  font-weight: var(--app-avatar-total-font-weight);
+  color: var(--app-avatar-total-color);
+  border-radius: var(--app-avatar-border-radius);
   flex: none;
   display: flex;
   align-items: center;
   justify-content: center;
 
   &:hover {
-    background: var(--fac-avatar-total-hover-bg);
+    background: var(--app-avatar-total-hover-bg);
   }
 }
 
 :host:not([class*='w-']):not([class*='size-']) {
-  width: var(--fac-avatar-size);
+  width: var(--app-avatar-size);
 }
 
 :host:not([class*='h-']):not([class*='size-']) {
-  height: var(--fac-avatar-size);
+  height: var(--app-avatar-size);
 }

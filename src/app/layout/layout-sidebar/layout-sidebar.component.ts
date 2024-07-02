@@ -12,7 +12,7 @@ import { LAYOUT, LayoutSidebarVisibilityChange } from '../types';
 import { LayoutComponent } from '../layout/layout.component';
 
 @Component({
-  selector: 'fac-layout-sidebar',
+  selector: 'app-layout-sidebar',
   standalone: true,
   imports: [],
   template: `<ng-content></ng-content>`,
@@ -27,7 +27,7 @@ import { LayoutComponent } from '../layout/layout.component';
     }
   `,
   host: {
-    class: 'fac-layout-sidebar',
+    class: 'app-layout-sidebar',
     '[class.is-hidden]': 'hidden',
   },
 })

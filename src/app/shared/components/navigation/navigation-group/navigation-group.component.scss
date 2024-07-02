@@ -1,8 +1,8 @@
 :host {
   display: block;
-  border-radius: var(--fac-navigation-group-border-radius);
+  border-radius: var(--app-navigation-group-border-radius);
 }
 
-:host:has(.fac-navigation-group-toggle.is-active) {
-  background: var(--fac-navigation-group-active-bg);
+:host:has(.app-navigation-group-toggle.is-active) {
+  background: var(--app-navigation-group-active-bg);
 }

@@ -2,7 +2,7 @@ import { AfterViewInit, Directive, ElementRef, inject } from '@angular/core';
 
 @Directive({
   selector: '[facAutoFocus]',
-  exportAs: 'facAutoFocus',
+  exportAs: 'appAutoFocus',
   standalone: true,
 })
 export class AutoFocusDirective implements AfterViewInit {

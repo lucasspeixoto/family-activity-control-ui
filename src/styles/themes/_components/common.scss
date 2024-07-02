@@ -21,7 +21,7 @@ body {
   max-width: none !important;
 }
 
-.fac-button-loading {
+.app-button-loading {
   .mat-button-wrapper {
     visibility: hidden;
   }
@@ -46,12 +46,12 @@ h6 {
   @apply font-serif;
 }
 
-input.fac-number-input-no-spinners::-webkit-outer-spin-button,
-input.fac-number-input-no-spinners::-webkit-inner-spin-button {
+input.app-number-input-no-spinners::-webkit-outer-spin-button,
+input.app-number-input-no-spinners::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-input[type='number'].fac-number-input-no-spinners {
+input[type='number'].app-number-input-no-spinners {
   -moz-appearance: textfield;
 }

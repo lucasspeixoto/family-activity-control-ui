@@ -1,18 +1,18 @@
 :root {
-  --fac-suggestions-bg: theme('colors.white');
-  --fac-suggestion-block-heading-color: theme('colors.neutral.800');
-  --fac-suggestion-block-font-size: theme('fontSize.xs');
-  --fac-suggestion-block-font-weight: theme('fontWeight.semibold');
-  --fac-suggestion-block-content-padding: theme('padding.2') 0;
-  --fac-suggestion-height: theme('height.11');
-  --fac-suggestion-padding: 0 theme('padding.2');
-  --fac-suggestion-margin: 0 calc(-1 * theme('margin.2'));
-  --fac-suggestion-hover-bg: theme('colors.neutral.100');
-  --fac-suggestion-border-radius: theme('borderRadius.DEFAULT');
+  --app-suggestions-bg: theme('colors.white');
+  --app-suggestion-block-heading-color: theme('colors.neutral.800');
+  --app-suggestion-block-font-size: theme('fontSize.xs');
+  --app-suggestion-block-font-weight: theme('fontWeight.semibold');
+  --app-suggestion-block-content-padding: theme('padding.2') 0;
+  --app-suggestion-height: theme('height.11');
+  --app-suggestion-padding: 0 theme('padding.2');
+  --app-suggestion-margin: 0 calc(-1 * theme('margin.2'));
+  --app-suggestion-hover-bg: theme('colors.neutral.100');
+  --app-suggestion-border-radius: theme('borderRadius.DEFAULT');
 }
 
 html.dark {
-  --fac-suggestions-bg: theme('colors.neutral.600');
-  --fac-suggestion-block-heading-color: theme('colors.neutral.200');
-  --fac-suggestion-hover-bg: theme('colors.neutral.600');
+  --app-suggestions-bg: theme('colors.neutral.600');
+  --app-suggestion-block-heading-color: theme('colors.neutral.200');
+  --app-suggestion-hover-bg: theme('colors.neutral.600');
 }

@@ -2,8 +2,8 @@ import { booleanAttribute, Component, Input } from '@angular/core';
 import { MatDivider } from '@angular/material/divider';
 
 @Component({
-  selector: 'fac-suggestion-block',
-  exportAs: 'facSuggestionBlock',
+  selector: 'app-suggestion-block',
+  exportAs: 'appSuggestionBlock',
   standalone: true,
   imports: [MatDivider],
   templateUrl: './suggestion-block.component.html',

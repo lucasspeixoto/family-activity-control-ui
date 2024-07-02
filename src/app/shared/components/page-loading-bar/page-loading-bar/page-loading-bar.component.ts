@@ -21,14 +21,14 @@ import { map, take } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
-  selector: 'fac-page-loading-bar',
-  exportAs: 'facPageLoadingBar',
+  selector: 'app-page-loading-bar',
+  exportAs: 'appPageLoadingBar',
   standalone: true,
   imports: [NgIf, MatProgressBar],
   templateUrl: './page-loading-bar.component.html',
   styleUrl: './page-loading-bar.component.scss',
   host: {
-    class: 'fac--page-loading-bar',
+    class: 'app--page-loading-bar',
     '[class.is-visible]': 'visible',
     '[class.is-fixed]': 'fixed',
   },

@@ -12,8 +12,8 @@ import { filter } from 'rxjs';
 import { isPlatformServer } from '@angular/common';
 
 @Component({
-  selector: 'fac-layout-body',
-  exportAs: 'facLayoutBody',
+  selector: 'app-layout-body',
+  exportAs: 'appLayoutBody',
   standalone: true,
   imports: [],
   template: `<ng-content></ng-content>`,
@@ -25,13 +25,13 @@ import { isPlatformServer } from '@angular/common';
       width: 100%;
       overflow: hidden;
 
-      &:has(:not(.fac-layout-body)) {
+      &:has(:not(.app-layout-body)) {
         overflow: auto;
       }
     }
   `,
   host: {
-    class: 'fac-layout-body fac-scroll-lg',
+    class: 'app-layout-body app-scroll-lg',
   },
 })
 export class LayoutBodyComponent implements OnInit {

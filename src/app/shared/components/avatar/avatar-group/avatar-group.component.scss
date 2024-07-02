@@ -6,11 +6,11 @@
 }
 
 :host ::ng-deep * + * {
-  margin-left: calc(var(--fac-avatar-group-item-offset) * -1);
+  margin-left: calc(var(--app-avatar-group-item-offset) * -1);
 }
 
-:host ::ng-deep .fac-avatar,
-:host ::ng-deep .fac-avatar-total {
-  border: var(--fac-avatar-group-item-border);
+:host ::ng-deep .app-avatar,
+:host ::ng-deep .app-avatar-total {
+  border: var(--app-avatar-group-item-border);
   z-index: 0;
 }

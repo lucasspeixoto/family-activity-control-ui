@@ -1,30 +1,30 @@
 :root {
-  --fac-command-bar-height: theme('height.10');
-  --fac-command-bar-margin: theme('margin.8') 0;
-  --fac-command-bar-zindex: theme('zIndex.50');
-  --fac-command-bar-bg: theme('colors.white');
-  --fac-command-bar-border: 1px solid theme('colors.neutral.200');
-  --fac-command-bar-shadow: theme('boxShadow.lg');
-  --fac-command-bar-border-radius: theme('borderRadius.full');
-  --fac-command-bar-command-padding: 0 theme('padding[3.5]');
-  --fac-command-bar-command-font-size: theme('fontSize.sm');
-  --fac-command-bar-command-color: theme('colors.neutral.500');
-  --fac-command-bar-command-hover-color: theme('colors.neutral.900');
-  --fac-command-bar-command-hover-bg: theme('colors.neutral.50');
-  --fac-command-bar-value-color: theme('colors.neutral.500');
-  --fac-command-bar-command-gap: theme('gap.3');
-  --fac-command-bar-value-padding: 0 theme('padding[3.5]');
-  --fac-command-bar-value-font-size: theme('fontSize.sm');
-  --fac-command-bar-separator-width: 1px;
-  --fac-command-bar-separator-height: 100%;
-  --fac-command-bar-separator-bg: theme('colors.neutral.200');
-  --fac-command-bar-command-shortcut-bg: theme('colors.neutral.100');
-  --fac-command-bar-command-shortcut-border-radius: theme(
+  --app-command-bar-height: theme('height.10');
+  --app-command-bar-margin: theme('margin.8') 0;
+  --app-command-bar-zindex: theme('zIndex.50');
+  --app-command-bar-bg: theme('colors.white');
+  --app-command-bar-border: 1px solid theme('colors.neutral.200');
+  --app-command-bar-shadow: theme('boxShadow.lg');
+  --app-command-bar-border-radius: theme('borderRadius.full');
+  --app-command-bar-command-padding: 0 theme('padding[3.5]');
+  --app-command-bar-command-font-size: theme('fontSize.sm');
+  --app-command-bar-command-color: theme('colors.neutral.500');
+  --app-command-bar-command-hover-color: theme('colors.neutral.900');
+  --app-command-bar-command-hover-bg: theme('colors.neutral.50');
+  --app-command-bar-value-color: theme('colors.neutral.500');
+  --app-command-bar-command-gap: theme('gap.3');
+  --app-command-bar-value-padding: 0 theme('padding[3.5]');
+  --app-command-bar-value-font-size: theme('fontSize.sm');
+  --app-command-bar-separator-width: 1px;
+  --app-command-bar-separator-height: 100%;
+  --app-command-bar-separator-bg: theme('colors.neutral.200');
+  --app-command-bar-command-shortcut-bg: theme('colors.neutral.100');
+  --app-command-bar-command-shortcut-border-radius: theme(
     'borderRadius.DEFAULT'
   );
-  --fac-command-bar-command-shortcut-font-size: theme('fontSize.xs');
-  --fac-command-bar-command-shortcut-color: theme('colors.neutral.600');
-  --fac-command-bar-command-shortcut-padding: 0 5px;
-  --fac-command-bar-command-shortcut-border: 1px solid
+  --app-command-bar-command-shortcut-font-size: theme('fontSize.xs');
+  --app-command-bar-command-shortcut-color: theme('colors.neutral.600');
+  --app-command-bar-command-shortcut-padding: 0 5px;
+  --app-command-bar-command-shortcut-border: 1px solid
     theme('colors.neutral.200');
 }

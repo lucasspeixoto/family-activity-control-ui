@@ -2,9 +2,9 @@ import { Directive } from '@angular/core';
 
 @Directive({
   selector: '[facSegmentedIcon]',
-  exportAs: 'facSegmentedIcon',
+  exportAs: 'appSegmentedIcon',
   host: {
-    class: 'fac-segmented-icon',
+    class: 'app-segmented-icon',
   },
   standalone: true,
 })

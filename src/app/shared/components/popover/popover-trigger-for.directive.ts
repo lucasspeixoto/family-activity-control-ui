@@ -29,10 +29,10 @@ import { MatIcon } from '@angular/material/icon';
 
 @Directive({
   selector: '[facPopoverTriggerFor]',
-  exportAs: 'facPopoverTriggerFor',
+  exportAs: 'appPopoverTriggerFor',
   host: {
-    class: 'fac-popover-trigger-for',
-    '[class.fac-popover-trigger-for--is-open]': 'api.isOpen()',
+    class: 'app-popover-trigger-for',
+    '[class.app-popover-trigger-for--is-open]': 'api.isOpen()',
   },
   standalone: true,
 })

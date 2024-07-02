@@ -25,8 +25,8 @@ import { MatInput } from '@angular/material/input';
 import { MatFormField } from '@angular/material/form-field';
 
 @Component({
-  selector: 'fac-pin-input',
-  exportAs: 'facPinInput',
+  selector: 'app-pin-input',
+  exportAs: 'appPinInput',
   templateUrl: './pin-input.component.html',
   styleUrl: './pin-input.component.scss',
   providers: [
@@ -37,7 +37,7 @@ import { MatFormField } from '@angular/material/form-field';
     },
   ],
   host: {
-    class: 'fac-pin-input',
+    class: 'app-pin-input',
     '[class.is-disabled]': 'disabled',
   },
   standalone: true,

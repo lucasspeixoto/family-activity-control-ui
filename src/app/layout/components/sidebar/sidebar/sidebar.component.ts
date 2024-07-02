@@ -46,13 +46,13 @@ import { MenuItem } from '@app/layout/types';
         >
       </div>
       <div class="grow relative overflow-y-auto overflow-x-hidden px-3">
-        <fac-navigation
+        <app-navigation
           #navigation
           [activeKey]="activeLinkId"
           class="navigation">
           @for (menuItem of menuItems; track menuItem) {
-            <fac-navigation-group>
-              <fac-navigation-group-toggle [for]="menuItem.id">
+            <app-navigation-group>
+              <app-navigation-group-toggle [for]="menuItem.id!">
                 @if (menuItem.icon) {
                   <mat-icon facNavigationItemIcon class="font-icon">{{
                     menuItem.icon
@@ -62,20 +62,20 @@ import { MenuItem } from '@app/layout/types';
                 <mat-icon facNavigationGroupToggleIcon class="font-icon"
                   >arrow_drop_down</mat-icon
                 >
-              </fac-navigation-group-toggle>
-              <fac-navigation-group-menu [key]="menuItem.id">
+              </app-navigation-group-toggle>
+              <app-navigation-group-menu [key]="menuItem.id!">
                 @for (childItem of menuItem.children; track childItem) {
                   <a
-                    fac-navigation-item
+                    app-navigation-item
                     [routerLink]="childItem.link"
                     [key]="childItem.link">
                     {{ childItem.name }}
                   </a>
                 }
-              </fac-navigation-group-menu>
-            </fac-navigation-group>
+              </app-navigation-group-menu>
+            </app-navigation-group>
           }
-        </fac-navigation>
+        </app-navigation>
       </div>
       <div class="flex-none p-7">
         <app-sidebar-toolbar></app-sidebar-toolbar>

@@ -1,10 +1,10 @@
 :root {
-  --fac-data-view-hl-header-row-bg: theme('colors.neutral.200');
-  --fac-data-view-hl-header-margin: theme('margin.1') 0;
-  --fac-data-view-sticky-header-top: 0;
-  --fac-data-view-selected-border-color: theme('colors.primary.DEFAULT');
+  --app-data-view-hl-header-row-bg: theme('colors.neutral.200');
+  --app-data-view-hl-header-margin: theme('margin.1') 0;
+  --app-data-view-sticky-header-top: 0;
+  --app-data-view-selected-border-color: theme('colors.primary.DEFAULT');
 }
 
 html.dark {
-  --fac-data-view-hl-header-row-bg: theme('colors.neutral.900');
+  --app-data-view-hl-header-row-bg: theme('colors.neutral.900');
 }

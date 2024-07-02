@@ -3,13 +3,13 @@
   align-items: center;
   width: 100%;
   gap: theme('gap[2.5]');
-  height: var(--fac-suggestion-height);
-  padding: var(--fac-suggestion-padding);
-  margin: var(--fac-suggestion-margin);
-  border-radius: var(--fac-suggestion-border-radius);
+  height: var(--app-suggestion-height);
+  padding: var(--app-suggestion-padding);
+  margin: var(--app-suggestion-margin);
+  border-radius: var(--app-suggestion-border-radius);
 
   &:hover {
-    background: var(--fac-suggestion-hover-bg);
+    background: var(--app-suggestion-hover-bg);
     cursor: pointer;
   }
 
@@ -23,7 +23,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    --fac-avatar-size: theme('size.8');
+    --app-avatar-size: theme('size.8');
   }
 
   .icon:empty,

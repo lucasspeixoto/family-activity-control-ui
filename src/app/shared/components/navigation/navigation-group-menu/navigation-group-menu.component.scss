@@ -1,6 +1,6 @@
 :host {
-  padding-inline-start: var(--fac-navigation-group-menu-padding-start);
-  margin-top: var(--fac-navigation-item-space-y);
+  padding-inline-start: var(--app-navigation-group-menu-padding-start);
+  margin-top: var(--app-navigation-item-space-y);
   display: none;
 }
 
@@ -8,6 +8,6 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  gap: var(--fac-navigation-items-gap);
-  padding: calc(var(--fac-navigation-items-gap) * 2) 0;
+  gap: var(--app-navigation-items-gap);
+  padding: calc(var(--app-navigation-items-gap) * 2) 0;
 }
