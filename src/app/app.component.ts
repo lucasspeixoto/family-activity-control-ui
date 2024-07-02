@@ -15,6 +15,8 @@ import { ThemeManagerService } from '@shared/services/theme-manager.service';
 import { ScreenLoaderService } from '@shared/services/screen-loader.service';
 import { PageLoadingBarComponent } from '@shared/components/page-loading-bar';
 import { ScreenLoaderComponent } from './layout/components/screen-loader/screen-loader.component';
+import { LayoutApiService } from './layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-root',
@@ -34,11 +36,12 @@ export class AppComponent implements OnInit {
   private _screenLoader = inject(ScreenLoaderService);
   private _platformId = inject(PLATFORM_ID);
   private _router = inject(Router);
+  private _layoutService = inject(LayoutApiService);
 
   public loadingText = signal('Carregando...');
   public pageLoaded = signal(false);
 
-  constructor() {
+  constructor(private _layoutBreakpointObserver$: BreakpointObserver) {
     afterNextRender(() => {
       // Scroll a page to top if url changed
       this._router.events
@@ -51,6 +54,14 @@ export class AppComponent implements OnInit {
           setTimeout(() => {
             this._screenLoader.hide();
             this.pageLoaded.set(true);
+
+            this._layoutBreakpointObserver$
+              ?.observe(['(max-width: 991px)'])
+              .subscribe(result => {
+                if (result.matches) {
+                  this._layoutService.hideSidebar('root');
+                }
+              });
           }, 2000);
         });
     });

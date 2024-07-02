@@ -36,8 +36,8 @@
         <mat-form-field class="w-1/2 my-2">
           <mat-label>Amount</mat-label>
           <span class="ml-2" matPrefix>R$ &nbsp;</span>
-          <input type="number" matInput formControlName="amount" />
-          @if (addNewBillForm.get('owner')!.hasError('min')) {
+          <input type="number" min="0" matInput formControlName="amount" />
+          @if (addNewBillForm.get('amount')!.hasError('min')) {
             <mat-error>Insert a amount value greater than 0</mat-error>
           }
         </mat-form-field>
@@ -59,7 +59,8 @@
         <textarea
           #description
           matInput
-          formControlName="description"></textarea>
+          formControlName="description"
+          maxlength="256"></textarea>
         @if (addNewBillForm.get('description')!.hasError('required')) {
           <mat-error>Description is <strong>required</strong></mat-error>
         } @else if (addNewBillForm.get('description')!.hasError('minlength')) {
@@ -79,6 +80,9 @@
             matSuffix
             [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker color="primary"></mat-datepicker>
+          @if (addNewBillForm.get('finishAt')!.hasError('required')) {
+            <mat-error>Finish At is <strong>required</strong></mat-error>
+          }
         </mat-form-field>
 
         <mat-form-field class="w-1/2 my-2">
