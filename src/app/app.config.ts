@@ -29,9 +29,6 @@ export const appConfig: ApplicationConfig = {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'outline' },
     },
-    /* {
-      provide: MatDialogRef,
-      useValue: {},
-    }, */
+    /* { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }, */
   ],
 };

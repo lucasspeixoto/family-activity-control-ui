@@ -1,0 +1,108 @@
+<div class="dark:bg-neutral-900 bg-neutral-100">
+  <h3 mat-dialog-title>Add new Bill</h3>
+  <mat-dialog-content class="mat-typography">
+    <form class="gap-1 flex flex-wrap" id="form" [formGroup]="addNewBillForm">
+      <div class="mt-2 flex flex-row w-full gap-2">
+        <div class="flex flex-col justify-start gap-0 w-1/2">
+          <mat-form-field class="my-2">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title" minlength="3" />
+            @if (addNewBillForm.get('title')!.hasError('required')) {
+              <mat-error>Title is <strong>required</strong></mat-error>
+            } @else if (addNewBillForm.get('title')!.hasError('minlength')) {
+              <mat-error
+                >Title field must contain
+                <strong>3 characteres</strong></mat-error
+              >
+            }
+          </mat-form-field>
+        </div>
+
+        <mat-form-field class="w-1/2 my-2">
+          <mat-label>Owner</mat-label>
+          <input matInput formControlName="owner" />
+          @if (addNewBillForm.get('owner')!.hasError('required')) {
+            <mat-error>Owner is <strong>required</strong></mat-error>
+          } @else if (addNewBillForm.get('owner')!.hasError('minlength')) {
+            <mat-error
+              >Owner field must contain
+              <strong>3 characteres</strong></mat-error
+            >
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="flex flex-row w-full gap-2">
+        <mat-form-field class="w-1/2 my-2">
+          <mat-label>Amount</mat-label>
+          <span class="ml-2" matPrefix>R$ &nbsp;</span>
+          <input type="number" matInput formControlName="amount" />
+          @if (addNewBillForm.get('owner')!.hasError('min')) {
+            <mat-error>Insert a amount value greater than 0</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field class="w-1/2 my-2">
+          <mat-label>Category</mat-label>
+          <mat-select formControlName="category">
+            @for (category of billCategoryOptions; track category) {
+              <mat-option [value]="category.value">{{
+                category.viewValue
+              }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="w-full my-2">
+        <mat-label>Description</mat-label>
+        <textarea
+          #description
+          matInput
+          formControlName="description"></textarea>
+        @if (addNewBillForm.get('description')!.hasError('required')) {
+          <mat-error>Description is <strong>required</strong></mat-error>
+        } @else if (addNewBillForm.get('description')!.hasError('minlength')) {
+          <mat-error
+            >Description field must contain
+            <strong>3 characteres</strong></mat-error
+          >
+        }
+        <mat-hint align="end">{{ description.value.length }} / 256</mat-hint>
+      </mat-form-field>
+
+      <div class="flex flex-row w-full gap-2">
+        <mat-form-field class="w-1/2 my-2">
+          <mat-label>Finish At</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="finishAt" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker color="primary"></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="w-1/2 my-2">
+          <mat-label>Type</mat-label>
+          <mat-select formControlName="type">
+            @for (type of billTypeOptions; track type) {
+              <mat-option [value]="type.value">{{ type.viewValue }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close (click)="onCancelClick()">
+      Cancel
+    </button>
+    <button
+      mat-flat-button
+      color="primary"
+      [mat-dialog-close]="true"
+      cdkFocusInitial>
+      Insert
+    </button>
+  </mat-dialog-actions>
+</div>

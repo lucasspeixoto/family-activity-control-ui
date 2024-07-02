@@ -5,7 +5,9 @@ const routes: Routes = [
   {
     path: 'bills/list',
     loadComponent: () =>
-      import('./bill-list/bill-list.component').then(c => c.BillListComponent),
+      import('./view/bill-list/bill-list.component').then(
+        c => c.BillListComponent
+      ),
   },
 ];
 

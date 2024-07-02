@@ -17,16 +17,16 @@ import {
   SegmentedButtonComponent,
   SegmentedComponent,
 } from '@shared/components/segmented/public-api';
-import { BillService } from '../services/bill.service';
-import { Bill } from '../model/bill';
+import { BillService } from '../../services/bill.service';
+import { Bill } from '../../model/bill';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSort, MatSortModule } from '@angular/material/sort';
-import { BILLS_TABLE_COLUMNS } from '../constants/bills-table';
+import { BILLS_TABLE_COLUMNS } from '../../constants/bills-table';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { BillListActionsComponent } from './bill-list-actions/bill-list-actions.component';
+import { BillListActionsComponent } from '../../components/bill-list-actions/bill-list-actions.component';
 
 @Component({
   selector: 'app-bill-list',

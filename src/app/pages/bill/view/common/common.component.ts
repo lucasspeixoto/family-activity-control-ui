@@ -8,7 +8,7 @@ import {
   LayoutBodyComponent,
   LayoutSidebarComponent,
   LayoutHeaderComponent,
-} from '../../layout';
+} from '../../../../layout';
 
 @Component({
   standalone: true,
