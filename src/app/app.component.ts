@@ -11,11 +11,8 @@ import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { filter } from 'rxjs';
 
-import { environment } from '../environments/environment';
 import { ThemeManagerService } from '@shared/services/theme-manager.service';
-import { InactivityTrackerService } from '@shared/services/inactivity-tracker.service';
 import { ScreenLoaderService } from '@shared/services/screen-loader.service';
-import { SeoService } from '@shared/services/seo.service';
 import { PageLoadingBarComponent } from '@shared/components/page-loading-bar';
 import { ScreenLoaderComponent } from './layout/components/screen-loader/screen-loader.component';
 
@@ -35,8 +32,6 @@ import { ScreenLoaderComponent } from './layout/components/screen-loader/screen-
 export class AppComponent implements OnInit {
   private _themeManager = inject(ThemeManagerService);
   private _screenLoader = inject(ScreenLoaderService);
-  private _inactivityTracker = inject(InactivityTrackerService);
-  private _seoService = inject(SeoService);
   private _platformId = inject(PLATFORM_ID);
   private _router = inject(Router);
 
@@ -58,11 +53,6 @@ export class AppComponent implements OnInit {
             this.pageLoaded.set(true);
           }, 2000);
         });
-
-      this._inactivityTracker.setupInactivityTimer().subscribe(() => {
-        console.log('Inactive mode has been activated!');
-        // this._inactivityTracker.reset();
-      });
     });
   }
 
@@ -74,9 +64,7 @@ export class AppComponent implements OnInit {
     if (isPlatformBrowser(this._platformId)) {
       setTimeout(() => {
         this.loadingText.set('Iniciando...');
-      }, 1500);
+      }, 1000);
     }
-
-    this._seoService.trackCanonicalChanges(environment.siteUrl);
   }
 }
