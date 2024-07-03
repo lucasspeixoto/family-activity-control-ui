@@ -11,7 +11,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
-import { SelectionModel } from '@angular/cdk/collections';
 import { VDividerComponent } from '@shared/components/divider';
 import {
   SegmentedButtonComponent,
@@ -19,7 +18,7 @@ import {
 } from '@shared/components/segmented/public-api';
 import { BillService } from '../../services/bill.service';
 import { Bill } from '../../model/bill';
-import { AsyncPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DatePipe, JsonPipe } from '@angular/common';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -51,6 +50,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatTooltipModule,
     MatCheckboxModule,
     BillListActionsComponent,
+    JsonPipe,
   ],
   templateUrl: './bill-list.component.html',
   providers: [BillService],
@@ -73,31 +73,10 @@ export class BillListComponent implements AfterViewInit, OnInit {
 
   public selectedFilterBillWord = signal('');
 
-  selection = new SelectionModel<Bill>(true, []);
+  public selectedBill!: Bill | null;
 
-  /** Whether the number of selected elements matches the total number of rows. */
-  isAllSelected() {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.billsDataSource.data.length;
-    return numSelected === numRows;
-  }
-
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
-  toggleAllRows() {
-    if (this.isAllSelected()) {
-      this.selection.clear();
-      return;
-    }
-
-    this.selection.select(...this.billsDataSource.data);
-  }
-
-  /** The label for the checkbox on the passed row */
-  checkboxLabel(row?: Bill): string {
-    if (!row) {
-      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
-    }
-    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.id + 1}`;
+  public onSelectBillChange(row: Bill): void {
+    this.selectedBill = this.selectedBill === row ? null : row;
   }
 
   public ngOnInit(): void {
