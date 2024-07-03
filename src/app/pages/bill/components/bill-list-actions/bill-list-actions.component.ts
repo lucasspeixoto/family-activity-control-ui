@@ -30,15 +30,12 @@ import { AddBillComponent } from '../add-bill/add-bill.component';
           <div class="hidden md:block">
             <app-v-divider class="my-3 h-8"></app-v-divider>
           </div>
-          <div class="hidden sm:block items-center sm:gap-4">
-            <button mat-stroked-button>
-              <mat-icon class="font-icon">download</mat-icon>
-              Download
+          <div class="flex items-center gap-4">
+            <button mat-stroked-button color="primary">
+              <mat-icon class="font-icon">edit</mat-icon>Update
             </button>
-          </div>
-          <div class="block sm:hidden items-center gap-1">
-            <button mat-mini-fab>
-              <mat-icon class="font-icon text-primary">download</mat-icon>
+            <button mat-stroked-button color="warn">
+              <mat-icon class="font-icon">delete</mat-icon>Delete
             </button>
           </div>
         </div>

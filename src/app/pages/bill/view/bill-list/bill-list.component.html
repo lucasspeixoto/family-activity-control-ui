@@ -2,70 +2,93 @@
   <app-bill-list-actions
     (applyBillsFilterHandler)="applyBillsFilterHandler($event)" />
 
-  <div class="px-10 grow-1 overflow-auto">
-    <table
-      mat-table
-      matSort
-      [dataSource]="billsDataSource"
-      class="mat-elevation-z8">
-      <!-- title Column -->
-      <ng-container matColumnDef="title">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          mat-sort-header
-          sortActionDescription="Sort by title">
-          Title
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.title }}</td>
-      </ng-container>
+  <div class="flex flex-col justify-between h-full overflow-hidden">
+    <div class="px-10 grow-1 overflow-auto">
+      <table
+        mat-table
+        matSort
+        [dataSource]="billsDataSource"
+        class="mat-elevation-z8">
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox
+              (change)="$event ? toggleAllRows() : null"
+              [checked]="selection.hasValue() && isAllSelected()"
+              [indeterminate]="selection.hasValue() && !isAllSelected()"
+              [aria-label]="checkboxLabel()">
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox
+              (click)="$event.stopPropagation()"
+              (change)="$event ? selection.toggle(row) : null"
+              [checked]="selection.isSelected(row)"
+              [aria-label]="checkboxLabel(row)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
 
-      <!-- owner Column -->
-      <ng-container matColumnDef="owner">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          mat-sort-header
-          sortActionDescription="Sort by owner">
-          Owner
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.owner }}</td>
-      </ng-container>
+        <!-- title Column -->
+        <ng-container matColumnDef="title">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by title">
+            Title
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+        </ng-container>
 
-      <!-- Amount Column -->
-      <ng-container matColumnDef="amount">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          mat-sort-header
-          sortActionDescription="Sort by amount">
-          Amount (R$)
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.amount }}</td>
-      </ng-container>
+        <!-- owner Column -->
+        <ng-container matColumnDef="owner">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by owner">
+            Owner
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.owner }}</td>
+        </ng-container>
 
-      <!-- FinishAt Column -->
-      <ng-container matColumnDef="finishAt">
-        <th mat-header-cell *matHeaderCellDef>Finish At.</th>
-        <td mat-cell *matCellDef="let element">
-          {{ element.finishAt | date: 'dd/MM/yyyy' }}
-        </td>
-      </ng-container>
+        <!-- Amount Column -->
+        <ng-container matColumnDef="amount">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by amount">
+            Amount (R$)
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.amount }}</td>
+        </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="billsTableColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: billsTableColumns"></tr>
+        <!-- FinishAt Column -->
+        <ng-container matColumnDef="finishAt">
+          <th mat-header-cell *matHeaderCellDef>Finish At.</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.finishAt | date: 'dd/MM/yyyy' }}
+          </td>
+        </ng-container>
 
-      <tr class="mat-row" *matNoDataRow>
-        <td class="mat-cell my-8 font-medium" colspan="4">
-          No data matching the filter
-          <span class="text-primary">"{{ selectedFilterBillWord() }}"</span>
-        </td>
-      </tr>
-    </table>
+        <tr mat-header-row *matHeaderRowDef="billsTableColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: billsTableColumns"></tr>
 
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell my-8 font-medium" colspan="4">
+            No data matching the filter
+            <span class="text-primary">"{{ selectedFilterBillWord() }}"</span>
+          </td>
+        </tr>
+      </table>
+    </div>
     <mat-paginator
+      class="mb-2"
       pageSize="5"
-      [pageSizeOptions]="[5, 10, 20, 30]"
-      showFirstLastButtons></mat-paginator>
+      [pageSizeOptions]="[5, 10, 20, 30, 50, 100]"
+      showFirstLastButtons>
+    </mat-paginator>
   </div>
 </div>

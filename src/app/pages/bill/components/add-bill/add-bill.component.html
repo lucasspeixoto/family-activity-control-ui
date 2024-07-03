@@ -79,6 +79,9 @@
             matSuffix
             [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker color="primary"></mat-datepicker>
+          @if (addNewBillForm.get('finishAt')!.hasError('required')) {
+            <mat-error>Finish At is <strong>required</strong></mat-error>
+          }
         </mat-form-field>
 
         <mat-form-field class="w-1/2 my-2">
