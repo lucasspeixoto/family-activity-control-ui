@@ -76,7 +76,8 @@ export class BillListComponent implements AfterViewInit, OnInit {
   public selectedBill!: Bill | null;
 
   public onSelectBillChange(row: Bill): void {
-    this.selectedBill = this.selectedBill === row ? null : row;
+    this.selectedBill = this.selectedBill === row ? null : (row as Bill);
+    this.billService.setSelectedBill(this.selectedBill);
   }
 
   public ngOnInit(): void {

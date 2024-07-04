@@ -10,6 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
 import { VDividerComponent } from '@shared/components/divider';
 import { AddBillComponent } from '../add-bill/add-bill.component';
+import { BillService } from '../../services/bill.service';
 
 @Component({
   selector: 'app-bill-list-actions',
@@ -31,10 +32,18 @@ import { AddBillComponent } from '../add-bill/add-bill.component';
             <app-v-divider class="my-3 h-8"></app-v-divider>
           </div>
           <div class="flex items-center gap-4">
-            <button mat-stroked-button color="primary">
+            <button
+              [disabled]="!billService.isABillSelected()"
+              mat-stroked-button
+              color="primary"
+              (click)="onUpdateBill()">
               <mat-icon class="font-icon">edit</mat-icon>Update
             </button>
-            <button mat-stroked-button color="warn">
+            <button
+              [disabled]="!billService.isABillSelected()"
+              mat-stroked-button
+              color="warn"
+              (click)="onDeleteBill()">
               <mat-icon class="font-icon">delete</mat-icon>Delete
             </button>
           </div>
@@ -72,6 +81,8 @@ export class BillListActionsComponent {
 
   private _dialog = inject(MatDialog);
 
+  public billService = inject(BillService);
+
   public applyBillsFilter(event: Event) {
     this.applyBillsFilterHandler.emit(event);
   }
@@ -80,5 +91,13 @@ export class BillListActionsComponent {
     this._dialog.open(AddBillComponent, {
       minWidth: '45%',
     });
+  }
+
+  public onUpdateBill(): void {
+    console.log(this.billService.selectedBill());
+  }
+
+  public onDeleteBill(): void {
+    console.log(this.billService.selectedBill());
   }
 }

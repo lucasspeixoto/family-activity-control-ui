@@ -17,11 +17,17 @@ import { PageLoadingBarComponent } from '@shared/components/page-loading-bar';
 import { ScreenLoaderComponent } from './layout/components/screen-loader/screen-loader.component';
 import { LayoutApiService } from './layout';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ScreenLoaderComponent, PageLoadingBarComponent],
+  imports: [
+    RouterOutlet,
+    ScreenLoaderComponent,
+    PageLoadingBarComponent,
+    MatSnackBarModule,
+  ],
   template: `
     @if (pageLoaded()) {
       <app-page-loading-bar fixed></app-page-loading-bar>
