@@ -52,17 +52,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
     ReactiveFormsModule,
   ],
   templateUrl: `./edit-bill.component.html`,
-  styles: `
-    .mat-mdc-form-field-error-wrapper {
-      padding: 0px !important;
-      margin: 0px !important;
-    }
-
-    .mat-mdc-form-field-error-wrapper {
-      padding: 0px !important;
-      margin: 0px !important;
-    }
-  `,
+  styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })

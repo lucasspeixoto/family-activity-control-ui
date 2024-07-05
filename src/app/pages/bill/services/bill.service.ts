@@ -8,17 +8,17 @@ import { ResourceService } from '@shared/services/resource.service';
   providedIn: 'root',
 })
 export class BillService extends ResourceService<Bill> {
-  private apiUrl = environment.apiUrl;
+  public apiUrl = environment.apiUrl;
 
   public selectedBill = signal<Bill | null>(null);
-
-  public isABillSelected = computed(() => {
-    return this.selectedBill() !== null;
-  });
 
   public isLoadingBill = signal(false);
 
   public bills = signal<Bill[]>([]);
+
+  public isABillSelected = computed(() => {
+    return this.selectedBill() !== null;
+  });
 
   public getBills(): Observable<Bill[]> {
     return this.http

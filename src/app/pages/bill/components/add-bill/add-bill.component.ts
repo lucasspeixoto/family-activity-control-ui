@@ -27,6 +27,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { finalize } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+
 @Component({
   selector: 'app-add-bill',
   standalone: true,
@@ -49,17 +50,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
     ReactiveFormsModule,
   ],
   templateUrl: `./add-bill.component.html`,
-  styles: `
-    .mat-mdc-form-field-error-wrapper {
-      padding: 0px !important;
-      margin: 0px !important;
-    }
-
-    .mat-mdc-form-field-error-wrapper {
-      padding: 0px !important;
-      margin: 0px !important;
-    }
-  `,
+  styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
