@@ -40,7 +40,7 @@ export class BillService extends ResourceService<Bill> {
 
   public deleteBill(id: string): Observable<Bill> {
     return this.http
-      .delete<Bill>(`${this.apiUrl}/bill/update/${id}`)
+      .delete<Bill>(`${this.apiUrl}/bill/delete/${id}`)
       .pipe(tap(() => this.removeResource(id)));
   }
 

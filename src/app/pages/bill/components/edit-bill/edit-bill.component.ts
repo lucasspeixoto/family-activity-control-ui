@@ -28,14 +28,12 @@ import { BillService } from '../../services/bill.service';
 import { Bill } from '../../model/bill';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { finalize } from 'rxjs/operators';
-import { A11yModule } from '@angular/cdk/a11y';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
   selector: 'app-edit-bill',
   standalone: true,
   imports: [
-    A11yModule,
     MatButtonModule,
     MatInputModule,
     MatFormField,

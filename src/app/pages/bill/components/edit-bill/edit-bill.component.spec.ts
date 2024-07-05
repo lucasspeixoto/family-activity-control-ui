@@ -2,7 +2,9 @@ import {
   ChangeDetectionStrategy,
   Component,
   DestroyRef,
+  Inject,
   inject,
+  OnInit,
   ViewEncapsulation,
 } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
@@ -19,18 +21,21 @@ import {
   MatDialogContent,
   MatDialogActions,
   MatDialogClose,
+  MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
 import { billCategoryOptions, billTypeOptions } from '../../constants/options';
 import { BillService } from '../../services/bill.service';
 import { Bill } from '../../model/bill';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { finalize } from 'rxjs/operators';
+import { A11yModule } from '@angular/cdk/a11y';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
-  selector: 'app-add-bill',
+  selector: 'app-edit-bill',
   standalone: true,
   imports: [
+    A11yModule,
     MatButtonModule,
     MatInputModule,
     MatFormField,
@@ -48,7 +53,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
     MatLabel,
     ReactiveFormsModule,
   ],
-  templateUrl: `./add-bill.component.html`,
+  templateUrl: `./edit-bill.component.html`,
   styles: `
     .mat-mdc-form-field-error-wrapper {
       padding: 0px !important;
@@ -63,7 +68,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
-export class AddBillComponent {
+export class EditBillComponent implements OnInit {
   private _formBuilder = inject(FormBuilder);
 
   private _billService = inject(BillService);
@@ -72,7 +77,7 @@ export class AddBillComponent {
 
   private _destroy$ = inject(DestroyRef);
 
-  public readonly addNewBillForm = this._formBuilder.group({
+  public readonly editBillForm = this._formBuilder.group({
     ...billForm,
   });
 
@@ -82,15 +87,34 @@ export class AddBillComponent {
 
   public readonly isLoadingBill = this._billService.isLoadingBill;
 
-  public onInsertBillHandler(): void {
+  constructor(@Inject(MAT_DIALOG_DATA) public readonly data: Bill) {}
+
+  public ngOnInit(): void {
+    const { id, title, owner, amount, category, description, finishAt, type } =
+      this.data as Bill;
+
+    this.editBillForm.setValue({
+      id: id!,
+      title,
+      owner,
+      amount,
+      category,
+      description,
+      type,
+      finishAt: new Date(finishAt),
+    });
+  }
+
+  public onUpdateBillHandler(): void {
     this._billService.startLoadingBill();
 
-    const { title, owner, amount, category, description, finishAt, type } = this
-      .addNewBillForm.value as Bill;
+    const { id, title, owner, amount, category, description, finishAt, type } =
+      this.editBillForm.value as Bill;
 
     const updatedFinishAt = new Date(finishAt);
 
-    const newBill = {
+    const updatedBill = {
+      id,
       title,
       owner,
       amount,
@@ -100,19 +124,19 @@ export class AddBillComponent {
       finishAt: updatedFinishAt.setHours(23, 59, 59, 999), // end of the day
     } as Bill;
 
-    this._createBill(newBill);
+    this._updateBill(updatedBill);
   }
 
-  private _createBill(bill: Bill) {
+  private _updateBill(bill: Bill) {
     this._billService
-      .createBill(bill)
+      .updateBill(bill)
       .pipe(
         finalize(() => this._billService.stopLoadingBill()),
         takeUntilDestroyed(this._destroy$)
       )
       .subscribe({
         complete: () => {
-          this._snackBar.open('Bill sucessfully created', 'Close', {
+          this._snackBar.open('Bill sucessfully updated', 'Close', {
             horizontalPosition: 'right',
             verticalPosition: 'top',
           });
