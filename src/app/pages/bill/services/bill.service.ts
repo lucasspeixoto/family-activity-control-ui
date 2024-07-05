@@ -34,7 +34,7 @@ export class BillService extends ResourceService<Bill> {
 
   public updateBill(bill: Bill): Observable<Bill> {
     return this.http
-      .post<Bill>(`${this.apiUrl}/bill/update/${bill.id}`, bill)
+      .put<Bill>(`${this.apiUrl}/bill/update/${bill.id}`, bill)
       .pipe(tap(this.upsertResource));
   }
 

@@ -11,6 +11,7 @@ import { MatIcon } from '@angular/material/icon';
 import { VDividerComponent } from '@shared/components/divider';
 import { AddBillComponent } from '../add-bill/add-bill.component';
 import { BillService } from '../../services/bill.service';
+import { EditBillComponent } from '../edit-bill/edit-bill.component';
 
 @Component({
   selector: 'app-bill-list-actions',
@@ -89,7 +90,10 @@ export class BillListActionsComponent {
   }
 
   public onUpdateBill(): void {
-    console.log(this.billService.selectedBill());
+    this._dialog.open(EditBillComponent, {
+      minWidth: '45%',
+      data: this.billService.selectedBill(),
+    });
   }
 
   public onDeleteBill(): void {

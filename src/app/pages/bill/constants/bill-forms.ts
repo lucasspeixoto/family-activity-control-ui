@@ -1,9 +1,10 @@
 import { Validators } from '@angular/forms';
 
-export const addEdditBillForm = {
+export const billForm = {
+  id: [''],
   title: ['', [Validators.required, Validators.minLength(3)]],
   owner: ['', [Validators.required, Validators.minLength(3)]],
-  amount: [null, [Validators.required, Validators.min(1)]],
+  amount: [0, [Validators.required, Validators.min(1)]],
   category: ['', [Validators.required, Validators.minLength(3)]],
   description: ['', [Validators.required, Validators.minLength(3)]],
   finishAt: [new Date(), [Validators.required]],
