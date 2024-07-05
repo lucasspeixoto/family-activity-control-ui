@@ -1,9 +1,8 @@
 import {
   AfterViewInit,
   Component,
-  DestroyRef,
+  effect,
   inject,
-  OnInit,
   signal,
   ViewChild,
 } from '@angular/core';
@@ -18,13 +17,12 @@ import {
 } from '@shared/components/segmented/public-api';
 import { BillService } from '../../services/bill.service';
 import { Bill } from '../../model/bill';
-import { AsyncPipe, DatePipe, JsonPipe } from '@angular/common';
+import { AsyncPipe, DatePipe, JsonPipe, NgIf } from '@angular/common';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { BILLS_TABLE_COLUMNS } from '../../constants/bills-table';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { BillListActionsComponent } from '../../components/bill-list-actions/bill-list-actions.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
@@ -51,37 +49,32 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatCheckboxModule,
     BillListActionsComponent,
     JsonPipe,
+    NgIf,
   ],
   templateUrl: './bill-list.component.html',
-  providers: [BillService],
   styles: ``,
 })
-export class BillListComponent implements AfterViewInit, OnInit {
+export class BillListComponent implements AfterViewInit {
   @ViewChild(MatPaginator) public paginator: MatPaginator;
 
   @ViewChild(MatSort) public sort: MatSort;
 
   private billService = inject(BillService);
 
-  private destroy$ = inject(DestroyRef);
-
-  public bills$ = this.billService.getBills();
-
   public billsDataSource = new MatTableDataSource<Bill>();
 
   public billsTableColumns = BILLS_TABLE_COLUMNS;
+
+  public getBills$ = this.billService.getBills();
 
   public selectedFilterBillWord = signal('');
 
   public selectedBill!: Bill | null;
 
-  public onSelectBillChange(row: Bill): void {
-    this.selectedBill = this.selectedBill === row ? null : (row as Bill);
-    this.billService.setSelectedBill(this.selectedBill);
-  }
-
-  public ngOnInit(): void {
-    this.fetchBillsListHandler();
+  constructor() {
+    effect(() => {
+      this.billsDataSource.data = this.billService.resources();
+    });
   }
 
   public ngAfterViewInit() {
@@ -89,10 +82,9 @@ export class BillListComponent implements AfterViewInit, OnInit {
     this.billsDataSource.sort = this.sort;
   }
 
-  public fetchBillsListHandler(): void {
-    this.bills$.pipe(takeUntilDestroyed(this.destroy$)).subscribe(bills => {
-      this.billsDataSource.data = bills;
-    });
+  public onSelectBillChange(row: Bill): void {
+    this.selectedBill = this.selectedBill === row ? null : (row as Bill);
+    this.billService.setSelectedBill(this.selectedBill);
   }
 
   public applyBillsFilterHandler(event: Event) {

@@ -1,4 +1,4 @@
-<div class="flex flex-col w-[100%] h-[100%] absolute">
+<div class="flex flex-col w-[100%] h-[100%] absolute" *ngIf="getBills$ | async">
   <app-bill-list-actions
     (applyBillsFilterHandler)="applyBillsFilterHandler($event)" />
 

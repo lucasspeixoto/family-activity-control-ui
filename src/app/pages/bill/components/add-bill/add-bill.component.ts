@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  DestroyRef,
   inject,
   ViewEncapsulation,
 } from '@angular/core';
@@ -18,17 +19,24 @@ import {
   MatDialogContent,
   MatDialogActions,
   MatDialogClose,
-  MatDialogRef,
 } from '@angular/material/dialog';
 import { billCategoryOptions, billTypeOptions } from '../../constants/options';
-
+import { BillService } from '../../services/bill.service';
+import { Bill } from '../../model/bill';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { finalize } from 'rxjs/operators';
+import { A11yModule } from '@angular/cdk/a11y';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
   selector: 'app-add-bill',
   standalone: true,
   imports: [
+    A11yModule,
     MatButtonModule,
     MatInputModule,
     MatFormField,
+    MatProgressSpinnerModule,
     MatLabel,
     MatRadioModule,
     MatDatepickerModule,
@@ -60,15 +68,57 @@ import { billCategoryOptions, billTypeOptions } from '../../constants/options';
 export class AddBillComponent {
   private _formBuilder = inject(FormBuilder);
 
-  public addNewBillForm = this._formBuilder.group({ ...addEdditBillForm });
+  private _billService = inject(BillService);
 
-  private _dialogRef = inject(MatDialogRef<AddBillComponent>);
+  private _snackBar = inject(MatSnackBar);
+
+  private _destroy$ = inject(DestroyRef);
+
+  public readonly addNewBillForm = this._formBuilder.group({
+    ...addEdditBillForm,
+  });
 
   public readonly billCategoryOptions = billCategoryOptions;
 
   public readonly billTypeOptions = billTypeOptions;
 
-  public onCancelClick(): void {
-    this._dialogRef.close();
+  public readonly isLoadingBill = this._billService.isLoadingBill;
+
+  public onInsertBillHandler(): void {
+    this._billService.startLoadingBill();
+
+    const { title, owner, amount, category, description, finishAt, type } = this
+      .addNewBillForm.value as Bill;
+
+    const updatedFinishAt = new Date(finishAt);
+
+    const newBill = {
+      title,
+      owner,
+      amount,
+      category,
+      description,
+      type,
+      finishAt: updatedFinishAt.setHours(23, 59, 59, 999), // end of the day
+    } as Bill;
+
+    this._createBill(newBill);
+  }
+
+  private _createBill(bill: Bill) {
+    this._billService
+      .createBill(bill)
+      .pipe(
+        finalize(() => this._billService.stopLoadingBill()),
+        takeUntilDestroyed(this._destroy$)
+      )
+      .subscribe({
+        complete: () => {
+          this._snackBar.open('Bill sucessfully created', 'Close', {
+            horizontalPosition: 'right',
+            verticalPosition: 'top',
+          });
+        },
+      });
   }
 }

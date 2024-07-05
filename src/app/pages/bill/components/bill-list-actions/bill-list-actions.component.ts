@@ -44,11 +44,12 @@ import { BillService } from '../../services/bill.service';
               mat-stroked-button
               color="warn"
               (click)="onDeleteBill()">
-              <mat-icon class="font-icon">delete</mat-icon>Delete
+              <mat-icon class="font-icon ">delete</mat-icon>
+              Delete
             </button>
           </div>
         </div>
-        <div class="my-4 w-full mx-4 flex items-center justify-end">
+        <div class="hidden sm:flex my-4 w-full mx-4 items-center justify-end">
           <mat-icon
             class="text-neutral-500 dart:text-neutral-300 font-icon search-icon relative left-8"
             >search</mat-icon
@@ -60,16 +61,10 @@ import { BillService } from '../../services/bill.service';
             placeholder="Filter bills..."
             #input />
         </div>
-        <div class="hidden sm:block">
-          <button mat-flat-button (click)="addNewBillHandler()">
-            <mat-icon class="font-icon">add</mat-icon> New
-          </button>
-        </div>
-        <div class="block sm:hidden">
-          <button mat-mini-fab (click)="addNewBillHandler()">
-            <mat-icon class="font-icon text-primary">add</mat-icon>
-          </button>
-        </div>
+
+        <button mat-flat-button (click)="addNewBillHandler()">
+          <mat-icon class="font-icon">add</mat-icon> New
+        </button>
       </div>
     </div>
   `,

@@ -68,7 +68,7 @@ export class AppComponent implements OnInit {
                   this._layoutService.hideSidebar('root');
                 }
               });
-          }, 2000);
+          }, 1000);
         });
     });
   }

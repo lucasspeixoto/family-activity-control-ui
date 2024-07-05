@@ -14,11 +14,15 @@ import {
 } from '@angular/common/http';
 import { provideStore } from '@ngrx/store';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
-import { provideNativeDateAdapter } from '@angular/material/core';
+import {
+  MAT_DATE_FORMATS,
+  provideNativeDateAdapter,
+} from '@angular/material/core';
 
 import { PageTitleStrategyService } from '@shared/services/page-title-strategy.service';
 import { httpErrorInterceptor } from './shared/interceptors/httpErrorInterceptor';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MY_DATE_FORMATS } from './config/dates';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -39,6 +43,6 @@ export const appConfig: ApplicationConfig = {
       provide: MatDialogRef,
       useValue: {},
     },
-    /* { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }, */
+    { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS },
   ],
 };

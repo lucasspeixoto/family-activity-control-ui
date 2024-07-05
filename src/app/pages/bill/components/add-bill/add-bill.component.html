@@ -1,4 +1,7 @@
-<div class="dark:bg-neutral-900 bg-neutral-100">
+<div
+  class="dark:bg-neutral-900 bg-neutral-100"
+  cdkTrapFocus
+  [cdkTrapFocusAutoCapture]="true">
   <h3 mat-dialog-title>Add new Bill</h3>
   <mat-dialog-content class="mat-typography">
     <form class="gap-1 flex flex-wrap" id="form" [formGroup]="addNewBillForm">
@@ -98,14 +101,16 @@
   </mat-dialog-content>
 
   <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close (click)="onCancelClick()">
+    <button mat-button mat-dialog-close [mat-dialog-close]="true">
       Cancel
     </button>
     <button
       mat-flat-button
       color="primary"
-      [mat-dialog-close]="true"
-      cdkFocusInitial>
+      [disabled]="addNewBillForm.invalid || isLoadingBill()"
+      [class.spinner]="isLoadingBill()"
+      cdkFocusInitial
+      (click)="onInsertBillHandler()">
       Insert
     </button>
   </mat-dialog-actions>

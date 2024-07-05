@@ -6,6 +6,7 @@ import {
 } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ResponseError } from '@shared/models/response-error';
 import { catchError, throwError } from 'rxjs';
 
 export const httpErrorInterceptor: HttpInterceptorFn = (
@@ -17,13 +18,10 @@ export const httpErrorInterceptor: HttpInterceptorFn = (
   return next(req).pipe(
     catchError((error: HttpErrorResponse) => {
       let errorMsg = '';
-      if (error.error instanceof ErrorEvent) {
-        // client side error
-        errorMsg = `Client Error: ${error.error.message}`;
-      } else {
-        // server side error
-        errorMsg = `Server Error Code: ${error.status}, Message: ${error.message}`;
-      }
+
+      const serverError = error.error as ResponseError;
+
+      errorMsg = `Error: ${serverError.message}`;
 
       snackBar.open(errorMsg, 'Close', {
         horizontalPosition: 'right',
