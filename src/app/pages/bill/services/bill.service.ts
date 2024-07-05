@@ -1,8 +1,8 @@
 import { computed, Injectable, signal } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { Bill } from '../model/bill';
-import { environment } from 'src/environments/environment';
-import { ResourceService } from '@shared/services/resource.service';
+import { environment } from '@env/environment';
+import { ResourceService } from '@sharedS/resource.service';
 
 @Injectable({
   providedIn: 'root',

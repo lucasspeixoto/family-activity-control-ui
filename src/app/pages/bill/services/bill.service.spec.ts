@@ -1,83 +1,183 @@
-import { TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import {
-  HttpClientTestingModule,
   HttpTestingController,
+  provideHttpClientTesting,
 } from '@angular/common/http/testing';
 import { BillService } from './bill.service';
 import { Bill } from '../model/bill';
+import { environment } from '@env/environment';
+import { BILL_LIST_MOCK, BILL_MOCK } from '@app/__mocks__/bill';
+import { HttpErrorResponse, provideHttpClient } from '@angular/common/http';
 
 describe('BillService', () => {
   let service: BillService;
-  let httpMock: HttpTestingController;
+  let httpTestingController: HttpTestingController;
+  const apiUrl = `${environment.apiUrl}`;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [BillService],
+      providers: [BillService, provideHttpClient(), provideHttpClientTesting()],
     });
     service = TestBed.inject(BillService);
-    httpMock = TestBed.inject(HttpTestingController);
+    httpTestingController = TestBed.inject(HttpTestingController);
   });
 
   afterEach(() => {
-    httpMock.verify();
+    httpTestingController.verify();
   });
 
-  it('should get an array of Bills with different lengths', fakeAsync(() => {
-    // Arrange
-    const mockBills = [
-      { id: 1, name: 'Bill 1' },
-      { id: 2, name: 'Bill 2' },
-      { id: 3, name: 'Bill 3' },
-    ];
+  it('creates service', () => {
+    expect(service).toBeTruthy();
+  });
 
-    // Act
-    service.getBills().subscribe(bills => {
-      // Assert
-      expect(bills.length).toBeGreaterThan(0);
-      expect(bills.length).toBeLessThanOrEqual(mockBills.length);
-      expect(bills).toEqual(expect.arrayContaining(mockBills));
+  it('sets initial data', () => {
+    expect(service.apiUrl).toEqual(apiUrl);
+    expect(service.selectedBill()).toEqual(null);
+    expect(service.isLoadingBill()).toEqual(false);
+    expect(service.bills()).toEqual([]);
+  });
+
+  describe('applyBillsFilter', () => {
+    it('should return trimmed and lowercased value from the input event', () => {
+      const event = { target: { value: '  TEST  ' } } as unknown as Event;
+      const result = service.applyBillsFilter(event);
+      expect(result).toBe('test');
     });
 
-    // Assert HTTP request
-    const req = httpMock.expectOne(`${service.apiUrl}/bill`);
-    expect(req.request.method).toBe('GET');
-
-    // Send response
-    req.flush(mockBills);
-  }));
-
-  it('should handle empty array of Bills', fakeAsync(() => {
-    // Arrange
-    const mockEmptyBills: Bill[] = [];
-
-    // Act
-    service.getBills().subscribe(bills => {
-      // Assert
-      expect(bills.length).toBe(0);
-      expect(bills).toEqual(expect.arrayContaining(mockEmptyBills));
+    it('should return an empty string if the input event value is just spaces', () => {
+      const event = { target: { value: '     ' } } as unknown as Event;
+      const result = service.applyBillsFilter(event);
+      expect(result).toBe('');
     });
 
-    // Assert HTTP request
-    const req = httpMock.expectOne(`${service.apiUrl}/bill`);
-    expect(req.request.method).toBe('GET');
+    it('should return the lowercased value if there are no spaces to trim', () => {
+      const event = { target: { value: 'TEST' } } as unknown as Event;
+      const result = service.applyBillsFilter(event);
+      expect(result).toBe('test');
+    });
 
-    // Send response
-    req.flush(mockEmptyBills);
-  }));
+    it('should handle mixed case and spaces correctly', () => {
+      const event = { target: { value: '  TeSt  ' } } as unknown as Event;
+      const result = service.applyBillsFilter(event);
+      expect(result).toBe('test');
+    });
+  });
 
-  it('should handle error when getting Bills', fakeAsync(() => {
-    // Arrange
-    const error = new ErrorEvent('Network error');
-    httpMock.expectOne(`${service.apiUrl}/bill`).error(error);
+  describe('getBills', () => {
+    it('should return a list of bills', () => {
+      let bills: Bill[] | undefined;
+      service.getBills().subscribe(response => {
+        bills = response;
+      });
+      const req = httpTestingController.expectOne(`${apiUrl}/bill`);
+      req.flush([...BILL_LIST_MOCK]);
+      expect(bills).toEqual([...BILL_LIST_MOCK]);
+      expect(service.resources()).toEqual([...BILL_LIST_MOCK]);
+    });
 
-    // Act
-    service.getBills().subscribe(
-      () => fail('Expected an error'),
-      err => {
-        // Assert
-        expect(err).toBe(error);
+    it('should return a list of bills using waitForAsync', waitForAsync(() => {
+      service.getBills().subscribe(response => {
+        expect(response).toEqual([...BILL_LIST_MOCK]);
+        expect(service.resources()).toEqual([...BILL_LIST_MOCK]);
+      });
+      const req = httpTestingController.expectOne(`${apiUrl}/bill`);
+      req.flush([...BILL_LIST_MOCK]);
+    }));
+  });
+
+  describe('createBill', () => {
+    it('should create a new bill', waitForAsync(() => {
+      const bill = BILL_MOCK;
+      service.createBill(bill).subscribe(response => {
+        expect(response).toEqual(bill);
+        expect(service.resources().length).toEqual(1);
+      });
+      const req = httpTestingController.expectOne(`${apiUrl}/bill/create`);
+      req.flush(bill);
+    }));
+
+    it('should pass the correct body', waitForAsync(() => {
+      const bill = BILL_MOCK;
+      service.createBill(bill).subscribe();
+      const req = httpTestingController.expectOne(`${apiUrl}/bill/create`);
+      req.flush(bill);
+
+      expect(req.request.body).toEqual(bill);
+      expect(req.request.method).toEqual('POST');
+    }));
+
+    it('throws an error if request fails', () => {
+      const bill = BILL_MOCK;
+      let actualError: HttpErrorResponse | undefined;
+      service.createBill(bill).subscribe({
+        next: () => {
+          fail('Success should not be called');
+        },
+        error: _error => (actualError = _error),
+      });
+      const req = httpTestingController.expectOne(`${apiUrl}/bill/create`);
+      req.flush('Server error', {
+        status: 422,
+        statusText: 'Unprocessible entity',
+      });
+
+      if (!actualError) {
+        throw new Error('Error needs to be defined');
       }
-    );
-  }));
+
+      expect(actualError.status).toEqual(422);
+      expect(actualError.statusText).toEqual('Unprocessible entity');
+    });
+  });
+
+  describe('updateBill', () => {
+    it('should update a bill', waitForAsync(() => {
+      const bill = BILL_MOCK;
+      service.updateBill(bill).subscribe(response => {
+        expect(response).toEqual(bill);
+        expect(service.resources().length).toEqual(1);
+      });
+      const req = httpTestingController.expectOne(
+        `${apiUrl}/bill/update/${bill.id}`
+      );
+      req.flush(bill);
+    }));
+
+    it('should pass the correct body', waitForAsync(() => {
+      const bill = BILL_MOCK;
+      service.updateBill(bill).subscribe();
+      const req = httpTestingController.expectOne(
+        `${apiUrl}/bill/update/${bill.id}`
+      );
+      req.flush(bill);
+
+      expect(req.request.body).toEqual(bill);
+      expect(req.request.method).toEqual('PUT');
+    }));
+
+    it('throws an error if request fails', () => {
+      const bill = BILL_MOCK;
+      let actualError: HttpErrorResponse | undefined;
+      service.updateBill(bill).subscribe({
+        next: () => {
+          fail('Success should not be called');
+        },
+        error: _error => (actualError = _error),
+      });
+      const req = httpTestingController.expectOne(
+        `${apiUrl}/bill/update/${bill.id}`
+      );
+      req.flush('Server error', {
+        status: 422,
+        statusText: 'Unprocessible entity',
+      });
+
+      if (!actualError) {
+        throw new Error('Error needs to be defined');
+      }
+
+      expect(actualError.status).toEqual(422);
+      expect(actualError.statusText).toEqual('Unprocessible entity');
+    });
+  });
 });

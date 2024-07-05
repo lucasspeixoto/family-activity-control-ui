@@ -13,7 +13,7 @@ import { Router, RouterLink } from '@angular/router';
 import { NotificationListComponent } from '@layoutC/header/_notifications/notification-list/notification-list.component';
 
 import { SoundEffectDirective } from '@sharedD/sound-effect.directive';
-import { ThemeManagerService } from '@sharedC/theme-manager.service';
+import { ThemeManagerService } from '@sharedS/theme-manager.service';
 
 import { IconComponent } from '@shared/components/icon';
 

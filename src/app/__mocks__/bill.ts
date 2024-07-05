@@ -1,0 +1,45 @@
+import { Bill } from '@app/pages/bill/model/bill';
+
+export const BILL_MOCK: Bill = {
+  id: '44b99384-5c1b-4109-b68d-bf19837489a2',
+  title: 'Energia 1',
+  owner: 'Lucas 1',
+  amount: 100.2,
+  category: 'Contas',
+  description: 'Pagar energia',
+  finishAt: new Date(),
+  type: 'FIXED',
+};
+
+export const BILL_LIST_MOCK: Bill[] = [
+  {
+    id: '44b99384-5c1b-4109-b68d-bf19837489a2',
+    title: 'Energia 1',
+    owner: 'Lucas 1',
+    amount: 100.2,
+    category: 'Contas',
+    description: 'Pagar energia',
+    finishAt: new Date(),
+    type: 'FIXED',
+  },
+  {
+    id: '2d387db6-317a-422a-b9e5-6dfe0593511e',
+    title: 'Energia 2',
+    owner: 'Lucas 2',
+    amount: 101.2,
+    category: 'Contas',
+    description: 'Pagar energia',
+    finishAt: new Date(),
+    type: 'FIXED',
+  },
+  {
+    id: '7f6f9fa9-85d5-4e73-a768-3ee36a0f84de',
+    title: 'Energia 3',
+    owner: 'Lucas 3',
+    amount: 102.2,
+    category: 'Contas',
+    description: 'Pagar energia',
+    finishAt: new Date(),
+    type: 'FIXED',
+  },
+];
