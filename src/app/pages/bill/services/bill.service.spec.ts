@@ -34,7 +34,6 @@ describe('BillService', () => {
     expect(service.apiUrl).toEqual(apiUrl);
     expect(service.selectedBill()).toEqual(null);
     expect(service.isLoadingBill()).toEqual(false);
-    expect(service.bills()).toEqual([]);
   });
 
   describe('applyBillsFilter', () => {
@@ -88,6 +87,7 @@ describe('BillService', () => {
   describe('createBill', () => {
     it('should create a new bill', waitForAsync(() => {
       const bill = BILL_MOCK;
+
       service.createBill(bill).subscribe(response => {
         expect(response).toEqual(bill);
         expect(service.resources().length).toEqual(1);
@@ -178,6 +178,77 @@ describe('BillService', () => {
 
       expect(actualError.status).toEqual(422);
       expect(actualError.statusText).toEqual('Unprocessible entity');
+    });
+  });
+
+  describe('deleteBill', () => {
+    it('should delete a bill', waitForAsync(() => {
+      const bill = BILL_MOCK;
+      service.deleteBill(bill.id!).subscribe(response => {
+        expect(response).toEqual(bill);
+        expect(service.resources().length).toEqual(0);
+      });
+      const req = httpTestingController.expectOne(
+        `${apiUrl}/bill/delete/${bill.id}`
+      );
+      req.flush(bill);
+    }));
+
+    it('should pass the correct body', waitForAsync(() => {
+      const bill = BILL_MOCK;
+      service.deleteBill(bill.id!).subscribe();
+      const req = httpTestingController.expectOne(
+        `${apiUrl}/bill/delete/${bill.id}`
+      );
+      req.flush(bill);
+
+      expect(req.request.body).toEqual(null);
+      expect(req.request.method).toEqual('DELETE');
+    }));
+
+    it('throws an error if request fails', () => {
+      const bill = BILL_MOCK;
+      let actualError: HttpErrorResponse | undefined;
+      service.deleteBill(bill.id!).subscribe({
+        next: () => {
+          fail('Success should not be called');
+        },
+        error: _error => (actualError = _error),
+      });
+      const req = httpTestingController.expectOne(
+        `${apiUrl}/bill/delete/${bill.id}`
+      );
+      req.flush('Server error', {
+        status: 422,
+        statusText: 'Unprocessible entity',
+      });
+
+      if (!actualError) {
+        throw new Error('Error needs to be defined');
+      }
+
+      expect(actualError.status).toEqual(422);
+      expect(actualError.statusText).toEqual('Unprocessible entity');
+    });
+  });
+
+  describe('loading', () => {
+    it('should set isLoading to true', () => {
+      service.startLoadingBill();
+      expect(service.isLoadingBill()).toBe(true);
+    });
+
+    it('should set isLoading to false', () => {
+      service.stopLoadingBill();
+      expect(service.isLoadingBill()).toBe(false);
+    });
+  });
+
+  describe('selectedBill', () => {
+    it('should set selected bill', () => {
+      const bill = BILL_MOCK;
+      service.setSelectedBill(bill);
+      expect(service.selectedBill()).toBe(bill);
     });
   });
 });

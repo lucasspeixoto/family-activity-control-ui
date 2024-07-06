@@ -2,7 +2,7 @@ import { computed, Injectable, signal } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { Bill } from '../model/bill';
 import { environment } from '@env/environment';
-import { ResourceService } from '@sharedS/resource.service';
+import { ResourceService } from '@sharedS/resource/resource.service';
 
 @Injectable({
   providedIn: 'root',
@@ -13,8 +13,6 @@ export class BillService extends ResourceService<Bill> {
   public selectedBill = signal<Bill | null>(null);
 
   public isLoadingBill = signal(false);
-
-  public bills = signal<Bill[]>([]);
 
   public isABillSelected = computed(() => {
     return this.selectedBill() !== null;
