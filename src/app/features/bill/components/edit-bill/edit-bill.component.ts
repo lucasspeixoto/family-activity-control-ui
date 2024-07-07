@@ -124,6 +124,8 @@ export class EditBillComponent implements OnInit {
       )
       .subscribe({
         complete: () => {
+          this._billService.setSelectedBill(null);
+
           this._snackBar.open('Bill sucessfully updated', 'Close', {
             horizontalPosition: 'right',
             verticalPosition: 'top',

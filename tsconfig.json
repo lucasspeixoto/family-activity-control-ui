@@ -7,12 +7,13 @@
       "@app/*": ["./src/app/*"],
       "@env/*": ["./src/environments/*"],
       "@shared/*": ["./src/app/shared/*"],
+      "@sharedC/*": ["./src/app/shared/components/*"],
       "@sharedS/*": ["./src/app/shared/services/*"],
       "@sharedD/*": ["./src/app/shared/directives/*"],
       "@state/*": ["./src/app/state/*"],
       "@layout/*": ["./src/app/layout/*"],
       "@layoutC/*": ["./src/app/layout/components/*"],
-      "@bill/*": ["./src/app/pages/bill/*"]
+      "@bill/*": ["./src/app/features/bill/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

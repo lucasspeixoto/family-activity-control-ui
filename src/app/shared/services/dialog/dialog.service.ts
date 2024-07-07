@@ -16,7 +16,7 @@ export class DialogService {
       cancelButtonTitle: 'Cancel',
       confirmationButtonTitle: 'Confirm',
       id,
-    };
+    } as DialogConfig;
 
     return config;
   }

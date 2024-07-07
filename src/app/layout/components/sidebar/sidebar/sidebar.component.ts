@@ -100,7 +100,7 @@ export class SidebarComponent implements OnInit {
       children: [
         {
           name: 'Bill List',
-          link: '/pages/bill/bills/list',
+          link: '/home/bill/bills/list',
         },
       ],
     },

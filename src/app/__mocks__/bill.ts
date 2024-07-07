@@ -1,4 +1,15 @@
-import { Bill } from '@app/pages/bill/model/bill';
+import { DialogConfig } from '@app/shared/models/dialog-config.model';
+import { Bill } from '@bill/model/bill';
+
+export const DIALOG_CONFIG_MOCK: DialogConfig = {
+  title: 'Delete Bill',
+  subtitle: 'Do you realy want to delete this bill?',
+  cancelButtonTitle: 'Cancel',
+  confirmationButtonTitle: 'Confirm',
+  id: '44b99384-5c1b-4109-b68d-bf19837489a2',
+};
+
+export const BILL_MOCK_ID: string = '44b99384-5c1b-4109-b68d-bf19837489a2';
 
 export const BILL_MOCK: Bill = {
   id: '44b99384-5c1b-4109-b68d-bf19837489a2',

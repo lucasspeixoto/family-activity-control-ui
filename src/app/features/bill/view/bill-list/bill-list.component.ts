@@ -87,9 +87,7 @@ export class BillListComponent implements AfterViewInit {
     this.billService.setSelectedBill(this.selectedBill);
   }
 
-  public applyBillsFilterHandler(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-
+  public billSearchTermEventHandler(filterValue: string) {
     const selectedFilterBillWord = filterValue.trim().toLowerCase();
 
     this.selectedFilterBillWord.set(selectedFilterBillWord);

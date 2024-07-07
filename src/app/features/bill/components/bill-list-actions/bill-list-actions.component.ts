@@ -9,15 +9,17 @@ import {
 import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
-import { VDividerComponent } from '@shared/components/divider';
+import { VDividerComponent } from '@sharedC/divider';
 import { AddBillComponent } from '../add-bill/add-bill.component';
-import { BillService } from '../../services/bill.service';
+import { BillService } from '@bill/services/bill.service';
 import { EditBillComponent } from '../edit-bill/edit-bill.component';
-import { DialogService } from '@shared/services/dialog/dialog.service';
-import { ConfirmationComponent } from '@shared/components/confirmation/confirmation.component';
+import { DialogService } from '@sharedS/dialog/dialog.service';
+import { ConfirmationComponent } from '@sharedC/confirmation/confirmation.component';
 import { finalize, first } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DialogConfig } from '@app/shared/models/dialog-config.model';
+import { ConfirmDialogResult } from '../../model/confirm-dialog-result';
 
 @Component({
   selector: 'app-bill-list-actions',
@@ -41,17 +43,19 @@ import { MatSnackBar } from '@angular/material/snack-bar';
           </div>
           <div class="flex items-center gap-4">
             <button
+              data-testid="update-button"
               [disabled]="!isBillSelected()"
               mat-stroked-button
               color="primary"
-              (click)="onUpdateBill()">
+              (click)="updateBillHandler()">
               <mat-icon class="font-icon">edit</mat-icon>Update
             </button>
             <button
+              data-testid="delete-button"
               [disabled]="!isBillSelected()"
               mat-stroked-button
               color="warn"
-              (click)="onDeleteBill()">
+              (click)="deleteBillHandler()">
               <mat-icon class="font-icon ">delete</mat-icon>
               Delete
             </button>
@@ -63,6 +67,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
             >search</mat-icon
           >
           <input
+            data-testid="input-filter"
             type="text"
             class="pl-10 outline-none placeholder-neutral-500 dark:placeholder-neutral-300 border-none text-xs sm:text-md bg-neutral-200 dark:bg-neutral-700 py-3 rounded-lg"
             (keyup)="applyBillsFilter($event)"
@@ -70,7 +75,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
             #input />
         </div>
 
-        <button mat-flat-button (click)="addNewBillHandler()">
+        <button
+          data-testid="add-button"
+          mat-flat-button
+          (click)="addNewBillHandler()">
           <mat-icon class="font-icon">add</mat-icon> New
         </button>
       </div>
@@ -80,11 +88,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BillListActionsComponent {
-  @Output() applyBillsFilterHandler = new EventEmitter();
+  @Output() billSearchTermEvent: EventEmitter<string> =
+    new EventEmitter<string>();
+
+  public debounceTimeout: ReturnType<typeof setTimeout> | undefined;
 
   private _dialog = inject(MatDialog);
 
-  private _dialogRef: MatDialogRef<ConfirmationComponent>;
+  private _dialogRef: MatDialogRef<ConfirmationComponent, ConfirmDialogResult>;
 
   private _dialogService = inject(DialogService);
 
@@ -96,8 +107,13 @@ export class BillListActionsComponent {
 
   public isBillSelected = this._billService.isABillSelected;
 
-  public applyBillsFilter(event: Event) {
-    this.applyBillsFilterHandler.emit(event);
+  public applyBillsFilter(event: KeyboardEvent) {
+    clearTimeout(this.debounceTimeout);
+    const target = event.target as HTMLInputElement;
+
+    this.debounceTimeout = setTimeout(() => {
+      this.billSearchTermEvent.emit(target.value);
+    }, 400);
   }
 
   public addNewBillHandler(): void {
@@ -106,42 +122,51 @@ export class BillListActionsComponent {
     });
   }
 
-  public onUpdateBill(): void {
+  public updateBillHandler(): void {
     this._dialog.open(EditBillComponent, {
       minWidth: '45%',
       data: this._billService.selectedBill(),
     });
   }
 
-  public onDeleteBill(): void {
+  public deleteBillHandler(): void {
     const billId = this._billService.selectedBill()?.id as string;
 
     this._dialogRef = this._dialog.open(ConfirmationComponent, {
       width: '350px',
-      data: this._dialogService.getDeleteDialogData(
-        billId!,
-        'Delete Bill',
-        'Do you realy want to delete this bill?'
-      ),
+      data: this.getDeleteBillDialogData(billId),
     });
 
-    const closeResult = this._dialogRef.afterClosed();
+    this._dialogRef
+      .afterClosed()
+      .pipe(first())
+      .subscribe(result => {
+        if (result === 'confirm') {
+          this._billService
+            .deleteBill(billId)
+            .pipe(
+              finalize(() => this._billService.stopLoadingBill()),
+              takeUntilDestroyed(this._destroy$)
+            )
+            .subscribe({
+              complete: () => {
+                this._billService.setSelectedBill(null);
 
-    closeResult.pipe(first()).subscribe(() => {
-      this._billService
-        .deleteBill(billId)
-        .pipe(
-          finalize(() => this._billService.stopLoadingBill()),
-          takeUntilDestroyed(this._destroy$)
-        )
-        .subscribe({
-          complete: () => {
-            this._snackBar.open('Bill sucessfully deleted', 'Close', {
-              horizontalPosition: 'right',
-              verticalPosition: 'top',
+                this._snackBar.open('Bill successfully deleted', 'Close', {
+                  horizontalPosition: 'right',
+                  verticalPosition: 'top',
+                });
+              },
             });
-          },
-        });
-    });
+        }
+      });
+  }
+
+  public getDeleteBillDialogData(billId: string): DialogConfig {
+    return this._dialogService.getDeleteDialogData(
+      billId,
+      'Delete Bill',
+      'Do you realy want to delete this bill?'
+    );
   }
 }

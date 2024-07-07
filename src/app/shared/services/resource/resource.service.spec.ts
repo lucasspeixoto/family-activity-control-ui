@@ -5,7 +5,7 @@ import {
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ResourceService } from './resource.service';
-import { Bill } from '@app/pages/bill/model/bill';
+import { Bill } from '@bill/model/bill';
 
 describe('ResourceService', () => {
   let service: ResourceService<Bill>;

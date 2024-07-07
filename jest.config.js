@@ -14,11 +14,12 @@ module.exports = {
   moduleNameMapper: {
     '^@app(.*)': '<rootDir>/src/app/$1',
     '^@env(.*)': '<rootDir>/src/environments/$1',
+    '^@sharedC(.*)': '<rootDir>/src/app/shared/components/$1',
     '^@sharedS(.*)': '<rootDir>/src/app/shared/services/$1',
     '^@sharedD(.*)': '<rootDir>/src/app/shared/directives/$1',
     '^@state(.*)': '<rootDir>/src/app/state/$1',
     '^@layout(.*)': '<rootDir>/src/app/layout/$1',
     '^@layoutC(.*)': '<rootDir>/src/app/layout/components/$1',
-    '^@bill(.*)': '<rootDir>/src/app/pages/bill/$1',
+    '^@bill(.*)': '<rootDir>/src/app/features/bill/$1',
   },
 };

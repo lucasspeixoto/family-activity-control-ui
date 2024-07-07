@@ -15,6 +15,7 @@ import {
   MatDialogActions,
   MatDialogClose,
   MatDialogContent,
+  MatDialogRef,
   MatDialogTitle,
 } from '@angular/material/dialog';
 import { MatFormField, MatLabel, MatError } from '@angular/material/form-field';
@@ -34,8 +35,34 @@ interface ConfirmationData {
 
 @Component({
   selector: 'app-confirmation',
-  templateUrl: './confirmation.component.html',
-  styleUrls: ['./confirmation.component.scss'],
+  template: `
+    @if (data) {
+      <div class="dark:bg-neutral-900 bg-neutral-100">
+        <h3 mat-dialog-title>{{ data.title }}</h3>
+        <mat-dialog-content class="mat-typography">{{
+          data.subtitle
+        }}</mat-dialog-content>
+        <mat-dialog-actions align="end">
+          <button
+            mat-flat-button
+            mat-dialog-close
+            [mat-dialog-close]="true"
+            (click)="onCancel()">
+            {{ data.cancelButtonTitle }}
+          </button>
+          <button
+            mat-flat-button
+            mat-dialog-close
+            [mat-dialog-close]="true"
+            color="primary"
+            (click)="onConfirm()">
+            {{ data.confirmationButtonTitle }}
+          </button>
+        </mat-dialog-actions>
+      </div>
+    }
+  `,
+  styles: [``],
   standalone: true,
   imports: [
     A11yModule,
@@ -59,14 +86,16 @@ interface ConfirmationData {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ConfirmationComponent {
-  @Output()
-  public confirmClicked = new EventEmitter<boolean>();
-
   constructor(
-    @Inject(MAT_DIALOG_DATA) public readonly data: ConfirmationData
+    @Inject(MAT_DIALOG_DATA) public readonly data: ConfirmationData,
+    public matDialogRef: MatDialogRef<ConfirmationComponent>
   ) {}
 
-  public confirm(): void {
-    this.confirmClicked.emit(true);
+  public onCancel(): void {
+    this.matDialogRef.close('cancel');
+  }
+
+  public onConfirm(): void {
+    this.matDialogRef.close('confirm');
   }
 }
