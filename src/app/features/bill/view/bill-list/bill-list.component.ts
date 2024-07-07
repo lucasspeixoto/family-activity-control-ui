@@ -67,6 +67,8 @@ export class BillListComponent implements AfterViewInit {
 
   public getBills$ = this.billService.getBills();
 
+  public hasFetchBillError = this.billService.hasFetchBillError;
+
   public selectedFilterBillWord = signal('');
 
   public selectedBill!: Bill | null;

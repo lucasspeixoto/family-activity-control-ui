@@ -191,6 +191,7 @@ describe('BillListActionsComponent', () => {
           verticalPosition: 'top',
         }
       );
+      expect(billService.selectedBill()).toEqual(null);
     });
 
     it('should open dialog with ConfirmationComponent when cancel is emitted', () => {
@@ -215,6 +216,7 @@ describe('BillListActionsComponent', () => {
 
       expect(billService.deleteBill).not.toHaveBeenCalled();
       expect(snackBar.open).not.toHaveBeenCalled();
+      expect(billService.selectedBill()).toEqual(bill);
     });
   });
 

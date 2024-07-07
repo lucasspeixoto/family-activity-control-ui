@@ -1,5 +1,5 @@
 import { computed, Injectable, signal } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { catchError, Observable, tap, throwError } from 'rxjs';
 import { Bill } from '../model/bill';
 import { environment } from '@env/environment';
 import { ResourceService } from '@sharedS/resource/resource.service';
@@ -14,14 +14,21 @@ export class BillService extends ResourceService<Bill> {
 
   public isLoadingBill = signal(false);
 
+  public hasFetchBillError = signal(false);
+
   public isABillSelected = computed(() => {
     return this.selectedBill() !== null;
   });
 
   public getBills(): Observable<Bill[]> {
-    return this.http
-      .get<Bill[]>(`${this.apiUrl}/bill`)
-      .pipe(tap(this.setResources));
+    return this.http.get<Bill[]>(`${this.apiUrl}/bill`).pipe(
+      tap(this.setResources),
+      catchError(error => {
+        this.hasFetchBillError.set(true);
+
+        return throwError(() => error);
+      })
+    );
   }
 
   public createBill(bill: Bill): Observable<Bill> {

@@ -21,7 +21,7 @@ export const httpErrorInterceptor: HttpInterceptorFn = (
 
       const serverError = error.error as ResponseError;
 
-      errorMsg = `Error: ${serverError.message}`;
+      errorMsg = `Error: Something went wrong, try again later (${serverError.message})`;
 
       snackBar.open(errorMsg, 'Close', {
         horizontalPosition: 'right',
