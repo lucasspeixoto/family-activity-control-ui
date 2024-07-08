@@ -11,9 +11,9 @@ import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { filter } from 'rxjs';
 
-import { ThemeManagerService } from '@shared/services/theme-manager.service';
-import { ScreenLoaderService } from '@shared/services/screen-loader.service';
-import { PageLoadingBarComponent } from '@shared/components/page-loading-bar';
+import { ThemeManagerService } from '@sharedS/theme-manager.service';
+import { ScreenLoaderService } from '@app/shared/services/screen-loader.service';
+import { PageLoadingBarComponent } from '@sharedC/page-loading-bar';
 import { ScreenLoaderComponent } from './layout/components/screen-loader/screen-loader.component';
 import { LayoutApiService } from './layout';
 import { BreakpointObserver } from '@angular/cdk/layout';
@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
   private _router = inject(Router);
   private _layoutService = inject(LayoutApiService);
 
-  public loadingText = signal('Carregando...');
+  public loadingText = signal('Loading...');
   public pageLoaded = signal(false);
 
   constructor(private _layoutBreakpointObserver$: BreakpointObserver) {
@@ -68,7 +68,7 @@ export class AppComponent implements OnInit {
                   this._layoutService.hideSidebar('root');
                 }
               });
-          }, 1000);
+          }, 500);
         });
     });
   }

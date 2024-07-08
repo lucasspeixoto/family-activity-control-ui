@@ -7,6 +7,9 @@
       <app-header></app-header>
     </app-layout-header>
     <app-layout-body>
+      @if (globalStore.featureLoading()) {
+        <app-loading />
+      }
       <router-outlet />
     </app-layout-body>
   </app-layout>

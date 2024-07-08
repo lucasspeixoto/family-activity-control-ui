@@ -1,6 +1,7 @@
 import {
   AfterViewInit,
   Component,
+  DestroyRef,
   effect,
   inject,
   signal,
@@ -25,11 +26,15 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { BILLS_TABLE_COLUMNS } from '../../constants/bills-table';
 import { BillListActionsComponent } from '../../components/bill-list-actions/bill-list-actions.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { LoadingComponent } from '@sharedC/loading/loading.component';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-bill-list',
   standalone: true,
   imports: [
+    LoadingComponent,
     MatPaginator,
     MatButton,
     MatIcon,
@@ -69,9 +74,13 @@ export class BillListComponent implements AfterViewInit {
 
   public hasFetchBillError = this.billService.hasFetchBillError;
 
+  public isLoadingBill = this.billService.isLoadingBill;
+
   public selectedFilterBillWord = signal('');
 
   public selectedBill!: Bill | null;
+
+  private _destroy$ = inject(DestroyRef);
 
   constructor() {
     effect(() => {
@@ -95,5 +104,21 @@ export class BillListComponent implements AfterViewInit {
     this.selectedFilterBillWord.set(selectedFilterBillWord);
 
     this.billsDataSource.filter = selectedFilterBillWord;
+  }
+
+  public tryLoadBillsAgain(): void {
+    this.billService
+      .getBills()
+      .pipe(
+        takeUntilDestroyed(this._destroy$),
+        tap(() => this.reiniciateTableData())
+      )
+      .subscribe();
+  }
+
+  public reiniciateTableData(): void {
+    this.billsDataSource.data = this.billService.resources();
+    this.billsDataSource.paginator = this.paginator;
+    this.billsDataSource.sort = this.sort;
   }
 }

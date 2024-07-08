@@ -1,8 +1,9 @@
-import { computed, Injectable, signal } from '@angular/core';
-import { catchError, Observable, tap, throwError } from 'rxjs';
+import { computed, inject, Injectable, signal } from '@angular/core';
+import { catchError, finalize, Observable, tap, throwError } from 'rxjs';
 import { Bill } from '../model/bill';
 import { environment } from '@env/environment';
 import { ResourceService } from '@sharedS/resource/resource.service';
+import { FeatureLoaderService } from '@app/shared/services/feature-loader.service';
 
 @Injectable({
   providedIn: 'root',
@@ -20,8 +21,15 @@ export class BillService extends ResourceService<Bill> {
     return this.selectedBill() !== null;
   });
 
+  private _featureLoader = inject(FeatureLoaderService);
+
   public getBills(): Observable<Bill[]> {
+    this.hasFetchBillError.set(false);
+
+    this._featureLoader.show();
+
     return this.http.get<Bill[]>(`${this.apiUrl}/bill`).pipe(
+      finalize(() => this._featureLoader.hide()),
       tap(this.setResources),
       catchError(error => {
         this.hasFetchBillError.set(true);

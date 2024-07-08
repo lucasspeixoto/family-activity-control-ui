@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { HeaderComponent } from '@layoutC/header/header/header.component';
@@ -9,6 +9,8 @@ import {
   LayoutSidebarComponent,
   LayoutHeaderComponent,
 } from '../../../../layout';
+import { GlobalStore } from '@app/state/global.state';
+import { LoadingComponent } from '@sharedC/loading/loading.component';
 
 @Component({
   standalone: true,
@@ -20,7 +22,10 @@ import {
     LayoutBodyComponent,
     LayoutSidebarComponent,
     LayoutHeaderComponent,
+    LoadingComponent,
   ],
   templateUrl: './common.component.html',
 })
-export class CommonComponent {}
+export class CommonComponent {
+  public globalStore = inject(GlobalStore);
+}
