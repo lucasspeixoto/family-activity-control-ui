@@ -109,6 +109,28 @@ export class SidebarComponent implements OnInit {
         },
       ],
     },
+    {
+      id: 'travel-planner',
+      icon: 'flight',
+      name: 'Travel Planner',
+      children: [
+        {
+          name: 'Planners',
+          link: '/home/travel-planner/travels',
+        },
+      ],
+    },
+    {
+      id: 'admin',
+      icon: 'admin_panel_settings',
+      name: 'Admin Panel',
+      children: [
+        {
+          name: 'Dashboards',
+          link: '/home/admin/dashboard',
+        },
+      ],
+    },
   ];
 
   navItemLinks: MenuItem[] = [];
