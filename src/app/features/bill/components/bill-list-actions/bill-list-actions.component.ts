@@ -18,7 +18,7 @@ import { ConfirmationComponent } from '@sharedC/confirmation/confirmation.compon
 import { finalize, first } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { DialogConfig } from '@app/shared/models/dialog-config.model';
+import { DialogConfig } from '@shared/models/dialog-config.model';
 import { ConfirmDialogResult } from '../../model/confirm-dialog-result';
 
 @Component({

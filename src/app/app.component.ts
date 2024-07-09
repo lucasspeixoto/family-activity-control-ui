@@ -12,7 +12,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { filter } from 'rxjs';
 
 import { ThemeManagerService } from '@sharedS/theme-manager.service';
-import { ScreenLoaderService } from '@app/shared/services/screen-loader.service';
+import { ScreenLoaderService } from '@sharedS/screen-loader.service';
 import { PageLoadingBarComponent } from '@sharedC/page-loading-bar';
 import { ScreenLoaderComponent } from './layout/components/screen-loader/screen-loader.component';
 import { LayoutApiService } from './layout';
@@ -80,7 +80,7 @@ export class AppComponent implements OnInit {
 
     if (isPlatformBrowser(this._platformId)) {
       setTimeout(() => {
-        this.loadingText.set('Iniciando...');
+        this.loadingText.set('Starting...');
       }, 1000);
     }
   }

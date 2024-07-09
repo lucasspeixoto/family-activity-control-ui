@@ -19,7 +19,7 @@ import {
   provideNativeDateAdapter,
 } from '@angular/material/core';
 
-import { PageTitleStrategyService } from '@shared/services/page-title-strategy.service';
+import { PageTitleStrategyService } from '@sharedS/page-title-strategy.service';
 import { httpErrorInterceptor } from '@shared/interceptors/httpErrorInterceptor';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MY_DATE_FORMATS } from './config/dates';

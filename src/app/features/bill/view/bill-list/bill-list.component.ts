@@ -11,11 +11,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
-import { VDividerComponent } from '@shared/components/divider';
+import { VDividerComponent } from '@sharedC/divider';
 import {
   SegmentedButtonComponent,
   SegmentedComponent,
-} from '@shared/components/segmented/public-api';
+} from '@sharedC/segmented/public-api';
 import { BillService } from '../../services/bill.service';
 import { Bill } from '../../model/bill';
 import { AsyncPipe, DatePipe, JsonPipe, NgIf } from '@angular/common';
@@ -66,9 +66,11 @@ export class BillListComponent implements AfterViewInit {
 
   private billService = inject(BillService);
 
-  public billsDataSource = new MatTableDataSource<Bill>();
+  private _destroy$ = inject(DestroyRef);
 
-  public billsTableColumns = BILLS_TABLE_COLUMNS;
+  public selectedFilterBillWord = signal('');
+
+  public billsDataSource = new MatTableDataSource<Bill>();
 
   public getBills$ = this.billService.getBills();
 
@@ -76,11 +78,9 @@ export class BillListComponent implements AfterViewInit {
 
   public isLoadingBill = this.billService.isLoadingBill;
 
-  public selectedFilterBillWord = signal('');
-
   public selectedBill!: Bill | null;
 
-  private _destroy$ = inject(DestroyRef);
+  public billsTableColumns = BILLS_TABLE_COLUMNS;
 
   constructor() {
     effect(() => {
