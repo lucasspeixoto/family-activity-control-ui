@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'bills/list',
+    path: 'list',
     loadComponent: () =>
       import('./view/bill-list/bill-list.component').then(
         c => c.BillListComponent

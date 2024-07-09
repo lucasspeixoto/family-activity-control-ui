@@ -44,6 +44,11 @@ import { MenuItem } from '@app/layout/types';
         <a routerLink="/" class="font-bold text-sm md:text-lg px-5 logo"
           >Family Control</a
         >
+        <img
+          alt="Main logo"
+          src="assets/main_logo.png"
+          width="40"
+          height="40" />
       </div>
       <div class="grow relative overflow-y-auto overflow-x-hidden px-3">
         <app-navigation
@@ -100,7 +105,7 @@ export class SidebarComponent implements OnInit {
       children: [
         {
           name: 'Bill List',
-          link: '/home/bill/bills/list',
+          link: '/home/bill/list',
         },
       ],
     },

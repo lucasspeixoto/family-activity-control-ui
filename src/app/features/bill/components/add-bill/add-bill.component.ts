@@ -3,7 +3,6 @@ import {
   Component,
   DestroyRef,
   inject,
-  ViewEncapsulation,
 } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { billForm } from '../../constants/bill-forms';
@@ -25,8 +24,9 @@ import { BillService } from '../../services/bill.service';
 import { Bill } from '../../model/bill';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { finalize } from 'rxjs/operators';
-import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { SnackbarService } from '@sharedS/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-add-bill',
@@ -52,16 +52,15 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   templateUrl: `./add-bill.component.html`,
   styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None,
 })
 export class AddBillComponent {
   private _formBuilder = inject(FormBuilder);
 
   private _billService = inject(BillService);
 
-  private _snackBar = inject(MatSnackBar);
-
   private _destroy$ = inject(DestroyRef);
+
+  private _snackBarService = inject(SnackbarService);
 
   public readonly addNewBillForm = this._formBuilder.group({
     ...billForm,
@@ -103,10 +102,7 @@ export class AddBillComponent {
       )
       .subscribe({
         complete: () => {
-          this._snackBar.open('Bill sucessfully created', 'Close', {
-            horizontalPosition: 'right',
-            verticalPosition: 'top',
-          });
+          this._snackBarService.showRightTopMessage('Bill sucessfully created');
         },
       });
   }

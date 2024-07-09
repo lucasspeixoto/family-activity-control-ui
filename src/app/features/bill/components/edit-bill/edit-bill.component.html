@@ -6,11 +6,20 @@
         <div class="flex flex-col justify-start gap-0 w-1/2">
           <mat-form-field class="my-2">
             <mat-label>Title</mat-label>
-            <input matInput formControlName="title" minlength="3" />
+            <input
+              id="title-field"
+              name="title-field"
+              data-testid="title-field"
+              matInput
+              formControlName="title"
+              minlength="3" />
             @if (editBillForm.get('title')!.hasError('required')) {
-              <mat-error>Title is <strong>required</strong></mat-error>
-            } @else if (editBillForm.get('title')!.hasError('minlength')) {
-              <mat-error
+              <mat-error data-testid="title-required-error"
+                >Title is <strong>required</strong></mat-error
+              >
+            }
+            @if (editBillForm.get('title')!.hasError('minlength')) {
+              <mat-error data-testid="title-minlength-error"
                 >Title field must contain
                 <strong>3 characteres</strong></mat-error
               >
@@ -20,11 +29,19 @@
 
         <mat-form-field class="w-1/2 my-2">
           <mat-label>Owner</mat-label>
-          <input matInput formControlName="owner" />
+          <input
+            id="owner-field"
+            name="owner-field"
+            data-testid="owner-field"
+            matInput
+            formControlName="owner" />
           @if (editBillForm.get('owner')!.hasError('required')) {
-            <mat-error>Owner is <strong>required</strong></mat-error>
-          } @else if (editBillForm.get('owner')!.hasError('minlength')) {
-            <mat-error
+            <mat-error data-testid="owner-required-error"
+              >Owner is <strong>required</strong></mat-error
+            >
+          }
+          @if (editBillForm.get('owner')!.hasError('minlength')) {
+            <mat-error data-testid="owner-minlength-error"
               >Owner field must contain
               <strong>3 characteres</strong></mat-error
             >
@@ -36,9 +53,18 @@
         <mat-form-field class="w-1/2 my-2">
           <mat-label>Amount</mat-label>
           <span class="ml-2" matPrefix>R$ &nbsp;</span>
-          <input type="number" min="0" matInput formControlName="amount" />
+          <input
+            id="amount-field"
+            name="amount-field"
+            data-testid="amount-field"
+            type="number"
+            min="0"
+            matInput
+            formControlName="amount" />
           @if (editBillForm.get('amount')!.hasError('min')) {
-            <mat-error>Insert a amount value greater than 0</mat-error>
+            <mat-error data-testid="amount-min-error"
+              >Insert a amount value greater than 0</mat-error
+            >
           }
         </mat-form-field>
 
@@ -57,14 +83,20 @@
       <mat-form-field class="w-full my-2">
         <mat-label>Description</mat-label>
         <textarea
+          id="description-field"
+          name="description-field"
+          data-testid="description-field"
           #description
           matInput
           formControlName="description"
           maxlength="256"></textarea>
         @if (editBillForm.get('description')!.hasError('required')) {
-          <mat-error>Description is <strong>required</strong></mat-error>
-        } @else if (editBillForm.get('description')!.hasError('minlength')) {
-          <mat-error
+          <mat-error data-testid="description-required-error"
+            >Description is <strong>required</strong></mat-error
+          >
+        }
+        @if (editBillForm.get('description')!.hasError('minlength')) {
+          <mat-error data-testid="description-minlength-error"
             >Description field must contain
             <strong>3 characteres</strong></mat-error
           >
@@ -104,9 +136,9 @@
     <button
       mat-flat-button
       color="primary"
+      data-testid="update-button"
       [disabled]="editBillForm.invalid || isLoadingBill()"
       [class.spinner]="isLoadingBill()"
-      cdkFocusInitial
       (click)="onUpdateBillHandler()">
       Update
     </button>

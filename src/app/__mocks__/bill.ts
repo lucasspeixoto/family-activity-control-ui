@@ -22,6 +22,16 @@ export const BILL_MOCK: Bill = {
   type: 'FIXED',
 };
 
+export const BILL_FORM_MOCK = {
+  title: 'Energia',
+  owner: 'Lucas',
+  amount: 100.2,
+  category: 'Contas',
+  description: 'Pagar energia',
+  finishAt: new Date(),
+  type: 'FIXED',
+};
+
 export const BILL_LIST_MOCK: Bill[] = [
   {
     id: '44b99384-5c1b-4109-b68d-bf19837489a2',

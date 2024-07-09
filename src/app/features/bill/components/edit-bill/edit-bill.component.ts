@@ -28,8 +28,8 @@ import { BillService } from '../../services/bill.service';
 import { Bill } from '../../model/bill';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { finalize } from 'rxjs/operators';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { SnackbarService } from '@sharedS/snackbar/snackbar.service';
 @Component({
   selector: 'app-edit-bill',
   standalone: true,
@@ -61,17 +61,17 @@ export class EditBillComponent implements OnInit {
 
   private _billService = inject(BillService);
 
-  private _snackBar = inject(MatSnackBar);
-
   private _destroy$ = inject(DestroyRef);
+
+  private _snackbarService = inject(SnackbarService);
 
   public readonly editBillForm = this._formBuilder.group({
     ...billForm,
   });
 
-  public readonly billCategoryOptions = billCategoryOptions;
+  public billCategoryOptions = billCategoryOptions;
 
-  public readonly billTypeOptions = billTypeOptions;
+  public billTypeOptions = billTypeOptions;
 
   public readonly isLoadingBill = this._billService.isLoadingBill;
 
@@ -82,8 +82,8 @@ export class EditBillComponent implements OnInit {
       this.data as Bill;
 
     this.editBillForm.setValue({
-      id: id!,
       title,
+      id,
       owner,
       amount,
       category,
@@ -126,10 +126,7 @@ export class EditBillComponent implements OnInit {
         complete: () => {
           this._billService.setSelectedBill(null);
 
-          this._snackBar.open('Bill sucessfully updated', 'Close', {
-            horizontalPosition: 'right',
-            verticalPosition: 'top',
-          });
+          this._snackbarService.showRightTopMessage('Bill sucessfully updated');
         },
       });
   }

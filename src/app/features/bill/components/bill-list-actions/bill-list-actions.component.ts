@@ -42,23 +42,55 @@ import { ConfirmDialogResult } from '../../model/confirm-dialog-result';
             <app-v-divider class="my-3 h-8"></app-v-divider>
           </div>
           <div class="flex items-center gap-4">
-            <button
-              data-testid="update-button"
-              [disabled]="!isBillSelected()"
-              mat-stroked-button
-              color="primary"
-              (click)="updateBillHandler()">
-              <mat-icon class="font-icon">edit</mat-icon>Update
-            </button>
-            <button
-              data-testid="delete-button"
-              [disabled]="!isBillSelected()"
-              mat-stroked-button
-              color="warn"
-              (click)="deleteBillHandler()">
-              <mat-icon class="font-icon ">delete</mat-icon>
-              Delete
-            </button>
+            <!-- Update buttons -->
+            <div class="hidden sm:flex">
+              <button
+                data-testid="update-button"
+                mat-stroked-button
+                color="primary"
+                [disabled]="!isBillSelected()"
+                (click)="updateBillHandler()">
+                <mat-icon class="font-icon">edit</mat-icon>Update
+              </button>
+            </div>
+            <div class="flex sm:hidden">
+              <button
+                data-testid="update-button"
+                mat-icon-button
+                color="warn"
+                position="below-end"
+                [disabled]="!isBillSelected()"
+                (click)="updateBillHandler()">
+                <mat-icon aria-hidden="false" class="text-primary font-icon"
+                  >edit</mat-icon
+                >
+              </button>
+            </div>
+            <!-- Delete buttons -->
+            <div class="hidden sm:flex">
+              <button
+                data-testid="delete-button"
+                mat-stroked-button
+                color="warn"
+                [disabled]="!isBillSelected()"
+                (click)="deleteBillHandler()">
+                <mat-icon class="font-icon">delete</mat-icon>
+                Delete
+              </button>
+            </div>
+            <div class="flex sm:hidden">
+              <button
+                data-testid="delete-button"
+                [disabled]="!isBillSelected()"
+                (click)="deleteBillHandler()"
+                mat-icon-button
+                color="warn"
+                position="below-end">
+                <mat-icon aria-hidden="false" class="text-red-700 font-icon"
+                  >delete</mat-icon
+                >
+              </button>
+            </div>
           </div>
         </div>
         <div class="hidden sm:flex my-4 w-full mx-4 items-center justify-end">

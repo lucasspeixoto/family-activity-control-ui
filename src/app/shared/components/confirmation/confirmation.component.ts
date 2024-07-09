@@ -1,11 +1,5 @@
 import { A11yModule } from '@angular/cdk/a11y';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Inject,
-  Output,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -44,7 +38,7 @@ interface ConfirmationData {
         }}</mat-dialog-content>
         <mat-dialog-actions align="end">
           <button
-            mat-flat-button
+            mat-button
             mat-dialog-close
             [mat-dialog-close]="true"
             (click)="onCancel()">

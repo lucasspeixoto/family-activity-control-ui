@@ -15,3 +15,13 @@ export const addTaskForm = {
   title: ['', [Validators.required, Validators.minLength(3)]],
   date: [new Date(), [Validators.required]],
 };
+
+export const billInitialFormValues = {
+  title: '',
+  owner: '',
+  amount: 0,
+  category: '',
+  description: '',
+  finishAt: '',
+  type: '',
+};
