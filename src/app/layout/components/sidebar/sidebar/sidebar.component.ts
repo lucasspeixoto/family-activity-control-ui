@@ -135,7 +135,7 @@ export class SidebarComponent implements OnInit {
         },
         {
           name: 'Notifications',
-          link: '/home/admin/notifications-management',
+          link: '/home/admin/notification-management',
         },
       ],
     },
