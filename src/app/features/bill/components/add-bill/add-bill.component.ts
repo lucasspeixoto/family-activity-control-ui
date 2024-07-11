@@ -19,7 +19,7 @@ import {
   MatDialogActions,
   MatDialogClose,
 } from '@angular/material/dialog';
-import { billCategoryOptions, billTypeOptions } from '../../constants/options';
+import { billTypeOptions } from '../../constants/options';
 import { BillService } from '../../services/bill.service';
 import { Bill } from '../../model/bill';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -27,11 +27,15 @@ import { finalize } from 'rxjs/operators';
 
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SnackbarService } from '@sharedS/snackbar/snackbar.service';
+import { AdminService } from '@app/features/admin/services/admin.service';
+import { AsyncPipe, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-add-bill',
   standalone: true,
   imports: [
+    AsyncPipe,
+    NgIf,
     MatButtonModule,
     MatInputModule,
     MatFormField,
@@ -58,6 +62,8 @@ export class AddBillComponent {
 
   private _billService = inject(BillService);
 
+  private _adminService = inject(AdminService);
+
   private _destroy$ = inject(DestroyRef);
 
   private _snackBarService = inject(SnackbarService);
@@ -66,7 +72,9 @@ export class AddBillComponent {
     ...billForm,
   });
 
-  public readonly billCategoryOptions = billCategoryOptions;
+  public getCategories$ = this._adminService.getCategoriesUsage();
+
+  public categories = this._adminService.categories;
 
   public readonly billTypeOptions = billTypeOptions;
 

@@ -29,6 +29,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { LoadingComponent } from '@sharedC/loading/loading.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { tap } from 'rxjs';
+import { AdminService } from '@app/features/admin/services/admin.service';
 
 @Component({
   selector: 'app-bill-list',
@@ -64,7 +65,9 @@ export class BillListComponent implements AfterViewInit {
 
   @ViewChild(MatSort) public sort: MatSort;
 
-  private billService = inject(BillService);
+  private _billService = inject(BillService);
+
+  private _adminService = inject(AdminService);
 
   private _destroy$ = inject(DestroyRef);
 
@@ -72,11 +75,11 @@ export class BillListComponent implements AfterViewInit {
 
   public billsDataSource = new MatTableDataSource<Bill>();
 
-  public getBills$ = this.billService.getBills();
+  public getBills$ = this._billService.getBills();
 
-  public hasFetchBillError = this.billService.hasFetchBillError;
+  public hasFetchBillError = this._billService.hasFetchBillError;
 
-  public isLoadingBill = this.billService.isLoadingBill;
+  public isLoadingBill = this._billService.isLoadingBill;
 
   public selectedBill!: Bill | null;
 
@@ -84,7 +87,7 @@ export class BillListComponent implements AfterViewInit {
 
   constructor() {
     effect(() => {
-      this.billsDataSource.data = this.billService.resources();
+      this.billsDataSource.data = this._billService.resources();
     });
   }
 
@@ -95,7 +98,7 @@ export class BillListComponent implements AfterViewInit {
 
   public onSelectBillChange(row: Bill): void {
     this.selectedBill = this.selectedBill === row ? null : (row as Bill);
-    this.billService.setSelectedBill(this.selectedBill);
+    this._billService.setSelectedBill(this.selectedBill);
   }
 
   public billSearchTermEventHandler(filterValue: string) {
@@ -107,7 +110,7 @@ export class BillListComponent implements AfterViewInit {
   }
 
   public tryLoadBillsAgain(): void {
-    this.billService
+    this._billService
       .getBills()
       .pipe(
         takeUntilDestroyed(this._destroy$),
@@ -117,7 +120,7 @@ export class BillListComponent implements AfterViewInit {
   }
 
   public reiniciateTableData(): void {
-    this.billsDataSource.data = this.billService.resources();
+    this.billsDataSource.data = this._billService.resources();
     this.billsDataSource.paginator = this.paginator;
     this.billsDataSource.sort = this.sort;
   }

@@ -5,7 +5,6 @@ import {
   Inject,
   inject,
   OnInit,
-  ViewEncapsulation,
 } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { billForm } from '../../constants/bill-forms';
@@ -23,17 +22,22 @@ import {
   MatDialogClose,
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
-import { billCategoryOptions, billTypeOptions } from '../../constants/options';
+import { billTypeOptions } from '../../constants/options';
 import { BillService } from '../../services/bill.service';
 import { Bill } from '../../model/bill';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { finalize } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SnackbarService } from '@sharedS/snackbar/snackbar.service';
+import { AdminService } from '@app/features/admin/services/admin.service';
+import { AsyncPipe, NgIf } from '@angular/common';
+
 @Component({
   selector: 'app-edit-bill',
   standalone: true,
   imports: [
+    NgIf,
+    AsyncPipe,
     MatButtonModule,
     MatInputModule,
     MatFormField,
@@ -54,12 +58,13 @@ import { SnackbarService } from '@sharedS/snackbar/snackbar.service';
   templateUrl: `./edit-bill.component.html`,
   styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None,
 })
 export class EditBillComponent implements OnInit {
   private _formBuilder = inject(FormBuilder);
 
   private _billService = inject(BillService);
+
+  private _adminService = inject(AdminService);
 
   private _destroy$ = inject(DestroyRef);
 
@@ -69,7 +74,9 @@ export class EditBillComponent implements OnInit {
     ...billForm,
   });
 
-  public billCategoryOptions = billCategoryOptions;
+  public getCategories$ = this._adminService.getCategoriesUsage();
+
+  public categories = this._adminService.categories;
 
   public billTypeOptions = billTypeOptions;
 

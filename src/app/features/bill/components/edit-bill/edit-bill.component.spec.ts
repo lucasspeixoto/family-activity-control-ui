@@ -21,7 +21,7 @@ import { BILL_FORM_MOCK, BILL_MOCK } from '@app/__mocks__/bill';
 import { of } from 'rxjs';
 import { SnackbarService } from '@sharedS/snackbar/snackbar.service';
 import { EditBillComponent } from './edit-bill.component';
-import { billCategoryOptions, billTypeOptions } from '../../constants/options';
+import { billTypeOptions } from '../../constants/options';
 
 describe('EditBillComponent', () => {
   let component: EditBillComponent;
@@ -58,7 +58,6 @@ describe('EditBillComponent', () => {
     snackBarService = TestBed.inject(SnackbarService);
 
     component = fixture.componentInstance;
-    component.billCategoryOptions = billCategoryOptions;
     component.billTypeOptions = billTypeOptions;
 
     fixture.detectChanges();
