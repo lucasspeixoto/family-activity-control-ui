@@ -1,19 +1,19 @@
 :root {
-  --fac-breadcrumbs-gap: theme('gap[2.5]');
-  --fac-breadcrumbs-item-font-size: theme('fontSize.sm');
-  --fac-breadcrumbs-item-color: theme('colors.neutral.500');
-  --fac-breadcrumbs-item-hover-color: theme('colors.primary.DEFAULT');
-  --fac-breadcrumbs-active-item-color: theme('colors.primary.DEFAULT');
-  --fac-breadcrumbs-item-font-weight: theme('fontWeight.normal');
-  --fac-breadcrumbs-separator-color: theme('colors.neutral.400');
-  --fac-breadcrumbs-separator-font-size: theme('fontSize.xs');
-  --fac-breadcrumbs-separator-position-top: 1px;
-  --fac-breadcrumbs-title-color: theme('colors.neutral.800');
-  --fac-breadcrumbs-title-font-size: theme('fontSize.xs');
+  --app-breadcrumbs-gap: theme('gap[2.5]');
+  --app-breadcrumbs-item-font-size: theme('fontSize.sm');
+  --app-breadcrumbs-item-color: theme('colors.neutral.500');
+  --app-breadcrumbs-item-hover-color: theme('colors.primary.DEFAULT');
+  --app-breadcrumbs-active-item-color: theme('colors.primary.DEFAULT');
+  --app-breadcrumbs-item-font-weight: theme('fontWeight.normal');
+  --app-breadcrumbs-separator-color: theme('colors.neutral.400');
+  --app-breadcrumbs-separator-font-size: theme('fontSize.xs');
+  --app-breadcrumbs-separator-position-top: 1px;
+  --app-breadcrumbs-title-color: theme('colors.neutral.800');
+  --app-breadcrumbs-title-font-size: theme('fontSize.xs');
 }
 
 html.dark {
-  --fac-breadcrumbs-item-color: theme('colors.neutral.400');
-  --fac-breadcrumbs-separator-color: theme('colors.neutral.400');
-  --fac-breadcrumbs-title-color: theme('colors.neutral.100');
+  --app-breadcrumbs-item-color: theme('colors.neutral.400');
+  --app-breadcrumbs-separator-color: theme('colors.neutral.400');
+  --app-breadcrumbs-title-color: theme('colors.neutral.100');
 }

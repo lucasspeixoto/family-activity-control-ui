@@ -1,12 +1,19 @@
 {
   "compileOnSave": false,
+  "typeRoots": ["node_modules/@angular/material"],
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@shared/*": ["./src/app/shared/*"],
       "@app/*": ["./src/app/*"],
+      "@env/*": ["./src/environments/*"],
+      "@shared/*": ["./src/app/shared/*"],
+      "@sharedC/*": ["./src/app/shared/components/*"],
+      "@sharedS/*": ["./src/app/shared/services/*"],
+      "@sharedD/*": ["./src/app/shared/directives/*"],
       "@state/*": ["./src/app/state/*"],
-      "@layoutC/*": ["./src/app/layout/components/*"]
+      "@layout/*": ["./src/app/layout/*"],
+      "@layoutC/*": ["./src/app/layout/components/*"],
+      "@bill/*": ["./src/app/features/bill/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

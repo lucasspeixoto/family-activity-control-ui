@@ -1,31 +1,31 @@
 :root {
-  --fac-color-picker-bg: theme('colors.white');
-  --fac-color-picker-border-radius: theme('borderRadius.md');
-  --fac-color-picker-margin-offset: theme('margin.2');
-  --fac-color-picker-border: 0 solid theme('colors.neutral.200');
-  --fac-color-picker-padding: theme('padding.0');
-  --fac-color-picker-gap: theme('gap.0');
+  --app-color-picker-bg: theme('colors.white');
+  --app-color-picker-border-radius: theme('borderRadius.md');
+  --app-color-picker-margin-offset: theme('margin.2');
+  --app-color-picker-border: 0 solid theme('colors.neutral.200');
+  --app-color-picker-padding: theme('padding.0');
+  --app-color-picker-gap: theme('gap.0');
 
-  --fac-color-picker-thumbnail-bg: transparent;
-  --fac-color-picker-thumbnail-size: theme('width.8');
-  --fac-color-picker-thumbnail-border-radius: theme('borderRadius.full');
-  --fac-color-picker-thumbnail-border: 1px solid theme('colors.neutral.200');
+  --app-color-picker-thumbnail-bg: transparent;
+  --app-color-picker-thumbnail-size: theme('width.8');
+  --app-color-picker-thumbnail-border-radius: theme('borderRadius.full');
+  --app-color-picker-thumbnail-border: 1px solid theme('colors.neutral.200');
 
-  --fac-color-picker-saturation-width: 15rem;
-  --fac-color-picker-saturation-height: 8.75rem;
-  --fac-color-picker-saturation-pointer-size: theme('width.7');
-  --fac-color-picker-saturation-pointer-shadow: theme('boxShadow.md');
-  --fac-color-picker-saturation-pointer-border: 2px solid theme('colors.white');
+  --app-color-picker-saturation-width: 15rem;
+  --app-color-picker-saturation-height: 8.75rem;
+  --app-color-picker-saturation-pointer-size: theme('width.7');
+  --app-color-picker-saturation-pointer-shadow: theme('boxShadow.md');
+  --app-color-picker-saturation-pointer-border: 2px solid theme('colors.white');
 
-  --fac-color-picker-hue-width: var(--fac-color-picker-saturation-width);
-  --fac-color-picker-hue-height: theme('height.7');
-  --fac-color-picker-hue-pointer-size: theme('width.7');
-  --fac-color-picker-hue-pointer-shadow: theme('boxShadow.md');
-  --fac-color-picker-hue-pointer-border: 2px solid theme('colors.white');
+  --app-color-picker-hue-width: var(--app-color-picker-saturation-width);
+  --app-color-picker-hue-height: theme('height.7');
+  --app-color-picker-hue-pointer-size: theme('width.7');
+  --app-color-picker-hue-pointer-shadow: theme('boxShadow.md');
+  --app-color-picker-hue-pointer-border: 2px solid theme('colors.white');
 
-  --fac-color-picker-alpha-width: var(--fac-color-picker-saturation-width);
-  --fac-color-picker-alpha-height: theme('height.7');
-  --fac-color-picker-alpha-pointer-size: theme('width.7');
-  --fac-color-picker-alpha-pointer-shadow: theme('boxShadow.md');
-  --fac-color-picker-alpha-pointer-border: 2px solid theme('colors.white');
+  --app-color-picker-alpha-width: var(--app-color-picker-saturation-width);
+  --app-color-picker-alpha-height: theme('height.7');
+  --app-color-picker-alpha-pointer-size: theme('width.7');
+  --app-color-picker-alpha-pointer-shadow: theme('boxShadow.md');
+  --app-color-picker-alpha-pointer-border: 2px solid theme('colors.white');
 }

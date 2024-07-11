@@ -2,9 +2,9 @@ import { Directive, inject, TemplateRef } from '@angular/core';
 
 @Directive({
   selector: '[facNavigationGroupToggleIcon]',
-  exportAs: 'facNavigationGroupToggleIcon',
+  exportAs: 'appNavigationGroupToggleIcon',
   host: {
-    class: 'fac-navigation-group-toggle-icon',
+    class: 'app-navigation-group-toggle-icon',
   },
   standalone: true,
 })

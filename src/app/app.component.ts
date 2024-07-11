@@ -11,22 +11,26 @@ import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { filter } from 'rxjs';
 
-import { environment } from '../environments/environment';
-import { ThemeManagerService } from '@shared/services/theme-manager.service';
-import { AnalyticsService } from '@shared/services/analytics.service';
-import { InactivityTrackerService } from '@shared/services/inactivity-tracker.service';
-import { ScreenLoaderService } from '@shared/services/screen-loader.service';
-import { SeoService } from '@shared/services/seo.service';
-import { PageLoadingBarComponent } from '@shared/components/page-loading-bar';
+import { ThemeManagerService } from '@sharedS/theme-manager.service';
+import { ScreenLoaderService } from '@sharedS/screen-loader.service';
+import { PageLoadingBarComponent } from '@sharedC/page-loading-bar';
 import { ScreenLoaderComponent } from './layout/components/screen-loader/screen-loader.component';
+import { LayoutApiService } from './layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ScreenLoaderComponent, PageLoadingBarComponent],
+  imports: [
+    RouterOutlet,
+    ScreenLoaderComponent,
+    PageLoadingBarComponent,
+    MatSnackBarModule,
+  ],
   template: `
     @if (pageLoaded()) {
-      <fac-page-loading-bar fixed></fac-page-loading-bar>
+      <app-page-loading-bar fixed></app-page-loading-bar>
     }
     <app-screen-loader [loadingText]="loadingText()"></app-screen-loader>
     <router-outlet />
@@ -36,16 +40,14 @@ import { ScreenLoaderComponent } from './layout/components/screen-loader/screen-
 export class AppComponent implements OnInit {
   private _themeManager = inject(ThemeManagerService);
   private _screenLoader = inject(ScreenLoaderService);
-  private _analyticsService = inject(AnalyticsService);
-  private _inactivityTracker = inject(InactivityTrackerService);
-  private _seoService = inject(SeoService);
   private _platformId = inject(PLATFORM_ID);
   private _router = inject(Router);
+  private _layoutService = inject(LayoutApiService);
 
-  public loadingText = signal('Carregando...');
+  public loadingText = signal('Loading...');
   public pageLoaded = signal(false);
 
-  constructor() {
+  constructor(private _layoutBreakpointObserver$: BreakpointObserver) {
     afterNextRender(() => {
       // Scroll a page to top if url changed
       this._router.events
@@ -58,15 +60,16 @@ export class AppComponent implements OnInit {
           setTimeout(() => {
             this._screenLoader.hide();
             this.pageLoaded.set(true);
-          }, 2000);
+
+            this._layoutBreakpointObserver$
+              ?.observe(['(max-width: 991px)'])
+              .subscribe(result => {
+                if (result.matches) {
+                  this._layoutService.hideSidebar('root');
+                }
+              });
+          }, 500);
         });
-
-      this._analyticsService.trackPageViews();
-
-      this._inactivityTracker.setupInactivityTimer().subscribe(() => {
-        console.log('Inactive mode has been activated!');
-        // this._inactivityTracker.reset();
-      });
     });
   }
 
@@ -77,10 +80,8 @@ export class AppComponent implements OnInit {
 
     if (isPlatformBrowser(this._platformId)) {
       setTimeout(() => {
-        this.loadingText.set('Iniciando...');
-      }, 1500);
+        this.loadingText.set('Starting...');
+      }, 1000);
     }
-
-    this._seoService.trackCanonicalChanges(environment.siteUrl);
   }
 }

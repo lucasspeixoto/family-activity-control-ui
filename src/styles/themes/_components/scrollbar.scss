@@ -1,27 +1,27 @@
 @tailwind components;
 
-body *:not(.fac-native-scroll)::-webkit-scrollbar {
+body *:not(.app-native-scroll)::-webkit-scrollbar {
   @apply bg-none w-[8px] h-[8px];
 }
 
-body *:not(.fac-native-scroll)::-webkit-scrollbar-track {
+body *:not(.app-native-scroll)::-webkit-scrollbar-track {
   @apply bg-neutral-200 rounded-sm;
 }
 
-body *:not(.fac-native-scroll)::-webkit-scrollbar-thumb {
+body *:not(.app-native-scroll)::-webkit-scrollbar-thumb {
   @apply rounded-sm bg-neutral-300 hover:bg-neutral-400;
 }
 
 html.dark {
-  body *:not(.fac-native-scroll)::-webkit-scrollbar-track {
+  body *:not(.app-native-scroll)::-webkit-scrollbar-track {
     @apply bg-neutral-500;
   }
 
-  body *:not(.fac-native-scroll)::-webkit-scrollbar-thumb {
+  body *:not(.app-native-scroll)::-webkit-scrollbar-thumb {
     @apply rounded-sm bg-neutral-200 hover:bg-neutral-300;
   }
 }
 
-body .fac-scroll-lg::-webkit-scrollbar {
+body .app-scroll-lg::-webkit-scrollbar {
   @apply w-[11px] h-[11px];
 }

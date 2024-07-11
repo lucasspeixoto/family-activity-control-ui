@@ -12,25 +12,33 @@ import { LAYOUT, LayoutSidebarVisibilityChange } from '../types';
 import { LayoutComponent } from '../layout/layout.component';
 
 @Component({
-  selector: 'fac-layout-sidebar',
+  selector: 'app-layout-sidebar',
   standalone: true,
   imports: [],
-  templateUrl: './layout-sidebar.component.html',
-  styleUrl: './layout-sidebar.component.scss',
+  template: `<ng-content></ng-content>`,
+  styles: `
+    :host {
+      display: block;
+      z-index: 1;
+
+      &.is-hidden {
+        display: none;
+      }
+    }
+  `,
   host: {
-    class: 'fac-layout-sidebar',
+    class: 'app-layout-sidebar',
     '[class.is-hidden]': 'hidden',
   },
 })
 export class LayoutSidebarComponent implements OnInit {
+  @Input({ transform: booleanAttribute }) public hidden = false;
+
   private _parent = inject<LayoutComponent>(LAYOUT);
   private _destroyRef = inject(DestroyRef);
   private _layoutApi = inject(LayoutApiService);
 
-  @Input({ transform: booleanAttribute })
-  hidden = false;
-
-  ngOnInit() {
+  public ngOnInit() {
     this._layoutApi.sidebarVisibility
       .pipe(takeUntilDestroyed(this._destroyRef))
       .subscribe((event: LayoutSidebarVisibilityChange) => {

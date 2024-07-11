@@ -2,9 +2,9 @@ import { Directive, inject, TemplateRef } from '@angular/core';
 
 @Directive({
   selector: '[facNavigationItemIcon]',
-  exportAs: 'facNavigationItemIcon',
+  exportAs: 'appNavigationItemIcon',
   host: {
-    class: 'fac-navigation-item-icon',
+    class: 'app-navigation-item-icon',
   },
   standalone: true,
 })

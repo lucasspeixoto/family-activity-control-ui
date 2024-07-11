@@ -12,14 +12,26 @@ import { filter } from 'rxjs';
 import { isPlatformServer } from '@angular/common';
 
 @Component({
-  selector: 'fac-layout-body',
-  exportAs: 'facLayoutBody',
+  selector: 'app-layout-body',
+  exportAs: 'appLayoutBody',
   standalone: true,
   imports: [],
-  templateUrl: './layout-body.component.html',
-  styleUrl: './layout-body.component.scss',
+  template: `<ng-content></ng-content>`,
+  styles: `
+    :host {
+      display: block;
+      position: relative;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+
+      &:has(:not(.app-layout-body)) {
+        overflow: auto;
+      }
+    }
+  `,
   host: {
-    class: 'fac-layout-body fac-scroll-lg',
+    class: 'app-layout-body app-scroll-lg',
   },
 })
 export class LayoutBodyComponent implements OnInit {
@@ -30,7 +42,7 @@ export class LayoutBodyComponent implements OnInit {
   @Input({ transform: booleanAttribute })
   autoscrollToTop = true;
 
-  ngOnInit() {
+  public ngOnInit() {
     // Scroll a page to top if url changed
     this._router.events
       .pipe(filter(event => event instanceof NavigationStart))

@@ -1,28 +1,28 @@
 :root {
   // bar chart
-  --fac-mchart-bar-bar-bg: theme('colors.primary.DEFAULT');
-  --fac-mchart-bar-bar-gradient-start-color: theme('colors.primary.500');
-  --fac-mchart-bar-bar-gradient-end-color: theme('colors.primary.DEFAULT');
-  --fac-mchart-bar-highlight-bg: theme('colors.neutral.200');
+  --app-mchart-bar-bar-bg: theme('colors.primary.DEFAULT');
+  --app-mchart-bar-bar-gradient-start-color: theme('colors.primary.500');
+  --app-mchart-bar-bar-gradient-end-color: theme('colors.primary.DEFAULT');
+  --app-mchart-bar-highlight-bg: theme('colors.neutral.200');
 
   // line chart
-  --fac-mchart-line-line-bg: theme('colors.primary.DEFAULT');
-  --fac-mchart-line-area-bg: theme('colors.primary.200');
-  --fac-mchart-line-marker-line-bg: theme('colors.neutral.DEFAULT');
-  --fac-mchart-line-marker-dot-bg: theme('colors.primary.DEFAULT');
-  --fac-mchart-line-area-gradient-start-color: theme('colors.primary.400/80');
-  --fac-mchart-line-area-gradient-end-color: theme('colors.background');
+  --app-mchart-line-line-bg: theme('colors.primary.DEFAULT');
+  --app-mchart-line-area-bg: theme('colors.primary.200');
+  --app-mchart-line-marker-line-bg: theme('colors.neutral.DEFAULT');
+  --app-mchart-line-marker-dot-bg: theme('colors.primary.DEFAULT');
+  --app-mchart-line-area-gradient-start-color: theme('colors.primary.400/80');
+  --app-mchart-line-area-gradient-end-color: theme('colors.background');
 
   // pie chart
-  --fac-mchart-pie-stroke-color: theme('colors.background');
-  --fac-mchart-pie-legend-item-color: theme('colors.neutral.900');
-  --fac-mchart-pie-legend-item-hover-color: theme('colors.primary.DEFAULT');
-  --fac-mchart-pie-value-color: theme('colors.neutral.950');
+  --app-mchart-pie-stroke-color: theme('colors.background');
+  --app-mchart-pie-legend-item-color: theme('colors.neutral.900');
+  --app-mchart-pie-legend-item-hover-color: theme('colors.primary.DEFAULT');
+  --app-mchart-pie-value-color: theme('colors.neutral.950');
 }
 
 html.dark {
-  --fac-mchart-bar-highlight-bg: theme('colors.neutral.700');
-  --fac-mchart-line-area-bg: theme('colors.neutral.700');
-  --fac-mchart-pie-legend-item-color: theme('colors.neutral.200');
-  --fac-mchart-line-area-gradient-start-color: theme('colors.neutral.700');
+  --app-mchart-bar-highlight-bg: theme('colors.neutral.700');
+  --app-mchart-line-area-bg: theme('colors.neutral.700');
+  --app-mchart-pie-legend-item-color: theme('colors.neutral.200');
+  --app-mchart-line-area-gradient-start-color: theme('colors.neutral.700');
 }

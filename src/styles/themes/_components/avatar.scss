@@ -1,27 +1,27 @@
 :root {
-  --fac-avatar-font-weight: theme('fontWeight.medium');
-  --fac-avatar-size: theme('width.10');
-  --fac-avatar-border-radius: theme('borderRadius.full');
-  --fac-avatar-bg: theme('colors.emerald.500');
-  --fac-avatar-color: theme('colors.white');
-  --fac-avatar-presence-indicator-size: 20%;
-  --fac-avatar-presence-indicator-position-top: 5%;
-  --fac-avatar-presence-indicator-position-end: 5%;
-  --fac-avatar-presence-indicator-online-bg: theme('colors.green.500');
-  --fac-avatar-presence-indicator-offline-bg: theme('colors.neutral.300');
-  --fac-avatar-presence-indicator-outline: theme('colors.white') solid 2px;
-  --fac-avatar-total-font-size: theme('fontSize.xs');
-  --fac-avatar-total-font-weight: theme('fontWeight.medium');
-  --fac-avatar-total-color: theme('colors.white');
-  --fac-avatar-total-bg: theme('colors.neutral.700');
-  --fac-avatar-total-hover-bg: theme('colors.neutral.600');
-  --fac-avatar-group-item-offset: theme('spacing[2.5]');
-  --fac-avatar-group-item-border: 0.125rem solid theme('colors.white');
-  --fac-avatar-inner-border: inset 0 0 2px theme('borderColor.DEFAULT');
+  --app-avatar-font-weight: theme('fontWeight.medium');
+  --app-avatar-size: theme('width.10');
+  --app-avatar-border-radius: theme('borderRadius.full');
+  --app-avatar-bg: theme('colors.emerald.500');
+  --app-avatar-color: theme('colors.white');
+  --app-avatar-presence-indicator-size: 20%;
+  --app-avatar-presence-indicator-position-top: 5%;
+  --app-avatar-presence-indicator-position-end: 5%;
+  --app-avatar-presence-indicator-online-bg: theme('colors.green.500');
+  --app-avatar-presence-indicator-offline-bg: theme('colors.neutral.300');
+  --app-avatar-presence-indicator-outline: theme('colors.white') solid 2px;
+  --app-avatar-total-font-size: theme('fontSize.xs');
+  --app-avatar-total-font-weight: theme('fontWeight.medium');
+  --app-avatar-total-color: theme('colors.white');
+  --app-avatar-total-bg: theme('colors.neutral.700');
+  --app-avatar-total-hover-bg: theme('colors.neutral.600');
+  --app-avatar-group-item-offset: theme('spacing[2.5]');
+  --app-avatar-group-item-border: 0.125rem solid theme('colors.white');
+  --app-avatar-inner-border: inset 0 0 2px theme('borderColor.DEFAULT');
 }
 
 html.dark {
-  --fac-avatar-group-item-border: 0.125rem solid theme('colors.neutral.950');
-  --fac-avatar-presence-indicator-outline: theme('colors.neutral.950') solid 2px;
-  --fac-avatar-inner-border: inset 0 0 2px theme('borderColor.inverse');
+  --app-avatar-group-item-border: 0.125rem solid theme('colors.neutral.950');
+  --app-avatar-presence-indicator-outline: theme('colors.neutral.950') solid 2px;
+  --app-avatar-inner-border: inset 0 0 2px theme('borderColor.inverse');
 }

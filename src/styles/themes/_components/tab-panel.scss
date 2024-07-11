@@ -1,30 +1,30 @@
 :root {
-  --fac-tab-panel-width: 5rem;
-  --fac-tab-panel-item-width: 3.75rem;
-  --fac-tab-panel-item-height: 3.75rem;
-  --fac-tab-panel-item-padding: theme('padding.2');
-  --fac-tab-panel-item-color: theme('colors.neutral.500');
-  --fac-tab-panel-item-gap: theme('gap.1');
-  --fac-tab-panel-item-hover-bg: theme('colors.neutral.200');
-  --fac-tab-panel-item-hover-color: theme('colors.neutral.700');
-  --fac-tab-panel-item-active-bg: theme('colors.neutral.300');
-  --fac-tab-panel-item-active-color: theme('colors.neutral.800');
-  --fac-tab-panel-item-border-radius: theme('borderRadius.lg');
-  --fac-tab-panel-aside-width: 18.75rem;
-  --fac-tab-panel-border-end: 1px solid theme('borderColor.DEFAULT');
-  --fac-tab-panel-nav-padding: theme('padding[2.5]');
-  --fac-tab-panel-nav-gap: theme('gap.3');
-  --fac-tab-panel-item-text-font-size: theme('fontSize.xs');
-  --fac-tab-panel-item-icon-font-size: theme('fontSize.2xl');
+  --app-tab-panel-width: 5rem;
+  --app-tab-panel-item-width: 3.75rem;
+  --app-tab-panel-item-height: 3.75rem;
+  --app-tab-panel-item-padding: theme('padding.2');
+  --app-tab-panel-item-color: theme('colors.neutral.500');
+  --app-tab-panel-item-gap: theme('gap.1');
+  --app-tab-panel-item-hover-bg: theme('colors.neutral.200');
+  --app-tab-panel-item-hover-color: theme('colors.neutral.700');
+  --app-tab-panel-item-active-bg: theme('colors.neutral.300');
+  --app-tab-panel-item-active-color: theme('colors.neutral.800');
+  --app-tab-panel-item-border-radius: theme('borderRadius.lg');
+  --app-tab-panel-aside-width: 18.75rem;
+  --app-tab-panel-border-end: 1px solid theme('borderColor.DEFAULT');
+  --app-tab-panel-nav-padding: theme('padding[2.5]');
+  --app-tab-panel-nav-gap: theme('gap.3');
+  --app-tab-panel-item-text-font-size: theme('fontSize.xs');
+  --app-tab-panel-item-icon-font-size: theme('fontSize.2xl');
 
   // compact state
-  --fac-tab-panel-compact-width: theme('width.14');
-  --fac-tab-panel-compact-item-width: theme('width.10');
-  --fac-tab-panel-compact-item-height: theme('height.10');
+  --app-tab-panel-compact-width: theme('width.14');
+  --app-tab-panel-compact-item-width: theme('width.10');
+  --app-tab-panel-compact-item-height: theme('height.10');
 }
 
 html.dark {
-  --fac-tab-panel-border-end: 1px solid theme('colors.neutral.600');
-  --fac-tab-panel-item-hover-bg: theme('colors.neutral.400');
-  --fac-tab-panel-item-active-bg: theme('colors.neutral.300');
+  --app-tab-panel-border-end: 1px solid theme('colors.neutral.600');
+  --app-tab-panel-item-hover-bg: theme('colors.neutral.400');
+  --app-tab-panel-item-active-bg: theme('colors.neutral.300');
 }

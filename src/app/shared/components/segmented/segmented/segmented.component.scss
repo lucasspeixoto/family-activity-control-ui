@@ -2,9 +2,9 @@
   display: flex;
   align-items: center;
   width: max-content;
-  background: var(--fac-segmented-bg);
-  padding: var(--fac-segmented-padding);
-  border-radius: var(--fac-segmented-border-radius);
-  gap: var(--fac-segmented-gap);
+  background: var(--app-segmented-bg);
+  padding: var(--app-segmented-padding);
+  border-radius: var(--app-segmented-border-radius);
+  gap: var(--app-segmented-gap);
   user-select: none;
 }

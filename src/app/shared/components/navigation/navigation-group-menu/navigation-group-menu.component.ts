@@ -15,13 +15,13 @@ import { CommonModule } from '@angular/common';
 import { MatRipple } from '@angular/material/core';
 
 @Component({
-  selector: 'fac-navigation-group-menu',
-  exportAs: 'facNavigationGroupMenu',
+  selector: 'app-navigation-group-menu',
+  exportAs: 'appNavigationGroupMenu',
   templateUrl: './navigation-group-menu.component.html',
   styleUrls: ['./navigation-group-menu.component.scss'],
   imports: [CommonModule, MatRipple],
   host: {
-    class: 'fac-navigation-group-menu',
+    class: 'app-navigation-group-menu',
     '[class.is-active]': 'active',
   },
   standalone: true,
@@ -37,8 +37,7 @@ export class NavigationGroupMenuComponent implements AfterContentInit {
   })
   private _items!: QueryList<NavigationItemComponent>;
 
-  @Input()
-  key: any;
+  @Input() public key: string | number;
 
   get active(): boolean {
     return this.api.isGroupActive(this.key);

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'fac-v-divider',
+  selector: 'app-v-divider',
   standalone: true,
   imports: [],
   templateUrl: './v-divider.component.html',

@@ -1,14 +1,14 @@
 :host {
-  animation: var(--fac-skeleton-item-animation);
+  animation: var(--app-skeleton-item-animation);
   display: inline-block;
   flex: none;
   border-radius: 50%;
 }
 
 :host:not([class*='w-']):not([class*='size-']) {
-  width: var(--fac-skeleton-circle-size);
+  width: var(--app-skeleton-circle-size);
 }
 
 :host:not([class*='h-']):not([class*='size-']) {
-  height: var(--fac-skeleton-circle-size);
+  height: var(--app-skeleton-circle-size);
 }

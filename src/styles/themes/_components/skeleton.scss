@@ -1,29 +1,29 @@
 :root {
-  --fac-skeleton-gap: theme('gap.4');
-  --fac-skeleton-item-border-radius: theme('borderRadius.xl');
-  --fac-skeleton-item-animation: fac-skeleton-loading 1s linear infinite
+  --app-skeleton-gap: theme('gap.4');
+  --app-skeleton-item-border-radius: theme('borderRadius.xl');
+  --app-skeleton-item-animation: app-skeleton-loading 1s linear infinite
     alternate;
-  --fac-skeleton-block-width: theme('width.full');
-  --fac-skeleton-block-height: theme('height.20');
-  --fac-skeleton-line-height: theme('height.5');
-  --fac-skeleton-line-width: theme('width.full');
-  --fac-skeleton-line-border-radius: theme('borderRadius.full');
-  --fac-skeleton-circle-size: theme('spacing.14');
-  --fac-skeleton-from-bg: theme('colors.neutral.100/80');
-  --fac-skeleton-from-to: theme('colors.neutral.200/70');
+  --app-skeleton-block-width: theme('width.full');
+  --app-skeleton-block-height: theme('height.20');
+  --app-skeleton-line-height: theme('height.5');
+  --app-skeleton-line-width: theme('width.full');
+  --app-skeleton-line-border-radius: theme('borderRadius.full');
+  --app-skeleton-circle-size: theme('spacing.14');
+  --app-skeleton-from-bg: theme('colors.neutral.100/80');
+  --app-skeleton-from-to: theme('colors.neutral.200/70');
 }
 
-@keyframes fac-skeleton-loading {
+@keyframes app-skeleton-loading {
   0% {
-    background: var(--fac-skeleton-from-bg);
+    background: var(--app-skeleton-from-bg);
   }
 
   100% {
-    background: var(--fac-skeleton-from-to);
+    background: var(--app-skeleton-from-to);
   }
 }
 
 html.dark {
-  --fac-skeleton-from-bg: theme('colors.neutral.500/80');
-  --fac-skeleton-from-to: theme('colors.neutral.600/70');
+  --app-skeleton-from-bg: theme('colors.neutral.500/80');
+  --app-skeleton-from-to: theme('colors.neutral.600/70');
 }

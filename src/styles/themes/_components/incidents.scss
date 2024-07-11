@@ -1,32 +1,32 @@
 :root {
-  --fac-incidents-bar-height: theme('height.24');
-  --fac-incidents-bar-bg: theme('colors.orange.400');
-  --fac-incidents-bar-padding: 0 theme('padding.8');
-  --fac-incidents-bar-color: theme('colors.neutral.800');
-  --fac-incidents-bar-box-shadow: theme('boxShadow.lg');
-  --fac-incidents-bar-hover-box-shadow: theme('boxShadow.xl');
-  --fac-incidents-list-bg: rgba(0, 0, 0, 0.32);
-  --fac-incidents-list-gap: theme('gap.5');
-  --fac-incidents-list-padding: theme('padding.7') 0;
-  --fac-incident-bg: theme('colors.white');
-  --fac-incident-color: theme('colors.neutral.700');
-  --fac-incident-border-radius: theme('borderRadius.md');
-  --fac-incident-padding: theme('padding.4') theme('padding.6');
-  --fac-incident-gap: theme('gap.6');
-  --fac-incident-border-start: theme('width.1') solid
+  --app-incidents-bar-height: theme('height.24');
+  --app-incidents-bar-bg: theme('colors.orange.400');
+  --app-incidents-bar-padding: 0 theme('padding.8');
+  --app-incidents-bar-color: theme('colors.neutral.800');
+  --app-incidents-bar-box-shadow: theme('boxShadow.lg');
+  --app-incidents-bar-hover-box-shadow: theme('boxShadow.xl');
+  --app-incidents-list-bg: rgba(0, 0, 0, 0.32);
+  --app-incidents-list-gap: theme('gap.5');
+  --app-incidents-list-padding: theme('padding.7') 0;
+  --app-incident-bg: theme('colors.white');
+  --app-incident-color: theme('colors.neutral.700');
+  --app-incident-border-radius: theme('borderRadius.md');
+  --app-incident-padding: theme('padding.4') theme('padding.6');
+  --app-incident-gap: theme('gap.6');
+  --app-incident-border-start: theme('width.1') solid
     theme('colors.neutral.900');
-  --fac-incident-close-color: theme('colors.neutral.500');
-  --fac-incident-close-hover-color: theme('colors.neutral.900');
-  --fac-incident-title-font-size: theme('fontSize.sm');
-  --fac-incident-title-font-weight: theme('fontWeight.medium');
-  --fac-incident-details-font-size: theme('fontSize.sm');
-  --fac-incident-details-color: theme('colors.neutral.500');
-  --fac-incidents-title-font-size: theme('fontSize.base');
-  --fac-incidents-title-font-weight: theme('fontWeight.medium');
-  --fac-incidents-description-font-size: theme('fontSize.sm');
-  --fac-incidents-description-opacity: theme('opacity.80');
+  --app-incident-close-color: theme('colors.neutral.500');
+  --app-incident-close-hover-color: theme('colors.neutral.900');
+  --app-incident-title-font-size: theme('fontSize.sm');
+  --app-incident-title-font-weight: theme('fontWeight.medium');
+  --app-incident-details-font-size: theme('fontSize.sm');
+  --app-incident-details-color: theme('colors.neutral.500');
+  --app-incidents-title-font-size: theme('fontSize.base');
+  --app-incidents-title-font-weight: theme('fontWeight.medium');
+  --app-incidents-description-font-size: theme('fontSize.sm');
+  --app-incidents-description-opacity: theme('opacity.80');
 }
 
 html.dark {
-  --fac-incidents-list-bg: rgba(255, 255, 255, 0.32);
+  --app-incidents-list-bg: rgba(255, 255, 255, 0.32);
 }

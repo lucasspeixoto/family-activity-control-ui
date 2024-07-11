@@ -12,14 +12,14 @@ import { loadIcon } from 'iconify-icon';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
-  selector: 'fac-icon',
-  exportAs: 'facIcon',
+  selector: 'app-icon',
+  exportAs: 'appIcon',
   standalone: true,
   template: '',
   styleUrls: ['./icon.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'fac-icon',
+    class: 'app-icon',
     '[innerHTML]': '_iconHtml',
   },
 })

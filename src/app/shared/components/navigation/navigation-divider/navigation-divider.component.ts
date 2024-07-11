@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'fac-navigation-divider',
-  exportAs: 'facNavigationDivider',
+  selector: 'app-navigation-divider',
+  exportAs: 'appNavigationDivider',
   template: '',
   styleUrls: ['./navigation-divider.component.scss'],
   host: {
-    class: 'fac-navigation-divider',
+    class: 'app-navigation-divider',
   },
   standalone: true,
 })

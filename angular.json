@@ -29,14 +29,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              {
-                "glob": "**/_examples/**",
-                "input": "src/app/pages",
-                "output": "_docs"
-              },
-              "src/robots.txt",
-              "src/sitemap.xml"
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"

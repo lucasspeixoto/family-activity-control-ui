@@ -1,31 +1,31 @@
 :host {
-  height: var(--fac-segmented-button-height);
-  padding: var(--fac-segmented-button-padding);
-  font-size: var(--fac-segmented-button-font-size);
-  border-radius: var(--fac-segmented-button-border-radius);
-  gap: var(--fac-segmented-button-gap);
+  height: var(--app-segmented-button-height);
+  padding: var(--app-segmented-button-padding);
+  font-size: var(--app-segmented-button-font-size);
+  border-radius: var(--app-segmented-button-border-radius);
+  gap: var(--app-segmented-button-gap);
   display: flex;
   align-items: center;
   cursor: pointer;
   justify-content: center;
-  color: var(--fac-segmented-button-color);
-  min-width: var(--fac-segmented-button-min-width);
+  color: var(--app-segmented-button-color);
+  min-width: var(--app-segmented-button-min-width);
 }
 
 :host(:hover) {
-  background: var(--fac-segmented-button-hover-bg);
-  color: var(--fac-segmented-button-hover-color);
+  background: var(--app-segmented-button-hover-bg);
+  color: var(--app-segmented-button-hover-color);
 }
 
 :host(.is-selected) {
-  background: var(--fac-segmented-button-selected-bg);
-  box-shadow: var(--fac-segmented-button-selected-shadow);
-  color: var(--fac-segmented-button-selected-color);
+  background: var(--app-segmented-button-selected-bg);
+  box-shadow: var(--app-segmented-button-selected-shadow);
+  color: var(--app-segmented-button-selected-color);
 }
 
 :host .icon {
   line-height: 0;
-  margin-left: var(--fac-segmented-button-icon-offset-margin);
+  margin-left: var(--app-segmented-button-icon-offset-margin);
 }
 
 :host .icon ::ng-deep .mat-icon {

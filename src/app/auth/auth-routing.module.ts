@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'sign-in',
+    path: 'signin',
     loadComponent: () =>
       import('./signin/signin.component').then(c => c.SigninComponent),
   },
@@ -17,32 +17,6 @@ const routes: Routes = [
     loadComponent: () =>
       import('./forgot-password/forgot-password.component').then(
         c => c.ForgotPasswordComponent
-      ),
-  },
-  {
-    path: 'password-reset',
-    loadComponent: () =>
-      import('./password-reset/password-reset.component').then(
-        c => c.PasswordResetComponent
-      ),
-  },
-  {
-    path: 'set-new-password',
-    loadComponent: () =>
-      import('./set-new-password/set-new-password.component').then(
-        c => c.SetNewPasswordComponent
-      ),
-  },
-  {
-    path: 'done',
-    loadComponent: () =>
-      import('./done/done.component').then(c => c.DoneComponent),
-  },
-  {
-    path: 'create-account',
-    loadComponent: () =>
-      import('./create-account/create-account.component').then(
-        c => c.CreateAccountComponent
       ),
   },
 ];

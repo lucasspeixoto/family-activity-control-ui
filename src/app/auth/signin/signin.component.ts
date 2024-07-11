@@ -25,12 +25,12 @@ import { HDividerComponent } from '@shared/components/divider';
     HDividerComponent,
   ],
   templateUrl: './signin.component.html',
-  styleUrl: './signin.component.scss',
+  styles: ``,
 })
 export class SigninComponent {
   private router = inject(Router);
 
   public loginHandler(): void {
-    this.router.navigateByUrl('/pages/content/posts/list');
+    this.router.navigateByUrl('/home/bill/list');
   }
 }

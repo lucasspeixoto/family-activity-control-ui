@@ -16,7 +16,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": ["app","fac"],
+            "prefix": ["app", "fac"],
             "style": "camelCase"
           }
         ],
@@ -24,8 +24,21 @@
           "error",
           {
             "type": "element",
-            "prefix": ["app","fac"],
+            "prefix": ["app", "fac"],
             "style": "kebab-case"
+          }
+        ],
+        
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "args": "all",
+            "argsIgnorePattern": "^_",
+            "caughtErrors": "all",
+            "caughtErrorsIgnorePattern": "^_",
+            "destructuredArrayIgnorePattern": "^_",
+            "varsIgnorePattern": "^_",
+            "ignoreRestSiblings": true
           }
         ]
       }
@@ -39,6 +52,8 @@
         "plugin:prettier/recommended"
       ],
       "rules": {
+        "@angular-eslint/template/click-events-have-key-events": "off",
+        "@angular-eslint/template/interactive-supports-focus": "off",
         "prettier/prettier": [
           "error",
           {

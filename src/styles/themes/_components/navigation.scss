@@ -1,122 +1,122 @@
 :root {
-  --fac-navigation-bg: inherit;
-  --fac-navigation-items-gap: theme('gap[0.5]');
-  --fac-navigation-item-width: 100%;
-  --fac-navigation-item-bg: theme('colors.transparent');
-  --fac-navigation-item-height: theme('height.12');
-  --fac-navigation-item-padding: 0 theme('padding.4');
-  --fac-navigation-item-font-size: theme('fontSize.sm');
-  --fac-navigation-item-border-radius: theme('borderRadius.lg');
-  --fac-navigation-item-border-width: 1px;
-  --fac-navigation-item-border-color: theme('colors.transparent');
-  --fac-navigation-item-font-weight: theme('fontWeight.medium');
-  --fac-navigation-item-color: theme('textColor.secondary.600');
-  --fac-navigation-item-hover-bg: theme('colors.neutral.200');
-  --fac-navigation-item-active-bg: theme('colors.neutral.300');
-  --fac-navigation-item-hover-color: theme('colors.secondary.800');
-  --fac-navigation-item-active-color: theme('colors.secondary.950');
-  --fac-navigation-item-icon-font-size: theme('fontSize.2xl');
-  --fac-navigation-item-icon-color: theme('colors.secondary.700');
-  --fac-navigation-item-icon-width: 1.5625rem; // 25px
-  --fac-navigation-item-hover-icon-color: theme('colors.secondary.800');
-  --fac-navigation-item-active-icon-color: theme('colors.secondary.950');
-  --fac-navigation-item-icon-size: theme('width.6');
-  --fac-navigation-item-gap: theme('gap.3');
-  --fac-navigation-item-has-icon-padding-start: theme('padding[2.5]');
-  --fac-navigation-heading-color: theme('colors.neutral.900');
-  --fac-navigation-heading-font-size: theme('fontSize.2xs');
-  --fac-navigation-heading-font-weight: theme('fontWeight.bold');
-  --fac-navigation-heading-padding: 0 theme('padding.4');
-  --fac-navigation-heading-margin-bottom: theme('spacing.3');
-  --fac-navigation-heading-after-margin: theme('spacing.8');
-  --fac-navigation-heading-text-transform: uppercase;
-  --fac-navigation-divider-height: theme('height.px');
-  --fac-navigation-divider-bg: theme('colors.neutral.200');
-  --fac-navigation-divider-margin: theme('margin.6') 0;
-  --fac-navigation-group-toggle-has-icon-padding-end: theme('padding.2');
-  --fac-navigation-group-toggle-icon-color: theme('colors.neutral.400');
-  --fac-navigation-group-toggle-icon-position-end: theme('spacing.3');
-  --fac-navigation-group-toggle-icon-size: theme('width.4');
-  --fac-navigation-group-menu-padding-start: 0;
-  --fac-navigation-nested-item-bg: theme('colors.transparent');
-  --fac-navigation-nested-item-height: theme('height.10');
-  --fac-navigation-nested-item-padding: 0 theme('padding.3');
-  --fac-navigation-nested-item-margin: 0 0 0 52px;
-  --fac-navigation-nested-item-border-radius: 0;
-  --fac-navigation-nested-item-color: theme('textColor.secondary.600');
-  --fac-navigation-nested-item-hover-bg: theme('colors.neutral.200');
-  --fac-navigation-nested-item-active-bg: theme('colors.surface-container');
-  --fac-navigation-nested-item-hover-color: theme('textColor.secondary.800');
-  --fac-navigation-nested-item-active-color: theme('colors.secondary.950');
-  --fac-navigation-nested-item-indicator-width: theme('width[3.5]');
-  --fac-navigation-nested-item-indicator-height: theme('height[0.5]');
-  --fac-navigation-nested-item-indicator-bg: theme('colors.neutral.500');
-  --fac-navigation-nested-item-indicator-position-start: calc(
+  --app-navigation-bg: inherit;
+  --app-navigation-items-gap: theme('gap[0.5]');
+  --app-navigation-item-width: 100%;
+  --app-navigation-item-bg: theme('colors.transparent');
+  --app-navigation-item-height: theme('height.12');
+  --app-navigation-item-padding: 0 theme('padding.4');
+  --app-navigation-item-font-size: theme('fontSize.sm');
+  --app-navigation-item-border-radius: theme('borderRadius.lg');
+  --app-navigation-item-border-width: 1px;
+  --app-navigation-item-border-color: theme('colors.transparent');
+  --app-navigation-item-font-weight: theme('fontWeight.medium');
+  --app-navigation-item-color: theme('textColor.secondary.600');
+  --app-navigation-item-hover-bg: theme('colors.neutral.200');
+  --app-navigation-item-active-bg: theme('colors.neutral.300');
+  --app-navigation-item-hover-color: theme('colors.secondary.800');
+  --app-navigation-item-active-color: theme('colors.secondary.950');
+  --app-navigation-item-icon-font-size: theme('fontSize.2xl');
+  --app-navigation-item-icon-color: theme('colors.secondary.700');
+  --app-navigation-item-icon-width: 1.5625rem; // 25px
+  --app-navigation-item-hover-icon-color: theme('colors.secondary.800');
+  --app-navigation-item-active-icon-color: theme('colors.secondary.950');
+  --app-navigation-item-icon-size: theme('width.6');
+  --app-navigation-item-gap: theme('gap.3');
+  --app-navigation-item-has-icon-padding-start: theme('padding[2.5]');
+  --app-navigation-heading-color: theme('colors.neutral.900');
+  --app-navigation-heading-font-size: theme('fontSize.2xs');
+  --app-navigation-heading-font-weight: theme('fontWeight.bold');
+  --app-navigation-heading-padding: 0 theme('padding.4');
+  --app-navigation-heading-margin-bottom: theme('spacing.3');
+  --app-navigation-heading-after-margin: theme('spacing.8');
+  --app-navigation-heading-text-transform: uppercase;
+  --app-navigation-divider-height: theme('height.px');
+  --app-navigation-divider-bg: theme('colors.neutral.200');
+  --app-navigation-divider-margin: theme('margin.6') 0;
+  --app-navigation-group-toggle-has-icon-padding-end: theme('padding.2');
+  --app-navigation-group-toggle-icon-color: theme('colors.neutral.400');
+  --app-navigation-group-toggle-icon-position-end: theme('spacing.3');
+  --app-navigation-group-toggle-icon-size: theme('width.4');
+  --app-navigation-group-menu-padding-start: 0;
+  --app-navigation-nested-item-bg: theme('colors.transparent');
+  --app-navigation-nested-item-height: theme('height.10');
+  --app-navigation-nested-item-padding: 0 theme('padding.3');
+  --app-navigation-nested-item-margin: 0 0 0 52px;
+  --app-navigation-nested-item-border-radius: 0;
+  --app-navigation-nested-item-color: theme('textColor.secondary.600');
+  --app-navigation-nested-item-hover-bg: theme('colors.neutral.200');
+  --app-navigation-nested-item-active-bg: theme('colors.surface-container');
+  --app-navigation-nested-item-hover-color: theme('textColor.secondary.800');
+  --app-navigation-nested-item-active-color: theme('colors.secondary.950');
+  --app-navigation-nested-item-indicator-width: theme('width[3.5]');
+  --app-navigation-nested-item-indicator-height: theme('height[0.5]');
+  --app-navigation-nested-item-indicator-bg: theme('colors.neutral.500');
+  --app-navigation-nested-item-indicator-position-start: calc(
     theme('spacing[2.5]') * -1
   );
-  --fac-navigation-group-active-bg: transparent;
-  --fac-navigation-group-border-radius: 0;
-  --fac-navigation-group-tree-lines-color: theme('borderColor.DEFAULT');
+  --app-navigation-group-active-bg: transparent;
+  --app-navigation-group-border-radius: 0;
+  --app-navigation-group-tree-lines-color: theme('borderColor.DEFAULT');
 }
 
-.fac-navigation > * + .fac-navigation-heading {
-  margin-top: var(--fac-navigation-heading-after-margin);
+.app-navigation > * + .app-navigation-heading {
+  margin-top: var(--app-navigation-heading-after-margin);
 }
 
-.fac-navigation-group-toggle-icon {
+.app-navigation-group-toggle-icon {
   @apply transition;
 }
 
-.fac-navigation[data-theme='secondary'] {
-  --fac-navigation-item-border-radius: theme('borderRadius.full');
-  --fac-navigation-item-height: theme('height.11');
-  --fac-navigation-item-active-bg: theme('colors.background');
+.app-navigation[data-theme='secondary'] {
+  --app-navigation-item-border-radius: theme('borderRadius.full');
+  --app-navigation-item-height: theme('height.11');
+  --app-navigation-item-active-bg: theme('colors.background');
 
-  .fac-navigation-item.is-active {
-    --fac-navigation-item-border-color: theme('colors.neutral.900');
+  .app-navigation-item.is-active {
+    --app-navigation-item-border-color: theme('colors.neutral.900');
   }
 }
 
-.fac-navigation[theme='simple'] {
-  --fac-navigation-item-height: theme('height.11');
-  --fac-navigation-items-gap: theme('gap.0');
-  --fac-navigation-item-hover-bg: none;
-  --fac-navigation-item-active-bg: none;
-  --fac-navigation-nested-item-height: theme('height.11');
-  --fac-navigation-nested-item-hover-bg: none;
-  --fac-navigation-nested-item-active-bg: none;
-  --fac-navigation-item-color: theme('textColor.secondary.500');
-  --fac-navigation-nested-item-color: theme('textColor.secondary.500');
-  --fac-navigation-item-icon-color: theme('colors.secondary.600');
+.app-navigation[theme='simple'] {
+  --app-navigation-item-height: theme('height.11');
+  --app-navigation-items-gap: theme('gap.0');
+  --app-navigation-item-hover-bg: none;
+  --app-navigation-item-active-bg: none;
+  --app-navigation-nested-item-height: theme('height.11');
+  --app-navigation-nested-item-hover-bg: none;
+  --app-navigation-nested-item-active-bg: none;
+  --app-navigation-item-color: theme('textColor.secondary.500');
+  --app-navigation-nested-item-color: theme('textColor.secondary.500');
+  --app-navigation-item-icon-color: theme('colors.secondary.600');
 }
 
 html.dark {
-  --fac-navigation-item-color: theme('colors.neutral.300');
-  --fac-navigation-item-icon-color: theme('colors.neutral.400');
-  --fac-navigation-item-hover-bg: #{rgba(#fff, 0.2)};
-  --fac-navigation-item-active-bg: #{rgba(#fff, 0.2)};
-  --fac-navigation-item-hover-color: theme('colors.neutral.100');
-  --fac-navigation-item-hover-icon-color: theme('colors.neutral.100');
-  --fac-navigation-item-active-color: theme('colors.neutral.100');
-  --fac-navigation-item-active-icon-color: theme('colors.neutral.100');
-  --fac-navigation-heading-color: theme('colors.neutral.200');
-  --fac-navigation-nested-item-color: theme('textColor.neutral.300');
-  --fac-navigation-nested-item-active-color: theme('colors.neutral.100');
-  --fac-navigation-nested-item-hover-bg: #{rgba(#fff, 0.1)};
-  --fac-navigation-nested-item-active-bg: #{rgba(#fff, 0.1)};
-  --fac-navigation-nested-item-hover-color: theme('colors.neutral.100');
-  --fac-navigation-divider-bg: theme('borderColor.inverse');
-  --fac-navigation-group-tree-lines-color: theme('borderColor.inverse');
+  --app-navigation-item-color: theme('colors.neutral.300');
+  --app-navigation-item-icon-color: theme('colors.neutral.400');
+  --app-navigation-item-hover-bg: #{rgba(#fff, 0.2)};
+  --app-navigation-item-active-bg: #{rgba(#fff, 0.2)};
+  --app-navigation-item-hover-color: theme('colors.neutral.100');
+  --app-navigation-item-hover-icon-color: theme('colors.neutral.100');
+  --app-navigation-item-active-color: theme('colors.neutral.100');
+  --app-navigation-item-active-icon-color: theme('colors.neutral.100');
+  --app-navigation-heading-color: theme('colors.neutral.200');
+  --app-navigation-nested-item-color: theme('textColor.neutral.300');
+  --app-navigation-nested-item-active-color: theme('colors.neutral.100');
+  --app-navigation-nested-item-hover-bg: #{rgba(#fff, 0.1)};
+  --app-navigation-nested-item-active-bg: #{rgba(#fff, 0.1)};
+  --app-navigation-nested-item-hover-color: theme('colors.neutral.100');
+  --app-navigation-divider-bg: theme('borderColor.inverse');
+  --app-navigation-group-tree-lines-color: theme('borderColor.inverse');
 
-  .fac-navigation[data-theme='secondary'] {
-    .fac-navigation-item.is-active {
-      --fac-navigation-item-border-color: theme('colors.neutral.400');
+  .app-navigation[data-theme='secondary'] {
+    .app-navigation-item.is-active {
+      --app-navigation-item-border-color: theme('colors.neutral.400');
     }
   }
 
-  .fac-navigation[theme='simple'] {
-    --fac-navigation-item-color: theme('textColor.neutral.500');
-    --fac-navigation-nested-item-color: theme('textColor.neutral.500');
-    --fac-navigation-item-icon-color: theme('colors.neutral.300');
+  .app-navigation[theme='simple'] {
+    --app-navigation-item-color: theme('textColor.neutral.500');
+    --app-navigation-nested-item-color: theme('textColor.neutral.500');
+    --app-navigation-item-icon-color: theme('colors.neutral.300');
   }
 }

@@ -1,19 +1,19 @@
 @tailwind components;
 
 @layer components {
-  .fac-resizable-container {
+  .app-resizable-container {
     @apply relative flex items-stretch overflow-hidden;
   }
 
-  .fac-resizable-container-content {
+  .app-resizable-container-content {
     @apply grow h-full me-4;
   }
 
-  .fac-resizable-container-handler {
+  .app-resizable-container-handler {
     @apply absolute select-none border-s inset-y-0 bg-slate-50 end-0 hidden cursor-ew-resize items-center px-1 sm:flex;
   }
 
-  .fac-resizable-container-handler > div {
+  .app-resizable-container-handler > div {
     @apply flex-none h-8 w-1.5 rounded-full bg-slate-400/80 hover:bg-slate-500/80;
   }
 }

@@ -13,12 +13,12 @@ import { NgIf, NgTemplateOutlet } from '@angular/common';
 import { MatRipple } from '@angular/material/core';
 
 @Component({
-  selector: 'fac-navigation-item,[fac-navigation-item]',
-  exportAs: 'facNavigationItem',
+  selector: 'app-navigation-item,[app-navigation-item]',
+  exportAs: 'appNavigationItem',
   templateUrl: './navigation-item.component.html',
   styleUrls: ['./navigation-item.component.scss'],
   host: {
-    class: 'fac-navigation-item',
+    class: 'app-navigation-item',
     '[class.is-active]': 'forceActive || active',
   },
   standalone: true,

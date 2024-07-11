@@ -1,0 +1,21 @@
+@if (data) {
+  <div class="dark:bg-neutral-900 bg-neutral-100">
+    <h3 mat-dialog-title>{{ data.title }}</h3>
+    <mat-dialog-content class="mat-typography">{{
+      data.subtitle
+    }}</mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close [mat-dialog-close]="true">
+        {{ data.cancelButtonTitle }}
+      </button>
+      <button
+        mat-flat-button
+        mat-dialog-close
+        [mat-dialog-close]="true"
+        color="primary"
+        (click)="confirm()">
+        {{ data.confirmationButtonTitle }}
+      </button>
+    </mat-dialog-actions>
+  </div>
+}

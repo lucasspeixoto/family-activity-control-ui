@@ -1,0 +1,28 @@
+<a
+  routerLink="/notifications/view"
+  matRipple
+  class="flex py-4 px-4 hover:bg-neutral-100 dark:hover:bg-neutral-950">
+  <div class="flex-shrink-0">
+    <div class="relative mt-1">
+      <app-avatar
+        text="PS"
+        [src]="notification.actor.avatarUrl"
+        class="size-10"></app-avatar>
+      <div
+        class="flex absolute justify-center z-10 text-white items-center -right-0 -bottom-0 w-5 h-5 bg-green-400 rounded-full border border-white dark:border-inverse">
+        <mat-icon class="font-icon-filled text-xs !h-[16px] !w-[12px]"
+          >comment</mat-icon
+        >
+      </div>
+    </div>
+  </div>
+  <div class="pl-3 w-full">
+    <div
+      class="text-neutral-500 font-normal text-sm mb-1.5 dark:text-neutral-400">
+      {{ notification.message }}
+    </div>
+    <div class="text-xs font-medium text-secondary-700 dark:text-primary-400">
+      {{ notification.createdAt }}
+    </div>
+  </div>
+</a>

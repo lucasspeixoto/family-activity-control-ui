@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'fac-skeleton-circle',
-  exportAs: 'facSkeletonCircle',
+  selector: 'app-skeleton-circle',
+  exportAs: 'appSkeletonCircle',
   template: '',
   styleUrls: ['./skeleton-circle.component.scss'],
   host: {
-    class: 'fac-skeleton-item fac-skeleton-circle',
+    class: 'app-skeleton-item app-skeleton-circle',
   },
   standalone: true,
 })

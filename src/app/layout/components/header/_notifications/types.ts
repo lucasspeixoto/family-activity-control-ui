@@ -1,17 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface Notification {
   actor: {
     name: string;
     username: string;
     avatarUrl?: string;
   };
-  notifier: {
-    name: string;
-    username: string;
-    avatarUrl?: string;
-  };
-  entity: {
-    content: any;
-  };
-  typeId: string;
+  message: string;
   createdAt: string;
 }

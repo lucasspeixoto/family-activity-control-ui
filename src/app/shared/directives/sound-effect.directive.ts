@@ -10,7 +10,7 @@ import { fromEvent } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Directive({
-  selector: '[facSoundEffect]',
+  selector: '[appSoundEffect]',
   standalone: true,
 })
 export class SoundEffectDirective {
@@ -30,7 +30,7 @@ export class SoundEffectDirective {
     audio.volume = 0.15;
     fromEvent(this._elementRef.nativeElement, 'click')
       .pipe(takeUntilDestroyed(this._destroyRef))
-      .subscribe(async e => {
+      .subscribe(async () => {
         await audio.play();
       });
   }

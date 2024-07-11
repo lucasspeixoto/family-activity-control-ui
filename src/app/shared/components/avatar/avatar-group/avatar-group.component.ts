@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'fac-avatar-group',
-  exportAs: 'facAvatarGroup',
+  selector: 'app-avatar-group',
+  exportAs: 'appAvatarGroup',
   styleUrls: ['./avatar-group.component.scss'],
   templateUrl: './avatar-group.component.html',
   host: {
-    class: 'fac-avatar-group',
+    class: 'app-avatar-group',
   },
   standalone: true,
 })
