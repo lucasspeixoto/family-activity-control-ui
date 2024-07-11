@@ -34,6 +34,9 @@ import { ConfirmDialogResult } from '../../model/confirm-dialog-result';
   ],
   template: `
     <div class="px-10 h-16">
+
+      @let isABillSelected = isBillSelected();
+
       <div
         class="border-b dark:border-b-inverse h-full w-full flex items-center justify-between">
         <div class="flex items-center gap-1 md:gap-7">
@@ -48,7 +51,7 @@ import { ConfirmDialogResult } from '../../model/confirm-dialog-result';
                 data-testid="update-button"
                 mat-stroked-button
                 color="primary"
-                [disabled]="!isBillSelected()"
+                [disabled]="!isABillSelected"
                 (click)="updateBillHandler()">
                 <mat-icon class="font-icon">edit</mat-icon>Update
               </button>
@@ -59,7 +62,7 @@ import { ConfirmDialogResult } from '../../model/confirm-dialog-result';
                 mat-icon-button
                 color="warn"
                 position="below-end"
-                [disabled]="!isBillSelected()"
+                [disabled]="!isABillSelected"
                 (click)="updateBillHandler()">
                 <mat-icon aria-hidden="false" class="text-primary font-icon"
                   >edit</mat-icon
@@ -72,7 +75,7 @@ import { ConfirmDialogResult } from '../../model/confirm-dialog-result';
                 data-testid="delete-button"
                 mat-stroked-button
                 color="warn"
-                [disabled]="!isBillSelected()"
+                [disabled]="!isABillSelected"
                 (click)="deleteBillHandler()">
                 <mat-icon class="font-icon">delete</mat-icon>
                 Delete
@@ -81,7 +84,7 @@ import { ConfirmDialogResult } from '../../model/confirm-dialog-result';
             <div class="flex sm:hidden">
               <button
                 data-testid="delete-button"
-                [disabled]="!isBillSelected()"
+                [disabled]="!isABillSelected"
                 (click)="deleteBillHandler()"
                 mat-icon-button
                 color="warn"

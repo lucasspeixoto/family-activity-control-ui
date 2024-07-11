@@ -29,7 +29,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { LoadingComponent } from '@sharedC/loading/loading.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { tap } from 'rxjs';
-import { AdminService } from '@app/features/admin/services/admin.service';
 
 @Component({
   selector: 'app-bill-list',
@@ -66,8 +65,6 @@ export class BillListComponent implements AfterViewInit {
   @ViewChild(MatSort) public sort: MatSort;
 
   private _billService = inject(BillService);
-
-  private _adminService = inject(AdminService);
 
   private _destroy$ = inject(DestroyRef);
 

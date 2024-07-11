@@ -72,9 +72,7 @@ export class AddBillComponent {
     ...billForm,
   });
 
-  public getCategories$ = this._adminService.getCategoriesUsage();
-
-  public categories = this._adminService.categories;
+  public categories$ = this._adminService.getCategoriesUsage();
 
   public readonly billTypeOptions = billTypeOptions;
 

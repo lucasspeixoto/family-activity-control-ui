@@ -4,14 +4,12 @@
 
   <ng-container *ngIf="getBills$ | async" />
 
-  @if (!hasFetchBillError()) {
+  @let fetchErrorBill = hasFetchBillError();
+
+  @if (!fetchErrorBill) {
     <div class="flex flex-col justify-between h-full overflow-hidden">
       <div class="px-10 grow-1 overflow-auto">
-        <table
-          mat-table
-          matSort
-          [dataSource]="billsDataSource"
-          class="mat-elevation-z8">
+        <table mat-table matSort [dataSource]="billsDataSource">
           <!-- Checkbox Column -->
           <ng-container matColumnDef="select">
             <th mat-header-cell *matHeaderCellDef></th>

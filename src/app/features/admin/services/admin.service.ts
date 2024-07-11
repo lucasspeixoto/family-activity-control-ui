@@ -1,5 +1,5 @@
-import { inject, Injectable, signal } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { environment } from '@env/environment';
 
@@ -14,11 +14,7 @@ export class AdminService {
 
   private _http = inject(HttpClient);
 
-  public categories = signal<Select[]>([]);
-
   public getCategoriesUsage(): Observable<Select[]> {
-    return this._http
-      .get<Select[]>(`${this.apiUrl}/category/usages`)
-      .pipe(tap(categories => this.categories.set(categories)));
+    return this._http.get<Select[]>(`${this.apiUrl}/category/usages`);
   }
 }
