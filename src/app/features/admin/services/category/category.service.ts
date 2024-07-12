@@ -44,7 +44,33 @@ export class CategoryService extends ResourceService<Category> {
     );
   }
 
+  public createCategory(category: Category): Observable<Category> {
+    return this.http
+      .post<Category>(`${this.apiUrl}/category/create`, category)
+      .pipe(tap(this.upsertResource));
+  }
+
+  public updateCategory(category: Category): Observable<Category> {
+    return this.http
+      .put<Category>(`${this.apiUrl}/category/update/${category.id}`, category)
+      .pipe(tap(this.upsertResource));
+  }
+
+  public deleteCategory(id: string): Observable<Category> {
+    return this.http
+      .delete<Category>(`${this.apiUrl}/category/delete/${id}`)
+      .pipe(tap(() => this.removeResource(id)));
+  }
+
   public setSelectedCategory(category: Category | null) {
     this.selectedCategory.set(category);
+  }
+
+  public startLoading() {
+    this.isLoadingCategory.set(true);
+  }
+
+  public stopLoading() {
+    this.isLoadingCategory.set(false);
   }
 }
