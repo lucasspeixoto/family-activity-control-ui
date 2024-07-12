@@ -110,6 +110,25 @@ export class SidebarComponent implements OnInit {
       ],
     },
     {
+      id: 'admin',
+      icon: 'admin_panel_settings',
+      name: 'Admin Panel',
+      children: [
+        {
+          name: 'Resources',
+          link: '/home/admin/resources',
+        },
+        {
+          name: 'Dashboards',
+          link: '/home/admin/dashboard',
+        },
+        {
+          name: 'Notifications',
+          link: '/home/admin/notification-management',
+        },
+      ],
+    },
+    {
       id: 'travel-planner',
       icon: 'flight',
       name: 'Travel Planner',
@@ -117,25 +136,6 @@ export class SidebarComponent implements OnInit {
         {
           name: 'Planners',
           link: '/home/travel-planner/travels',
-        },
-      ],
-    },
-    {
-      id: 'admin',
-      icon: 'admin_panel_settings',
-      name: 'Admin Panel',
-      children: [
-        {
-          name: 'Dashboards',
-          link: '/home/admin/dashboard',
-        },
-        {
-          name: 'Resources',
-          link: '/home/admin/resources',
-        },
-        {
-          name: 'Notifications',
-          link: '/home/admin/notification-management',
         },
       ],
     },

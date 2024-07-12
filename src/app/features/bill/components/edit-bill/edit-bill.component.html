@@ -1,6 +1,8 @@
 <div class="dark:bg-neutral-900 bg-neutral-100">
   @let categoriesList = categories$ | async;
 
+  @let isUpdateButtonDisabled = editBillForm.invalid || isLoadingBill();
+
   <h3 mat-dialog-title>Edit Bill</h3>
   <mat-dialog-content class="mat-typography">
     <form class="gap-1 flex flex-wrap" id="form" [formGroup]="editBillForm">
@@ -139,7 +141,7 @@
       mat-flat-button
       color="primary"
       data-testid="update-button"
-      [disabled]="editBillForm.invalid || isLoadingBill()"
+      [disabled]="isUpdateButtonDisabled"
       [class.spinner]="isLoadingBill()"
       (click)="onUpdateBillHandler()">
       Update

@@ -27,8 +27,9 @@ import { finalize } from 'rxjs/operators';
 
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SnackbarService } from '@sharedS/snackbar/snackbar.service';
-import { AdminService } from '@app/features/admin/services/admin.service';
+
 import { AsyncPipe, NgIf } from '@angular/common';
+import { CategoryService } from '@app/features/admin/services/category/category.service';
 
 @Component({
   selector: 'app-add-bill',
@@ -62,7 +63,7 @@ export class AddBillComponent {
 
   private _billService = inject(BillService);
 
-  private _adminService = inject(AdminService);
+  private _categoryService = inject(CategoryService);
 
   private _destroy$ = inject(DestroyRef);
 
@@ -72,7 +73,7 @@ export class AddBillComponent {
     ...billForm,
   });
 
-  public categories$ = this._adminService.getCategoriesUsage();
+  public categories$ = this._categoryService.getCategoriesUsage();
 
   public readonly billTypeOptions = billTypeOptions;
 

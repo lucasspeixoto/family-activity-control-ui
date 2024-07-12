@@ -21,5 +21,8 @@ module.exports = {
     '^@layout(.*)': '<rootDir>/src/app/layout/$1',
     '^@layoutC(.*)': '<rootDir>/src/app/layout/components/$1',
     '^@bill(.*)': '<rootDir>/src/app/features/bill/$1',
+    '^@billS(.*)': '<rootDir>/src/app/features/bill/services/$1',
+    '^@billC(.*)': '<rootDir>/src/app/features/bill/components/$1',
+    '^@billV(.*)': '<rootDir>/src/app/features/bill/view/$1',
   },
 };

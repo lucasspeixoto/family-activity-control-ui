@@ -2,7 +2,9 @@
 
   @let categoriesList = categories$ | async;
 
-  <h3 mat-dialog-title>Add new Bill</h3>
+  @let isInsertButtonDisabled = addNewBillForm.invalid || isLoadingBill();
+
+  <h3 mat-dialog-title>Add Bill</h3>
   <mat-dialog-content class="mat-typography">
     <form class="gap-1 flex flex-wrap" id="form" [formGroup]="addNewBillForm">
       <div class="mt-2 flex flex-row w-full gap-2">
@@ -147,7 +149,7 @@
       data-testid="insert-button"
       mat-flat-button
       color="primary"
-      [disabled]="addNewBillForm.invalid || isLoadingBill()"
+      [disabled]="isInsertButtonDisabled"
       [class.spinner]="isLoadingBill()"
       (click)="onInsertBillHandler()">
       Insert

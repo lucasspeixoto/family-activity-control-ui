@@ -3,17 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'dashboard',
-    loadComponent: () =>
-      import('./view/dashboard/dashboard.component').then(
-        c => c.DashboardComponent
-      ),
-  },
-  {
     path: 'resources',
     loadComponent: () =>
       import('./view/resources/resources.component').then(
         c => c.ResourcesComponent
+      ),
+  },
+  {
+    path: 'dashboard',
+    loadComponent: () =>
+      import('./view/dashboard/dashboard.component').then(
+        c => c.DashboardComponent
       ),
   },
   {

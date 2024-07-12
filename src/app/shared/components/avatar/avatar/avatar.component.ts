@@ -66,7 +66,7 @@ export class AvatarComponent implements OnInit, OnChanges {
     this.imageLoaded = true;
   }
 
-  private _setAutomaticColor(color: any): void {
+  private _setAutomaticColor(color: string | null): void {
     if (!this.isValidHex(color)) {
       throw new Error(
         `Invalid ${color} color, automatic color supports only a valid hex color`
@@ -85,8 +85,8 @@ export class AvatarComponent implements OnInit, OnChanges {
     );
   }
 
-  private _newShade(hexColor: string, magnitude: number): string {
-    hexColor = hexColor.replace(`#`, ``);
+  private _newShade(hexColor: string | null, magnitude: number): string {
+    hexColor = hexColor!.replace(`#`, ``);
     if (hexColor.length === 6) {
       const decimalColor = parseInt(hexColor, 16);
       let r = (decimalColor >> 16) + magnitude;
@@ -104,7 +104,7 @@ export class AvatarComponent implements OnInit, OnChanges {
     }
   }
 
-  isValidHex(color: any): boolean {
+  isValidHex(color: string | null): boolean {
     if (!color || typeof color !== 'string') {
       return false;
     }
