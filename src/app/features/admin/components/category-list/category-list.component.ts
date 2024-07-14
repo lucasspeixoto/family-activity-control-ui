@@ -34,6 +34,7 @@ import { finalize, first } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SnackbarService } from '@sharedS/snackbar/snackbar.service';
 import { AddCategoryComponent } from '../add-category/add-category.component';
+import { EditCategoryComponent } from '../edit-category/edit-category.component';
 
 @Component({
   selector: 'app-category-list',
@@ -63,6 +64,7 @@ import { AddCategoryComponent } from '../add-category/add-category.component';
     ConfirmationComponent,
     VDividerComponent,
     AddCategoryComponent,
+    EditCategoryComponent,
   ],
   templateUrl: './category-list.component.html',
   styleUrl: './category-list.component.scss',
@@ -116,6 +118,13 @@ export class CategoryListComponent implements AfterViewInit {
   public addCategoryHandler(): void {
     this._dialog.open(AddCategoryComponent, {
       minWidth: '45%',
+    });
+  }
+
+  public updateCategoryHandler(): void {
+    this._dialog.open(EditCategoryComponent, {
+      minWidth: '45%',
+      data: this._categoryService.selectedCategory(),
     });
   }
 

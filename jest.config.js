@@ -24,7 +24,6 @@ module.exports = {
     '^@billS(.*)': '<rootDir>/src/app/features/bill/services/$1',
     '^@billC(.*)': '<rootDir>/src/app/features/bill/components/$1',
     '^@billV(.*)': '<rootDir>/src/app/features/bill/view/$1',
-    '^@admin(.*)': '<rootDir>/src/app/features/admin/$1',
     '^@adminS(.*)': '<rootDir>/src/app/features/admin/services/$1',
     '^@adminC(.*)': '<rootDir>/src/app/features/admin/components/$1',
     '^@adminV(.*)': '<rootDir>/src/app/features/admin/view/$1',

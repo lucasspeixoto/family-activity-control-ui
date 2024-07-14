@@ -28,7 +28,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
       height: 100vh;
       width: 100%;
       background-color: var(--app-incidents-list-bg);
-      z-index: 10;
+      z-index: 9999;
       top: 0;
       left: 0;
       position: fixed;
