@@ -1,6 +1,10 @@
 <div class="dark:bg-neutral-900 bg-neutral-100">
-  <ng-container *ngIf="getCategories$ | async" />
-  <h3 mat-dialog-title>Add new Bill</h3>
+
+  @let categoriesList = categories$ | async;
+
+  @let isInsertButtonDisabled = addNewBillForm.invalid || isLoadingBill();
+
+  <h3 mat-dialog-title>Add Bill</h3>
   <mat-dialog-content class="mat-typography">
     <form class="gap-1 flex flex-wrap" id="form" [formGroup]="addNewBillForm">
       <div class="mt-2 flex flex-row w-full gap-2">
@@ -73,11 +77,11 @@
             >
           }
         </mat-form-field>
-
+        
         <mat-form-field class="w-1/2 my-2">
           <mat-label>Category</mat-label>
           <mat-select formControlName="category">
-            @for (category of categories(); track category) {
+            @for (category of categoriesList; track category) {
               <mat-option [value]="category.value">{{
                 category.viewValue
               }}</mat-option>
@@ -145,7 +149,7 @@
       data-testid="insert-button"
       mat-flat-button
       color="primary"
-      [disabled]="addNewBillForm.invalid || isLoadingBill()"
+      [disabled]="isInsertButtonDisabled"
       [class.spinner]="isLoadingBill()"
       (click)="onInsertBillHandler()">
       Insert

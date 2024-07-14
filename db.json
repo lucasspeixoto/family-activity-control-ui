@@ -500,5 +500,27 @@
       "finishAt": "2024-09-28T12:00:00",
       "type": "FIXED"
     }
+  ],
+  "category": [
+    {
+      "id": "dafe80b5-3b05-4d75-9a9b-98ade67c2799",
+      "title": "Academia/Ginástica",
+      "description": "Academia/Ginástica"
+    },
+    {
+      "id": "8c0d73b6-ff69-4c15-929e-f366255c3dba",
+      "title": "Água",
+      "description": "Pagar conta de água"
+    },
+    {
+      "id": "e3da8d8b-c42b-423c-b809-26c1db140bef",
+      "title": "Alimentação Fora de Casa",
+      "description": "Alimentação Fora de Casa"
+    },
+    {
+      "id": "995736c2-a59d-475e-a6e9-f9957aa2422c",
+      "title": "Aluguel",
+      "description": "Aluguel"
+    }
   ]
 }

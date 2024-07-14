@@ -13,7 +13,14 @@
       "@state/*": ["./src/app/state/*"],
       "@layout/*": ["./src/app/layout/*"],
       "@layoutC/*": ["./src/app/layout/components/*"],
-      "@bill/*": ["./src/app/features/bill/*"]
+      "@bill/*": ["./src/app/features/bill/*"],
+      "@billS/*": ["./src/app/features/bill/services/*"],
+      "@billC/*": ["./src/app/features/bill/components/*"],
+      "@billV/*": ["./src/app/features/bill/view/*"],
+      "@admin/*": ["./src/app/features/admin/*"],
+      "@adminS/*": ["./src/app/features/admin/services/*"],
+      "@adminC/*": ["./src/app/features/admin/components/*"],
+      "@adminV/*": ["./src/app/features/admin/view/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

@@ -5,7 +5,7 @@ import {
   inject,
 } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { billForm } from '../../constants/bill-forms';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -19,9 +19,7 @@ import {
   MatDialogActions,
   MatDialogClose,
 } from '@angular/material/dialog';
-import { billTypeOptions } from '../../constants/options';
-import { BillService } from '../../services/bill.service';
-import { Bill } from '../../model/bill';
+
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { finalize } from 'rxjs/operators';
 
@@ -29,10 +27,13 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SnackbarService } from '@sharedS/snackbar/snackbar.service';
 
 import { AsyncPipe, NgIf } from '@angular/common';
-import { CategoryService } from '@app/features/admin/services/category/category.service';
+import { CategoryService } from '@adminS/category/category.service';
+
+import { categoryForm } from '../../constants/category-forms';
+import { Category } from '../../model/category';
 
 @Component({
-  selector: 'app-add-bill',
+  selector: 'app-add-category',
   standalone: true,
   imports: [
     AsyncPipe,
@@ -54,14 +55,12 @@ import { CategoryService } from '@app/features/admin/services/category/category.
     MatLabel,
     ReactiveFormsModule,
   ],
-  templateUrl: `./add-bill.component.html`,
+  templateUrl: `./add-category.component.html`,
   styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AddBillComponent {
+export class AddCategoryComponent {
   private _formBuilder = inject(FormBuilder);
-
-  private _billService = inject(BillService);
 
   private _categoryService = inject(CategoryService);
 
@@ -69,47 +68,39 @@ export class AddBillComponent {
 
   private _snackBarService = inject(SnackbarService);
 
-  public readonly addNewBillForm = this._formBuilder.group({
-    ...billForm,
+  public readonly addCategoryForm = this._formBuilder.group({
+    ...categoryForm,
   });
 
   public categories$ = this._categoryService.getCategoriesUsage();
 
-  public readonly billTypeOptions = billTypeOptions;
+  public readonly isLoadingCategory = this._categoryService.isLoadingCategory;
 
-  public readonly isLoadingBill = this._billService.isLoadingBill;
+  public onInsertCategoryHandler(): void {
+    this._categoryService.startLoading();
 
-  public onInsertBillHandler(): void {
-    this._billService.startLoadingBill();
-
-    const { title, owner, amount, category, description, finishAt, type } = this
-      .addNewBillForm.value as Bill;
-
-    const updatedFinishAt = new Date(finishAt);
+    const { title, description } = this.addCategoryForm.value as Category;
 
     const newBill = {
       title,
-      owner,
-      amount,
-      category,
       description,
-      type,
-      finishAt: updatedFinishAt.setHours(23, 59, 59, 999), // end of the day
-    } as Bill;
+    } as Category;
 
-    this._createBill(newBill);
+    this._createCategory(newBill);
   }
 
-  private _createBill(bill: Bill) {
-    this._billService
-      .createBill(bill)
+  private _createCategory(category: Category) {
+    this._categoryService
+      .createCategory(category)
       .pipe(
-        finalize(() => this._billService.stopLoadingBill()),
+        finalize(() => this._categoryService.stopLoading()),
         takeUntilDestroyed(this._destroy$)
       )
       .subscribe({
         complete: () => {
-          this._snackBarService.showRightTopMessage('Bill sucessfully created');
+          this._snackBarService.showRightTopMessage(
+            'Category sucessfully created'
+          );
         },
       });
   }

@@ -20,6 +20,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DialogConfig } from '@shared/models/dialog-config.model';
 import { ConfirmDialogResult } from '../../model/confirm-dialog-result';
+import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-bill-list-actions',
@@ -27,6 +28,7 @@ import { ConfirmDialogResult } from '../../model/confirm-dialog-result';
   imports: [
     MatButton,
     MatIcon,
+    MatTooltip,
     VDividerComponent,
     MatIconButton,
     AddBillComponent,
@@ -34,6 +36,9 @@ import { ConfirmDialogResult } from '../../model/confirm-dialog-result';
   ],
   template: `
     <div class="px-10 h-16">
+
+      @let isABillSelected = isBillSelected();
+
       <div
         class="border-b dark:border-b-inverse h-full w-full flex items-center justify-between">
         <div class="flex items-center gap-1 md:gap-7">
@@ -48,7 +53,8 @@ import { ConfirmDialogResult } from '../../model/confirm-dialog-result';
                 data-testid="update-button"
                 mat-stroked-button
                 color="primary"
-                [disabled]="!isBillSelected()"
+                class="opacity-100 disabled:opacity-50"
+                [disabled]="!isABillSelected"
                 (click)="updateBillHandler()">
                 <mat-icon class="font-icon">edit</mat-icon>Update
               </button>
@@ -59,11 +65,11 @@ import { ConfirmDialogResult } from '../../model/confirm-dialog-result';
                 mat-icon-button
                 color="warn"
                 position="below-end"
-                [disabled]="!isBillSelected()"
+                class="opacity-100 disabled:opacity-50"
+                [disabled]="!isABillSelected"
                 (click)="updateBillHandler()">
-                <mat-icon aria-hidden="false" class="text-primary font-icon"
-                  >edit</mat-icon
-                >
+                <mat-icon matTooltip="Edit Bill" aria-hidden="false"
+          class="text-tertiary font-icon">edit</mat-icon>
               </button>
             </div>
             <!-- Delete buttons -->
@@ -72,7 +78,8 @@ import { ConfirmDialogResult } from '../../model/confirm-dialog-result';
                 data-testid="delete-button"
                 mat-stroked-button
                 color="warn"
-                [disabled]="!isBillSelected()"
+                class="opacity-100 disabled:opacity-50"
+                [disabled]="!isABillSelected"
                 (click)="deleteBillHandler()">
                 <mat-icon class="font-icon">delete</mat-icon>
                 Delete
@@ -81,14 +88,15 @@ import { ConfirmDialogResult } from '../../model/confirm-dialog-result';
             <div class="flex sm:hidden">
               <button
                 data-testid="delete-button"
-                [disabled]="!isBillSelected()"
+                [disabled]="!isABillSelected"
                 (click)="deleteBillHandler()"
                 mat-icon-button
                 color="warn"
-                position="below-end">
-                <mat-icon aria-hidden="false" class="text-red-700 font-icon"
-                  >delete</mat-icon
+                position="below-end"
+                class="opacity-100 disabled:opacity-50"
                 >
+                <mat-icon matTooltip="Delete Bill" aria-hidden="false"
+                    class="text-red-500 font-icon">delete</mat-icon>
               </button>
             </div>
           </div>

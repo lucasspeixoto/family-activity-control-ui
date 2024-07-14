@@ -7,7 +7,6 @@ import {
   OnInit,
 } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { billForm } from '@bill/constants/bill-forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -22,18 +21,17 @@ import {
   MatDialogClose,
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
-import { billTypeOptions } from '@bill/constants/options';
-import { BillService } from '@bill/services/bill.service';
-import { Bill } from '@bill/model/bill';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { finalize } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SnackbarService } from '@sharedS/snackbar/snackbar.service';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { CategoryService } from '@app/features/admin/services/category/category.service';
+import { categoryForm } from '../../constants/category-forms';
+import { Category } from '../../model/category';
 
 @Component({
-  selector: 'app-edit-bill',
+  selector: 'app-edit-category',
   standalone: true,
   imports: [
     NgIf,
@@ -55,14 +53,12 @@ import { CategoryService } from '@app/features/admin/services/category/category.
     MatLabel,
     ReactiveFormsModule,
   ],
-  templateUrl: `./edit-bill.component.html`,
+  templateUrl: `./edit-category.component.html`,
   styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EditBillComponent implements OnInit {
+export class EditCategoryComponent implements OnInit {
   private _formBuilder = inject(FormBuilder);
-
-  private _billService = inject(BillService);
 
   private _categoryService = inject(CategoryService);
 
@@ -70,68 +66,54 @@ export class EditBillComponent implements OnInit {
 
   private _snackbarService = inject(SnackbarService);
 
-  public readonly editBillForm = this._formBuilder.group({
-    ...billForm,
+  public readonly editCategoryForm = this._formBuilder.group({
+    ...categoryForm,
   });
 
   public categories$ = this._categoryService.getCategoriesUsage();
 
-  public billTypeOptions = billTypeOptions;
+  public readonly isLoadingCategory = this._categoryService.isLoadingCategory;
 
-  public readonly isLoadingBill = this._billService.isLoadingBill;
-
-  constructor(@Inject(MAT_DIALOG_DATA) public readonly data: Bill) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public readonly data: Category) {}
 
   public ngOnInit(): void {
-    const { id, title, owner, amount, category, description, finishAt, type } =
-      this.data as Bill;
+    const { id, title, description } = this.data as Category;
 
-    this.editBillForm.setValue({
+    this.editCategoryForm.setValue({
       title,
-      id,
-      owner,
-      amount,
-      category,
+      id: id!,
       description,
-      type,
-      finishAt: new Date(finishAt),
     });
   }
 
-  public onUpdateBillHandler(): void {
-    this._billService.startLoadingBill();
+  public onUpdateCategoryHandler(): void {
+    this._categoryService.startLoading();
 
-    const { id, title, owner, amount, category, description, finishAt, type } =
-      this.editBillForm.value as Bill;
+    const { id, title, description } = this.editCategoryForm.value as Category;
 
-    const updatedFinishAt = new Date(finishAt);
-
-    const updatedBill = {
+    const updatedCategory = {
       id,
       title,
-      owner,
-      amount,
-      category,
       description,
-      type,
-      finishAt: updatedFinishAt.setHours(23, 59, 59, 999), // end of the day
-    } as Bill;
+    } as Category;
 
-    this._updateBill(updatedBill);
+    this._updateCategory(updatedCategory);
   }
 
-  private _updateBill(bill: Bill) {
-    this._billService
-      .updateBill(bill)
+  private _updateCategory(category: Category) {
+    this._categoryService
+      .updateCategory(category)
       .pipe(
-        finalize(() => this._billService.stopLoadingBill()),
+        finalize(() => this._categoryService.stopLoading()),
         takeUntilDestroyed(this._destroy$)
       )
       .subscribe({
         complete: () => {
-          this._billService.setSelectedBill(null);
+          this._categoryService.setSelectedCategory(null);
 
-          this._snackbarService.showRightTopMessage('Bill sucessfully updated');
+          this._snackbarService.showRightTopMessage(
+            'Category sucessfully updated'
+          );
         },
       });
   }

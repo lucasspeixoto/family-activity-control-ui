@@ -3,25 +3,25 @@ import {
   HttpTestingController,
   provideHttpClientTesting,
 } from '@angular/common/http/testing';
-import { AdminService } from './admin.service';
 
 import { environment } from '@env/environment';
 import { provideHttpClient } from '@angular/common/http';
+import { CategoryService } from './category.service';
 
-describe('AdminService', () => {
-  let service: AdminService;
+describe('CategoryService', () => {
+  let service: CategoryService;
   let httpTestingController: HttpTestingController;
   const apiUrl = `${environment.apiUrl}`;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        AdminService,
+        CategoryService,
         provideHttpClient(),
         provideHttpClientTesting(),
       ],
     });
-    service = TestBed.inject(AdminService);
+    service = TestBed.inject(CategoryService);
     httpTestingController = TestBed.inject(HttpTestingController);
   });
 
