@@ -11,45 +11,27 @@
         <div class="flex flex-col justify-start gap-0 w-1/2">
           <mat-form-field class="my-2">
             <mat-label>Title</mat-label>
-            <input
-              id="title-field"
-              name="title-field"
-              data-testid="title-field"
-              matInput
-              formControlName="title"
+            <input id="title-field" name="title-field" data-testid="title-field" matInput formControlName="title"
               minlength="3" />
             @if (addNewBillForm.get('title')!.hasError('required')) {
-              <mat-error data-testid="title-required-error"
-                >Title is <strong>required</strong></mat-error
-              >
+            <mat-error data-testid="title-required-error">Title is <strong>required</strong></mat-error>
             }
             @if (addNewBillForm.get('title')!.hasError('minlength')) {
-              <mat-error data-testid="title-minlength-error"
-                >Title field must contain
-                <strong>3 characteres</strong></mat-error
-              >
+            <mat-error data-testid="title-minlength-error">Title field must contain
+              <strong>3 characteres</strong></mat-error>
             }
           </mat-form-field>
         </div>
 
         <mat-form-field class="w-1/2 my-2">
           <mat-label>Owner</mat-label>
-          <input
-            id="owner-field"
-            name="owner-field"
-            data-testid="owner-field"
-            matInput
-            formControlName="owner" />
+          <input id="owner-field" name="owner-field" data-testid="owner-field" matInput formControlName="owner" />
           @if (addNewBillForm.get('owner')!.hasError('required')) {
-            <mat-error data-testid="owner-required-error"
-              >Owner is <strong>required</strong></mat-error
-            >
+          <mat-error data-testid="owner-required-error">Owner is <strong>required</strong></mat-error>
           }
           @if (addNewBillForm.get('owner')!.hasError('minlength')) {
-            <mat-error data-testid="owner-minlength-error"
-              >Owner field must contain
-              <strong>3 characteres</strong></mat-error
-            >
+          <mat-error data-testid="owner-minlength-error">Owner field must contain
+            <strong>3 characteres</strong></mat-error>
           }
         </mat-form-field>
       </div>
@@ -58,32 +40,21 @@
         <mat-form-field class="w-1/2 my-2">
           <mat-label>Amount</mat-label>
           <span class="ml-2" matPrefix>R$ &nbsp;</span>
-          <input
-            id="amount-field"
-            name="amount-field"
-            data-testid="amount-field"
-            type="number"
-            min="0"
-            matInput
+          <input id="amount-field" name="amount-field" data-testid="amount-field" type="number" min="0" matInput
             formControlName="amount" />
           @if (addNewBillForm.get('amount')!.hasError('required')) {
-            <mat-error data-testid="amount-required-error"
-              >Amount is <strong>required</strong></mat-error
-            >
+          <mat-error data-testid="amount-required-error">Amount is <strong>required</strong></mat-error>
           }
           @if (addNewBillForm.get('amount')!.hasError('min')) {
-            <mat-error data-testid="amount-min-error"
-              >Insert a amount value greater than 0</mat-error
-            >
+          <mat-error data-testid="amount-min-error">Insert a amount value greater than 0</mat-error>
           }
         </mat-form-field>
-        
+
         <mat-form-field class="w-1/2 my-2">
           <mat-label>Category</mat-label>
-          <mat-select formControlName="category">
+          <mat-select formControlName="categoryId">
             @for (category of categoriesList; track category) {
-              <mat-option [value]="category.value">{{
-                category.viewValue
+            <mat-option [value]="category.value">{{category.viewValue
               }}</mat-option>
             }
           </mat-select>
@@ -92,24 +63,14 @@
 
       <mat-form-field class="w-full my-2">
         <mat-label>Description</mat-label>
-        <textarea
-          id="description-field"
-          name="description-field"
-          data-testid="description-field"
-          #description
-          matInput
-          formControlName="description"
-          maxlength="256"></textarea>
+        <textarea id="description-field" name="description-field" data-testid="description-field" #description matInput
+          formControlName="description" maxlength="256"></textarea>
         @if (addNewBillForm.get('description')!.hasError('required')) {
-          <mat-error data-testid="description-required-error"
-            >Description is <strong>required</strong></mat-error
-          >
+        <mat-error data-testid="description-required-error">Description is <strong>required</strong></mat-error>
         }
         @if (addNewBillForm.get('description')!.hasError('minlength')) {
-          <mat-error data-testid="description-minlength-error"
-            >Description field must contain
-            <strong>3 characteres</strong></mat-error
-          >
+        <mat-error data-testid="description-minlength-error">Description field must contain
+          <strong>3 characteres</strong></mat-error>
         }
         <mat-hint align="end">{{ description.value.length }} / 256</mat-hint>
       </mat-form-field>
@@ -118,14 +79,10 @@
         <mat-form-field class="w-1/2 my-2">
           <mat-label>Finish At</mat-label>
           <input matInput [matDatepicker]="picker" formControlName="finishAt" />
-          <mat-datepicker-toggle
-            matSuffix
-            [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker color="primary"></mat-datepicker>
           @if (addNewBillForm.get('finishAt')!.hasError('required')) {
-            <mat-error data-testid="finishAt-required-error"
-              >Finish At is <strong>required</strong></mat-error
-            >
+          <mat-error data-testid="finishAt-required-error">Finish At is <strong>required</strong></mat-error>
           }
         </mat-form-field>
 
@@ -133,7 +90,7 @@
           <mat-label>Type</mat-label>
           <mat-select formControlName="type">
             @for (type of billTypeOptions; track type) {
-              <mat-option [value]="type.value">{{ type.viewValue }}</mat-option>
+            <mat-option [value]="type.value">{{ type.viewValue }}</mat-option>
             }
           </mat-select>
         </mat-form-field>
@@ -145,13 +102,8 @@
     <button mat-button mat-dialog-close [mat-dialog-close]="true">
       Cancel
     </button>
-    <button
-      data-testid="insert-button"
-      mat-flat-button
-      color="primary"
-      [disabled]="isInsertButtonDisabled"
-      [class.spinner]="isLoadingBill()"
-      (click)="onInsertBillHandler()">
+    <button data-testid="insert-button" mat-flat-button color="primary" [disabled]="isInsertButtonDisabled"
+      [class.spinner]="isLoadingBill()" (click)="onInsertBillHandler()">
       Insert
     </button>
   </mat-dialog-actions>

@@ -82,8 +82,8 @@ export class AddBillComponent {
   public onInsertBillHandler(): void {
     this._billService.startLoadingBill();
 
-    const { title, owner, amount, category, description, finishAt, type } = this
-      .addNewBillForm.value as Bill;
+    const { title, owner, amount, categoryId, description, finishAt, type } =
+      this.addNewBillForm.value as Bill;
 
     const updatedFinishAt = new Date(finishAt);
 
@@ -91,7 +91,7 @@ export class AddBillComponent {
       title,
       owner,
       amount,
-      category,
+      categoryId,
       description,
       type,
       finishAt: updatedFinishAt.setHours(23, 59, 59, 999), // end of the day

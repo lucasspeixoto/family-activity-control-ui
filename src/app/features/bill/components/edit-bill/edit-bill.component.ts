@@ -29,8 +29,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { finalize } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SnackbarService } from '@sharedS/snackbar/snackbar.service';
-import { AsyncPipe, NgIf } from '@angular/common';
-import { CategoryService } from '@app/features/admin/services/category/category.service';
+import { AsyncPipe, JsonPipe, NgIf } from '@angular/common';
+import { CategoryService } from '@adminS/category/category.service';
 
 @Component({
   selector: 'app-edit-bill',
@@ -38,6 +38,7 @@ import { CategoryService } from '@app/features/admin/services/category/category.
   imports: [
     NgIf,
     AsyncPipe,
+    JsonPipe,
     MatButtonModule,
     MatInputModule,
     MatFormField,
@@ -80,18 +81,28 @@ export class EditBillComponent implements OnInit {
 
   public readonly isLoadingBill = this._billService.isLoadingBill;
 
+  public selectedCategoryValue!: string;
+
   constructor(@Inject(MAT_DIALOG_DATA) public readonly data: Bill) {}
 
   public ngOnInit(): void {
-    const { id, title, owner, amount, category, description, finishAt, type } =
-      this.data as Bill;
+    const {
+      id,
+      title,
+      owner,
+      amount,
+      categoryId,
+      description,
+      finishAt,
+      type,
+    } = this.data as Bill;
 
     this.editBillForm.setValue({
       title,
       id,
       owner,
       amount,
-      category,
+      categoryId,
       description,
       type,
       finishAt: new Date(finishAt),
@@ -101,8 +112,16 @@ export class EditBillComponent implements OnInit {
   public onUpdateBillHandler(): void {
     this._billService.startLoadingBill();
 
-    const { id, title, owner, amount, category, description, finishAt, type } =
-      this.editBillForm.value as Bill;
+    const {
+      id,
+      title,
+      owner,
+      amount,
+      categoryId,
+      description,
+      finishAt,
+      type,
+    } = this.editBillForm.value as Bill;
 
     const updatedFinishAt = new Date(finishAt);
 
@@ -111,7 +130,7 @@ export class EditBillComponent implements OnInit {
       title,
       owner,
       amount,
-      category,
+      categoryId,
       description,
       type,
       finishAt: updatedFinishAt.setHours(23, 59, 59, 999), // end of the day

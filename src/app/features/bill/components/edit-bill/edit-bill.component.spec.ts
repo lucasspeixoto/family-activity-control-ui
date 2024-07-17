@@ -44,7 +44,7 @@ describe('EditBillComponent', () => {
             title: 'Energia',
             owner: 'Lucas',
             amount: 100.2,
-            category: 'Contas',
+            categoryId: 'e71b6cd0-a12e-4005-afa8-c2c220b65459',
             description: 'Pagar energia',
             finishAt: new Date(),
             type: 'FIXED',
@@ -81,7 +81,9 @@ describe('EditBillComponent', () => {
       expect(addForm.controls.title.value).toEqual('Energia');
       expect(addForm.controls.owner.value).toEqual('Lucas');
       expect(addForm.controls.amount.value).toEqual(100.2);
-      expect(addForm.controls.category.value).toEqual('Contas');
+      expect(addForm.controls.categoryId.value).toEqual(
+        'e71b6cd0-a12e-4005-afa8-c2c220b65459'
+      );
       expect(addForm.controls.description.value).toEqual('Pagar energia');
       expect(addForm.controls.type.value).toEqual('FIXED');
     });
