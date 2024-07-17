@@ -5,7 +5,7 @@ export type Bill = {
   title: string;
   owner: string;
   amount: number | null;
-  category: string;
+  categoryId: string;
   description: string;
   finishAt: Date | number;
   type: BillType;
