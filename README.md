@@ -21,11 +21,15 @@ O projeto foi desenvolvido com as seguintes tecnologias:
 ![Bill List](src/assets/layout_bill.png 'Bill List')
 ![Resource Page](src/assets/layout_resources.png 'Resource Page')
 
+
 ## 🚀 Instalação
 
 ```bash
-# Clone o repositório e entre na pasta do projeto
-$ git clone https://github.com/lucasspeixoto/family-activity-control-ui && cd family-activity-control-ui
+# Clone o repositório
+$ git clone https://github.com/lucasspeixoto/family-activity-control-ui
+
+# Entre na pasta do projeto
+$ cd family-activity-control-ui
 
 # Instalação bibliotecas
 $ npm install
@@ -33,6 +37,21 @@ $ npm install
 # Iniciando projeto
 $ npm start
 
+```
+
+## 🚢 Iniciar em container Docker
+
+```bash
+# Clone o repositório
+$ git clone https://github.com/lucasspeixoto/family-activity-control-ui
+
+# Entre na pasta do projeto
+$ cd family-activity-control-ui
+
+# Execute a aplicação em uma máquina com docker
+$ docker-compose up --build
+
+# A aplicação iniciará na porta 4200
 ```
 
 ## 📝 Licença

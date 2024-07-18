@@ -81,8 +81,6 @@ export class EditBillComponent implements OnInit {
 
   public readonly isLoadingBill = this._billService.isLoadingBill;
 
-  public selectedCategoryValue!: string;
-
   constructor(@Inject(MAT_DIALOG_DATA) public readonly data: Bill) {}
 
   public ngOnInit(): void {

@@ -3,7 +3,7 @@ import { catchError, finalize, Observable, tap, throwError } from 'rxjs';
 import { Bill } from '../model/bill';
 import { environment } from '@env/environment';
 import { ResourceService } from '@sharedS/resource/resource.service';
-import { FeatureLoaderService } from '@app/shared/services/feature-loader.service';
+import { FeatureLoaderService } from '@sharedS/feature-loader.service';
 
 @Injectable({
   providedIn: 'root',
