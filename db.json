@@ -1,526 +1,217 @@
 {
-  "bill": [
+  "api/v1/bill": [
     {
-      "id": "44b99384-5c1b-4109-b68d-bf19837489a2",
-      "title": "Energia 1",
-      "owner": "Lucas 1",
+      "id": "bbf9815d-5826-4660-80b1-bc232121313e",
+      "title": "Conta de Energia",
+      "owner": "Lucas",
       "amount": 100.20,
-      "category": "Contas",
+      "categoryId": "a1e7e456-8c1d-4b3b-9f0c-9c0a7d6f5e4a",
       "description": "Pagar energia",
       "finishAt": "2024-08-10T12:00:00",
       "type": "FIXED"
     },
     {
-      "id": "2d387db6-317a-422a-b9e5-6dfe0593511e",
-      "title": "Energia 2",
-      "owner": "Lucas 2",
-      "amount": 101.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-11T12:00:00",
+      "id": "a7f12b69-99d7-4cd4-92b8-8ec92f8a2b2e",
+      "title": "Conta de Água",
+      "owner": "Lucas",
+      "amount": 60.50,
+      "categoryId": "b2f9e2f7-12d6-4a47-b70e-84d9c98f2a6b",
+      "description": "Pagar água",
+      "finishAt": "2024-08-10T12:00:00",
       "type": "FIXED"
     },
     {
-      "id": "7f6f9fa9-85d5-4e73-a768-3ee36a0f84de",
-      "title": "Energia 3",
-      "owner": "Lucas 3",
-      "amount": 102.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-12T12:00:00",
+      "id": "f8d3f7ea-8f3a-4db6-8d94-b4f9d9e9a313",
+      "title": "Conta de Internet",
+      "owner": "Lucas",
+      "amount": 120.00,
+      "categoryId": "c3f7d6a1-5a3b-4b8d-9d4a-4b6d2f5e6f7c",
+      "description": "Pagar internet",
+      "finishAt": "2024-08-10T12:00:00",
       "type": "FIXED"
     },
     {
-      "id": "6febac22-b2c3-481b-94e9-10cc3cb40498",
-      "title": "Energia 4",
-      "owner": "Lucas 4",
-      "amount": 103.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-13T12:00:00",
+      "id": "d0e37c4b-80c5-403e-99a8-1ec4b9357812",
+      "title": "Conta de Telefone",
+      "owner": "Lucas",
+      "amount": 90.00,
+      "categoryId": "d4f7e8a2-6c9a-4f6d-8b7a-8c0a9e2d5f6b",
+      "description": "Pagar telefone",
+      "finishAt": "2024-08-10T12:00:00",
       "type": "FIXED"
     },
     {
-      "id": "4fbe9e50-757f-4a68-9b47-2b5ea8fcca84",
-      "title": "Energia 5",
-      "owner": "Lucas 5",
-      "amount": 104.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-14T12:00:00",
+      "id": "b2e45d38-0f9b-49b4-91be-19c5de5d4c31",
+      "title": "Conta de Gás",
+      "owner": "Lucas",
+      "amount": 70.25,
+      "categoryId": "e5f6d7a3-9b8c-4d9a-8e6a-5c7a8b6f7d8a",
+      "description": "Pagar gás",
+      "finishAt": "2024-08-10T12:00:00",
       "type": "FIXED"
     },
     {
-      "id": "87b5b40e-257d-4a10-95df-a037180cdc6f",
-      "title": "Energia 6",
-      "owner": "Lucas 6",
-      "amount": 105.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-15T12:00:00",
+      "id": "fe4a3b4d-7e28-4769-b1f7-3f0a9ecb0531",
+      "title": "Condomínio",
+      "owner": "Lucas",
+      "amount": 200.00,
+      "categoryId": "f6d7e8a4-7b8a-4c9d-8f6a-6b7c9a8d5e6a",
+      "description": "Pagar condomínio",
+      "finishAt": "2024-08-10T12:00:00",
       "type": "FIXED"
     },
     {
-      "id": "6fa9bdcb-001e-4570-bf82-9c1ffc20715b",
-      "title": "Energia 7",
-      "owner": "Lucas 7",
-      "amount": 106.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-16T12:00:00",
+      "id": "f5e6d8d8-9c89-4f7c-a3db-2b66b4c8d345",
+      "title": "Conta de TV a Cabo",
+      "owner": "Lucas",
+      "amount": 80.00,
+      "categoryId": "a6b7c8d9-5f6a-4b7c-8a9d-9b0a8d7c6e5a",
+      "description": "Pagar TV a cabo",
+      "finishAt": "2024-08-10T12:00:00",
       "type": "FIXED"
     },
     {
-      "id": "41bb701f-c761-4b71-a055-2fa7cbbb0ec0",
-      "title": "Energia 8",
-      "owner": "Lucas 8",
-      "amount": 107.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-17T12:00:00",
+      "id": "eac7f08c-9f5e-4e2e-b9a5-f4560b8f40ef",
+      "title": "Conta de Escola",
+      "owner": "Lucas",
+      "amount": 450.00,
+      "categoryId": "b7c8d9a1-6a7b-4d8a-9c0b-8e7a6f5d4c9a",
+      "description": "Pagar escola",
+      "finishAt": "2024-08-10T12:00:00",
       "type": "FIXED"
     },
     {
-      "id": "3b10a864-4cbd-419b-950b-d80d148dddda",
-      "title": "Energia 9",
-      "owner": "Lucas 9",
-      "amount": 108.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-18T12:00:00",
+      "id": "a6e0a1c1-8e11-4e1d-b657-1e4a5f0e96b6",
+      "title": "Conta de Academia",
+      "owner": "Lucas",
+      "amount": 100.00,
+      "categoryId": "c8d9e0a1-7f8b-4d9a-8c0b-9a7b8d6a5e4a",
+      "description": "Pagar academia",
+      "finishAt": "2024-08-10T12:00:00",
       "type": "FIXED"
     },
     {
-      "id": "73397e4c-292e-45f7-93eb-5f97dbc6aaeb",
-      "title": "Energia 10",
-      "owner": "Lucas 10",
-      "amount": 109.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-19T12:00:00",
+      "id": "d4f1a8a2-ff13-4e62-a905-5e3b95f774a3",
+      "title": "Manutenção do Carro",
+      "owner": "Lucas",
+      "amount": 300.00,
+      "categoryId": "d9e0a1b2-8c9a-4f6d-9b0a-8d7c6f5e4a3a",
+      "description": "Pagar manutenção do carro",
+      "finishAt": "2024-08-10T12:00:00",
       "type": "FIXED"
     },
     {
-      "id": "57b08c89-ea01-4b32-af10-77089eb8bddb",
-      "title": "Energia 11",
-      "owner": "Lucas 11",
-      "amount": 110.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-20T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "f3b6f70b-5204-4160-aaa2-8eedc41abe2c",
-      "title": "Energia 12",
-      "owner": "Lucas 12",
-      "amount": 111.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-21T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "2c342451-6b16-40af-9604-f79a0d2b0752",
-      "title": "Energia 13",
-      "owner": "Lucas 13",
-      "amount": 112.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-22T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "0e38686b-6d91-4d04-b6ca-a0da6f165f51",
-      "title": "Energia 14",
-      "owner": "Lucas 14",
-      "amount": 113.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-23T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "9775ff26-ff3f-4c68-8a21-973141e64fb9",
-      "title": "Energia 15",
-      "owner": "Lucas 15",
-      "amount": 114.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-24T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "86b489a9-63e2-4654-b8d3-9b9e4eb00d7a",
-      "title": "Energia 16",
-      "owner": "Lucas 16",
-      "amount": 115.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-25T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "8bd27663-9b6d-47e7-8a5f-0fb1827ffdd5",
-      "title": "Energia 17",
-      "owner": "Lucas 17",
-      "amount": 116.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-26T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "f2436168-66f5-4081-b0a3-069a84361db9",
-      "title": "Energia 18",
-      "owner": "Lucas 18",
-      "amount": 117.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-27T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "9e90070d-8e77-44c6-ab7c-5d02d230ae8d",
-      "title": "Energia 19",
-      "owner": "Lucas 19",
-      "amount": 118.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-28T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "194c6e72-da08-4bd7-bdb1-f5c273dddb94",
-      "title": "Energia 20",
-      "owner": "Lucas 20",
-      "amount": 119.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-29T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "f4236725-d265-4d7f-9a72-88ff2f3fcb75",
-      "title": "Energia 21",
-      "owner": "Lucas 21",
-      "amount": 120.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-30T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "1a5f7b12-0351-4124-8aab-4414ba9799da",
-      "title": "Energia 22",
-      "owner": "Lucas 22",
-      "amount": 121.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-08-31T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "c2a667dd-3e10-425a-8878-ad85aa61b34d",
-      "title": "Energia 23",
-      "owner": "Lucas 23",
-      "amount": 122.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-01T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "726a8cc3-25d2-4a0b-8cc0-e07c4fac946a",
-      "title": "Energia 24",
-      "owner": "Lucas 24",
-      "amount": 123.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-02T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "ad50c1de-e761-4f91-a709-8722d76953fa",
-      "title": "Energia 25",
-      "owner": "Lucas 25",
-      "amount": 124.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-03T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "0ab9a090-c2a1-47b4-a45f-71fe396f3294",
-      "title": "Energia 26",
-      "owner": "Lucas 26",
-      "amount": 125.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-04T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "6d8336d7-3496-4fe6-9e75-b0d9cbfc4444",
-      "title": "Energia 27",
-      "owner": "Lucas 27",
-      "amount": 126.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-05T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "3db5d452-4679-4fdc-aa15-f8c7f513602b",
-      "title": "Energia 28",
-      "owner": "Lucas 28",
-      "amount": 127.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-06T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "4aa74d66-34cb-467f-9d1c-f1e8efb8ca7b",
-      "title": "Energia 29",
-      "owner": "Lucas 29",
-      "amount": 128.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-07T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "3f560fd4-948a-412b-a554-496d9ceb9a2e",
-      "title": "Energia 30",
-      "owner": "Lucas 30",
-      "amount": 129.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-08T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "18a5e065-2bad-4d9c-9631-6a563c278113",
-      "title": "Energia 31",
-      "owner": "Lucas 31",
-      "amount": 130.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-09T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "7558fc84-b8ab-4658-8b94-b722679f09a5",
-      "title": "Energia 32",
-      "owner": "Lucas 32",
-      "amount": 131.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-10T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "e0b07978-d673-4a3e-b400-64dabcb2f3ff",
-      "title": "Energia 33",
-      "owner": "Lucas 33",
-      "amount": 132.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-11T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "87558f92-506a-45ef-9be0-d917abd47dd4",
-      "title": "Energia 34",
-      "owner": "Lucas 34",
-      "amount": 133.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-12T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "c6b8c162-e260-417e-96cc-e44134022bcc",
-      "title": "Energia 35",
-      "owner": "Lucas 35",
-      "amount": 134.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-13T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "6eb91730-13d8-4492-83f8-eca80d705e6d",
-      "title": "Energia 36",
-      "owner": "Lucas 36",
-      "amount": 135.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-14T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "9e109c13-9536-4758-88fa-66a40d95f8e7",
-      "title": "Energia 37",
-      "owner": "Lucas 37",
-      "amount": 136.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-15T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "f486cece-816c-43cf-93a8-0ba9e6b1696a",
-      "title": "Energia 38",
-      "owner": "Lucas 38",
-      "amount": 137.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-16T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "3ede8146-5b26-47d5-8bd1-9991ec129cdc",
-      "title": "Energia 39",
-      "owner": "Lucas 39",
-      "amount": 138.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-17T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "01c29bab-08cf-45bb-b1b3-1e6764f6c043",
-      "title": "Energia 40",
-      "owner": "Lucas 40",
-      "amount": 139.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-18T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "886a21e5-be1f-476e-b32d-13fb8e8df4d3",
-      "title": "Energia 41",
-      "owner": "Lucas 41",
-      "amount": 140.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-19T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "9937ca88-16ee-4c9e-a3d4-0ffa620e0bf6",
-      "title": "Energia 42",
-      "owner": "Lucas 42",
-      "amount": 141.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-20T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "1d9a9919-79b1-4b86-bdac-2095a8b0111c",
-      "title": "Energia 43",
-      "owner": "Lucas 43",
-      "amount": 142.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-21T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "1e59acb4-e310-4a3d-8d60-606c2633eb6e",
-      "title": "Energia 44",
-      "owner": "Lucas 44",
-      "amount": 143.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-22T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "3c3a4c3a-7736-483c-9196-a6b4dd980195",
-      "title": "Energia 45",
-      "owner": "Lucas 45",
-      "amount": 144.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-23T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "d1f82a47-56cc-4cf6-97d1-86c14bf3b59a",
-      "title": "Energia 46",
-      "owner": "Lucas 46",
-      "amount": 145.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-24T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "f0395e8a-8da8-4be4-a16b-66cb1a59117c",
-      "title": "Energia 47",
-      "owner": "Lucas 47",
-      "amount": 146.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-25T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "d83acfad-1e1f-48d6-8e7e-2b250786aec5",
-      "title": "Energia 48",
-      "owner": "Lucas 48",
-      "amount": 147.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-26T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "977e7fc2-a5cc-4d53-a8af-0548c383835e",
-      "title": "Energia 49",
-      "owner": "Lucas 49",
-      "amount": 148.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-27T12:00:00",
-      "type": "FIXED"
-    },
-    {
-      "id": "390ac571-4669-4bad-8da6-3062cbcee05b",
-      "title": "Energia 50",
-      "owner": "Lucas 50",
-      "amount": 149.20,
-      "category": "Contas",
-      "description": "Pagar energia",
-      "finishAt": "2024-09-28T12:00:00",
+      "id": "bcf5b7c1-6f12-4822-9b93-523f734a12e5",
+      "title": "Seguro de Saúde",
+      "owner": "Lucas",
+      "amount": 350.00,
+      "categoryId": "e0a1b2c3-9d8a-4c0b-8e7a-6f5d4b9a3c7a",
+      "description": "Pagar seguro de saúde",
+      "finishAt": "2024-08-10T12:00:00",
       "type": "FIXED"
     }
   ],
-  "category": [
+  "api/v1/category": [
     {
-      "id": "dafe80b5-3b05-4d75-9a9b-98ade67c2799",
-      "title": "Academia/Ginástica",
-      "description": "Academia/Ginástica"
+      "id": "a1e7e456-8c1d-4b3b-9f0c-9c0a7d6f5e4a",
+      "title": "Conta de Energia",
+      "description": "Pagar energia"
     },
     {
-      "id": "8c0d73b6-ff69-4c15-929e-f366255c3dba",
-      "title": "Água",
-      "description": "Pagar conta de água"
+      "id": "b2f9e2f7-12d6-4a47-b70e-84d9c98f2a6b",
+      "title": "Conta de Água",
+      "description": "Pagar água"
     },
     {
-      "id": "e3da8d8b-c42b-423c-b809-26c1db140bef",
-      "title": "Alimentação Fora de Casa",
-      "description": "Alimentação Fora de Casa"
+      "id": "c3f7d6a1-5a3b-4b8d-9d4a-4b6d2f5e6f7c",
+      "title": "Conta de Internet",
+      "description": "Pagar internet"
     },
     {
-      "id": "995736c2-a59d-475e-a6e9-f9957aa2422c",
-      "title": "Aluguel",
-      "description": "Aluguel"
+      "id": "d4f7e8a2-6c9a-4f6d-8b7a-8c0a9e2d5f6b",
+      "title": "Conta de Telefone",
+      "description": "Pagar telefone"
+    },
+    {
+      "id": "e5f6d7a3-9b8c-4d9a-8e6a-5c7a8b6f7d8a",
+      "title": "Conta de Gás",
+      "description": "Pagar gás"
+    },
+    {
+      "id": "f6d7e8a4-7b8a-4c9d-8f6a-6b7c9a8d5e6a",
+      "title": "Condomínio",
+      "description": "Pagar condomínio"
+    },
+    {
+      "id": "a6b7c8d9-5f6a-4b7c-8a9d-9b0a8d7c6e5a",
+      "title": "Conta de TV a Cabo",
+      "description": "Pagar TV a cabo"
+    },
+    {
+      "id": "b7c8d9a1-6a7b-4d8a-9c0b-8e7a6f5d4c9a",
+      "title": "Conta de Escola",
+      "description": "Pagar escola"
+    },
+    {
+      "id": "c8d9e0a1-7f8b-4d9a-8c0b-9a7b8d6a5e4a",
+      "title": "Conta de Academia",
+      "description": "Pagar academia"
+    },
+    {
+      "id": "d9e0a1b2-8c9a-4f6d-9b0a-8d7c6f5e4a3a",
+      "title": "Manutenção do Carro",
+      "description": "Pagar manutenção do carro"
+    },
+    {
+      "id": "e0a1b2c3-9d8a-4c0b-8e7a-6f5d4b9a3c7a",
+      "title": "Seguro de Saúde",
+      "description": "Pagar seguro de saúde"
+    }
+  ],
+  "api/v1/usages": [
+    {
+      "value": "a1e7e456-8c1d-4b3b-9f0c-9c0a7d6f5e4a",
+      "viewValue": "Pagar energia"
+    },
+    {
+      "value": "b2f9e2f7-12d6-4a47-b70e-84d9c98f2a6b",
+      "viewValue": "Pagar água"
+    },
+    {
+      "value": "c3f7d6a1-5a3b-4b8d-9d4a-4b6d2f5e6f7c",
+      "viewValue": "Pagar internet"
+    },
+    {
+      "value": "d4f7e8a2-6c9a-4f6d-8b7a-8c0a9e2d5f6b",
+      "viewValue": "Pagar telefone"
+    },
+    {
+      "value": "e5f6d7a3-9b8c-4d9a-8e6a-5c7a8b6f7d8a",
+      "viewValue": "Pagar gás"
+    },
+    {
+      "value": "f6d7e8a4-7b8a-4c9d-8f6a-6b7c9a8d5e6a",
+      "viewValue": "Pagar condomínio"
+    },
+    {
+      "value": "a6b7c8d9-5f6a-4b7c-8a9d-9b0a8d7c6e5a",
+      "viewValue": "Pagar TV a cabo"
+    },
+    {
+      "value": "b7c8d9a1-6a7b-4d8a-9c0b-8e7a6f5d4c9a",
+      "viewValue": "Pagar escola"
+    },
+    {
+      "value": "c8d9e0a1-7f8b-4d9a-8c0b-9a7b8d6a5e4a",
+      "viewValue": "Pagar academia"
+    },
+    {
+      "value": "d9e0a1b2-8c9a-4f6d-9b0a-8d7c6f5e4a3a",
+      "viewValue": "Pagar manutenção do carro"
+    },
+    {
+      "value": "e0a1b2c3-9d8a-4c0b-8e7a-6f5d4b9a3c7a",
+      "viewValue": "Pagar seguro de saúde"
     }
   ]
 }
