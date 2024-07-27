@@ -20,7 +20,12 @@
       "@admin/*": ["./src/app/features/admin/*"],
       "@adminS/*": ["./src/app/features/admin/services/*"],
       "@adminC/*": ["./src/app/features/admin/components/*"],
-      "@adminV/*": ["./src/app/features/admin/view/*"]
+      "@adminV/*": ["./src/app/features/admin/view/*"],
+
+      "@auth/*": ["./src/app/auth/*"],
+      "@authS/*": ["./src/app/auth/services/*"],
+      "@authC/*": ["./src/app/auth/components/*"],
+      "@authV/*": ["./src/app/auth/view/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

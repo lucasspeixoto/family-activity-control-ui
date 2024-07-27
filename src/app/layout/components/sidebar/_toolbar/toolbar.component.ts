@@ -8,6 +8,7 @@ import { MatIconButton } from '@angular/material/button';
 import { MatTooltip } from '@angular/material/tooltip';
 import { Router } from '@angular/router';
 import { AvatarComponent } from '@shared/components/avatar';
+import { UserService } from '@app/shared/services/user/user.service';
 
 @Component({
   selector: 'app-sidebar-toolbar',
@@ -23,14 +24,14 @@ import { AvatarComponent } from '@shared/components/avatar';
   ],
   template: `
     <div class="flex items-center gap-2">
-      <div class="text-sm">Lucas Peixoto</div>
+      <div class="text-sm">{{ userData()?.name }}</div>
       <div
         class="border flex items-center border-neutral-900 dark:border-neutral-200 h-5 leading-3 px-2 rounded-full font-bold text-4xs uppercase text-neutral-500 dark:text-neutral-200">
         Admin
       </div>
     </div>
     <div class="text-xs text-gray-500 mt-0.5 dark:text-gray-400">
-      lspeixotodev&#64;gmail.com
+      {{ userData()?.email }}
     </div>
     <div class="my-4">
       <mat-divider></mat-divider>
@@ -67,9 +68,15 @@ import { AvatarComponent } from '@shared/components/avatar';
   styles: ``,
 })
 export class ToolbarComponent {
-  public router = inject(Router);
+  private _router = inject(Router);
+
+  public userService = inject(UserService);
+
+  public userData = this.userService.userData;
 
   public logoutHandler(): void {
-    this.router.navigateByUrl('/auth/signin');
+    sessionStorage.removeItem('FAC:access_token');
+    sessionStorage.removeItem('FAC:refresh_token');
+    this._router.navigateByUrl('/auth/signin');
   }
 }

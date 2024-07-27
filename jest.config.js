@@ -27,5 +27,9 @@ module.exports = {
     '^@adminS(.*)': '<rootDir>/src/app/features/admin/services/$1',
     '^@adminC(.*)': '<rootDir>/src/app/features/admin/components/$1',
     '^@adminV(.*)': '<rootDir>/src/app/features/admin/view/$1',
+
+    '^@authS(.*)': '<rootDir>/src/app/auth/services/$1',
+    '^@authC(.*)': '<rootDir>/src/app/auth/components/$1',
+    '^@authV(.*)': '<rootDir>/src/app/auth/view/$1',
   },
 };

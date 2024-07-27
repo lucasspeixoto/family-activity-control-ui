@@ -5,9 +5,7 @@ const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./bill/view/common/common.component').then(
-        c => c.CommonComponent
-      ),
+      import('./common/common.component').then(c => c.CommonComponent),
     children: [
       {
         path: 'bill',

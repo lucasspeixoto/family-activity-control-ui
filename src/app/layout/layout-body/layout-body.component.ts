@@ -40,7 +40,7 @@ export class LayoutBodyComponent implements OnInit {
   private _platformId = inject(PLATFORM_ID);
 
   @Input({ transform: booleanAttribute })
-  autoscrollToTop = true;
+  public autoscrollToTop = true;
 
   public ngOnInit() {
     // Scroll a page to top if url changed

@@ -2,12 +2,7 @@ import { afterNextRender, inject, Injectable } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-const LOCAL_STORAGE_KEY = 'Family-Control:Theme';
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getClassNameForKey(key: string) {
-  return `style-manager-${key}`;
-}
+const LOCAL_STORAGE_KEY = 'FAC:Theme';
 
 @Injectable({
   providedIn: 'root',

@@ -5,17 +5,17 @@ const routes: Routes = [
   {
     path: 'signin',
     loadComponent: () =>
-      import('./signin/signin.component').then(c => c.SigninComponent),
+      import('./view/signin/signin.component').then(c => c.SigninComponent),
   },
   {
     path: 'signup',
     loadComponent: () =>
-      import('./signup/signup.component').then(c => c.SignupComponent),
+      import('./view/signup/signup.component').then(c => c.SignupComponent),
   },
   {
     path: 'forgot-password',
     loadComponent: () =>
-      import('./forgot-password/forgot-password.component').then(
+      import('./view/forgot-password/forgot-password.component').then(
         c => c.ForgotPasswordComponent
       ),
   },

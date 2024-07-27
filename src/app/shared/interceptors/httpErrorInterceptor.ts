@@ -15,20 +15,24 @@ export const httpErrorInterceptor: HttpInterceptorFn = (
 ) => {
   const snackBar = inject(MatSnackBar);
 
-  return next(req).pipe(
-    catchError((error: HttpErrorResponse) => {
-      let errorMsg = '';
+  if (typeof sessionStorage !== 'undefined') {
+    return next(req).pipe(
+      catchError((error: HttpErrorResponse) => {
+        let errorMsg = '';
 
-      const serverError = error.error as ResponseError;
+        const serverError = error.error as ResponseError;
 
-      errorMsg = `Error: Something went wrong, try again later (${serverError.message})`;
+        errorMsg = `Error: Something went wrong, try again later (${serverError.message})`;
 
-      snackBar.open(errorMsg, 'Close', {
-        horizontalPosition: 'right',
-        verticalPosition: 'top',
-      });
+        snackBar.open(errorMsg, 'Close', {
+          horizontalPosition: 'right',
+          verticalPosition: 'top',
+        });
 
-      return throwError(() => errorMsg);
-    })
-  );
+        return throwError(() => errorMsg);
+      })
+    );
+  }
+
+  return next(req);
 };

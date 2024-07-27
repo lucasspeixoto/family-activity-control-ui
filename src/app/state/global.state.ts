@@ -4,12 +4,14 @@ export type GlobalState = {
   screenLoading: boolean;
   sidebarHidden: boolean;
   featureLoading: boolean;
+  authenticationLoading: boolean;
 };
 
 const initialGlobalState: GlobalState = {
   screenLoading: true,
   sidebarHidden: false,
   featureLoading: false,
+  authenticationLoading: false,
 };
 
 export const GlobalStore = signalStore(
@@ -24,6 +26,11 @@ export const GlobalStore = signalStore(
     setFeatureLoading(isLoading: boolean) {
       patchState(store, {
         featureLoading: isLoading,
+      });
+    },
+    setAuthenticationLoading(isLoading: boolean) {
+      patchState(store, {
+        authenticationLoading: isLoading,
       });
     },
   }))

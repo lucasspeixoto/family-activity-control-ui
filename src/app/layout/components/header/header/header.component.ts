@@ -23,6 +23,7 @@ import {
   PopoverComponent,
   PopoverTriggerForDirective,
 } from '@shared/components/popover';
+import { AuthenticationService } from '@app/auth/services/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -65,6 +66,8 @@ export class HeaderComponent {
 
   private _router = inject(Router);
 
+  private _authenticationService = inject(AuthenticationService);
+
   public isDark$ = this._themeManager.isDark();
 
   public innerWidth: number;
@@ -80,6 +83,8 @@ export class HeaderComponent {
   }
 
   public logoutHandler(): void {
+    this._authenticationService.removeAuthenticationTokens();
+
     this._router.navigateByUrl('/auth/signin');
   }
 
