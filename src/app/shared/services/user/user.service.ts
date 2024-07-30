@@ -1,8 +1,8 @@
 import { DestroyRef, inject, Injectable, signal } from '@angular/core';
-import { User } from '@app/shared/models/user';
+import { User } from '@shared/models/user';
 import { environment } from '@env/environment';
 import { HttpClient } from '@angular/common/http';
-import { finalize, Observable, tap } from 'rxjs';
+import { finalize, switchMap, tap } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Injectable({
@@ -25,8 +25,11 @@ export class UserService {
     this._http
       .get<User>(`${this.apiUrl}/user/data/${usernameOrEmail}`)
       .pipe(
-        takeUntilDestroyed(this._destroy$),
-        tap(response => this.userData.set(response))
+        switchMap(response => {
+          return this._http.get<User>(`${this.apiUrl}/user/${response.id}`);
+        }),
+        tap(response => this.userData.set(response)),
+        takeUntilDestroyed(this._destroy$)
       )
       .subscribe({
         error: error => {

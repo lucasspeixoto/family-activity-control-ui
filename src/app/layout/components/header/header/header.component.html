@@ -1,50 +1,30 @@
 <div class="h-20 w-full px-10 bg-background">
-  <div
-    class="h-full flex items-center justify-between border-b dark:border-b-neutral-600 gap-7">
+  <div class="h-full flex items-center justify-between border-b dark:border-b-neutral-600 gap-7">
     <div class="flex items-center gap-3">
       <button mat-icon-button (click)="toggleSidebar()">
         <mat-icon class="font-icon">menu</mat-icon>
       </button>
     </div>
     <div class="flex items-center gap-3">
-      <button
-        mat-icon-button
-        [matMenuTriggerFor]="appsMenu"
-        matTooltip="Applications">
+      <button mat-icon-button [matMenuTriggerFor]="appsMenu" matTooltip="Applications">
         <mat-icon class="font-icon">apps</mat-icon>
       </button>
-      <button
-        mat-icon-button
-        matTooltip="Notifications"
-        [facPopoverTriggerFor]="notificationsPopover"
+      <button mat-icon-button matTooltip="Notifications" [facPopoverTriggerFor]="notificationsPopover"
         position="below-end">
-        <mat-icon
-          aria-hidden="false"
-          class="font-icon"
-          matBadge="3"
-          matBadgeColor="warn"
-          matBadgeSize="small"
-          >notifications</mat-icon
-        >
+        <mat-icon aria-hidden="false" class="font-icon" matBadge="3" matBadgeColor="warn"
+          matBadgeSize="small">notifications</mat-icon>
       </button>
-      <button
-        mat-icon-button
-        (click)="_themeManager.toggleColorScheme()"
-        matTooltip="Color Theme"
-        appSoundEffect
+      <button mat-icon-button (click)="_themeManager.toggleColorScheme()" matTooltip="Color Theme" appSoundEffect
         soundSrc="/assets/sound-effects/mouse-click.ogg">
         @if (isDark$ | async) {
-          <mat-icon class="font-icon">light_mode</mat-icon>
+        <mat-icon class="font-icon">light_mode</mat-icon>
         } @else {
-          <mat-icon class="font-icon">dark_mode</mat-icon>
+        <mat-icon class="font-icon">dark_mode</mat-icon>
         }
       </button>
-      <app-avatar
-        text="PS"
-        [clickable]="true"
-        [matMenuTriggerFor]="accountMenu"
-        matTooltip="Account"
-        class="w-10 h-10"></app-avatar>
+
+      <img [src]="userProfilePhoto()" [matMenuTriggerFor]="accountMenu" matTooltip="Account" alt="User Photo"
+        class="h-10 w-10 relative rounded-full object-cover" />
     </div>
   </div>
 </div>
@@ -55,14 +35,8 @@
       <div class="flex items-center gap-3 my-3">
         <div
           class="w-14 h-14 border border-neutral-400 dark:border-inverse rounded-lg flex-none flex items-center justify-center">
-          <img
-            src="assets/applications/file-storage.svg"
-            alt="File Storage"
-            class="w-8 h-8 dark:hidden" />
-          <img
-            src="assets/applications/file-storage-dark.svg"
-            alt="File Storage"
-            class="w-8 h-8 hidden dark:block" />
+          <img src="assets/applications/file-storage.svg" alt="File Storage" class="w-8 h-8 dark:hidden" />
+          <img src="assets/applications/file-storage-dark.svg" alt="File Storage" class="w-8 h-8 hidden dark:block" />
         </div>
         <div class="-mt-0.5">
           <div>File Storage</div>
@@ -76,14 +50,8 @@
       <div class="flex items-center gap-3 my-3">
         <div
           class="w-14 h-14 border border-neutral-400 dark:border-inverse rounded-lg flex-none flex items-center justify-center">
-          <img
-            src="assets/applications/sign.svg"
-            alt="Sign"
-            class="w-8 h-8 dark:hidden" />
-          <img
-            src="assets/applications/sign-dark.svg"
-            alt="Sign"
-            class="w-8 h-8 hidden dark:block" />
+          <img src="assets/applications/sign.svg" alt="Sign" class="w-8 h-8 dark:hidden" />
+          <img src="assets/applications/sign-dark.svg" alt="Sign" class="w-8 h-8 hidden dark:block" />
         </div>
         <div class="-mt-0.5">
           <div>Sign</div>
@@ -97,14 +65,8 @@
       <div class="flex items-center gap-3 my-3">
         <div
           class="w-14 h-14 border border-neutral-400 dark:border-inverse rounded-lg flex-none flex items-center justify-center">
-          <img
-            src="assets/applications/backup.svg"
-            alt="Backup"
-            class="w-8 h-8 dark:hidden" />
-          <img
-            src="assets/applications/backup-dark.svg"
-            alt="Backup"
-            class="w-8 h-8 hidden dark:block" />
+          <img src="assets/applications/backup.svg" alt="Backup" class="w-8 h-8 dark:hidden" />
+          <img src="assets/applications/backup-dark.svg" alt="Backup" class="w-8 h-8 hidden dark:block" />
         </div>
         <div class="-mt-0.5">
           <div>Backup</div>
@@ -122,14 +84,8 @@
       <div class="flex items-center gap-3 my-3">
         <div
           class="w-14 h-14 border border-neutral-400 dark:border-inverse rounded-lg flex-none flex items-center justify-center">
-          <img
-            src="assets/applications/passwords.svg"
-            alt="Passwords"
-            class="w-8 h-8 dark:hidden" />
-          <img
-            src="assets/applications/passwords-dark.svg"
-            alt="Passwords"
-            class="w-8 h-8 hidden dark:block" />
+          <img src="assets/applications/passwords.svg" alt="Passwords" class="w-8 h-8 dark:hidden" />
+          <img src="assets/applications/passwords-dark.svg" alt="Passwords" class="w-8 h-8 hidden dark:block" />
         </div>
         <div class="-mt-0.5">
           <div>Passwords</div>
@@ -146,9 +102,7 @@
       <div class="flex items-center gap-3 my-3">
         <div
           class="w-14 h-14 border border-neutral-400 dark:border-inverse rounded-lg flex-none flex items-center justify-center">
-          <mat-icon class="font-icon !text-2xl !w-5 !h-8 relative -right-1"
-            >arrow_forward</mat-icon
-          >
+          <mat-icon class="font-icon !text-2xl !w-5 !h-8 relative -right-1">arrow_forward</mat-icon>
         </div>
         <div class="-mt-0.5">
           <div>App Center</div>
@@ -169,17 +123,17 @@
 
 <mat-menu class="mt-2" xPosition="before" #accountMenu="matMenu">
   <div class="flex items-center px-4 pb-4 pt-2 gap-3">
-    <app-avatar text="PS" class="w-14 h-14"></app-avatar>
+    <img [src]="userProfilePhoto()" alt="User Photo" class="h-14 w-14 relative rounded-full object-cover" />
     <div class="-mt-0.5">
       <div class="flex items-center gap-2">
-        Lucas Peixoto
+        {{ userData()?.name }}
         <div
           class="border flex items-center border-neutral-900 dark:border-neutral-200 h-5 leading-3 px-2 rounded-full font-bold text-4xs uppercase text-neutral-500 dark:text-neutral-200">
           Admin
         </div>
       </div>
       <div class="text-xs text-gray-500 mt-0.5 dark:text-gray-400">
-        lspeixotodev&#64;gmail.com
+        {{ userData()?.email }}
       </div>
     </div>
   </div>

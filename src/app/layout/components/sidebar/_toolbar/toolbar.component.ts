@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { MatDivider } from '@angular/material/divider';
 import { AsyncPipe } from '@angular/common';
 
@@ -37,10 +37,10 @@ import { UserService } from '@app/shared/services/user/user.service';
       <mat-divider></mat-divider>
     </div>
     <div class="ms-auto flex items-center gap-2.5">
-      <app-avatar
-        text="PS"
-        src="https://avatar.iran.liara.run/public"
-        class="size-12"></app-avatar>
+      <img
+        [src]="userProfilePhoto()"
+        alt="User Photo"
+        class="size-12 relative rounded-full object-cover" />
       <div
         class="flex items-center rounded-full p-1 gap-[0.5] bg-neutral-200 dark:bg-neutral-700 hover:text-neutral-900">
         <button mat-icon-button matTooltip="Settings">
@@ -70,9 +70,17 @@ import { UserService } from '@app/shared/services/user/user.service';
 export class ToolbarComponent {
   private _router = inject(Router);
 
-  public userService = inject(UserService);
+  private _userService = inject(UserService);
 
-  public userData = this.userService.userData;
+  public userData = this._userService.userData;
+
+  public userProfilePhoto = computed(() => {
+    const profilePhoto = this.userData() ? this.userData()?.profilePhoto : '';
+
+    return profilePhoto
+      ? `data:image;base64,${profilePhoto}`
+      : 'assets/dummy-user.png';
+  });
 
   public logoutHandler(): void {
     sessionStorage.removeItem('FAC:access_token');

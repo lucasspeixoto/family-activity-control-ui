@@ -1,4 +1,10 @@
-import { Component, HostListener, inject, Input } from '@angular/core';
+import {
+  Component,
+  computed,
+  HostListener,
+  inject,
+  Input,
+} from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { MatAnchor, MatButton, MatIconButton } from '@angular/material/button';
 import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
@@ -24,6 +30,7 @@ import {
   PopoverTriggerForDirective,
 } from '@shared/components/popover';
 import { AuthenticationService } from '@app/auth/services/authentication.service';
+import { UserService } from '@app/shared/services/user/user.service';
 
 @Component({
   selector: 'app-header',
@@ -67,6 +74,17 @@ export class HeaderComponent {
   private _router = inject(Router);
 
   private _authenticationService = inject(AuthenticationService);
+
+  private _userService = inject(UserService);
+
+  public userData = this._userService.userData;
+
+  public userProfilePhoto = computed(() => {
+    const profilePhoto = this.userData() ? this.userData()?.profilePhoto : '';
+    return profilePhoto
+      ? `data:image;base64,${profilePhoto}`
+      : 'assets/dummy-user.png';
+  });
 
   public isDark$ = this._themeManager.isDark();
 
