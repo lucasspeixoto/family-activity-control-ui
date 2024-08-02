@@ -1,6 +1,6 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { DecodedToken } from '@shared/models/decoded-token';
-import { UserService } from '@shared/services/user/user.service';
+import { UserService } from '@sharedS/user/user.service';
 
 import { jwtDecode } from 'jwt-decode';
 

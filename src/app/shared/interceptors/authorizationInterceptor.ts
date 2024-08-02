@@ -41,6 +41,8 @@ export const authorizationInterceptor: HttpInterceptorFn = (
 
     const decodedToken = jwtDecode<DecodedToken>(accessToken);
     username = decodedToken.sub;
+  } else {
+    router.navigateByUrl('/');
   }
 
   return next(request).pipe(
@@ -50,7 +52,8 @@ export const authorizationInterceptor: HttpInterceptorFn = (
         !(
           (
             request.url.includes('auth/login') ||
-            request.url.includes('auth/refresh')
+            request.url.includes('auth/refresh') ||
+            request.url.includes('auth/is-authenticated')
           ) // <- this will avoid an infinite loop when the accessToken expires.
         ) &&
         error.status === 401

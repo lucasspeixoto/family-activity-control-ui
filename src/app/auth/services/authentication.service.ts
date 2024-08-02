@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
-import { Signin, Signup } from '@app/auth/constants/forms';
-import { SigninResponse } from '@app/auth/models/signin';
-import { SignupResponse } from '@app/auth/models/signup';
+import { Signin, Signup } from '@auth/constants/forms';
+import { SigninResponse } from '@auth/models/signin';
+import { SignupResponse } from '@auth/models/signup';
 
 import { environment } from '@env/environment';
 import { Observable, tap } from 'rxjs';
@@ -23,6 +23,10 @@ export class AuthenticationService {
 
   public signinResponse = signal<SigninResponse | null>(null);
 
+  public isUserAdmin = signal(false);
+
+  public isUserAuthenticated = signal(false);
+
   public signupUserHandler(signup: Signup): Observable<SignupResponse> {
     return this._http
       .post<SignupResponse>(`${this.apiUrl}/auth/register`, signup)
@@ -35,10 +39,24 @@ export class AuthenticationService {
       .pipe(tap(response => this.authenticatedSuccessHandler(response)));
   }
 
+  public isUserAdminCheckHandler(username: string): Observable<boolean> {
+    return this._http
+      .get<boolean>(`${this.apiUrl}/auth/user-role?username=${username}`)
+      .pipe(tap(response => this.isUserAdmin.set(response)));
+  }
+
+  public isUserAuthenticatedHandler(): Observable<boolean> {
+    const headers = this.buildRequestHeadersWithToken('FAC:access_token');
+
+    return this._http
+      .get<boolean>(`${this.apiUrl}/auth/is-authenticated`, headers)
+      .pipe(tap(response => this.isUserAuthenticated.set(response)));
+  }
+
   public refreshTokenHandler(
     usernameOrEmail: string
   ): Observable<SigninResponse> {
-    const headers = this.buildRefreshTokenRequestHeaders();
+    const headers = this.buildRequestHeadersWithToken('FAC:refresh_token');
 
     return this._http
       .get<SigninResponse>(
@@ -48,8 +66,10 @@ export class AuthenticationService {
       .pipe(tap(response => this.authenticatedSuccessHandler(response)));
   }
 
-  public buildRefreshTokenRequestHeaders(): { headers: HttpHeaders } {
-    const refreshToken = sessionStorage.getItem('FAC:refresh_token') as string;
+  public buildRequestHeadersWithToken(tokenAlias: string): {
+    headers: HttpHeaders;
+  } {
+    const token = sessionStorage.getItem(tokenAlias) as string;
 
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -57,17 +77,16 @@ export class AuthenticationService {
 
     return {
       ...httpOptions,
-      headers: httpOptions.headers.set(
-        'Authorization',
-        `Bearer ${refreshToken}`
-      ),
+      headers: httpOptions.headers.set('Authorization', `Bearer ${token}`),
     };
   }
 
   public authenticatedSuccessHandler(signinResponse: SigninResponse): void {
     this.signinResponse.set(signinResponse);
-    sessionStorage.setItem('FAC:access_token', signinResponse.accessToken);
-    sessionStorage.setItem('FAC:refresh_token', signinResponse.refreshToken);
+
+    const { accessToken, refreshToken } = signinResponse;
+
+    this.setAuthenticationTokens(accessToken, refreshToken);
   }
 
   public setAuthenticationTokens(

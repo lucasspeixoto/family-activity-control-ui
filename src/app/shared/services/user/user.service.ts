@@ -33,7 +33,7 @@ export class UserService {
       )
       .subscribe({
         error: error => {
-          const errorMessage = `Error: Something went wrong, try again later (${error.error.message})`;
+          const errorMessage = `Error: Something went wrong, try again later (${error.message})`;
           throw new Error(errorMessage);
         },
       }),
