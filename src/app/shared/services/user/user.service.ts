@@ -1,9 +1,8 @@
-import { DestroyRef, inject, Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { User } from '@shared/models/user';
 import { environment } from '@env/environment';
 import { HttpClient } from '@angular/common/http';
-import { finalize, switchMap, tap } from 'rxjs';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { finalize, Observable, switchMap, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -17,27 +16,18 @@ export class UserService {
 
   public userData = signal<User | null>(null);
 
-  private _destroy$ = inject(DestroyRef);
-
-  public getUserData(usernameOrEmail: string): void {
+  public getUserData(usernameOrEmail: string): Observable<User> {
     this.startLoading();
 
-    this._http
+    return this._http
       .get<User>(`${this.apiUrl}/user/data/${usernameOrEmail}`)
       .pipe(
+        finalize(() => this.stopLoading()),
         switchMap(response => {
           return this._http.get<User>(`${this.apiUrl}/user/${response.id}`);
         }),
-        tap(response => this.userData.set(response)),
-        takeUntilDestroyed(this._destroy$)
-      )
-      .subscribe({
-        error: error => {
-          const errorMessage = `Error: Something went wrong, try again later (${error.message})`;
-          throw new Error(errorMessage);
-        },
-      }),
-      finalize(() => this.startLoading());
+        tap(response => this.userData.set(response))
+      );
   }
 
   public startLoading() {

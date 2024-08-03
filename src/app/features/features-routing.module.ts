@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { userRoleGuard } from './guards/user-role.guard';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
         path: 'admin',
         loadChildren: () =>
           import('./admin/admin.module').then(m => m.AdminModule),
+        canActivate: [userRoleGuard('home/bill/list')],
       },
       {
         path: 'travel-planner',

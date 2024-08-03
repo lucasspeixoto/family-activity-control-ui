@@ -74,7 +74,7 @@ export class SignupComponent {
         },
         error: error => {
           const errorMessage = `Error: Something went wrong, try again later (${error.error.message})`;
-
+          this.authenticationService.removeAuthenticationTokens();
           this._snackBarService.showRightTopMessage(`${errorMessage}`);
         },
       }),

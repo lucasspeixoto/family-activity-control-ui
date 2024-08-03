@@ -2,7 +2,7 @@ import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
-import { Location } from '@angular/common';
+import { Location, NgIf } from '@angular/common';
 
 import { MatRipple } from '@angular/material/core';
 
@@ -19,6 +19,9 @@ import {
   NavigationItemIconDirective,
 } from '@shared/components/navigation';
 import { MenuItem } from '@app/layout/types';
+import { menuItems } from '@app/layout/constants/menu-item';
+import { checkMenuItemsAdminRoutes } from '@app/layout/utils/create-menu-items';
+import { AuthenticationService } from '@app/auth/services/authentication.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -36,6 +39,7 @@ import { MenuItem } from '@app/layout/types';
     NavigationDividerComponent,
     NavigationItemIconDirective,
     NavigationGroupToggleIconDirective,
+    NgIf,
   ],
   template: `
     <div
@@ -56,7 +60,7 @@ import { MenuItem } from '@app/layout/types';
           [activeKey]="activeLinkId"
           class="navigation">
           @for (menuItem of menuItems; track menuItem) {
-            <app-navigation-group>
+            <app-navigation-group *ngIf="menuItem.show">
               <app-navigation-group-toggle [for]="menuItem.id!">
                 @if (menuItem.icon) {
                   <mat-icon facNavigationItemIcon class="font-icon">{{
@@ -71,6 +75,7 @@ import { MenuItem } from '@app/layout/types';
               <app-navigation-group-menu [key]="menuItem.id!">
                 @for (childItem of menuItem.children; track childItem) {
                   <a
+                    *ngIf="childItem.show"
                     app-navigation-item
                     [routerLink]="childItem.link"
                     [key]="childItem.link">
@@ -92,60 +97,28 @@ import { MenuItem } from '@app/layout/types';
 export class SidebarComponent implements OnInit {
   public router = inject(Router);
   public location = inject(Location);
+  private _authService = inject(AuthenticationService);
+  private _isUserAdmin = this._authService.isUserAdmin();
+
   public height: string | null = '200px';
 
   @ViewChild('navigation', { static: true })
   public navigation!: string;
 
-  public menuItems: MenuItem[] = [
-    {
-      id: 'bill',
-      icon: 'paid',
-      name: 'Bill',
-      children: [
-        {
-          name: 'Bill List',
-          link: '/home/bill/list',
-        },
-      ],
-    },
-    {
-      id: 'admin',
-      icon: 'admin_panel_settings',
-      name: 'Admin Panel',
-      children: [
-        {
-          name: 'Resources',
-          link: '/home/admin/resources',
-        },
-        {
-          name: 'Dashboards',
-          link: '/home/admin/dashboard',
-        },
-        {
-          name: 'Notifications',
-          link: '/home/admin/notification-management',
-        },
-      ],
-    },
-    {
-      id: 'travel-planner',
-      icon: 'flight',
-      name: 'Travel Planner',
-      children: [
-        {
-          name: 'Planners',
-          link: '/home/travel-planner/travels',
-        },
-      ],
-    },
-  ];
+  public menuItems = menuItems;
 
   navItemLinks: MenuItem[] = [];
 
   activeLinkId: string | null = '/';
 
   public ngOnInit() {
+    this.menuItems = checkMenuItemsAdminRoutes(
+      this.menuItems,
+      this._isUserAdmin
+    );
+
+    console.log(this.menuItems);
+
     this.menuItems.forEach(menuItem => {
       this.navItemLinks.push(menuItem);
 

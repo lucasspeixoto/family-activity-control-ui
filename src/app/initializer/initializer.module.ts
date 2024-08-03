@@ -15,12 +15,12 @@ import { jwtDecode } from 'jwt-decode';
 
           if (typeof sessionStorage !== 'undefined') {
             token = sessionStorage.getItem('FAC:access_token') as string;
-          }
 
-          if (token) {
-            const decodedToken = jwtDecode<DecodedToken>(token);
+            if (token) {
+              const decodedToken = jwtDecode<DecodedToken>(token);
 
-            userService.getUserData(decodedToken.sub);
+              userService.getUserData(decodedToken.sub);
+            }
           }
         };
       },

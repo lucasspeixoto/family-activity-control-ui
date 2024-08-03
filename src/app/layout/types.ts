@@ -12,5 +12,7 @@ export interface MenuItem {
   icon?: string;
   id?: string | number;
   link?: string;
+  requireAdmin: boolean;
+  show: boolean;
   children?: MenuItem[];
 }

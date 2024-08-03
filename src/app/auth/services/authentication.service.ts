@@ -53,6 +53,12 @@ export class AuthenticationService {
       .pipe(tap(response => this.isUserAuthenticated.set(response)));
   }
 
+  public isUserAdminHandler(username: string): Observable<boolean> {
+    return this._http
+      .get<boolean>(`${this.apiUrl}/user-role?username=${username}`)
+      .pipe(tap(response => this.isUserAdmin.set(response)));
+  }
+
   public refreshTokenHandler(
     usernameOrEmail: string
   ): Observable<SigninResponse> {
@@ -69,7 +75,11 @@ export class AuthenticationService {
   public buildRequestHeadersWithToken(tokenAlias: string): {
     headers: HttpHeaders;
   } {
-    const token = sessionStorage.getItem(tokenAlias) as string;
+    let token = null;
+
+    if (typeof sessionStorage !== 'undefined') {
+      token = sessionStorage.getItem(tokenAlias) as string;
+    }
 
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

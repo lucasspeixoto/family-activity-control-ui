@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { HeaderComponent } from '@layoutC/header/header/header.component';
@@ -15,6 +15,11 @@ import {
 import { DecodedToken } from '@shared/models/decoded-token';
 import { jwtDecode } from 'jwt-decode';
 import { UserService } from '@sharedS/user/user.service';
+import { User } from '@shared/models/user';
+import { Observable } from 'rxjs';
+import { AsyncPipe, NgIf } from '@angular/common';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { AuthenticationService } from '@authS/authentication.service';
 
 @Component({
   standalone: true,
@@ -27,6 +32,8 @@ import { UserService } from '@sharedS/user/user.service';
     LayoutSidebarComponent,
     LayoutHeaderComponent,
     LoadingComponent,
+    NgIf,
+    AsyncPipe,
   ],
   templateUrl: './common.component.html',
 })
@@ -34,6 +41,12 @@ export class CommonComponent implements OnInit {
   public globalStore = inject(GlobalStore);
 
   private _userService = inject(UserService);
+
+  private _authenticationService = inject(AuthenticationService);
+
+  private _destroy$ = inject(DestroyRef);
+
+  public userData$!: Observable<User>;
 
   public ngOnInit(): void {
     let token = null;
@@ -45,7 +58,17 @@ export class CommonComponent implements OnInit {
     if (token) {
       const decodedToken = jwtDecode<DecodedToken>(token);
 
-      this._userService.getUserData(decodedToken.sub);
+      const username = decodedToken.sub;
+
+      this._userService
+        .getUserData(username)
+        .pipe(takeUntilDestroyed(this._destroy$))
+        .subscribe();
+
+      this._authenticationService
+        .isUserAdminCheckHandler(username)
+        .pipe(takeUntilDestroyed(this._destroy$))
+        .subscribe();
     }
   }
 }

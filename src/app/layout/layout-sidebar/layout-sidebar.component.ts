@@ -35,12 +35,12 @@ export class LayoutSidebarComponent implements OnInit {
   @Input({ transform: booleanAttribute }) public hidden = false;
 
   private _parent = inject<LayoutComponent>(LAYOUT);
-  private _destroyRef = inject(DestroyRef);
+  private _destroy$ = inject(DestroyRef);
   private _layoutApi = inject(LayoutApiService);
 
   public ngOnInit() {
     this._layoutApi.sidebarVisibility
-      .pipe(takeUntilDestroyed(this._destroyRef))
+      .pipe(takeUntilDestroyed(this._destroy$))
       .subscribe((event: LayoutSidebarVisibilityChange) => {
         if (event.layoutId !== this._parent.layoutId) {
           return;

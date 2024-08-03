@@ -26,6 +26,8 @@ export function authenticationGuard(redirectRoute: string): CanActivateFn {
       catchError((error: unknown) => {
         authService.removeAuthenticationTokens();
 
+        router.navigateByUrl('/');
+
         return throwError(() => error);
       })
     );
