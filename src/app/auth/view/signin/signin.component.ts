@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject } from '@angular/core';
+import { Component, DestroyRef, HostListener, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { MatButton, MatIconButton } from '@angular/material/button';
 import {
@@ -39,7 +39,7 @@ import { AuthenticationService } from '@authS/authentication.service';
 export class SigninComponent {
   public signinForm = createSigninForm();
 
-  public authenticationService = inject(AuthenticationService);
+  private _authService = inject(AuthenticationService);
 
   private _destroy$ = inject(DestroyRef);
 
@@ -47,31 +47,40 @@ export class SigninComponent {
 
   private _router = inject(Router);
 
+  public isLoading = this._authService.isLoading;
+
+  @HostListener('document:keypress', ['$event'])
+  public keyEvent(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.signinUserHandler();
+    }
+  }
+
   public signinUserHandler(): void {
-    this.authenticationService.startLoading();
+    this._authService.startLoading();
 
     const signinUserData = this.signinForm.value as Signin;
 
-    this.authenticationService
+    this._authService
       .signinUserHandler(signinUserData)
       .pipe(
         delay(2000),
-        finalize(() => this.authenticationService.stopLoading()),
+        finalize(() => this._authService.stopLoading()),
         takeUntilDestroyed(this._destroy$)
       )
       .subscribe({
         next: response =>
-          this.authenticationService.authenticatedSuccessHandler(response),
+          this._authService.authenticatedSuccessHandler(response),
         complete: () => {
           this.signinForm.reset();
           this._router.navigateByUrl('/home/bill/list');
         },
         error: error => {
           const errorMessage = `Error: Something went wrong, try again later (${error.error.message})`;
-          this.authenticationService.removeAuthenticationTokens();
+          this._authService.removeAuthenticationTokens();
           this._snackBarService.showRightTopMessage(`${errorMessage}`);
         },
       }),
-      finalize(() => this.authenticationService.stopLoading());
+      finalize(() => this._authService.stopLoading());
   }
 }

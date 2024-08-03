@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, ViewChild } from '@angular/core';
+import { Component, computed, inject, OnInit, ViewChild } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
@@ -55,11 +55,12 @@ import { AuthenticationService } from '@app/auth/services/authentication.service
           height="40" />
       </div>
       <div class="grow relative overflow-y-auto overflow-x-hidden px-3">
+        {{ isUserAdmin() }}
         <app-navigation
           #navigation
           [activeKey]="activeLinkId"
           class="navigation">
-          @for (menuItem of menuItems; track menuItem) {
+          @for (menuItem of menuItems(); track menuItem) {
             <app-navigation-group *ngIf="menuItem.show">
               <app-navigation-group-toggle [for]="menuItem.id!">
                 @if (menuItem.icon) {
@@ -95,31 +96,26 @@ import { AuthenticationService } from '@app/auth/services/authentication.service
   styles: ``,
 })
 export class SidebarComponent implements OnInit {
-  public router = inject(Router);
-  public location = inject(Location);
-  private _authService = inject(AuthenticationService);
-  private _isUserAdmin = this._authService.isUserAdmin();
-
-  public height: string | null = '200px';
-
   @ViewChild('navigation', { static: true })
   public navigation!: string;
 
-  public menuItems = menuItems;
+  public navItemLinks: MenuItem[] = [];
 
-  navItemLinks: MenuItem[] = [];
+  public activeLinkId: string | null = '/';
 
-  activeLinkId: string | null = '/';
+  public height: string | null = '200px';
+
+  public router = inject(Router);
+  public location = inject(Location);
+  private _authService = inject(AuthenticationService);
+  public isUserAdmin = this._authService.isUserAdmin;
+
+  public menuItems = computed(() => {
+    return checkMenuItemsAdminRoutes(menuItems, this.isUserAdmin());
+  });
 
   public ngOnInit() {
-    this.menuItems = checkMenuItemsAdminRoutes(
-      this.menuItems,
-      this._isUserAdmin
-    );
-
-    console.log(this.menuItems);
-
-    this.menuItems.forEach(menuItem => {
+    this.menuItems().forEach(menuItem => {
       this.navItemLinks.push(menuItem);
 
       if (menuItem.children) {
@@ -128,7 +124,9 @@ export class SidebarComponent implements OnInit {
         );
       }
     });
+
     this._activateLink();
+
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
