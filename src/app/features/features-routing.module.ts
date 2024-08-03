@@ -9,6 +9,13 @@ const routes: Routes = [
       import('./common/common.component').then(c => c.CommonComponent),
     children: [
       {
+        path: 'presentation',
+        loadChildren: () =>
+          import('./presentation/presentation.module').then(
+            m => m.PresentationModule
+          ),
+      },
+      {
         path: 'bill',
         loadChildren: () =>
           import('./bill/bill.module').then(m => m.BillModule),

@@ -73,7 +73,7 @@ export class SigninComponent {
           this._authService.authenticatedSuccessHandler(response),
         complete: () => {
           this.signinForm.reset();
-          this._router.navigateByUrl('/home/bill/list');
+          this._router.navigateByUrl('/home/presentation/features');
         },
         error: error => {
           const errorMessage = `Error: Something went wrong, try again later (${error.error.message})`;
