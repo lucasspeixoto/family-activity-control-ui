@@ -20,10 +20,10 @@ const routes: Routes = [
         canActivate: [userRoleGuard('home/bill/list')],
       },
       {
-        path: 'travel-planner',
+        path: 'user-profile',
         loadChildren: () =>
-          import('./travel-planner/travel-planner.module').then(
-            m => m.TravelPlannerModule
+          import('./user-profile/user-profile.module').then(
+            m => m.UserProfileModule
           ),
       },
     ],

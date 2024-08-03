@@ -55,7 +55,6 @@ import { AuthenticationService } from '@app/auth/services/authentication.service
           height="40" />
       </div>
       <div class="grow relative overflow-y-auto overflow-x-hidden px-3">
-        {{ isUserAdmin() }}
         <app-navigation
           #navigation
           [activeKey]="activeLinkId"

@@ -44,15 +44,15 @@ export const menuItems: MenuItem[] = [
     ],
   },
   {
-    id: 'travel-planner',
-    icon: 'flight',
-    name: 'Travel Planner',
+    id: 'user-profile',
+    icon: 'group',
+    name: 'User Profile',
     requireAdmin: false,
     show: false,
     children: [
       {
-        name: 'Planners',
-        link: '/home/travel-planner/travels',
+        name: 'Personal Data',
+        link: '/home/user-profile/personal-data',
         requireAdmin: false,
         show: false,
       },

@@ -3,9 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'travels',
+    path: 'personal-data',
     loadComponent: () =>
-      import('./view/travels/travels.component').then(c => c.TravelsComponent),
+      import('./view/personal-data/personal-data.component').then(
+        c => c.PersonalDataComponent
+      ),
   },
 ];
 
@@ -13,4 +15,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class TravelPlannerRoutingModule {}
+export class UserProfileRoutingModule {}
