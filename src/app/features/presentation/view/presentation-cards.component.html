@@ -1,5 +1,17 @@
 <div class="select-none flex flex-col w-[100%] h-[100%] absolute">
   <div class="flex flex-col justify-between h-full overflow-hidden">
-    <div class="px-10 grow-1 overflow-auto">Presentation</div>
+    <div class="px-10 grow-1 overflow-auto">
+      <div class="flex flex-wrap justify-around w-100 py-8 gap-4">
+        @for (featureItem of featureItems; track featureItem) {
+          <app-feature-card
+            [title]="featureItem.title"
+            [content]="featureItem.content"
+            [icon]="featureItem.icon"
+            [disabled]="featureItem.disabled"
+            [router]="featureItem.route"
+            [borderColor]="featureItem.borderColor" />
+        }
+      </div>
+    </div>
   </div>
 </div>
